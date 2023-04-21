@@ -11,6 +11,7 @@ const AdminMenu = () => {
   const [isSUBFacultyActive, setIsSUBFacultyActive] = useState(false);
   const [isSUBPlacementActive, setIsSUBPlacementActive] = useState(false);
   const [isSUBRecruitersActive, setIsSUBRecruitersActive] = useState(false);
+  const [isSUBCollabsActive, setIsSUBCollabsActive] = useState(false);
   const [isSUBAdministrationActive, setIsSUBAdministrationActive] =
     useState(false);
   const [isSUBAdmissionActive, setIsSUBAdmissionActive] = useState(false);
@@ -144,6 +145,37 @@ const AdminMenu = () => {
                         PLACEMENT DISPLAY
                       </p>
                     </span>
+                  </div>
+                )}
+
+                <p
+                  onClick={() => {
+                    setIsSUBRecruitersActive(!isSUBRecruitersActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  COLLABORATIONS <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBRecruitersActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Collaborations_Add");
+                        }}
+                      >
+                        COLLABORATIONS ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Collaborations_Display");
+                        }}
+                      >
+                        COLLABORATIONS DISPLAY
+                      </p>
+                      </span>
                   </div>
                 )}
 

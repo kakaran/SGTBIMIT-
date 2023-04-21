@@ -67,6 +67,9 @@ import Login from './Login/Login.jsx'
 import QuestionPaperUpdate from './Pages/QuestionPaper/QuestionPaperUpdate/QuestionPaperUpdate.jsx'
 import PrivateRouter from './Routes/Private.js'
 import NoticeAdd from './Pages/Notice/Notice_Add/Notice_Add.jsx'
+import CollaborationsAdd from './Pages/Collabrations/Collab_Add/Collab_Add.jsx'
+import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_Display.jsx'
+import CollaborationsUpdate from './Pages/Collabrations/Collab_Update/Collab_Update.jsx'
 
 function App() {
 
@@ -127,6 +130,9 @@ function App() {
           <Route path='admin/Recruiters_Add' element={<RecruitersAdd />} />
           <Route path='admin/Recruiters_Display' element={<RecruitersDisplay />} />
           <Route path='admin/Recruiters_Update/:_id' element={<RecruitersUpdate />} />
+          <Route path='admin/Collaborations_Add' element={<CollaborationsAdd />} />
+          <Route path='admin/Collaborations_Display' element={<CollaborationsDisplay />} />
+          <Route path='admin/Recruiters_Update/:_id' element={<CollaborationsUpdate />} />
           <Route path='admin/EResources_Add' element={<EResourcesAdd />} />
           <Route path='admin/EResources_Display' element={<EResourcesDisplay />} />
           <Route path='admin/EResources_Update/:_id' element={<EResourcesUpdate />} />

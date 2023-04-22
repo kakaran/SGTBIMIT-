@@ -62,7 +62,7 @@ const CollaborationsDisplay = () => {
           <AdminHeader />
           <div className="TesHeaderCard">
             <div className="TesDisplayHeading">
-              <h1>Our Recruiters</h1>
+              <h1>Our Collaborations</h1>
             </div>
             <div className="FacultyCardContainer">
              {getCollabs.map((value) =>{
@@ -85,7 +85,7 @@ const CollaborationsDisplay = () => {
                         />
                       </div>
                       <span className="FacultyCardController">
-                        <BiEditAlt
+                        {/* <BiEditAlt
                           style={{
                             paddingRight: "10px",
                             borderRight : "1px solid #f0f0f0",
@@ -96,7 +96,7 @@ const CollaborationsDisplay = () => {
                           onClick={() => {
                               navigator(`/admin/recruiters_Update/${value._id}`);
                           }}
-                        />
+                        /> */}
                         <RiDeleteBin6Line
                           className="TestBin"
                           onClick={() => {

@@ -130,7 +130,6 @@ function App() {
           <Route path='admin/Recruiters_Update/:_id' element={<RecruitersUpdate />} />
           <Route path='admin/Collaborations_Add' element={<CollaborationsAdd />} />
           <Route path='admin/Collaborations_Display' element={<CollaborationsDisplay />} />
-          <Route path='admin/Recruiters_Update/:_id' element={<CollaborationsUpdate />} />
           <Route path='admin/EResources_Add' element={<EResourcesAdd />} />
           <Route path='admin/EResources_Display' element={<EResourcesDisplay />} />
           <Route path='admin/EResources_Update/:_id' element={<EResourcesUpdate />} />

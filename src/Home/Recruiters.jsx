@@ -6,7 +6,7 @@ import { CustomArrow, CustomArrowNotActive } from '../Components/Carousel'
 import { motion } from 'framer-motion'
 /* import useIntersection from '../useIntersection' */
 
-export default function Recruiters() {
+export default function Recruiters({ isTitle = true }) {
   const carouselRef = useRef(null)
 
   /*   const isVisible = useIntersection(carouselRef, '0px') */
@@ -35,7 +35,7 @@ export default function Recruiters() {
   }
   return (
     <section className='recruiters'>
-      <motion.h1
+      {isTitle && <motion.h1
         initial={{
           x: 400
         }}
@@ -48,7 +48,7 @@ export default function Recruiters() {
         }}
       >
         Our Recruiters.
-      </motion.h1>
+      </motion.h1>}
       <motion.div
         className="recruiters-container"
         ref={carouselRef}

@@ -5,7 +5,7 @@ import Welcome from './Welcome'
 import ImageCarousel from './ImageCarousel'
 import Testimonials from './Testimonials'
 import DirectorMsg from './DirectorMsg'
-import Placements from './Placements'
+import Placementss from './Placementss'
 import Collaboration from './Collaboration'
 import Recruiters from './Recruiters'
 import Map from './Map'
@@ -38,7 +38,7 @@ export default function Home() {
           <Testimonials />
           <DirectorMsg />
           <Committees />
-          <Placements />
+          <Placementss />
           <Collaboration />
           <Recruiters />
           <Map />

@@ -4,10 +4,11 @@ import { Header, Navbar, Footer, Loader } from '../Components'
 import nssImg2 from '../images/nss-img-2.png'
 import { Carousel } from 'react-responsive-carousel'
 import { BsFillFilterCircleFill } from 'react-icons/bs'
-import { walkathon } from './walkathon'
 import useFetch from '../useFetch'
 import { useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 export default function Events() {
+
 
     const { id } = useParams()
 
@@ -21,6 +22,7 @@ export default function Events() {
 
     return (
         <>
+            <Helmet title={event.name} />
             <Header />
             <Navbar />
             {isPending && <Loader />}
@@ -44,9 +46,9 @@ export default function Events() {
                             showIndicators={false}
                             width="600px"
                         >
-                            {[...Array(3)].map(() => (
+                            {event.images.map((image) => (
                                 <div className="event-carousel-img">
-                                    <img src={nssImg2} alt="cant load" />
+                                    <img src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${event._id}/${image._id}`} alt="cant load" />
                                 </div>
                             ))}
                         </Carousel>
@@ -57,31 +59,34 @@ export default function Events() {
                         <button type='button'>Events</button>
                         <BsFillFilterCircleFill size="4rem" color='#005E93' />
                     </div>
-                    <Carousel
-                        showThumbs={false}
-                        showIndicators={false}
-                        showStatus={false}
-                    >
-                        {walkathon.map(walk => (
-                            <div className="event-grid">
-                                {walk.map(wal => (
-                                    <div className="event-card">
-                                        <img src={wal.image} alt="" />
-                                        <h1> {wal.title} </h1>
-                                        <p> {wal.detail} </p>
-                                        {/* <div className="event-card-bottom">
-                                            <div className="date-chip">
-                                                {wal.date}
+                    {event.Years.map((year, i) => (
+                        <div className="events-container">
+                            <h1
+                                style={{
+                                    fontFamily: "SF Pro Display-Bold",
+                                    fontSize: "min(3rem, 6vw)",
+                                    marginTop: 0,
+                                }}
+                            > {year.year} </h1>
+                            <Carousel
+                                showThumbs={false}
+                                showIndicators={false}
+                                showStatus={false}
+                            >
+                                <div className="event-grid">
+                                    {year.Events.map(singleEvent => (
+                                        singleEvent.Event_id.Images.map(image => (
+                                            <div className="event-card">
+                                                <img src={`${API_URL}/Event/Event_Image_Display/${singleEvent.Event_id._id}/${image._id}`} alt="cant load" />
+                                                <h1> {singleEvent.Event_id.name} </h1>
+                                                <p> {singleEvent.Event_id.detail}  </p>
                                             </div>
-                                            <div className="register-btn">
-                                                <div>Register Now</div>
-                                            </div>
-                                        </div> */}
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
-                    </Carousel>
+                                        ))
+                                    ))}
+                                </div>
+                            </Carousel>
+                        </div>
+                    ))}
                 </section>
             </section>}
             <Footer />

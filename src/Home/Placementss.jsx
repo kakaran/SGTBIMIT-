@@ -4,7 +4,7 @@ import useFetch from '../useFetch'
 import { motion } from 'framer-motion'
 
 
-export default function Placements() {
+export default function Placements({ isTitle = true }) {
   const scrollRef = useRef(null)
   const handleClick = (e) => {
     scrollRef.current.scrollLeft += 400
@@ -20,7 +20,7 @@ export default function Placements() {
 
     <section className='placements'>
       <div className="placements-container">
-        <motion.h1
+        {isTitle && <motion.h1
           initial={{
             opacity: 0,
             x: 400,
@@ -35,7 +35,7 @@ export default function Placements() {
           }}
         >
           Placements and Internships.
-        </motion.h1>
+        </motion.h1>}
         <div className="placement-bg"></div>
         {isPending && <Loader />}
         <motion.div className="placement-grid"

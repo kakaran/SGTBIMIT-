@@ -3,6 +3,7 @@ import Admission from './Admission'
 import "./components.css"
 import useFetch from '../useFetch'
 import { Link } from 'react-router-dom'
+import { IoMdSchool, IoMdExit } from 'react-icons/io'
 
 export default function Header() {
   const { data: notices } = useFetch("http://localhost:5000/Notice/Notice_Data_Display")
@@ -17,6 +18,15 @@ export default function Header() {
       document.querySelector(".admission-bg").classList.add("show-bg")
     })
   }, [])
+
+  const buttonStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "210px",
+    margin: "auto",
+    alignItems: "center",
+  }
+
   return (
 
 
@@ -38,8 +48,8 @@ export default function Header() {
           </p>
         </div>
         <div className="desktop header-btns">
-          <button className="admission-btn" type="button">Enroll for Admissions</button>
-          <button className="student-login-btn" type="button">Student - ERP Login</button>
+          <button className="admission-btn" type="button"><span style={buttonStyle}><IoMdSchool />Enroll for Admissions</span></button>
+          <button className="student-login-btn" type="button"><span style={buttonStyle}><IoMdExit />Student - ERP Login</span></button>
         </div>
         <div className="mobile">
           <img src={require("../images/menu.png")} alt="" height={"50px"} className="menu" />

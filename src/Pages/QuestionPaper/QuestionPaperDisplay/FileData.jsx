@@ -13,7 +13,7 @@ const FileData = (props) => {
       const data = await axios.get(
         `http://localhost:5000/QuestionPaper/Display/${props.course}/${props.Year}/${props.Semester}`
       );
-      console.log(data);
+      // console.log(data);
       setPaperName(data.data.FileNames);
       setRender(0);
     } catch (error) {

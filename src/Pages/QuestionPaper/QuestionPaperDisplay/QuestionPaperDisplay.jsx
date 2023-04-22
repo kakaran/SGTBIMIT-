@@ -10,9 +10,9 @@ import FileData from "./FileData";
 import "./QuestionPaperDisplay.css"
 
 const QuestionPaperDisplay = () => {
-  const [render, setRender] = useState(0);
-  const [getSociety, setSociety] = useState([]);
-  const [dataReset, setDataReset] = useState(true);
+  // const [render, setRender] = useState(0);
+  // const [getSociety, setSociety] = useState([]);
+  // const [dataReset, setDataReset] = useState(true);
   const [getPaperFilter, setPaperfilter] = useState({
     course: "",
     Year: "",
@@ -34,26 +34,6 @@ const QuestionPaperDisplay = () => {
 
   const navigator = useNavigate("");
 
-  //------------------------- All object Display -------------------------//
-  const QuestionPaperDataGet = async () => {
-    try {
-      const data = (
-        await axios.get(
-          "http://localhost:5000/QuestionPaper/Question_Paper_Display_All"
-        )
-      ).data;
-      setSociety(data);
-
-      setRender(0);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    QuestionPaperDataGet();
-  }, [render]);
-
   //-------------------- Single Document Data get ----------------------//
   const SinglePaperDisplay = async () => {
     try {
@@ -71,7 +51,8 @@ const QuestionPaperDisplay = () => {
         Semester: Detail?.Data[0]?.Semester,
         _id: Detail?.Data[0]?._id,
       });
-      setDataReset(false);
+
+      // setDataReset(false);
     } catch (error) {
       console.log(error);
     }
@@ -81,9 +62,8 @@ const QuestionPaperDisplay = () => {
   const PaperDelete = async (value) => {
     try {
       const _id = value;
-      // console.log(_id);
       await axios.get(`http://localhost:5000/QuestionPaper/Year_Delete/${_id}`);
-      setRender(1);
+      // setRender(1);
     } catch (error) {
       console.log(error);
     }
@@ -91,15 +71,18 @@ const QuestionPaperDisplay = () => {
 
   //----------- Reset the Data --------------//
   const ResetPaperData = async () => {
-    if (!dataReset) {
-      setDataReset(true);
-      setRender(1);
+      // setRender(1);
       setPaperfilter({
         course: " ",
         Year: " ",
         Semester: " ",
       });
-    }
+      setPaperFilterData({
+        course: "",
+        Year: "",
+        Semester: "",
+        _id: "",
+      })
   };
 
   //--------------- Get the Filter Data ----------------------//
@@ -115,6 +98,7 @@ const QuestionPaperDisplay = () => {
       console.log(error);
     }
   };
+
   return (
     <>
       <div className="SocietyDisplayContainer">
@@ -158,7 +142,6 @@ const QuestionPaperDisplay = () => {
                 >
                   <option value=" ">Select Year</option>
                   {filter?.Years?.map((value) => {
-                    // console.log(value);
                     return <option value={value.year}>{value.year}</option>;
                   })}
                 </select>
@@ -189,97 +172,52 @@ const QuestionPaperDisplay = () => {
               <button onClick={SinglePaperDisplay} className="button-30">Search</button>
               <button onClick={ResetPaperData} className="button-30">Clear</button>
             </div>
-            {dataReset ? (
-              <div className="PaperDisplayCardContainer">
-                {console.log(dataReset)}
-                {getSociety.map((value) => {
-                  return (
-                    <div className="Society_Card Paper_Card">
-                      <h3>
-                        {value.course}
-                        <span>
-                          <BiEditAlt
-                            style={{
-                              paddingRight: "10px",
-                              width: "32px",
-                              color: "#adb5bd",
-                            }}
-                            onClick={() => {
-                              navigator(`/admin/Prev_Year_Paper_Update/${value?.course}/${value?.Year}/${value?.Semester}/${value?._id}`);
-                            }}
-                          />
-                          <RiDeleteBin6Line
-                            className="TestBin"
-                            onClick={() => {
-                              PaperDelete(value._id);
-                            }}
-                            style={{ color: "#d00000" }}
-                          />
-                        </span>
-                      </h3>
-                      <div className="Society_Card_ImageDescription ">
-                        <FileData
-                          course={value?.course}
-                          Year={value?.Year}
-                          Semester={value?.Semester}
-                          _id={value?._id}
+            {getPaperFilterData.Semester ?
+              (
+                <div className="TesDisplayCardContainer">
+                  <div className="Society_Card">
+                    <h3>
+                      {getPaperFilterData?.course}
+                      <span>
+                        <BiEditAlt
+                          style={{
+                            paddingRight: "10px",
+                            width: "32px",
+                            color: "#adb5bd",
+                          }}
+                          onClick={() => {
+                            navigator(
+                              `/admin/Society_Update/${getPaperFilterData?._id}`
+                            );
+                          }}
                         />
-                        <div className="Society_Describe">
-                          <h4>{value.Year}</h4>
-                          <h4> Semester : {value.Semester}</h4>
-                        </div>
+                        <RiDeleteBin6Line
+                          className="TestBin"
+                          onClick={() => {
+                            PaperDelete(getPaperFilterData?._id);
+                          }}
+                          style={{ color: "#d00000" }}
+                        />
+                      </span>
+                    </h3>
+                    <div className="Society_Card_ImageDescription">
+                      {getPaperFilterData ? (
+                        <FileData
+                          course={getPaperFilterData?.course}
+                          Year={getPaperFilterData?.Year}
+                          Semester={getPaperFilterData?.Semester}
+                          _id={getPaperFilterData?._id}
+                        />
+                      ) : (
+                        "  "
+                      )}
+                      <div className="Society_Describe">
+                        <h4>{getPaperFilterData.Year}</h4>
+                        <h4> Semester : {getPaperFilterData?.Semester}</h4>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="TesDisplayCardContainer">
-                {/* {console.log(getPaperFilterData)} */}
-                <div className="Society_Card">
-                  <h3>
-                    {getPaperFilterData?.course}
-                    <span>
-                      <BiEditAlt
-                        style={{
-                          paddingRight: "10px",
-                          width: "32px",
-                          color: "#adb5bd",
-                        }}
-                        onClick={() => {
-                          navigator(
-                            `/admin/Society_Update/${getPaperFilterData?._id}`
-                          );
-                        }}
-                      />
-                      <RiDeleteBin6Line
-                        className="TestBin"
-                        onClick={() => {
-                          PaperDelete(getPaperFilterData?._id);
-                        }}
-                        style={{ color: "#d00000" }}
-                      />
-                    </span>
-                  </h3>
-                  <div className="Society_Card_ImageDescription">
-                    {getPaperFilterData ? (
-                      <FileData
-                        course={getPaperFilterData?.course}
-                        Year={getPaperFilterData?.Year}
-                        Semester={getPaperFilterData?.Semester}
-                        _id={getPaperFilterData?._id}
-                      />
-                    ) : (
-                      "  "
-                    )}
-                    <div className="Society_Describe">
-                      <h4>{getPaperFilterData.Year}</h4>
-                      <h4> Semester : {getPaperFilterData?.Semester}</h4>
-                    </div>
                   </div>
-                </div>
-              </div>
-            )}
+                </div>) : " "}
           </div>
         </div>
       </div>

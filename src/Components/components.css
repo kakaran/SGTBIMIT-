@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400&display=swap');
+
 .mobile {
   display: none !important;
 }
@@ -210,21 +212,22 @@ header {
 }
 
 .admission-form input[type=text],
-.admission-form input[type=email],
-.admission-form select {
+.admission-form input[type=email] {
   border: none;
   background: transparent;
   color: white;
   font-size: 1.5rem;
+  border-radius: 10px;
   border-bottom: 1px solid var(--secondary-clr);
-  font-family: cursive;
+  font-family: 'IBM Plex Sans', sans-serif;
+  /* font-family: cursive; */
 }
 
-.admission-form select option {
+/* .admission-form select option {
   background-color: var(--primary-clr);
   color: white;
   font-family: cursive;
-}
+} */
 
 .admission-form select:focus {
   outline: none;
@@ -239,6 +242,15 @@ header {
   font-size: min(2rem, 5vw);
   font-weight: 700;
 
+}
+
+.AdmissionRadiobuttonsContainer{
+  display: flex;
+  gap: 25px;
+}
+
+.AdmisRadioButton label {
+  font-size: 20px;
 }
 
 .admission-form input[type=text]::placeholder,

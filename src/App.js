@@ -25,7 +25,6 @@ import Events from './Events/Events.jsx'
 import Gallery from './Alumni/Gallery/Gallery.jsx'
 import Placements from './Industry Interface/Placements/Placements.jsx'
 import Research from './Academics/Research/Research.jsx'
-import Nss from './Events/Nss/Nss.jsx'
 import NoticePDF from './Admission/Notices/NoticePDF.jsx'
 import Questionpaper from './Academics/Questionpaper/Questionpaper'
 import Registration from './Alumni/Registration/Registration.jsx'
@@ -100,8 +99,7 @@ function App() {
         <Route path='/academics/research' element={<Research />} />
         <Route path='/alumini/alumini-meet' element={<AlumniMeet />} />
         <Route path='/alumini/testimonials' element={<TestimonialsAL />} />
-        <Route path="/events/past" element={<Events />} />
-        <Route path="events/nss" element={<Nss />} />
+        <Route path="events/:id" element={<Events />} />
         <Route path='/committees/:id' element={<CommitteePDF />}></Route>
         <Route path='/alumini/registration' element={<Registration />} />
         <Route path='/industry/placements' element={<Placements />}/>

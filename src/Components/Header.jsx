@@ -59,7 +59,12 @@ export default function Header() {
         <marquee direction="left">
           {notices && filteredNotices.map((notice) => (
             <span key={notice._id}>
-              <Link to={`/admission/notices/${notice._id}`}>{` ${notice.Name} ||`}</Link>
+              <Link
+                to={`/admission/notices/${notice._id}`}
+                target='_blank'
+              >
+                {` ${notice.Name} ||`}
+              </Link>
             </span>
           ))}
         </marquee>

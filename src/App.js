@@ -71,6 +71,7 @@ import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_D
 import CollaborationsUpdate from './Pages/Collabrations/Collab_Update/Collab_Update.jsx'
 
 function App() {
+ 
 
   return (
     <Router>
@@ -102,10 +103,9 @@ function App() {
         <Route path="events/:id" element={<Events />} />
         <Route path='/committees/:id' element={<CommitteePDF />}></Route>
         <Route path='/alumini/registration' element={<Registration />} />
-        <Route path='/industry/placements' element={<Placements />}/>
+        <Route path='/industry/placements' element={<Placements />} />
 
         {/* Admin Routes */}
-
 
         <Route path='/login' element={<Login />} />
         <Route path='/dashboard' element={<PrivateRouter />} >

@@ -55,7 +55,7 @@ export default function Login() {
     
     return (
         <>
-            <section className="login-section">
+          (  <section className="login-section">
                 <img className="login-logo" src={require("../images/sgtbimit.png")} alt="" />
                 <div className="form-container">
                     <p className="login-title">Login</p>
@@ -84,8 +84,8 @@ export default function Login() {
 
                 </div>
 
-            </section>
-
+            </section>)  
+        
         </>
     )
 }

@@ -150,7 +150,7 @@ const AdminMenu = () => {
 
                 <p
                   onClick={() => {
-                    setIsSUBRecruitersActive(!isSUBRecruitersActive);
+                    setIsSUBCollabsActive(!isSUBCollabsActive);
                   }}
                   style={{
                     backgroundColor: "#e0e1dd",
@@ -158,7 +158,7 @@ const AdminMenu = () => {
                 >
                   COLLABORATIONS <IoIosArrowDown className="CatHeadIcons" />
                 </p>
-                {isSUBRecruitersActive && (
+                {isSUBCollabsActive && (
                   <div className="Categoriesdropdown">
                     <span>
                       <p

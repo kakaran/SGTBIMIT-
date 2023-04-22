@@ -5,15 +5,12 @@ import axios from "axios";
 import "../../Society/Society_Display/Society_Display.css";
 import "../../Faculty/Faculty_Display/FacultyDisplay.css"
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { BiEditAlt } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
 import { Card } from "antd";
 const { Meta } = Card;
 
 const CollaborationsDisplay = () => {
   const [render, setRender] = useState(0);
   const [getCollabs, setCollabs] = useState([]);
-  const navigator = useNavigate("");
 
   useEffect(() => {
     const TestimonialsDataGet = async () => {

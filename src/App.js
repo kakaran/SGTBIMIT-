@@ -68,7 +68,6 @@ import PrivateRouter from './Routes/Private.js'
 import NoticeAdd from './Pages/Notice/Notice_Add/Notice_Add.jsx'
 import CollaborationsAdd from './Pages/Collabrations/Collab_Add/Collab_Add.jsx'
 import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_Display.jsx'
-import CollaborationsUpdate from './Pages/Collabrations/Collab_Update/Collab_Update.jsx'
 
 function App() {
  

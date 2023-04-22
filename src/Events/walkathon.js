@@ -1,4 +1,4 @@
-import nssImg2 from '../../images/nss-img-2.png'
+import nssImg2 from '../images/nss-img-2.png'
 
 export const walkathon = [
     [

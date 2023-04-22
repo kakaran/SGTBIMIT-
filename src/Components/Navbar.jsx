@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import useFetch from '../useFetch'
 export default function Navbar() {
+  const { data: events, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
 
   const arrow = require("../images/down.png")
   const { data: societies } = useFetch("http://localhost:5000/Society/Society_Display")
@@ -171,15 +172,11 @@ export default function Navbar() {
         <div className="nav-item" data-index="6">
           <div>EVENTS<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="6">
-            <NavLink to="/events/past" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
-              <div className="dropdown-item">PAST EVENTS</div>
+            {events && events.map((event, i)=>(
+              <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+              <div className="dropdown-item"> {event.name} </div>
             </NavLink>
-            <NavLink to="/events/upcoming" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
-              <div className="dropdown-item">UPCOMING EVENTS</div>
-            </NavLink>
-            <NavLink to="/events/gallery" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
-              <div className="dropdown-item">GALLERY</div>
-            </NavLink>
+            ))}
           </div>
 
         </div>

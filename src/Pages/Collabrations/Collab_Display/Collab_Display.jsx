@@ -44,8 +44,8 @@ const CollaborationsDisplay = () => {
   const CollabsDelete = async (value) => {
     try {
       const _id = value;
-      // console.log(_id);
-      await axios.post(`http://localhost:5000/Collaborations/Collaborations_Delete/${_id}`);
+      console.log(_id);
+      await axios.delete(`http://localhost:5000/Collaborations/Collaborations_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -85,7 +85,7 @@ const CollaborationsDisplay = () => {
                         />
                       </div>
                       <span className="FacultyCardController">
-                        <BiEditAlt
+                        {/* <BiEditAlt
                           style={{
                             paddingRight: "10px",
                             borderRight : "1px solid #f0f0f0",
@@ -96,11 +96,11 @@ const CollaborationsDisplay = () => {
                           onClick={() => {
                               navigator(`/admin/recruiters_Update/${value._id}`);
                           }}
-                        />
+                        /> */}
                         <RiDeleteBin6Line
                           className="TestBin"
                           onClick={() => {
-                            CollabsDelete(value._id);
+                            CollabsDelete(value?._id);
                           }}
                           style={{ color: "#d00000" }}
                         />

@@ -57,7 +57,7 @@ export default function Events() {
                 <section className="events-section-1">
                     <div className="events-header">
                         <button type='button'>Events</button>
-                        <BsFillFilterCircleFill size="4rem" color='#005E93' />
+                        <BsFillFilterCircleFill size="min(4rem, 5vw)" color='#005E93' />
                     </div>
                     {event.Years.map((year, i) => (
                         <div className="events-container">

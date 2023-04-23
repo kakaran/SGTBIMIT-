@@ -2,7 +2,7 @@ import React from 'react'
 import './placements.css'
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from 'react-helmet'
-import { BsArrowDownCircleFill } from 'react-icons/bs'
+import { BsArrowDownCircleFill, BsDownload } from 'react-icons/bs'
 import ellipse from '../../images/placement-ellipse.png'
 import img from '../../images/place-img.png'
 import Recruiters from '../../Home/Recruiters'
@@ -63,9 +63,9 @@ export default function Placements() {
                     }}>Featured Stars</h1>
                     <Placementss isTitle={false} />
                     <div className="vertical-line"
-                    style={{
-                        marginTop: "min(2rem, 2vw)"
-                    }}
+                        style={{
+                            marginTop: "min(2rem, 2vw)"
+                        }}
                     ></div>
 
                 </section>
@@ -79,6 +79,45 @@ export default function Placements() {
                     </div>
                     <Recruiters isTitle={false} />
                 </section>
+
+
+                <section className="placement-stats-section">
+                    <div className="placements-stats-container">
+                        <div className='horizontal-line' />
+                    <h1>
+                        <span>
+                            Placements Statistics
+                        </span>
+                        <BsDownload color="#4B5563"/>
+                    </h1>
+                    <div className="years-grid">
+                        <div className="year-item">2021-2022</div>
+                        <div className="year-item">2020-2021</div>
+                        <div className="year-item">2019-2020</div>
+                    </div>
+
+
+
+
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <ul className='points'>
                     <li>To invite industries and putative companies with the aim of providing employment to students and assisting them in the placement process.</li>

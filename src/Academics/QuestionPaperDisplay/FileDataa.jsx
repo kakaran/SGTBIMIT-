@@ -10,7 +10,7 @@ const FileData = (props) => {
   const paperDataRecover = async () => {
     try {
       const data = await axios.get(
-        `http://localhost:5000/QuestionPaper/Display/${props.course}/${props.Year}/${props.Semester}`
+        `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${props.course}/${props.Year}/${props.Semester}`
       );
       console.log(data);
       setPaperName(data.data.FileNames);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 
 const QuestionPaperPDFDisplay = () => {
@@ -16,8 +17,9 @@ const QuestionPaperPDFDisplay = () => {
 
   return (
     <div>
+      <Helmet title="Question Paper PDF" />
       <iframe
-        src={`http://localhost:5000/QuestionPaper/Display/${_id}/${index}`}
+        src={`${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${_id}/${index}`}
         frameborder="0"
         width="100%"
         height={embedHeight}

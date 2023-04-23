@@ -6,6 +6,7 @@ import "../../Society/Society_Display/Society_Display.css";
 import "../../Faculty/Faculty_Display/FacultyDisplay.css"
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Card } from "antd";
+import { Helmet } from "react-helmet";
 const { Meta } = Card;
 
 const CollaborationsDisplay = () => {
@@ -16,7 +17,7 @@ const CollaborationsDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get("http://localhost:5000/Collaborations/Collaborations_Display")
+          await axios.get(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Display`)
         ).data;
         setCollabs(data);
         setRender(0);
@@ -31,9 +32,9 @@ const CollaborationsDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`http://localhost:5000/Collaborations/Collaborations_Image_Display/${value}`}
+        src={`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Image_Display/${value}`}
         alt=""
-        style={{height : "300px", borderBottom : "1px solid #f0f0f0" , paddingBottom : "5px"}}
+        style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
     );
   };
@@ -42,7 +43,7 @@ const CollaborationsDisplay = () => {
     try {
       const _id = value;
       console.log(_id);
-      await axios.delete(`http://localhost:5000/Collaborations/Collaborations_Delete/${_id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -51,6 +52,7 @@ const CollaborationsDisplay = () => {
 
   return (
     <>
+      <Helmet title="Display Collaboration" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />
@@ -62,9 +64,9 @@ const CollaborationsDisplay = () => {
               <h1>Our Collaborations</h1>
             </div>
             <div className="FacultyCardContainer">
-             {getCollabs.map((value) =>{
-                return(
-                    <div className="FacultyCard">
+              {getCollabs.map((value) => {
+                return (
+                  <div className="FacultyCard">
                     <Card
                       hoverable
                       style={{
@@ -75,10 +77,10 @@ const CollaborationsDisplay = () => {
                       }
                     >
                       <div className="FacultyCardtitle">
-                        <Meta title={value?.name} bordered={false} style = {{padding : "10px"}}/>
+                        <Meta title={value?.name} bordered={false} style={{ padding: "10px" }} />
                         <Meta
                         //   title={value?.name}
-                          // description={value?.companyName}
+                        // description={value?.companyName}
                         />
                       </div>
                       <span className="FacultyCardController">
@@ -105,7 +107,7 @@ const CollaborationsDisplay = () => {
                     </Card>
                   </div>
                 )
-             })}
+              })}
             </div>
           </div>
         </div>

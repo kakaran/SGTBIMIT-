@@ -12,7 +12,7 @@ export default function Recruiters({ isTitle = true }) {
   /*   const isVisible = useIntersection(carouselRef, '0px') */
 
 
-  const { data: recruiters, isPending } = useFetch("http://localhost:5000/Recruiters/recruiters_Display")
+  const { data: recruiters, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Display`)
 
 
   let recruitersChunks = []
@@ -104,7 +104,7 @@ export default function Recruiters({ isTitle = true }) {
                   {recruiters.map((recruiter, i) => {
                     return (
                       <div className="recruiter-img" key={`rec-img-${i}`}>
-                        <img src={`http://localhost:5000/Recruiters/Recruiter_Image_Display/${recruiter._id}`} key={recruiter._id} alt="cant load" />
+                        <img src={`${process.env.REACT_APP_API_URL}/Recruiters/Recruiter_Image_Display/${recruiter._id}`} key={recruiter._id} alt="cant load" />
 
                       </div>
                     )

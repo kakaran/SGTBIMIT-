@@ -4,7 +4,7 @@ import useFetch from '../../useFetch'
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from 'react-helmet'
 export default function Faculty() {
-    const { data: facultyData, isPending } = useFetch("http://localhost:5000/Faculty/Faculty_Display")
+    const { data: facultyData, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Display`)
 
     return (
         <>
@@ -19,7 +19,7 @@ export default function Faculty() {
                         {isPending && <Loader />}
                         {facultyData && facultyData.map(({ _id, name, post, detail, Department }, i) => (
                             <div className="faculty-card">
-                                <img src={`http://localhost:5000/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" />
+                                <img src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" />
                                 <div className='fac-name'>
                                     <h2 className="faculty-name">{name}</h2>
                                     <p>{post}</p>

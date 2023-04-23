@@ -5,7 +5,7 @@ import useFetch from '../../useFetch'
 import { Helmet } from 'react-helmet'
 
 export default function AcademicCal() {
-    const { data: calendar, isPending } = useFetch("http://localhost:5000/Calendar/CalendarDisplay")
+    const { data: calendar, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Calendar/CalendarDisplay`)
     console.log(calendar && calendar)
 
     return (

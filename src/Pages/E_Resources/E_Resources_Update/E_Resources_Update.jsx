@@ -3,6 +3,7 @@ import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const EResourcesUpdate = () => {
   const [SingleData, setSingleData] = useState({
@@ -17,7 +18,7 @@ const EResourcesUpdate = () => {
       try {
         const data = (
           await axios.post(
-            "http://localhost:5000/E_Resources/EResources_Single_Display",
+            `${process.env.REACT_APP_API_URL}/E_Resources/EResources_Single_Display`,
             { id }
           )
         ).data;
@@ -37,7 +38,7 @@ const EResourcesUpdate = () => {
     try {
       const data = (
         await axios.post(
-          `http://localhost:5000/E_Resources/EResources_Update/${id}`,
+          `${process.env.REACT_APP_API_URL}/E_Resources/EResources_Update/${id}`,
           { SingleData }
         )
       ).data;
@@ -55,6 +56,7 @@ const EResourcesUpdate = () => {
 
   return (
     <>
+      <Helmet title="Update E-Resources" />
       <div className="TestimonialUpdateContainer" style={{ display: "flex" }}>
         <div className="SideBar">
           <AdminMenu />

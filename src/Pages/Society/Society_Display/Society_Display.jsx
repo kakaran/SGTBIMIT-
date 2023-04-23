@@ -6,6 +6,7 @@ import axios from "axios";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Society_Display = () => {
   const [render, setRender] = useState(0);
@@ -16,7 +17,7 @@ const Society_Display = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get("http://localhost:5000/Society/Society_Display")
+          await axios.get(`${process.env.REACT_APP_API_URL}/Society/Society_Display`)
         ).data;
         setSociety(data);
         setRender(0);
@@ -30,7 +31,7 @@ const Society_Display = () => {
 
   const ImagesGet = (value) =>{
     return (<img
-      src={`http://localhost:5000/Society/Society_Image_Display/${value}`}
+      src={`${process.env.REACT_APP_API_URL}/Society/Society_Image_Display/${value}`}
       alt=""
     />)
   }
@@ -39,7 +40,7 @@ const Society_Display = () => {
     try {
       const _id = value;
       console.log(_id);
-      await axios.post(`http://localhost:5000/Society/Society_Delete/${_id}`);
+      await axios.post(`${process.env.REACT_APP_API_URL}/Society/Society_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -48,6 +49,7 @@ const Society_Display = () => {
 
   return (
     <>
+    <Helmet title="Display Society" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />

@@ -16,7 +16,7 @@ export default function Login() {
     const handleLogin = async () => {
         try {
 
-            const data = (await axios.post("http://localhost:5000/Admin/Login",{email,password})).data;
+            const data = (await axios.post(`${process.env.REACT_APP_API_URL}/Admin/Login`,{email,password})).data;
             console.log(data);
             if(data.token){
                 setAuth({
@@ -37,7 +37,7 @@ export default function Login() {
     const handleForgetpassword = async () =>{
         try {
             if(email){
-                const data = (await axios.post(`http://localhost:5000/Admin/EmailCheck/${email}`)).data
+                const data = (await axios.post(`${process.env.REACT_APP_API_URL}/Admin/EmailCheck/${email}`)).data
                 console.log(data);
                 if(data.status){
                     navigate(`/admin/forgetPassword/${data.status}`)

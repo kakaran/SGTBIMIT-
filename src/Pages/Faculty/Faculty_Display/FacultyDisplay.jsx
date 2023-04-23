@@ -8,6 +8,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { Card } from "antd";
+import { Helmet } from "react-helmet";
 const { Meta } = Card;
 
 const FacultyDisplay = () => {
@@ -19,7 +20,7 @@ const FacultyDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get("http://localhost:5000/Faculty/Faculty_Display")
+          await axios.get(`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Display`)
         ).data;
         setFaculty(data);
         setRender(0);
@@ -34,7 +35,7 @@ const FacultyDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`http://localhost:5000/Faculty/Faculty_Image_Display/${value}`}
+        src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${value}`}
         alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
@@ -45,7 +46,7 @@ const FacultyDisplay = () => {
     try {
       const _id = value;
       // console.log(_id);
-      await axios.post(`http://localhost:5000/Faculty/Faculty_Delete/${_id}`);
+      await axios.post(`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -54,6 +55,7 @@ const FacultyDisplay = () => {
 
   return (
     <>
+      <Helmet title="Display Faculty" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />
@@ -79,7 +81,7 @@ const FacultyDisplay = () => {
                     >
                       <div className="FacultyCardtitle">
                         <Meta title={value?.name} bordered={false} style={{ padding: "10px" }} />
-                        <Meta title={value?.Department}/>
+                        <Meta title={value?.Department} />
                         <Meta
                           title={value?.post}
                           description={value?.detail}

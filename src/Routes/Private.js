@@ -10,7 +10,7 @@ export default function PrivateRouter() {
     useEffect(() => {
         const authCheck = async () => {
             // console.log("hi");
-            const res = await axios.get("http://localhost:5000/admin-auth",);
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/admin-auth`,);
             console.log(res);
             if (res.data.ok) {
                 setOk(true)

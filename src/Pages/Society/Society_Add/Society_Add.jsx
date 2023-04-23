@@ -5,6 +5,7 @@ import "./Society_Add.css";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
 import imageCompression from 'browser-image-compression';
+import { Helmet } from "react-helmet";
 
 
 const Society_Add = () => {
@@ -30,13 +31,13 @@ const Society_Add = () => {
       let formData = new FormData();
       const compressedFile = await imageCompression(filedata, options);
       console.log(compressedFile);
-      formData.append("image", compressedFile,filedata.name);
+      formData.append("image", compressedFile, filedata.name);
       formData.append("title", societUpdate.title);
       formData.append("detail", societUpdate.detail);
       formData.append("subdetail", societUpdate.subdetail);
       const data1 = (
         await axios.post(
-          "http://localhost:5000/Society/Society_Add",
+          `${process.env.REACT_APP_API_URL}/Society/Society_Add`,
           formData,
           {
             headers: {
@@ -52,6 +53,7 @@ const Society_Add = () => {
   };
   return (
     <>
+      <Helmet title="Add Society" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -93,14 +95,14 @@ const Society_Add = () => {
                   onChange={(e) => {
                     setFileData(e.target.files[0]);
                   }}
-                  style={{width: "200px",height:"150px"}}
+                  style={{ width: "200px", height: "150px" }}
                 />
               </div>
 
               <button
                 className="button-19"
                 onClick={() => {
-                    SocietyAdd();
+                  SocietyAdd();
                 }}
               >
                 Submit

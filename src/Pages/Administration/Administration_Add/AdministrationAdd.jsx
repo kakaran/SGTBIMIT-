@@ -5,6 +5,7 @@ import "../../Testimonials/Testimonials_ADD/Testimonials_ADD.css";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import imageCompression from "browser-image-compression";
+import { Helmet } from "react-helmet";
 
 const AdministrationAdd = () => {
   const [AdminiUpdate, setAdminiUpdate] = useState({
@@ -33,14 +34,14 @@ const AdministrationAdd = () => {
       let formData = new FormData();
       const compressedFile = await imageCompression(filedata, options);
       console.log(compressedFile);
-      formData.append("image", compressedFile,filedata.name);
+      formData.append("image", compressedFile, filedata.name);
       formData.append("name", AdminiUpdate.name);
       formData.append("position", AdminiUpdate.position);
       formData.append("shortNote", AdminiUpdate.shortNote);
       formData.append("longNote", AdminiUpdate.longNote);
       const data1 = (
         await axios.post(
-          "http://localhost:5000/Administration/Administration_Add",
+          `${process.env.REACT_APP_API_URL}/Administration/Administration_Add`,
           formData,
           {
             headers: {
@@ -56,6 +57,7 @@ const AdministrationAdd = () => {
   };
   return (
     <>
+      <Helmet title="Add Administration" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

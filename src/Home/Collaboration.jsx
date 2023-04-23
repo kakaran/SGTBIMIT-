@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import useFetch from '../useFetch'
 
 export default function Collaboration() {
-  const { data: collabs, isPending } = useFetch("http://localhost:5000/Collaborations/Collaborations_Display")
+  const { data: collabs, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Display`)
 
   
 
@@ -87,7 +87,7 @@ export default function Collaboration() {
               <div className="collab-grid" key={`${i}collabgrid`}>
                 {collabss.map((collab, i) => (
                   <div className="collab-img" key={`${i}collabimg`}>
-                    <img src={`http://localhost:5000/Collaborations/Collaborations_Image_Display/${collab._id}`} alt="" />
+                    <img src={`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Image_Display/${collab._id}`} alt="" />
                   </div>
                 ))}
               </div>

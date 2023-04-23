@@ -37,7 +37,7 @@ const QuestionPaperDisplay = () => {
     try {
       const data = (
         await axios.get(
-          "http://localhost:5000/QuestionPaper/Question_Paper_Display_All"
+          `${process.env.REACT_APP_API_URL}/QuestionPaper/Question_Paper_Display_All`
         )
       ).data;
       setSociety(data);
@@ -58,7 +58,7 @@ const QuestionPaperDisplay = () => {
       // console.log(getPaperFilter);
       const Detail = (
         await axios.get(
-          `http://localhost:5000/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
+          `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
         )
       ).data;
       // console.log(Detail);
@@ -93,7 +93,7 @@ const QuestionPaperDisplay = () => {
     try {
       const data = (
         await axios.get(
-          `http://localhost:5000/QuestionPaper/Filter_Data/${course}`
+          `${process.env.REACT_APP_API_URL}/QuestionPaper/Filter_Data/${course}`
         )
       ).data;
       setfilter(data[0]);

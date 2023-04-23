@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD.css";
+import { Helmet } from 'react-helmet'
 
 const CalenderAdd = () => {
   const [calenderUpdate, setCalenderUpdate] = useState({
@@ -16,7 +17,7 @@ const CalenderAdd = () => {
 
   const CalenderAdd = async () => {
     try {
-      await axios.post("http://localhost:5000/Calendar/CalendarAdd", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarAdd`, {
         calenderUpdate,
       });
     } catch (error) {
@@ -26,6 +27,7 @@ const CalenderAdd = () => {
 
   return (
     <>
+      <Helmet title="Add Calendar" />
       <div className="TestimonailAddContainer">
         <div className="SideBar">
           <AdminMenu />

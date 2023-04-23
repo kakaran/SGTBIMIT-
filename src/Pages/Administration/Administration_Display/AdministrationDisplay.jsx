@@ -7,6 +7,7 @@ import axios from "axios";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AdministrationDisplay = () => {
   const [render, setRender] = useState(0);
@@ -19,7 +20,7 @@ const AdministrationDisplay = () => {
       try {
         const data = (
           await axios.get(
-            "http://localhost:5000/Administration/Administration_Display"
+            `${process.env.REACT_APP_API_URL}/Administration/Administration_Display`
           )
         ).data;
         setAdmini(data);
@@ -35,7 +36,7 @@ const AdministrationDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`http://localhost:5000/Administration/AdministrationImageDisplay/${value}`}
+        src={`${process.env.REACT_APP_API_URL}/Administration/AdministrationImageDisplay/${value}`}
         alt=""
         style={{ width: "400px", height: "450px" }}
       />
@@ -47,7 +48,7 @@ const AdministrationDisplay = () => {
       const _id = value;
       console.log(_id);
       await axios.post(
-        `http://localhost:5000/Administration/Administration_Delete/${_id}`
+        `${process.env.REACT_APP_API_URL}/Administration/Administration_Delete/${_id}`
       );
       setRender(1);
     } catch (error) {
@@ -58,6 +59,7 @@ const AdministrationDisplay = () => {
   const numAscending = [...getAdmini].sort((a, b) => a.Index - b.Index);
   return (
     <>
+      <Helmet title="Display Administration" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />

@@ -10,7 +10,7 @@ export default function Placements({ isTitle = true }) {
     scrollRef.current.scrollLeft += 400
   }
 
-  const { data: placementArray, isPending } = useFetch("http://localhost:5000/Placement_Intership/PlacementInterships_Display")
+  const { data: placementArray, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Display`)
 
   useEffect(() => {
     scrollRef.current.scrollLeft = 0
@@ -56,7 +56,7 @@ export default function Placements({ isTitle = true }) {
             placementArray.map((placement, i) => {
               return (
                 <div className="place-card" key={placement._id}>
-                  <img src={`http://localhost:5000/Placement_Intership/PlacementInterships_Image_Display/${placement._id}`} alt="cant load" className='placement-img' />
+                  <img src={`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${placement._id}`} alt="cant load" className='placement-img' />
                   <div className='place-heading'> {placement.name}  </div>
                   <p> {placement.companyName} </p>
                 </div>

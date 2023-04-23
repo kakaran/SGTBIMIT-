@@ -7,6 +7,7 @@ import { Card, Col, Row } from "antd";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { EditOutlined } from "@ant-design/icons";
+import { Helmet } from "react-helmet";
 
 const CalenderDisplay = () => {
   const [getCalender, setCalender] = useState([]);
@@ -19,7 +20,7 @@ const CalenderDisplay = () => {
       try {
         const data = (
           await axios.get(
-            "http://localhost:5000/Calendar/CalendarDisplay"
+            `${process.env.REACT_APP_API_URL}/Calendar/CalendarDisplay`
           )
         ).data;
         console.log(data);
@@ -35,7 +36,7 @@ const CalenderDisplay = () => {
   const CalenderDelete = async (value) => {
     try {
       const _id = value;
-      await axios.post("http://localhost:5000/Calendar/CalendarDelete", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarDelete`, {
         _id,
       });
       setRender(1)
@@ -50,6 +51,7 @@ const CalenderDisplay = () => {
   console.log(getCalender);
   return (
     <>
+      <Helmet title="Display Calendar" />
       <div className="Testimonial_DisplayContainer">
         <div className="SideBar">
           <AdminMenu />

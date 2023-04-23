@@ -7,10 +7,10 @@ import ellipse from '../../images/placement-ellipse.png'
 import img from '../../images/place-img.png'
 import Recruiters from '../../Home/Recruiters'
 import Placementss from '../../Home/Placementss'
-
+import Chart from 'react-apexcharts'
 export default function Placements() {
 
-    const [oneYear, setOneYear] = useState(false)
+    const [oneYear, setOneYear] = useState(true)
     const [twoYear, setTwoYear] = useState(false)
     const [threeYear, setThreeYear] = useState(false)
 
@@ -107,6 +107,8 @@ export default function Placements() {
 
 
                 <section className="placement-stats-section">
+
+
                     <div className="placements-stats-container">
                         <div className='horizontal-line' />
                         <h1>
@@ -122,7 +124,197 @@ export default function Placements() {
                         </div>
 
 
+                        <div className="chart">
+                            <h1>Eligible Students and Number of Offers</h1>
+                            {oneYear && <><Chart
+                                type='bar'
+                                width={600}
+                                height={600}
+                                series={[
+                                    {
+                                        name: "Eligible Students",
+                                        data: [95, 40, 140],
+                                    },
+                                    {
+                                        name: "Number of Offers",
+                                        data: [140, 50, 190],
+                                    },
+                                ]}
+                                options={{
+                                    color: ['#60A5FA', '#34D399'],
+                                    tooltip: {
+                                        followCursor: true
+                                    },
+                                    dataLabels: {
+                                        formatter: (val) => (""),
+                                    },
+                                    xaxis: {
+                                        tickPlacement: 'on',
+                                        categories: ["CSE", "ECE", "Total"],
+                                    }
+                                }}
+                            >
+                            </Chart>
 
+                                <h1>Placement Percentage of Registered Students</h1>
+                                <Chart
+                                    type='bar'
+                                    width={600}
+                                    height={600}
+                                    options={{
+                                        plotOptions: {
+                                            bar: {
+                                                horizontal: true,
+                                                barHeight: 30,
+                                            },
+                                        },
+                                        xaxis: {
+                                            categories: ["CSE", "ECE", "Total"],
+                                        },
+                                        dataLabels: {
+                                            formatter: (val) => `${val}%`
+                                        }
+                                    }}
+                                    series={[
+                                        {
+                                            name: "true",
+                                            data: [94.85, 80.95, 90.65],
+                                            color: '#818CF8'
+                                        }
+                                    ]}
+                                >
+
+                                </Chart>
+                            </>
+                            }
+                            {twoYear && <>
+                                <Chart
+                                    type='bar'
+                                    width={600}
+                                    height={600}
+                                    series={[
+                                        {
+                                            name: "Eligible Students",
+                                            data: [50, 20, 80],
+                                        },
+                                        {
+                                            name: "Number of Offers",
+                                            data: [60, 80, 120],
+                                        },
+                                    ]}
+                                    options={{
+                                        color: ['#60A5FA', '#34D399'],
+                                        tooltip: {
+                                            followCursor: true
+                                        },
+                                        dataLabels: {
+                                            formatter: (val) => (""),
+                                        },
+                                        xaxis: {
+                                            tickPlacement: 'on',
+                                            categories: ["CSE", "ECE", "Total"],
+                                        }
+                                    }}
+                                >
+
+                                </Chart>
+
+                                <h1>Placement Percentage of Registered Students</h1>
+                                <Chart
+                                    type='bar'
+                                    width={600}
+                                    height={600}
+                                    options={{
+                                        plotOptions: {
+                                            bar: {
+                                                horizontal: true,
+                                                barHeight: 30,
+                                            },
+                                        },
+                                        xaxis: {
+                                            categories: ["CSE", "ECE", "Total"],
+                                        },
+                                        dataLabels: {
+                                            formatter: (val) => `${val}%`
+                                        }
+                                    }}
+                                    series={[
+                                        {
+                                            name: "true",
+                                            data: [50, 90, 70],
+                                            color: '#818CF8'
+                                        }
+                                    ]}
+                                >
+
+                                </Chart>
+                            </>
+                            }
+                            {threeYear && <><Chart
+                                type='bar'
+                                width={600}
+                                height={600}
+                                series={[
+                                    {
+                                        name: "Eligible Students",
+                                        data: [50, 90, 20],
+                                    },
+                                    {
+                                        name: "Number of Offers",
+                                        data: [70, 110, 60],
+                                    },
+                                ]}
+                                options={{
+                                    color: ['#60A5FA', '#34D399'],
+                                    tooltip: {
+                                        followCursor: true
+                                    },
+                                    dataLabels: {
+                                        formatter: (val) => (""),
+                                    },
+                                    xaxis: {
+                                        tickPlacement: 'on',
+                                        categories: ["CSE", "ECE", "Total"],
+                                    }
+                                }}
+                            >
+
+                            </Chart>
+
+                                <h1>Placement Percentage of Registered Students</h1>
+                                <Chart
+                                    type='bar'
+                                    width={600}
+                                    height={600}
+                                    options={{
+                                        plotOptions: {
+                                            bar: {
+                                                horizontal: true,
+                                                barHeight: 30,
+                                            },
+                                        },
+                                        xaxis: {
+                                            categories: ["CSE", "ECE", "Total"],
+                                        },
+                                        dataLabels: {
+                                            formatter: (val) => `${val}%`
+                                        }
+                                    }}
+                                    series={[
+                                        {
+                                            name: "true",
+                                            data: [80, 90, 60],
+                                            color: '#818CF8'
+                                        }
+                                    ]}
+                                >
+
+                                </Chart>
+                            </>
+                            }
+
+
+                        </div>
 
                     </div>
                 </section>

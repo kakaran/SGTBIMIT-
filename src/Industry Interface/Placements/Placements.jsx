@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './placements.css'
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from 'react-helmet'
@@ -9,7 +9,32 @@ import Recruiters from '../../Home/Recruiters'
 import Placementss from '../../Home/Placementss'
 
 export default function Placements() {
+
+    const [oneYear, setOneYear] = useState(false)
+    const [twoYear, setTwoYear] = useState(false)
+    const [threeYear, setThreeYear] = useState(false)
+
+    const handle1Year = (e) => {
+        setTwoYear(false)
+        setThreeYear(false)
+        setOneYear(true)
+
+    }
+
+    const handle2Year = (e) => {
+        setOneYear(false)
+        setThreeYear(false)
+        setTwoYear(true)
+    }
+
+    const handle3Year = (e) => {
+        setTwoYear(false)
+        setOneYear(false)
+        setThreeYear(true)
+    }
+
     return (
+
         <>
             <Helmet title='SGTBIMIT | Placements' />
             <Header />
@@ -84,17 +109,17 @@ export default function Placements() {
                 <section className="placement-stats-section">
                     <div className="placements-stats-container">
                         <div className='horizontal-line' />
-                    <h1>
-                        <span>
-                            Placements Statistics
-                        </span>
-                        <BsDownload color="#4B5563"/>
-                    </h1>
-                    <div className="years-grid">
-                        <div className="year-item">2021-2022</div>
-                        <div className="year-item">2020-2021</div>
-                        <div className="year-item">2019-2020</div>
-                    </div>
+                        <h1>
+                            <span>
+                                Placements Statistics
+                            </span>
+                            <BsDownload color="#4B5563" />
+                        </h1>
+                        <div className="years-grid">
+                            <div className={`year-item ${oneYear ? "selected-year-item" : ''}`} onClick={(e) => handle1Year(e)}>2021-2022</div>
+                            <div className={`year-item ${twoYear ? "selected-year-item" : ''}`} onClick={(e) => handle2Year(e)}>2020-2021</div>
+                            <div className={`year-item ${threeYear ? "selected-year-item" : ''}`} onClick={(e) => handle3Year(e)}>2019-2020</div>
+                        </div>
 
 
 

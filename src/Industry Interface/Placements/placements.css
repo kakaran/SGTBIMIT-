@@ -1,3 +1,9 @@
+.vertical-line {
+    width: 4px;
+    height: 230px;
+    background-color: #005E93;
+}
+
 .placement-cell {
     background-color: #f5f5f5;
 }
@@ -32,6 +38,16 @@
     line-height: min(2.3rem, 4.6vh);
 }
 
+.placement-cell-section>a {
+    position: relative;
+}
+.placement-cell-section >a .vertical-line {
+    position: absolute;
+    top: 170%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .placement-about-section {
     min-height: 100vh;
     position: relative;
@@ -43,9 +59,9 @@
 
 .placement-about-section>img {
     position: absolute;
-    top: 0;
+    top: -120px;
     right: 0;
-    height: 130%;
+    height: 150%;
     z-index: 1;
 }
 
@@ -85,7 +101,7 @@
     position: relative;
     place-items: center;
     z-index: 2;
-    padding-block: min(4rem, 4vw);
+    padding: min(4rem, 4vw) min(2rem, 2vw);
 }
 
 
@@ -126,6 +142,10 @@
     display: flex;
     flex-direction: column;
     padding-top: min(5rem, 5vw);
+    padding-bottom: min(2rem, 2vw);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
 }
 
 .featured-stars-section h1 {

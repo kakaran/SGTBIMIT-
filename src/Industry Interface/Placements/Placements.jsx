@@ -26,6 +26,7 @@ export default function Placements() {
                     </p>
                     <a href="#placement-about">
                         <BsArrowDownCircleFill size={"3rem"} color="#005E93" />
+                        <div className="vertical-line" />
                     </a>
 
                 </section>
@@ -57,8 +58,15 @@ export default function Placements() {
                             marginInline: 'auto',
                         }}
                     >01/About Us</h2>
-                    <h1>Featured Stars</h1>
+                    <h1 style={{
+                        marginBottom: "4rem"
+                    }}>Featured Stars</h1>
                     <Placementss isTitle={false} />
+                    <div className="vertical-line"
+                    style={{
+                        marginTop: "min(2rem, 2vw)"
+                    }}
+                    ></div>
 
                 </section>
 

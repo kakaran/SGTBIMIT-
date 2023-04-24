@@ -68,6 +68,8 @@ import PrivateRouter from './Routes/Private.js'
 import NoticeAdd from './Pages/Notice/Notice_Add/Notice_Add.jsx'
 import CollaborationsAdd from './Pages/Collabrations/Collab_Add/Collab_Add.jsx'
 import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_Display.jsx'
+import ForgetPassword from './Login/ForgetPassword.jsx'
+import Notice_Display from './Pages/Notice/Notice_Display/Notice_Display.jsx'
 
 function App() {
  
@@ -99,7 +101,7 @@ function App() {
         <Route path='/academics/research' element={<Research />} />
         <Route path='/alumini/alumini-meet' element={<AlumniMeet />} />
         <Route path='/alumini/testimonials' element={<TestimonialsAL />} />
-        <Route path="events/:id" element={<Events />} />
+        <Route path="/events/:id" element={<Events />} />
         <Route path='/committees/:id' element={<CommitteePDF />}></Route>
         <Route path='/alumini/registration' element={<Registration />} />
         <Route path='/industry/placements' element={<Placements />} />
@@ -139,8 +141,9 @@ function App() {
           <Route path='admin/Prev_Year_Paper_Add' element={<QuestionPaperAdd />} />
           <Route path='admin/Prev_Year_Paper_Update/:course/:Year/:Semester/:_id' element={<QuestionPaperUpdate />} />
           <Route path='admin/Notice_Add' element={<NoticeAdd />} />
+          <Route path='admin/Notice_Display' element={<Notice_Display />} />
         </Route>
-
+        <Route path='/admin/forgetPassword/:_id/:email/:status'element={<ForgetPassword/>} />
         <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />
         {/* <Route path='/admin/login' element={<Login />} /> */}
 

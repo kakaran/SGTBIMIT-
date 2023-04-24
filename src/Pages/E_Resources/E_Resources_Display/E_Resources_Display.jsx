@@ -78,7 +78,7 @@ const EResourcesDisplay = () => {
                               style={{ color: "#d00000" }}
                             />
                           }
-                          style={{ width: 300, marginTop: 16, detailStyle }}
+                          style={{ width: 400, marginTop: 16, detailStyle }}
                           actions={[
                             <EditOutlined
                               key="edit"

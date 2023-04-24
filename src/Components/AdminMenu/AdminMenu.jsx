@@ -283,12 +283,18 @@ const AdminMenu = () => {
                   onClick={() => {
                     navigate("/dashboard/admin/Society_Add");
                   }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
                 >
                   SOCIETY ADD
                 </p>
                 <p
                   onClick={() => {
                     navigate("/dashboard/admin/Society_Display");
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
                   }}
                 >
                   SOCIETY DISPLAY
@@ -427,12 +433,18 @@ const AdminMenu = () => {
                   onClick={() => {
                     navigate("/dashboard/admin/Notice_Add");
                   }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
                 >
                   NOTICE ADD
                 </p>
                 <p
                   onClick={() => {
                     navigate("/dashboard/admin/Notice_Display");
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
                   }}
                 >
                   NOTICE DISPLAY

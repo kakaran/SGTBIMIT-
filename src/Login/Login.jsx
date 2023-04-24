@@ -1,28 +1,29 @@
 import React, { useState } from 'react'
 import './login.css'
-import { useNavigate ,useLocation} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useAuth } from '../Context/auth';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 export default function Login() {
 
-    const [email,setEamil] = useState();
-    const [password , setPassword] = useState();
+    const [email, setEamil] = useState();
+    const [password, setPassword] = useState();
     const navigate = useNavigate();
-    const [auth,setAuth] = useAuth();
+    const [auth, setAuth] = useAuth();
 
 
     const handleLogin = async () => {
         try {
 
-            const data = (await axios.post("http://localhost:5000/Admin/Login",{email,password})).data;
+            const data = (await axios.post("http://localhost:5000/Admin/Login", { email, password })).data;
             console.log(data);
-            if(data.token){
+            if (data.token) {
                 setAuth({
                     ...auth,
-                    _id : data.admin._id,
-                    token : data.token,
+                    _id: data.admin._id,
+                    token: data.token,
                 })
                 localStorage.setItem("auth", JSON.stringify(data));
 
@@ -34,28 +35,46 @@ export default function Login() {
         }
     }
 
-    const handleForgetpassword = async () =>{
+    const handleForgetpassword = async () => {
         try {
-            if(email){
+            if (email) {
                 const data = (await axios.post(`http://localhost:5000/Admin/EmailCheck/${email}`)).data
                 console.log(data);
-                if(data.status){
-                    navigate(`/admin/forgetPassword/${data.status}`)
-                    window.alert(data.message)
+                if (data.status) {
+                    navigate(`/admin/forgetPassword/${data.user_id}/${email}/${data.status}`)
+                    toast.success(`${data.message}`, {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
                 }
-            }else{
-                window.alert("Enter please Email")
+            } else {
+                toast.warn('Enter please Email', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
-            
+
         } catch (error) {
             console.log(error);
         }
     }
 
-    
+
     return (
         <>
-          (  <section className="login-section">
+            (  <section className="login-section">
                 <img className="login-logo" src={require("../images/sgtbimit.png")} alt="" />
                 <div className="form-container">
                     <p className="login-title">Login</p>
@@ -73,19 +92,17 @@ export default function Login() {
                             <input type="password" name="password" id="password" placeholder="" onChange={(e) => {
                                 setPassword(e.target.value);
                             }}
-                            maxLength="12"
-                             />
+                                maxLength="12"
+                            />
                             <div className="forgot">
                                 <a rel="noopener noreferrer" onClick={handleForgetpassword}>Forgot Password ?</a>
                             </div>
                         </div>
                         <button className="sign" onClick={handleLogin}>Sign in</button>
                     </div>
-
                 </div>
-
-            </section>)  
-        
+            </section>)
+            <ToastContainer />
         </>
     )
 }

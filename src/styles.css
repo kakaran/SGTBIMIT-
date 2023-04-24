@@ -1,5 +1,3 @@
-
-
 :root {
     --primary-clr: #243f56;
     --secondary-clr: #4fb291;
@@ -77,6 +75,12 @@ button {
     border: none;
 }
 
+.AllHeading {
+    font-size: 25px;
+    padding: 10px;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
 .loading {
     text-align: center;
 }
@@ -105,7 +109,8 @@ button {
     background: rgba(0, 0, 0, 0.3) !important;
     backdrop-filter: blur(12px) !important;
 }
-.carousel-slider{
+
+.carousel-slider {
     position: relative;
     overflow: visible !important;
 }

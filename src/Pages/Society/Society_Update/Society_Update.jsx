@@ -6,6 +6,7 @@ import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import imageCompression from "browser-image-compression";
+import { Helmet } from "react-helmet";
 
 const Society_Update = () => {
   const [societUpdate, setSocieUpdate] = useState({
@@ -32,7 +33,7 @@ const Society_Update = () => {
       try {
         const data = (
           await axios.get(
-            `http://localhost:5000/Society/Single_Society_Display/${_id}`
+            `${process.env.REACT_APP_API_URL}/Society/Single_Society_Display/${_id}`
           )
         ).data;
         setSocieUpdate({
@@ -52,7 +53,7 @@ const Society_Update = () => {
     if (filedata) {
       const compressedFile = await imageCompression(filedata, options);
       return compressedFile
-    }else{
+    } else {
       return filedata
     }
   };
@@ -61,13 +62,13 @@ const Society_Update = () => {
     try {
       let formData = new FormData();
       let Imagefile = await compresFile()
-      formData.append("image", Imagefile,filedata.name);
+      formData.append("image", Imagefile, filedata.name);
       formData.append("title", societUpdate.title);
       formData.append("detail", societUpdate.detail);
       formData.append("subdetail", societUpdate.subdetail);
       const data1 = (
         await axios.post(
-          `http://localhost:5000/Society/Society_Update/${_id}`,
+          `${process.env.REACT_APP_API_URL}/Society/Society_Update/${_id}`,
           formData,
           {
             headers: {
@@ -84,6 +85,7 @@ const Society_Update = () => {
 
   return (
     <>
+      <Helmet title="Update Society" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -143,7 +145,7 @@ const Society_Update = () => {
                   />
                 ) : (
                   <img
-                    src={`http://localhost:5000/Society/Society_Image_Display/${_id}`}
+                    src={`${process.env.REACT_APP_API_URL}/Society/Society_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

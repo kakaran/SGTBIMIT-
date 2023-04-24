@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 export default function NoticePDF() {
 
   const { id } = useParams()
-  const { data: notices, isPending } = useFetch("http://localhost:5000/Notice/Notice_Data_Display")
+  const { data: notices, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Notice/Notice_Data_Display`)
 
   const filteredNotice = notices ? notices.filter((notice) => (
     notice._id === id
@@ -38,7 +38,7 @@ export default function NoticePDF() {
           }}
           >{filteredNotice.Name}</h1> */}
           <iframe
-            src={`http://localhost:5000/Notice/Notice_File_Display/${id}`}
+            src={`${process.env.REACT_APP_API_URL}/Notice/Notice_File_Display/${id}`}
             className='embed-pdf'
             frameborder="0"
             width="100%"

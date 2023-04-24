@@ -8,6 +8,7 @@ import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import FileData from "./FileData";
 import "./QuestionPaperDisplay.css"
+import { Helmet } from "react-helmet";
 
 const QuestionPaperDisplay = () => {
   // const [render, setRender] = useState(0);
@@ -40,7 +41,7 @@ const QuestionPaperDisplay = () => {
       // console.log(getPaperFilter);
       const Detail = (
         await axios.get(
-          `http://localhost:5000/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
+          `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
         )
       ).data;
       // console.log(Detail);
@@ -62,7 +63,7 @@ const QuestionPaperDisplay = () => {
   const PaperDelete = async (value) => {
     try {
       const _id = value;
-      await axios.get(`http://localhost:5000/QuestionPaper/Year_Delete/${_id}`);
+      await axios.get(`${process.env.REACT_APP_API_URL}/QuestionPaper/Year_Delete/${_id}`);
       // setRender(1);
     } catch (error) {
       console.log(error);
@@ -71,18 +72,18 @@ const QuestionPaperDisplay = () => {
 
   //----------- Reset the Data --------------//
   const ResetPaperData = async () => {
-      // setRender(1);
-      setPaperfilter({
-        course: " ",
-        Year: " ",
-        Semester: " ",
-      });
-      setPaperFilterData({
-        course: "",
-        Year: "",
-        Semester: "",
-        _id: "",
-      })
+    // setRender(1);
+    setPaperfilter({
+      course: " ",
+      Year: " ",
+      Semester: " ",
+    });
+    setPaperFilterData({
+      course: "",
+      Year: "",
+      Semester: "",
+      _id: "",
+    })
   };
 
   //--------------- Get the Filter Data ----------------------//
@@ -90,7 +91,7 @@ const QuestionPaperDisplay = () => {
     try {
       const data = (
         await axios.get(
-          `http://localhost:5000/QuestionPaper/Filter_Data/${course}`
+          `${process.env.REACT_APP_API_URL}/QuestionPaper/Filter_Data/${course}`
         )
       ).data;
       setfilter(data[0]);
@@ -101,6 +102,7 @@ const QuestionPaperDisplay = () => {
 
   return (
     <>
+      <Helmet title="Display Question Paper" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />

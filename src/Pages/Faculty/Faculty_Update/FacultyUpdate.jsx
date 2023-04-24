@@ -6,6 +6,7 @@ import "../../Society/Society_Add/Society_Add.css";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
+import { Helmet } from "react-helmet";
 
 const FacultyUpdate = () => {
   const [facultyUpdate, setFacultyUpdate] = useState({
@@ -33,7 +34,7 @@ const FacultyUpdate = () => {
       try {
         const data = (
           await axios.get(
-            `http://localhost:5000/Faculty/FacultySingle/${_id}`
+            `${process.env.REACT_APP_API_URL}/Faculty/FacultySingle/${_id}`
           )
         ).data;
         setFacultyUpdate({
@@ -71,7 +72,7 @@ const FacultyUpdate = () => {
       formData.append("Department", facultyUpdate.Department);
       const data1 = (
         await axios.post(
-          `http://localhost:5000/Faculty/Faculty_Update/${_id}`,
+          `${process.env.REACT_APP_API_URL}/Faculty/Faculty_Update/${_id}`,
           formData,
           {
             headers: {
@@ -88,6 +89,7 @@ const FacultyUpdate = () => {
   console.log(facultyUpdate);
   return (
     <>
+      <Helmet title="Update Faculty" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -155,7 +157,7 @@ const FacultyUpdate = () => {
                   />
                 ) : (
                   <img
-                    src={`http://localhost:5000/Faculty/Faculty_Image_Display/${_id}`}
+                    src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

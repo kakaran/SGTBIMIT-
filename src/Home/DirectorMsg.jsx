@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import useFetch from '../useFetch'
 export default function DirectorMsg() {
 
-  const { data: director, isPending } = useFetch("http://localhost:5000/Administration/Single_Administration_Display/:_id")
+  const { data: director, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Administration/Single_Administration_Display/:_id`)
   return (
     <section className="director-msg">
       <motion.h1

@@ -6,7 +6,7 @@ import Footer from '../Components/Footer.jsx'
 import useFetch from '../useFetch'
 import Loader from '../Components/Loader'
 export default function DirectorReadMore() {
-    const { data, isPending } = useFetch("http://localhost:5000/Administration/Administration_Display")
+    const { data, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Administration/Administration_Display`)
     let directorData = null
     data && (directorData = data.filter((adminis) => (
         adminis._id === "6425708bc6a54569d1944242"
@@ -22,7 +22,7 @@ export default function DirectorReadMore() {
                     {directorData.map(director => (
                         <>
                             <div className='cont'>
-                                <img src={`http://localhost:5000/Administration/AdministrationImageDisplay/${director._id}`} alt="cant load" />
+                                <img src={`${process.env.REACT_APP_API_URL}/Administration/AdministrationImageDisplay/${director._id}`} alt="cant load" />
                                 <div className='title'>{director.name}
                                     <div className="dir-position">{director.position}</div>
                                 </div>

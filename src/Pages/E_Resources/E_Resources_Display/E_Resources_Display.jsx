@@ -7,6 +7,7 @@ import { Card, Col, Row } from "antd";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { EditOutlined } from "@ant-design/icons";
+import { Helmet } from "react-helmet";
 
 const EResourcesDisplay = () => {
   const [getEresources, setEresources] = useState([]);
@@ -19,7 +20,7 @@ const EResourcesDisplay = () => {
       try {
         const data = (
           await axios.get(
-            "http://localhost:5000/E_Resources/EResources_Display"
+            `${process.env.REACT_APP_API_URL}/E_Resources/EResources_Display`
           )
         ).data;
         console.log(data);
@@ -35,7 +36,7 @@ const EResourcesDisplay = () => {
   const EresourcesDelete = async (value) => {
     try {
       const _id = value;
-      await axios.post("http://localhost:5000/E_Resources/EResources_Delete", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Delete`, {
         _id,
       });
       setRender(1)
@@ -50,6 +51,7 @@ const EResourcesDisplay = () => {
   console.log(getEresources);
   return (
     <>
+      <Helmet title="Display E-Resources" />
       <div className="Testimonial_DisplayContainer">
         <div className="SideBar">
           <AdminMenu />

@@ -7,6 +7,7 @@ import "../../Society/Society_Add/Society_Add.css";
 import "./QuestionPaperAdd.css";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const QuestionPaperAdd = () => {
   const [societUpdate, setSocieUpdate] = useState({
@@ -21,13 +22,13 @@ const QuestionPaperAdd = () => {
     const files = event.target.files;
     const newImages = [];
 
-    if(files.length){
+    if (files.length) {
       for (let i = 0; i < files.length; i++) {
         newImages.push(files[i]);
       }
-  
+
       setFileData(newImages);
-    }else{
+    } else {
       setFileData(files);
     }
   }
@@ -39,19 +40,19 @@ const QuestionPaperAdd = () => {
   const SocietyAdd = async () => {
     try {
       let formData = new FormData();
-      if(filedata.length){
+      if (filedata.length) {
         for (let i = 0; i < filedata.length; i++) {
           formData.append("file", filedata[i]);
         }
-      }else{
+      } else {
         formData.append("file", filedata);
       }
-      
+
       formData.append("course", societUpdate.course);
       formData.append("Year", societUpdate.Year);
       formData.append("Semester", societUpdate.Semester);
       const data1 = (
-        await axios.post("http://localhost:5000/QuestionPaper/Add", formData, {
+        await axios.post(`${process.env.REACT_APP_API_URL}/QuestionPaper/Add`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -85,6 +86,7 @@ const QuestionPaperAdd = () => {
   console.log(filedata);
   return (
     <>
+      <Helmet title="Add Question Paper" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

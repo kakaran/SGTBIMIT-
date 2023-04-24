@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../QuestionPaperAdd/QuestionPaperAdd.css";
 import "../../Society/Society_Add/Society_Add.css";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
+import { Helmet } from "react-helmet";
 
 const QuestionPaperUpdate = () => {
   const [societUpdate, setSocieUpdate] = useState({
@@ -24,13 +25,13 @@ const QuestionPaperUpdate = () => {
     const files = event.target.files;
     const newImages = [];
 
-    if(files.length){
+    if (files.length) {
       for (let i = 0; i < files.length; i++) {
         newImages.push(files[i]);
       }
-  
+
       setFileData(newImages);
-    }else{
+    } else {
       setFileData(files);
     }
   }
@@ -62,7 +63,7 @@ const QuestionPaperUpdate = () => {
       formData.append("Year", societUpdate.Year);
       formData.append("Semester", societUpdate.Semester);
       const data1 = (
-        await axios.post(`http://localhost:5000/QuestionPaper/Question_Paper_Update/${_id}`, formData, {
+        await axios.post(`${process.env.REACT_APP_API_URL}/QuestionPaper/Question_Paper_Update/${_id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -95,6 +96,7 @@ const QuestionPaperUpdate = () => {
   };
   return (
     <>
+      <Helmet title="Update Question Paper" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

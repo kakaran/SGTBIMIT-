@@ -3,6 +3,7 @@ import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const Testimonial_Update = () => {
   const [SingleData, setSingleData] = useState({
@@ -17,7 +18,7 @@ const Testimonial_Update = () => {
       try {
         const data = (
           await axios.post(
-            "http://localhost:5000/Testimonial/single_Testimonial_Display",
+            `${process.env.REACT_APP_API_URL}/Testimonial/single_Testimonial_Display`,
             { id }
           )
         ).data;
@@ -37,7 +38,7 @@ const Testimonial_Update = () => {
     try {
       const data = (
         await axios.post(
-          `http://localhost:5000/Testimonial/Testimonial_Update/${id}`,
+          `${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Update/${id}`,
           { SingleData }
         )
       ).data;
@@ -55,6 +56,7 @@ const Testimonial_Update = () => {
 
   return (
     <>
+      <Helmet title="Update Testimonial" />
       <div className="TestimonialUpdateContainer" style={{ display: "flex" }}>
         <div className="SideBar">
           <AdminMenu />

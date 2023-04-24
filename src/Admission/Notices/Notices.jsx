@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet"
 
 export default function Notice() {
 
-    const { data: notices, isPending } = useFetch("http://localhost:5000/Notice/Notice_Data_Display")
+    const { data: notices, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Notice/Notice_Data_Display`)
 
     return (
         <>

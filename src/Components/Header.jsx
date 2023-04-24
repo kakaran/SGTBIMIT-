@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { IoMdSchool, IoMdExit } from 'react-icons/io'
 
 export default function Header() {
-  const { data: notices } = useFetch("http://localhost:5000/Notice/Notice_Data_Display")
+  const { data: notices } = useFetch(`${process.env.REACT_APP_API_URL}/Notice/Notice_Data_Display`)
   const filteredNotices = notices ? notices.filter((notice) => (
     notice.Categories === "Important"
   )) : null

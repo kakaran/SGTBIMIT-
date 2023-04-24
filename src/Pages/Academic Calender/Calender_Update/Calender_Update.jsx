@@ -3,6 +3,7 @@ import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const CalenderUpdate = () => {
   const [SingleData, setSingleData] = useState({
@@ -17,7 +18,7 @@ const CalenderUpdate = () => {
       try {
         const data = (
           await axios.post(
-            "http://localhost:5000/Calendar/CalendarSingle",
+            `${process.env.REACT_APP_API_URL}/Calendar/CalendarSingle`,
             { id }
           )
         ).data;
@@ -37,7 +38,7 @@ const CalenderUpdate = () => {
     try {
       const data = (
         await axios.post(
-          `http://localhost:5000/Calendar/CalendarUpdate/${id}`,
+          `${process.env.REACT_APP_API_URL}/Calendar/CalendarUpdate/${id}`,
           { SingleData }
         )
       ).data;
@@ -55,6 +56,7 @@ const CalenderUpdate = () => {
 
   return (
     <>
+    <Helmet title="Update Calendar" />
       <div className="TestimonialUpdateContainer" style={{ display: "flex" }}>
         <div className="SideBar">
           <AdminMenu />

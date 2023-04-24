@@ -28,7 +28,7 @@ export default function Admission() {
 
     const AdmissionDataSubmit = async () =>{
         try {
-            const data = (await axios.post("http://localhost:5000/Admission/Request",{Name : admissionFormDetail.Name,
+            const data = (await axios.post(`${process.env.REACT_APP_API_URL}/Admission/Request`,{Name : admissionFormDetail.Name,
         Email: admissionFormDetail.Email,
         PNumber : admissionFormDetail.PNumber,
         Course : admissionFormDetail.Course})).data

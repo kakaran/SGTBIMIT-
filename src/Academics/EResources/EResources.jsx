@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 
 export default function EResources() {
 
-    const { data: eResources, isPending } = useFetch("http://localhost:5000/E_Resources/EResources_Display")
+    const { data: eResources, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Display`)
     return (
         <>
         <Helmet title="SGTBIMIT | E-Resources" />

@@ -6,6 +6,7 @@ import "../../Society/Society_Add/Society_Add.css";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
+import { Helmet } from "react-helmet";
 
 const RecruitersUpdate = () => {
   const [recruitersUpdate, setRecruitersUpdate] = useState({
@@ -31,7 +32,7 @@ const RecruitersUpdate = () => {
       try {
         const data = (
           await axios.get(
-            `http://localhost:5000/Recruiters/recruiters_Single_Display/${_id}`
+            `${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Single_Display/${_id}`
           )
         ).data;
         console.log(data);
@@ -49,7 +50,7 @@ const RecruitersUpdate = () => {
     if (filedata) {
       const compressedFile = await imageCompression(filedata, options);
       return compressedFile
-    }else{
+    } else {
       return filedata
     }
   };
@@ -63,7 +64,7 @@ const RecruitersUpdate = () => {
       formData.append("Name", recruitersUpdate.Name);
       const data1 = (
         await axios.post(
-          `http://localhost:5000/Recruiters/recruiters_Update/${_id}`,
+          `${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Update/${_id}`,
           formData,
           {
             headers: {
@@ -80,6 +81,7 @@ const RecruitersUpdate = () => {
 
   return (
     <>
+      <Helmet title="Update Recruiters" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -122,7 +124,7 @@ const RecruitersUpdate = () => {
                   />
                 ) : (
                   <img
-                    src={`http://localhost:5000/Recruiters/Recruiter_Image_Display/${_id}`}
+                    src={`${process.env.REACT_APP_API_URL}/Recruiters/Recruiter_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

@@ -8,6 +8,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { Card } from "antd";
+import { Helmet } from "react-helmet";
 const { Meta } = Card;
 
 const RecruitersDisplay = () => {
@@ -19,7 +20,7 @@ const RecruitersDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get("http://localhost:5000/Recruiters/recruiters_Display")
+          await axios.get(`${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Display`)
         ).data;
         setRecruiters(data);
         setRender(0);
@@ -34,9 +35,9 @@ const RecruitersDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`http://localhost:5000/Recruiters/Recruiter_Image_Display/${value}`}
+        src={`${process.env.REACT_APP_API_URL}/Recruiters/Recruiter_Image_Display/${value}`}
         alt=""
-        style={{height : "300px", borderBottom : "1px solid #f0f0f0" , paddingBottom : "5px"}}
+        style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
     );
   };
@@ -45,7 +46,7 @@ const RecruitersDisplay = () => {
     try {
       const _id = value;
       // console.log(_id);
-      await axios.post(`http://localhost:5000/Recruiters/recruiters_Delete/${_id}`);
+      await axios.post(`${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -54,6 +55,7 @@ const RecruitersDisplay = () => {
 
   return (
     <>
+      <Helmet title="Display Recruiters" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />
@@ -65,9 +67,9 @@ const RecruitersDisplay = () => {
               <h1>Our Recruiters</h1>
             </div>
             <div className="FacultyCardContainer">
-             {getRecruiters.map((value) =>{
-                return(
-                    <div className="FacultyCard">
+              {getRecruiters.map((value) => {
+                return (
+                  <div className="FacultyCard">
                     <Card
                       hoverable
                       style={{
@@ -78,23 +80,23 @@ const RecruitersDisplay = () => {
                       }
                     >
                       <div className="FacultyCardtitle">
-                        <Meta title={value?.Name} bordered={false} style = {{padding : "10px"}}/>
+                        <Meta title={value?.Name} bordered={false} style={{ padding: "10px" }} />
                         <Meta
                         //   title={value?.name}
-                          // description={value?.companyName}
+                        // description={value?.companyName}
                         />
                       </div>
                       <span className="FacultyCardController">
                         <BiEditAlt
                           style={{
                             paddingRight: "10px",
-                            borderRight : "1px solid #f0f0f0",
+                            borderRight: "1px solid #f0f0f0",
                             width: "35px",
-                            fontSize : "20px",
+                            fontSize: "20px",
                             color: "#adb5bd",
                           }}
                           onClick={() => {
-                              navigator(`/admin/recruiters_Update/${value._id}`);
+                            navigator(`/admin/recruiters_Update/${value._id}`);
                           }}
                         />
                         <RiDeleteBin6Line
@@ -108,7 +110,7 @@ const RecruitersDisplay = () => {
                     </Card>
                   </div>
                 )
-             })}
+              })}
             </div>
           </div>
         </div>

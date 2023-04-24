@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import "./Testimonials_ADD.css";
+import { Helmet } from "react-helmet";
 
 const Testimonials_ADD = () => {
   const [testiUpdate, setTestiUpdate] = useState({
@@ -16,7 +17,7 @@ const Testimonials_ADD = () => {
 
   const AddTestimonial = async () => {
     try {
-      await axios.post("http://localhost:5000/Testimonial/Testimonial_Add", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Add`, {
         testiUpdate,
       });
     } catch (error) {
@@ -26,6 +27,7 @@ const Testimonials_ADD = () => {
 
   return (
     <>
+      <Helmet title="Add Testimonial" />
       <div className="TestimonailAddContainer">
         <div className="SideBar">
           <AdminMenu />

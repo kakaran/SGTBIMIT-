@@ -6,7 +6,7 @@ import '../society.css'
 import { Helmet } from 'react-helmet'
 export default function Society() {
     const { id } = useParams()
-    const { data: society } = useFetch(`http://localhost:5000/Society/Single_Society_Display/${id}`)
+    const { data: society } = useFetch(`${process.env.REACT_APP_API_URL}/Society/Single_Society_Display/${id}`)
     return (
         <>
             <Helmet title={society?.title} />
@@ -17,7 +17,7 @@ export default function Society() {
                 <h1>
                     {society.title}
                 </h1>
-                <img src={`http://localhost:5000/Society/Society_Image_Display/${society._id}`} alt="cant load" />
+                <img src={`${process.env.REACT_APP_API_URL}/Society/Society_Image_Display/${society._id}`} alt="cant load" />
                 <pre className='society-sub-heading'>
                     {society.subdetail}
                 </pre>

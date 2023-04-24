@@ -8,6 +8,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { Card } from "antd";
+import { Helmet } from "react-helmet";
 const { Meta } = Card;
 
 const PlacementDisplay = () => {
@@ -19,7 +20,7 @@ const PlacementDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get("http://localhost:5000/Placement_Intership/PlacementInterships_Display")
+          await axios.get(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Display`)
         ).data;
         setPlacement(data);
         setRender(0);
@@ -34,9 +35,9 @@ const PlacementDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`http://localhost:5000/Placement_Intership/PlacementInterships_Image_Display/${value}`}
+        src={`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${value}`}
         alt=""
-        style={{height : "300px", borderBottom : "1px solid #f0f0f0" , paddingBottom : "5px"}}
+        style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
     );
   };
@@ -45,7 +46,7 @@ const PlacementDisplay = () => {
     try {
       const _id = value;
       // console.log(_id);
-      await axios.post(`http://localhost:5000/Placement_Intership/PlacementInterships_Delete/${_id}`);
+      await axios.post(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -54,6 +55,7 @@ const PlacementDisplay = () => {
 
   return (
     <>
+      <Helmet title="Display Placement" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />
@@ -65,9 +67,9 @@ const PlacementDisplay = () => {
               <h1>Placements and Internships</h1>
             </div>
             <div className="FacultyCardContainer">
-             {getPlacement.map((value) =>{
-                return(
-                    <div className="FacultyCard">
+              {getPlacement.map((value) => {
+                return (
+                  <div className="FacultyCard">
                     <Card
                       hoverable
                       style={{
@@ -78,23 +80,23 @@ const PlacementDisplay = () => {
                       }
                     >
                       <div className="FacultyCardtitle">
-                        <Meta title={value?.name} bordered={false} style = {{padding : "10px"}}/>
+                        <Meta title={value?.name} bordered={false} style={{ padding: "10px" }} />
                         <Meta
                           title={value?.companyName}
-                          // description={value?.companyName}
+                        // description={value?.companyName}
                         />
                       </div>
                       <span className="FacultyCardController">
                         <BiEditAlt
                           style={{
                             paddingRight: "10px",
-                            borderRight : "1px solid #f0f0f0",
+                            borderRight: "1px solid #f0f0f0",
                             width: "35px",
-                            fontSize : "20px",
+                            fontSize: "20px",
                             color: "#adb5bd",
                           }}
                           onClick={() => {
-                              navigator(`/admin/Placement_Update/${value._id}`);
+                            navigator(`/admin/Placement_Update/${value._id}`);
                           }}
                         />
                         <RiDeleteBin6Line
@@ -108,7 +110,7 @@ const PlacementDisplay = () => {
                     </Card>
                   </div>
                 )
-             })}
+              })}
             </div>
           </div>
         </div>

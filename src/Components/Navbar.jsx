@@ -5,7 +5,7 @@ export default function Navbar() {
   const { data: events, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
 
   const arrow = require("../images/down.png")
-  const { data: societies } = useFetch("http://localhost:5000/Society/Society_Display")
+  const { data: societies } = useFetch(`${process.env.REACT_APP_API_URL}/Society/Society_Display`)
 
   const myRef = useRef(null)
   useEffect(() => {

@@ -6,6 +6,7 @@ import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import imageCompression from "browser-image-compression";
+import { Helmet } from "react-helmet";
 
 
 const Society_Update = () => {
@@ -35,7 +36,7 @@ const Society_Update = () => {
       try {
         const data = (
           await axios.get(
-            `http://localhost:5000/Administration/Single_Administration_Display/${_id}`
+            `${process.env.REACT_APP_API_URL}/Administration/Single_Administration_Display/${_id}`
           )
         ).data;
         setGovernUpdate({
@@ -56,7 +57,7 @@ const Society_Update = () => {
     if (filedata) {
       const compressedFile = await imageCompression(filedata, options);
       return compressedFile
-    }else{
+    } else {
       return filedata
     }
   };
@@ -67,7 +68,7 @@ const Society_Update = () => {
     try {
       let formData = new FormData();
       let Imagefile = await compresFile()
-      formData.append("image", Imagefile,filedata.name);
+      formData.append("image", Imagefile, filedata.name);
       formData.append("name", GovernUpdate.name);
       formData.append("position", GovernUpdate.position);
       formData.append("shortNote", GovernUpdate.shortNote);
@@ -77,7 +78,7 @@ const Society_Update = () => {
       console.log(formData);
       const data1 = (
         await axios.post(
-          `http://localhost:5000/Administration/Administration_Update/${_id}`,
+          `${process.env.REACT_APP_API_URL}/Administration/Administration_Update/${_id}`,
           formData,
           {
             headers: {
@@ -94,6 +95,7 @@ const Society_Update = () => {
 
   return (
     <>
+      <Helmet title="Update Administration" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -170,7 +172,7 @@ const Society_Update = () => {
                   />
                 ) : (
                   <img
-                    src={`http://localhost:5000/Administration/AdministrationImageDisplay/${_id}`}
+                    src={`${process.env.REACT_APP_API_URL}/Administration/AdministrationImageDisplay/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

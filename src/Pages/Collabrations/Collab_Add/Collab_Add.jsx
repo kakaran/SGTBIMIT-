@@ -5,6 +5,7 @@ import imageCompression from 'browser-image-compression';
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const CollaborationsAdd = () => {
     const [collabUpdate, setCollabUpdate] = useState({
@@ -32,7 +33,7 @@ const CollaborationsAdd = () => {
           formData.append("name", collabUpdate.name);
           const data1 = (
             await axios.post(
-              "http://localhost:5000/Collaborations/Collaborations_Add",
+              `${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Add`,
               formData,
               {
                 headers: {
@@ -48,6 +49,7 @@ const CollaborationsAdd = () => {
       };
       return (
         <>
+        <Helmet title="Add Collaboration" />
           <div className="societyAddConatiner">
             <div className="SideBar">
               <AdminMenu />

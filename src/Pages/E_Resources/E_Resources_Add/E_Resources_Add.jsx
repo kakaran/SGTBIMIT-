@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD.css";
+import { Helmet } from "react-helmet";
 
 const EResourcesAdd = () => {
   const [eresourcesUpdate, setEResoursesUpdate] = useState({
@@ -16,7 +17,7 @@ const EResourcesAdd = () => {
 
   const EResourcesAdd = async () => {
     try {
-      await axios.post("http://localhost:5000/E_Resources/EResources_Add", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Add`, {
         eresourcesUpdate,
       });
     } catch (error) {
@@ -26,6 +27,7 @@ const EResourcesAdd = () => {
 
   return (
     <>
+      <Helmet title="Add E-Resources" />
       <div className="TestimonailAddContainer">
         <div className="SideBar">
           <AdminMenu />

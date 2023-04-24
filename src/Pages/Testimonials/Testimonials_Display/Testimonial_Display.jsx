@@ -7,6 +7,7 @@ import { Card, Col, Row } from "antd";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { EditOutlined } from "@ant-design/icons";
+import { Helmet } from "react-helmet";
 
 const Testimonial_Display = () => {
   const [getTestimonials, setTestimonial] = useState([]);
@@ -19,7 +20,7 @@ const Testimonial_Display = () => {
       try {
         const data = (
           await axios.get(
-            "http://localhost:5000/Testimonial/Testimonial_Display"
+            `${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Display`
           )
         ).data;
         console.log(data);
@@ -35,7 +36,7 @@ const Testimonial_Display = () => {
   const TestimonialDelete = async (value) => {
     try {
       const _id = value;
-      await axios.post("http://localhost:5000/Testimonial/Testimonial_Delete", {
+      await axios.post(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Delete`, {
         _id,
       });
       setRender(1)
@@ -50,6 +51,7 @@ const Testimonial_Display = () => {
   console.log(getTestimonials);
   return (
     <>
+      <Helmet title="Display Testimonial" />
       <div className="Testimonial_DisplayContainer">
         <div className="SideBar">
           <AdminMenu />

@@ -17,7 +17,7 @@ const QuestionPaperPDFDisplay = () => {
   return (
     <div>
       <iframe
-        src={`http://localhost:5000/QuestionPaper/Display/${_id}/${index}`}
+        src={`${process.env.REACT_APP_API_URL}QuestionPaper/Display/${_id}/${index}`}
         frameborder="0"
         width="100%"
         height={embedHeight}

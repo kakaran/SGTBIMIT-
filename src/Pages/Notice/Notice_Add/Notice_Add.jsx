@@ -5,6 +5,7 @@ import "../../Society/Society_Add/Society_Add.css";
 import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
 import imageCompression from 'browser-image-compression';
+import { Helmet } from "react-helmet";
 
 
 const NoticeAdd = () => {
@@ -19,13 +20,13 @@ const NoticeAdd = () => {
     const files = event.target.files;
     const newImages = [];
 
-    if(files.length){
+    if (files.length) {
       for (let i = 0; i < files.length; i++) {
         newImages.push(files[i]);
       }
-  
+
       setFileData(newImages);
-    }else{
+    } else {
       setFileData(files);
     }
   }
@@ -50,7 +51,7 @@ const NoticeAdd = () => {
       formData.append("Categories", noticeUpdate.Categories);
       const data1 = (
         await axios.post(
-          "http://localhost:5000/Notice/Notice_Add",
+          `${process.env.REACT_APP_API_URL}/Notice/Notice_Add`,
           formData,
           {
             headers: {
@@ -66,6 +67,7 @@ const NoticeAdd = () => {
   };
   return (
     <>
+      <Helmet title="Add Notice" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -84,20 +86,20 @@ const NoticeAdd = () => {
                 placeholder="Name"
                 onChange={Onchagetesdetail}
               />
-                <textarea
-                  name="Detail"
-                  id=""
-                  cols="20"
-                  rows="5"
-                  placeholder="Detail"
-                  onChange={Onchagetesdetail}
-                ></textarea>
-                <select name="Categories" id="" onChange={Onchagetesdetail}>
+              <textarea
+                name="Detail"
+                id=""
+                cols="20"
+                rows="5"
+                placeholder="Detail"
+                onChange={Onchagetesdetail}
+              ></textarea>
+              <select name="Categories" id="" onChange={Onchagetesdetail}>
                 <option value=" ">Select Category</option>
                 <option value="important">Important</option>
                 <option value="normal">Normal</option>
-                </select>
-                <div className="Message_image">
+              </select>
+              <div className="Message_image">
                 <input
                   type="file"
                   name="file"
@@ -111,7 +113,7 @@ const NoticeAdd = () => {
               <button
                 className="button-19"
                 onClick={() => {
-                    SocietyAdd();
+                  SocietyAdd();
                 }}
               >
                 Submit

@@ -12,7 +12,7 @@ export default function Eligibility() {
             <Navbar />
             <section className="eli-section">
                 <div className="eli_container">
-                    <h1>Eligibility for Courses</h1>
+                    <h1>ELIGIBILITY FOR COURSES</h1>
                     <div className="btns">
                         <h2>BCA</h2>
                         <div className="infos">

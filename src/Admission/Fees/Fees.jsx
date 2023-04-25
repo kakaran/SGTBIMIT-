@@ -11,7 +11,7 @@ export default function Fees() {
             <Header />
             <Navbar />
             <div className="Fees">
-                <h1>Fees Structure</h1>
+                <h1>FEES STRUCTURE</h1>
                 <div className="structure">
                     <div className="box">
                         <div className="icon">

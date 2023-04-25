@@ -22,7 +22,7 @@ export default function Testimonials() {
                     type: 'spring'
                 }}
             >
-                What students say about us.
+                WHAT STUDENTS SAY ABOUT US
             </motion.h1>
             {isPending && <Loader />}
             <motion.div className="test-carousel-container"

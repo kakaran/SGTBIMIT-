@@ -67,7 +67,7 @@ export default function Recruiters({ isTitle = true }) {
           type: 'spring'
         }}
       >
-        Our Recruiters.
+        OUR RECRUITERS
       </motion.h1>}
       <motion.div
         className="recruiters-container"

@@ -13,16 +13,24 @@
 }
 .alumnimeet h2{
     font-family: "SF Pro Display-Bold";
-    font-size: min(2rem,4vw);
+    font-size: 40px;
     width: min(1500px,90%);
     margin-inline: auto;
 }
+
+.alumnimeet h3{
+    font-family: "SF Pro Display";
+    font-size: 30px;
+    width: min(1500px,90%);
+    margin-inline: auto;
+}
+
 .alumnimeet p{
-    font-size: min(1.37rem,3vw);
+    font-size: 24px;
     text-align: justify;
     width: min(1500px,90%);
     margin-inline: auto;
 }
 .alumnimeet li{
-    font-size: min(1.37rem,3vw);
+    font-size: 24px;
 }

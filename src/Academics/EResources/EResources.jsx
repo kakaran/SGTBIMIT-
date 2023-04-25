@@ -16,7 +16,7 @@ export default function EResources() {
             <Navbar />
             <section className='e-resources'>
                 <div className="e-resources-container">
-                    <h1>SGTBIMIT Digital Library (E-Resources)</h1>
+                    <h1>SGTBIMIT DIGITAL LIBRARY (E-RESOURCES)</h1>
                     <div className="e-resources-flex">
                         <div className="resources-headings">
                             <div className="publisher-heading">

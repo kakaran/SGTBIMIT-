@@ -38,7 +38,7 @@ export default function Map() {
           }}
         >
           <h1>
-            Get in Touch
+            GET IN TOUCH
           </h1>
           <div className="address-wrapper">
             {data.map(address => (

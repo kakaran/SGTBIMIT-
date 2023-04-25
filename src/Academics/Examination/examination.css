@@ -13,7 +13,7 @@
 
 
 .examination p {
-    font-size: min(1.37rem, 3vw);
+    font-size: 24px;
     color: rgba(0, 0, 0, 0.9);
 }
 
@@ -21,16 +21,21 @@
     font-size: min(4rem, 8vw);
     text-align: center;
     border-radius: 10px;
-    font-family: "SF Pro Display-Bold";
+    font-family: "SF Pro Display-Bold", sans-serif;
     color: #2d2d2d;
 }
 
 .examination h2 {
-    font-size: min(1.8rem, 5vw);
+    font-size: 40px;
     font-family: "SF Pro Display-Bold";
+}
 
+.examination h3 {
+    font-size: 30px;
+    font-family: "SF Pro Display-Bold";
 }
 
 .examination li {
-    font-size: min(1.37em, 3vw);
+    font-size: 24px;
+    font-family: "SF Pro Display";
 }

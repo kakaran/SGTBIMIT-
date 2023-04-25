@@ -116,10 +116,7 @@ const QuestionPaperDisplay = () => {
         <div className="Testimonial_DetailContainer">
           <div className="TesHeaderCard">
             <div className="TesDisplayHeading">
-              <h1
-              style={{
-                fontFamily: "SF Pro Display"
-              }}>Prev Year Papers</h1>
+              <h1>PREVIOUS YEAR PAPERS</h1>
             </div>
             <div className="filterContainer-f">
               <span className="NameAndSelect-f">

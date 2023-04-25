@@ -12,6 +12,7 @@ export default function Events() {
   const { id } = useParams();
   const [events, setEvents] = useState();
   const [eventFilter, setEventFilter] = useState();
+  const [eventYearController, setEventYearController] = useState(false);
 
   const API_URL = process.env.REACT_APP_API_URL;
 
@@ -25,7 +26,7 @@ export default function Events() {
             `${API_URL}/Eventhandler/EventHandler_Single_Display/${id}`
           )
         ).data;
-        // console.log(data);
+        console.log(data);
         setEvents(data);
         setEventFilter(data?.Years[0]?.year);
       } catch (error) {
@@ -35,7 +36,7 @@ export default function Events() {
     EventDataGet();
   }, [id]);
 
-  //   console.log(eventFilter);
+  console.log(eventFilter);
 
   // let i = 0
   // const count = 4
@@ -93,48 +94,78 @@ export default function Events() {
           </div>
           <section className="events-section-1">
             <div className="events-header">
-              <button type="button">Events</button>
-              <span>
-                <BsFillFilterCircleFill size="min(4rem, 5vw)" color="#005E93" />
-                {events.Years.map((value) =>{
-                    return(
+              <div className="EventFilterContainer">
+                <span className="EventFilterHeader">
+                  <h4 type="button">Events</h4>
+                  <BsFillFilterCircleFill
+                    size="min(4rem, 5vw)"
+                    color="#005E93"
+                    cursor= "pointer"
+                    onClick={() => {
+                      setEventYearController(!eventYearController);
+                    }}
+                  />
+                </span>
+                {eventYearController ? (
+                  <div className="FilterData">
+                    {events.Years.map((value) => {
+                      return (
                         <>
-
-                        </>
-                    )
-                })}
-              </span>
-            </div>
-            {/* {event.Years.map((year, i) => (
-                        <div className="events-container">
-                            <h1
-                                style={{
-                                    fontFamily: "SF Pro Display-Bold",
-                                    fontSize: "min(3rem, 6vw)",
-                                    marginTop: 0,
-                                }}
-                            > {year.year} </h1>
-                            <Carousel           
-                                showThumbs={false}
-                                showIndicators={false}
-                                showStatus={false}
+                          <div className="EventsYear">
+                            <h5
+                              onClick={() => {
+                                setEventFilter(value.year);
+                                setEventYearController(!eventYearController);
+                              }}
+                              style={{ cursor: "pointer" }}
                             >
-                                {year.Events.map(singleEvent => (
-                                    eventChunks.map(images => (
-                                        <div className="event-grid">
-                                            {images.map(image => (
-                                                <div className="event-card">
-                                                    <img src={`${API_URL}/Event/Event_Image_Display/${singleEvent.Event_id._id}/${image._id}`} alt="cant load" />
-                                                    <h1> {singleEvent.Event_id.name} </h1>
-                                                    <p> {singleEvent.Event_id.detail}  </p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ))
-                                ))}
-                            </Carousel>
-                        </div>
-                    ))} */}
+                              {value.year}
+                            </h5>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  " "
+                )}
+              </div>
+            </div>
+            {events.Years.map((year, i) => {
+              console.log(year);
+              if (eventFilter === year.year) {
+                return (
+                  <div className="events-container">
+                    {/* <h1
+                style={{
+                    fontFamily: "SF Pro Display-Bold",
+                    fontSize: "min(3rem, 6vw)",
+                    marginTop: 0,
+                }}
+            > {year.year} </h1> */}
+
+                    <div className="EventScroller">
+                      {year.Events.map((singleEvent) => {
+                        console.log(singleEvent);
+                        return (
+                          <div className="eventCardConatainer">
+                            <div className="event-card">
+                              <p>{year.year}</p>
+                              <img
+                                src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent?.Event_id?._id}`}
+                                alt="cant load"
+                              />
+                              <h1> {singleEvent?.Event_id?.name} </h1>
+                              <p> {singleEvent?.Event_id?.detail} </p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </section>
         </section>
       )}

@@ -13,21 +13,38 @@ export default function Bcom() {
             <section className="courses-section">
                 <div className='courses'>
                     <img src={require("../../images/bcom.png")} alt="cant load" />
-                    <h1>Bachelors of Commerce</h1>
+                    <h1>BACHELORS OF COMMERCE</h1>
                     <p>
-                        The three-year, full-time Bachelor of Commerce (B.Com) programme at Sri
-                        Guru Tegh Bahadur Institute of Management and Information Technology
-                        is certified by GGSIP University. It started out with the goal of
-                        offering pupils a holistic education that included both academic
-                        and extracurricular activities. Its goal is to give readers a thorough
-                        understanding of taxation, accounting, finance, law, and management.
-                        The students participate in internship programmes, research projects,
-                        and courses that improve their skills, preparing them for the corporate
-                        sector. The students will acquire the theoretical and practical abilities
-                        needed to handle real-life scenarios and develop into young, aspiring
-                        entrepreneurs in the demanding, globalised world. The department offers
-                        the programmes which help in pursuing the professional courses in future
-                        like C.A, C.S., I.C.W.A., C.F.A, M.B.A.,etc.
+                    The Bachelor of Commerce (BCom) program offered by Sri Guru 
+                    Tegh Bahadur Institute of Management and Information Technology 
+                    (SGTBIMIT) is a highly regarded program for students looking to 
+                    pursue a career in the field of commerce and business.The BCom 
+                    program at SGTBIMIT provides students with a comprehensive 
+                    understanding of business concepts and practices, including accounting, 
+                    finance, marketing, and human resource management. The curriculum is
+                    designed to provide students with both theoretical and practical 
+                    knowledge, through case studies, projects, and internships. 
+                    The program also emphasizes the development of critical thinking, 
+                    analytical, and communication skills, which are essential for 
+                    success in the business world.
+                    <br/><br/>
+                    The faculty at SGTBIMIT are highly experienced and dedicated to 
+                    providing students with quality education. The institute offers 
+                    modern facilities and resources, including a well-equipped library, 
+                    computer labs, and access to industry experts.Throughout the program, 
+                    students have the opportunity to participate in various extracurricular 
+                    activities, including seminars, workshops, and business competitions, 
+                    which help them enhance their skills and gain exposure to the latest 
+                    trends in the business world.
+                    <br/><br/>
+                    Upon completion of the BCom program, students are well-equipped to 
+                    pursue exciting careers in various fields, including accounting, 
+                    finance, marketing, human resources, and many more. The program also 
+                    provides an excellent foundation for students who wish to pursue further 
+                    studies in business or related fields. Overall, the BCom program at 
+                    SGTBIMIT is an excellent choice for students who are passionate about 
+                    pursuing a career in the field of business and commerce, as it provides 
+                    them with a solid foundation and exposure to the latest trends and practices in the industry.
                     </p>
 {/*                     <AdditionalDiploma /> */}
                 </div>

@@ -129,6 +129,10 @@
     --padding: min(25px, 2vw);
 }
 
+.test-section h1{
+    font-size: min(4rem, 8vw);
+}
+
 .test-section .control-arrow {
     background-color: #005e93 !important;
 }
@@ -661,6 +665,10 @@
     justify-content: center;
     position: relative;
     width: 100%;
+}
+
+.map-container h1{
+    font-size: min(4rem, 8vw);
 }
 
 .address-container {

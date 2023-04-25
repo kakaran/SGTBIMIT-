@@ -10,10 +10,10 @@ export default function Registration() {
             <Header />
             <Navbar />
             <section className="registeration-section">
-                <h1>Alumni Registration Form</h1>
+                <h1>ALUMINI REGISTRATION FORM</h1>
                 <form className="personal-details">
 
-                        <h2>Personal Details</h2>
+                        <h2>PERSONAL DETAILS</h2>
                         <label for="fname">First Name</label>
                         <input type="text" name="fname" id="fname" />
                         <label for="lname">Last Name</label>
@@ -28,7 +28,7 @@ export default function Registration() {
                         <input type="text" name="aadhaar" id="Adhaar" />
 
 
-                        <h2>Higher Education Details</h2>
+                        <h2>HIGHER EDUCATION DETAILS</h2>
 
                         <label for="higher-studies">Higher Studies</label>
                         <select name="select">
@@ -51,7 +51,7 @@ export default function Registration() {
                             </div>
                         </div>
 
-                        <h2>Current Working Details</h2>
+                        <h2>CURRENT WORKING DETAILS</h2>
 
                         <label for="Placement">Placement Provided by SGTBIMIT</label>
                         <div>

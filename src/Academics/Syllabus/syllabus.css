@@ -52,12 +52,12 @@ table {
 
 th {
     border-bottom: 1px solid var(--secondary-clr);
-    font-size: 25px;
+    font-size: 24px;
 }
 
 td {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 td>a {

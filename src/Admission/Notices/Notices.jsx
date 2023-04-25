@@ -16,7 +16,7 @@ export default function Notice() {
             <Navbar />
             <>
                 <section className="notices-section">
-                    <h1>Notices</h1>
+                    <h1>NOTICES</h1>
                     {isPending && <Loader />}
                     <div className="notices-grid">
                         {notices && notices.map((notice) => (

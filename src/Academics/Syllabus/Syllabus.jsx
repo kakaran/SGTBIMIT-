@@ -72,7 +72,7 @@ export default function Syllabus() {
             <Header />
             <Navbar />
                 <div className="syllabus">
-                    <h1>Syllabus</h1>
+                    <h1>SYLLABUS</h1>
                     <div className="imptop">
                         <table>
                             <tr>

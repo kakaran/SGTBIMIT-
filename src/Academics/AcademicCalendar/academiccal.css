@@ -25,7 +25,7 @@
     border: 2px solid rgb(1, 39, 59);
     text-align: center;
     padding: min(1rem,1vw);
-    font-size: min(1.4rem,3.2vw);
+    font-size: 24px;
 }
 .heading{
     font-weight: bolder;

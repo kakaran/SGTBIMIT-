@@ -41,7 +41,7 @@ export default function Collaboration() {
             type: 'spring'
           }}
         >
-          Collaborations.
+          COLLABORATIONS
         </motion.h1>
 
         <motion.div

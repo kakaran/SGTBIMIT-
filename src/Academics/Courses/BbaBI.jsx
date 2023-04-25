@@ -14,32 +14,30 @@ export default function BbaBI() {
       <section className="courses-section">
         <div className='courses'>
           <img src={require("../../images/bba.jpg")} alt="cant load" />
-          <h1>Bachelors of Business Administration (Banking and Insurance)</h1>
+          <h1>BACHELORS OF BUSINESS ADMINISTRATION (BANKING & INSURANCE)</h1>
           <p>
-            A three-year full-time degree program in Bachelor of Business Administration
-            (Banking and Insurance) is presented by Sri Guru Tegh Bahadur Institute of
-            Management and Information Technology and is accredited by GGSIP University.
-            It seeks to help students gain fundamental expertise in important facets of
-            business management. It covers many business-related topics, including how to
-            communicate, analyse situations, present one's own viewpoints in front of a
-            large audience, make decisions using both quantitative and qualitative factors,
-            and create a comprehensive understanding of the various business environments'
-            functional domains. According to the curriculum, students participate in
-            internships or summer training programs to gain practical experience working
-            on real-world projects.
-            Throughout the course of its three years, this banking and insurance curriculum covers
-            a wide range of topics, including IT (Information Technology), computer applications,
-            accounting, economics, banking operations, Treasury operations, investment banking,
-            rural finance, insurance, and loans. Six semesters make up the curriculum, of which
-            four are shared by all students and the remaining two are dependent on their chosen speciality.
-            The course will also give the students the opportunity to use cutting-edge methods to manage
-            banking-related tasks and deliver outcomes quickly. Graduates with a BBA in Banking and
-            Insurance can find employment in a wide range of industries and occupations. The majority
-            of candidates may find employment through government banks.
-            Yet in order to apply for a post, they must forego a common position front exam.
-            Applicants for MBA or PGDM programmes in banking and insurance should be highly motivated
-            and have strong communication skills. Also, you may make a tonne of money with this degree.
-            Starting out is simple.
+          BBA (B&I) is a prestigious program offered by Sri Guru Tegh Bahadur Institute of 
+          Management and Information Technology (SGTBIMIT). The program aims to equip 
+          students with a strong foundation in business and management principles, with 
+          a particular focus on Banking and Insurance. The BBA (B&I) program at SGTBIMIT 
+          is designed to develop students' analytical, problem-solving, and communication 
+          skills, which are essential for success in the field of business. 
+          <br/><br/>
+          The curriculum is a well-balanced mix of theoretical and practical learning, with an emphasis 
+          on case studies, projects, and real-world applications. The program provides a 
+          comprehensive understanding of banking and insurance operations, including their 
+          regulatory framework, financial products and services, and risk management practices. 
+          Students learn about various aspects of business, including accounting, finance, 
+          marketing, and human resources management, in addition to specialized courses 
+          related to banking and insurance.
+          <br/><br/>
+          The faculty at SGTBIMIT is highly experienced and dedicated to providing students 
+          with quality education. The institute offers state-of-the-art facilities and resources, 
+          including a well-stocked library, modern computer labs, and access to industry experts.
+          <br/><br/>
+          Upon completion of the BBA (B&I) program, students are well-equipped to pursue exciting 
+          careers in the banking and insurance sectors or pursue further studies in related fields. 
+          The program offers a solid foundation for future success in the field of business and management.
           </p>
 {/*           <AdditionalDiploma /> */}
         </div>

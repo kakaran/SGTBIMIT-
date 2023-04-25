@@ -34,7 +34,7 @@
     padding: 20px;
     border: 3px solid var(--secondary-clr);
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 @media (max-width:1000px) {

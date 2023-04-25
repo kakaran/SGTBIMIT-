@@ -19,7 +19,7 @@ export default function DirectorMsg() {
           type: 'spring'
         }}
       >
-        Director's Note.
+        DIRECTOR'S NOTE
       </motion.h1>
       <motion.div className='director-container'
         initial={{

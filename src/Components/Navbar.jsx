@@ -24,7 +24,6 @@ export default function Navbar() {
       })
       document.querySelectorAll(".nav-item>*:first-child").forEach((link, i) => {
         link.addEventListener("click", e => {
-          if (i !== 0) e.preventDefault()
           const dropdowns = document.querySelectorAll(`.dropdown`)
           dropdowns.forEach((dropdown, j) => {
             if (dropdown.dataset.index === `${i}`) {
@@ -115,7 +114,7 @@ export default function Navbar() {
               <div className="dropdown-item">E-RESOURCES</div>
             </NavLink>
             <NavLink to="/academics/research" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
-              <div className="dropdown-item">RESEARCH</div>
+              <div className="dropdown-item">RESEARC & DEVELOPMENT</div>
             </NavLink>
             <NavLink to="/academics/faculty" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">FACULTY MEMBERS</div>

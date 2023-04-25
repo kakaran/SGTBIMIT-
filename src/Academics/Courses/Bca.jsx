@@ -38,7 +38,7 @@ export default function Bca() {
             The program's standout elements include a focus on developing students' soft skills and
             giving them the best possible industry interaction through a variety of projects.
           </p>
-          <AdditionalDiploma />
+{/*           <AdditionalDiploma /> */}
         </div>
       </section>
       <Footer />

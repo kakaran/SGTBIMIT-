@@ -41,7 +41,7 @@ export default function BbaBI() {
             and have strong communication skills. Also, you may make a tonne of money with this degree.
             Starting out is simple.
           </p>
-          <AdditionalDiploma />
+{/*           <AdditionalDiploma /> */}
         </div>
       </section>
       <Footer />

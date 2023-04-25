@@ -65,7 +65,7 @@ export default function Placements({ isTitle = true }) {
           }
           <div className="blank place-card"></div>
         </motion.div>
-        <button type='button' onClick={(e) => { handleClick(e) }} className='scroll-btn'>Scroll</button>
+{/*         <button type='button' onClick={(e) => { handleClick(e) }} className='scroll-btn'>Scroll</button> */}
       </div>
 
 

@@ -29,7 +29,7 @@ export default function Bcom() {
                         the programmes which help in pursuing the professional courses in future
                         like C.A, C.S., I.C.W.A., C.F.A, M.B.A.,etc.
                     </p>
-                    <AdditionalDiploma />
+{/*                     <AdditionalDiploma /> */}
                 </div>
             </section>
             <Footer></Footer>

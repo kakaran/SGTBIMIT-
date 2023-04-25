@@ -40,7 +40,7 @@ export default function Bba() {
             problem-solving skills in relation to various business-related issues. Students are
             given a platform to familiarise themselves with the rapidly evolving global business environment.
           </p>
-          <AdditionalDiploma />
+{/*           <AdditionalDiploma /> */}
         </div>
       </section>
       <Footer />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import useFetch from '../useFetch'
 import Loader from '../Components/Loader'
 import { Carousel } from 'react-responsive-carousel'
@@ -7,10 +7,30 @@ import { motion } from 'framer-motion'
 /* import useIntersection from '../useIntersection' */
 
 export default function Recruiters({ isTitle = true }) {
+  function useIsInViewport(ref) {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting),
+        ),
+      [],
+    );
+
+    useEffect(() => {
+      observer.observe(ref.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref, observer]);
+
+    return isIntersecting;
+  }
+
   const carouselRef = useRef(null)
-
-  /*   const isVisible = useIntersection(carouselRef, '0px') */
-
+  const isCarouselVisible = useIsInViewport(carouselRef);
 
   const { data: recruiters, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Display`)
 
@@ -68,13 +88,13 @@ export default function Recruiters({ isTitle = true }) {
 
         {recruiters &&
           <Carousel
-
+            ref={carouselRef}
             onChange={handleSlideChange}
             transitionTime={1000}
             showThumbs={false}
             showIndicators={false}
             showStatus={false}
-            autoPlay={recruiters ? true : false}
+            autoPlay={isCarouselVisible && true}
             infiniteLoop={true}
             selectedItem={0}
             renderArrowNext={(onClickHandler, hasNext, label) => (

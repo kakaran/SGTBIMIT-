@@ -29,11 +29,16 @@
 .event-header-title p {
     color: #D4D4D4;
     font-family: "SF Pro Display-Medium";
-    font-size: min(2rem, 4vw);
+    /* font-size: min(2rem, 4vw); */
+    font-size: 31.6667px;
+
 }
 
 .event-header-title h1 {
-    font-size: min(5rem, 10vw);
+    /* font-size: min(5rem, 10vw); */
+    /* font-size: min(3.75rem, 7.5vw); */
+    font-size: 79.1667px;
+
     margin-block: 1.5rem;
     font-family: "SF Pro Display-Medium";
 }
@@ -52,7 +57,9 @@
 
 .about-event h1 {
     font-family: "SF Pro Display-Bold";
-    font-size: min(5rem, 10vw);
+    /* font-size: min(5rem, 10vw); */
+    font-size: min(3.75rem, 7.5vw);
+
 }
 
 .about-event p {

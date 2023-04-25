@@ -92,7 +92,7 @@ const AdministrationDisplay = () => {
                           }}
                           onClick={() => {
                             navigator(
-                              `/admin/Administration_Update/${value._id}`
+                              `/dashboard/admin/Administration_Update/${value._id}`
                             );
                           }}
                         />

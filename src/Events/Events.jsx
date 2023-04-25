@@ -47,9 +47,7 @@ export default function Events() {
                             width="600px"
                         >
                             {event.images.map((image) => (
-                                <div className="event-carousel-img">
-                                    <img src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${event._id}/${image._id}`} alt="cant load" />
-                                </div>
+                                    <img src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${event._id}/${image._id}`} alt="cant load" className='event-carousel-img' />
                             ))}
                         </Carousel>
                     </div>

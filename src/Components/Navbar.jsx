@@ -114,7 +114,7 @@ export default function Navbar() {
               <div className="dropdown-item">E-RESOURCES</div>
             </NavLink>
             <NavLink to="/academics/research" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
-              <div className="dropdown-item">RESEARC & DEVELOPMENT</div>
+              <div className="dropdown-item">RESEARCH & DEVELOPMENT</div>
             </NavLink>
             <NavLink to="/academics/faculty" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">FACULTY MEMBERS</div>

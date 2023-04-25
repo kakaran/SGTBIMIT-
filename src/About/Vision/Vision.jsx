@@ -14,7 +14,7 @@ export default function Vision() {
       <Header />
       <Navbar />
       <div className="Vision_Container">
-        <h1>VISION AND MISSION</h1>
+        <h1>Vission and Mission</h1>
         <div className="Detail_ImageContainer">
           <div className="VisionDetail">
             <h3>OUR VISION</h3>

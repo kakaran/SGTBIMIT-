@@ -18,8 +18,24 @@ export default function Events() {
 
     const event = events ? events[0] : " "
 
-    console.log(events ? event : '')
 
+
+    let i = 0
+    const count = 4
+    let eventChunks = []
+    events && (
+        event.Years.forEach((e) => {
+            e.Events.forEach((ee) => {
+                ee.Event_id.Images.forEach(() => {
+                    let res = ee.Event_id.Images.slice(i, i + count)
+                    if (res.length === 0) return
+                    eventChunks.push(res)
+                    i = i + count
+                })
+            })
+        })
+    )
+    console.log(eventChunks ? eventChunks : '')
     return (
         <>
             <Helmet title={event.name} />
@@ -47,7 +63,7 @@ export default function Events() {
                             width="600px"
                         >
                             {event.images.map((image) => (
-                                    <img src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${event._id}/${image._id}`} alt="cant load" className='event-carousel-img' />
+                                <img src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${event._id}/${image._id}`} alt="cant load" className='event-carousel-img' />
                             ))}
                         </Carousel>
                     </div>
@@ -71,17 +87,19 @@ export default function Events() {
                                 showIndicators={false}
                                 showStatus={false}
                             >
-                                <div className="event-grid">
-                                    {year.Events.map(singleEvent => (
-                                        singleEvent.Event_id.Images.map(image => (
-                                            <div className="event-card">
-                                                <img src={`${API_URL}/Event/Event_Image_Display/${singleEvent.Event_id._id}/${image._id}`} alt="cant load" />
-                                                <h1> {singleEvent.Event_id.name} </h1>
-                                                <p> {singleEvent.Event_id.detail}  </p>
-                                            </div>
-                                        ))
-                                    ))}
-                                </div>
+                                {year.Events.map(singleEvent => (
+                                    eventChunks.map(images => (
+                                        <div className="event-grid">
+                                            {images.map(image => (
+                                                <div className="event-card">
+                                                    <img src={`${API_URL}/Event/Event_Image_Display/${singleEvent.Event_id._id}/${image._id}`} alt="cant load" />
+                                                    <h1> {singleEvent.Event_id.name} </h1>
+                                                    <p> {singleEvent.Event_id.detail}  </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ))
+                                ))}
                             </Carousel>
                         </div>
                     ))}

@@ -68,7 +68,7 @@ export default function Events() {
                                     marginTop: 0,
                                 }}
                             > {year.year} </h1>
-                            <Carousel
+                            <Carousel           
                                 showThumbs={false}
                                 showIndicators={false}
                                 showStatus={false}

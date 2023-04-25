@@ -47,7 +47,7 @@ export default function Research() {
 
     return (
         <>
-        <Helmet title="SGTBIMIT | Research" />
+            <Helmet title="SGTBIMIT | Research" />
             <Header />
             <Navbar />
             <section className='research-section'>
@@ -68,12 +68,12 @@ export default function Research() {
                     </div>
                     <div className="research-box-right">
                         <Carousel
-                        showThumbs={false}
-                        showIndicators={false}
+                            showThumbs={false}
+                            showIndicators={false}
                         >
-                            {research.map((res, i)=>(
+                            {research.map((res, i) => (
                                 <div className="res-grid" key={i}>
-                                    {res.map((re, i)=>(
+                                    {res.map((re, i) => (
                                         <div className="research-card" key={i}>
                                             <img src={re.image} alt="cant load" />
                                             <h1>{re.title}</h1>
@@ -85,6 +85,28 @@ export default function Research() {
                         </Carousel>
                     </div>
                 </section>
+                <div className="bottom-carousel"
+                    style={{
+                        marginTop: 'min(3rem, 3vw)',
+                    }}
+                >
+                    <Carousel
+                        showThumbs={false}
+                        showIndicators={false}
+                    >
+                        {research.map((res, i) => (
+                            <div className="res-grid" key={i}>
+                                {res.map((re, i) => (
+                                    <div className="research-card" key={i}>
+                                        <img src={re.image} alt="cant load" />
+                                        <h1>{re.title}</h1>
+                                        <p>{re.date}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </Carousel>
+                </div>
             </section>
             <Footer />
         </>

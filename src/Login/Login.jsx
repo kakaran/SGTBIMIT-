@@ -16,12 +16,7 @@ export default function Login() {
 
     const handleLogin = async () => {
         try {
-
-<<<<<<< HEAD
-            const data = (await axios.post("http://localhost:5000/Admin/Login", { email, password })).data;
-=======
             const data = (await axios.post(`${process.env.REACT_APP_API_URL}/Admin/Login`,{email,password})).data;
->>>>>>> 8dcc187a9c160c44ee3a471f505df5a34dd61147
             console.log(data);
             if (data.token) {
                 setAuth({
@@ -43,7 +38,6 @@ export default function Login() {
         try {
             if(email){
                 const data = (await axios.post(`${process.env.REACT_APP_API_URL}/Admin/EmailCheck/${email}`)).data
->>>>>>> 8dcc187a9c160c44ee3a471f505df5a34dd61147
                 console.log(data);
                 if (data.status) {
                     navigate(`/admin/forgetPassword/${data.user_id}/${email}/${data.status}`)

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BsDownload } from 'react-icons/bs'
 import Chart from 'react-apexcharts'
+import './statistics.css'
 
 export default function Statistics() {
 

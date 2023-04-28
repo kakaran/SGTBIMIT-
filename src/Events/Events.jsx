@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./events.css";
 import { Header, Navbar, Footer, Loader } from "../Components";
-import nssImg2 from "../images/nss-img-2.png";
 import { Carousel } from "react-responsive-carousel";
 import { BsFillFilterCircleFill } from "react-icons/bs";
-import useFetch from "../useFetch";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
+import { motion } from 'framer-motion'
+
 export default function Events() {
   const { id } = useParams();
   const [events, setEvents] = useState();
@@ -59,32 +59,32 @@ export default function Events() {
       <Helmet title={events?.name} />
       <Header />
       <Navbar />
-      {/* {isPending && <Loader />} */}
+      {!events && <Loader />}
       {events && (
         <section className="event-section">
           <div className="event-header">
             <div className="gradient" />
             <img
-              src={`${API_URL}/Eventhandler/EventHandleR_Heder_Image/${events?._id}`}
+              src={`${API_URL}/Eventhandler/EventHandleR_Heder_Image/${events._id}`}
               alt=""
             />
             <div className="event-header-title">
               <p>
-                Home {">"} Societies {">"} {events?.name}
+                Home {">"} Societies {">"} {events.name}
               </p>
-              <h1> {events?.name} </h1>
+              <h1> {events.name} </h1>
             </div>
           </div>
           <div className="about-event-section">
             <div className="about-event">
-              <h1>About {events?.name}</h1>
-              <p>{events?.detail}</p>
+              <h1>About {events.name}</h1>
+              <p>{events.detail}</p>
             </div>
             <div className="about-event-carousel">
-              <Carousel showThumbs={false} showIndicators={false} width="600px">
+              <Carousel showThumbs={false} showIndicators={false} >
                 {events.images.map((image) => (
                   <img
-                    src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${events?._id}/${image?._id}`}
+                    src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${events._id}/${image._id}`}
                     alt="cant load"
                     className="event-carousel-img"
                   />
@@ -100,14 +100,22 @@ export default function Events() {
                   <BsFillFilterCircleFill
                     size="min(4rem, 5vw)"
                     color="#005E93"
-                    cursor= "pointer"
+                    cursor="pointer"
                     onClick={() => {
                       setEventYearController(!eventYearController);
                     }}
                   />
                 </span>
-                {eventYearController ? (
-                  <div className="FilterData">
+                {eventYearController && (
+                  <motion.div 
+                  className="FilterData"
+                  initial={{
+                    scale: 0,
+                  }}
+                  animate={{
+                    scale: 1,
+                  }}
+                  >
                     {events.Years.map((value) => {
                       return (
                         <>
@@ -125,10 +133,8 @@ export default function Events() {
                         </>
                       );
                     })}
-                  </div>
-                ) : (
-                  " "
-                )}
+                  </motion.div>
+                ) }
               </div>
             </div>
             {events.Years.map((year, i) => {
@@ -146,24 +152,24 @@ export default function Events() {
 
                     <div className="EventScroller">
                       {year.Events.map((singleEvent) => {
-                        console.log(singleEvent);
+                        console.log(singleEvent)
                         return (
                           <div className="eventCardConatainer">
                             <div className="event-card">
                               <p>{year.year}</p>
                               <img
-                                src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent?.Event_id?._id}`}
+                                src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent.Event_id._id}`}
                                 alt="cant load"
                               />
-                              <h1> {singleEvent?.Event_id?.name} </h1>
-                              <p> {singleEvent?.Event_id?.detail} </p>
+                              <h1> {singleEvent.Event_id.name} </h1>
+                              <p> {singleEvent.Event_id.detail} </p>
                             </div>
                           </div>
-                        );
+                        )
                       })}
                     </div>
                   </div>
-                );
+                )
               }
             })}
           </section>

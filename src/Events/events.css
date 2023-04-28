@@ -70,15 +70,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-inline: 20px;
 }
 
 .event-carousel-img {
-    width: 600px;
-}
-
-.event-carousel-img img {
-    height: 600px;
-    object-fit: contain;
+    width: min(600px, 100%);
+    aspect-ratio: 2/1.5;
+    object-fit: fill;
 }
 .events-section-1 {
     padding: min(2rem, 2vw);

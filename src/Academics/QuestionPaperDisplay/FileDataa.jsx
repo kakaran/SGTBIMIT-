@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { motion } from 'framer-motion'
 
 const FileData = (props) => {
   const [getPaperName, setPaperName] = useState([]);
@@ -29,7 +30,14 @@ const FileData = (props) => {
 
 
   return (
-    <div className="FileNames Paper_detail">
+    <motion.div className="FileNames-f Paper_detail-f"
+    initial={{
+      opacity: 0,
+    }}
+    whileInView={{
+      opacity: 1,
+    }}
+    >
       {getPaperName?.map((value, Index) => {
         return (
           <div className="FileName">
@@ -58,7 +66,7 @@ const FileData = (props) => {
           </div>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 

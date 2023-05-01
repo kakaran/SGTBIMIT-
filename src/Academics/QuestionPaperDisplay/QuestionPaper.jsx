@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "../../Pages/Society/Society_Display/Society_Display.css";
+import { Header, Navbar, Footer } from '../../Components'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FileData from "./FileDataa";
 import "./QuestionPaperDisplay.css"
-import { Header, Navbar, Footer } from "../../Components";
 import { Helmet } from "react-helmet";
 
 const QuestionPaperDisplay = () => {
-  const [render, setRender] = useState(0);
-  const [getSociety, setSociety] = useState([]);
-  const [dataReset, setDataReset] = useState(true);
+  // const [render, setRender] = useState(0);
+  // const [getSociety, setSociety] = useState([]);
+  // const [dataReset, setDataReset] = useState(true);
   const [getPaperFilter, setPaperfilter] = useState({
     course: "",
     Year: "",
@@ -32,26 +31,6 @@ const QuestionPaperDisplay = () => {
 
   const navigator = useNavigate("");
 
-  //------------------------- All object Display -------------------------//
-  const QuestionPaperDataGet = async () => {
-    try {
-      const data = (
-        await axios.get(
-          `${process.env.REACT_APP_API_URL}/QuestionPaper/Question_Paper_Display_All`
-        )
-      ).data;
-      setSociety(data);
-
-      setRender(0);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    QuestionPaperDataGet();
-  }, [render]);
-
   //-------------------- Single Document Data get ----------------------//
   const SinglePaperDisplay = async () => {
     try {
@@ -69,7 +48,8 @@ const QuestionPaperDisplay = () => {
         Semester: Detail?.Data[0]?.Semester,
         _id: Detail?.Data[0]?._id,
       });
-      setDataReset(false);
+
+      // setDataReset(false);
     } catch (error) {
       console.log(error);
     }
@@ -77,15 +57,18 @@ const QuestionPaperDisplay = () => {
 
   //----------- Reset the Data --------------//
   const ResetPaperData = async () => {
-    if (!dataReset) {
-      setDataReset(true);
-      setRender(1);
-      setPaperfilter({
-        course: " ",
-        Year: " ",
-        Semester: " ",
-      });
-    }
+    // setRender(1);
+    setPaperfilter({
+      course: " ",
+      Year: " ",
+      Semester: " ",
+    });
+    setPaperFilterData({
+      course: "",
+      Year: "",
+      Semester: "",
+      _id: "",
+    })
   };
 
   //--------------- Get the Filter Data ----------------------//
@@ -101,25 +84,26 @@ const QuestionPaperDisplay = () => {
       console.log(error);
     }
   };
+
   return (
     <>
-    <Helmet title="SGTBIMIT | Previous Year Papers" />
-    <Header />
-    <Navbar />
+      <Header />
+      <Navbar />
+      <Helmet title="Display Question Paper" />
       <div className="SocietyDisplayContainer"
-      style={{
-        fontFamily: "SF Pro Display"
-      }}
+      style="background-image: url('../../images/bg-frame.png') !important"
       >
-        <div className="SideBar">
-        </div>
         <div className="Testimonial_DetailContainer">
           <div className="TesHeaderCard">
-            <div className="TesDisplayHeading">
+            <div className="TesDisplayHeading-f">
               <h1
               style={{
-                fontFamily: "SF Pro Display"
-              }}>Prev Year Papers</h1>
+                fontFamily:"SF Pro Display-Bold",
+                fontSize: "min(4rem, 8vw)",
+              }}
+              >
+                
+                Prev Year Papers</h1>
             </div>
             <div className="filterContainer-f">
               <span className="NameAndSelect-f">
@@ -152,7 +136,6 @@ const QuestionPaperDisplay = () => {
                 >
                   <option value=" ">Select Year</option>
                   {filter?.Years?.map((value) => {
-                    // console.log(value);
                     return <option value={value.year}>{value.year}</option>;
                   })}
                 </select>
@@ -183,68 +166,31 @@ const QuestionPaperDisplay = () => {
               <button onClick={SinglePaperDisplay} className="button-30-f">Search</button>
               <button onClick={ResetPaperData} className="button-30-f">Clear</button>
             </div>
-            {/* {dataReset ? (
-              <div className="PaperDisplayCardContainer">
-                {console.log(dataReset)}
-                {getSociety.map((value) => {
-                  return (
-                    <div className="Society_Card Paper_Card">
-                      <h3
-                      style={{
-                        fontFamily: "SF Pro Display"
-                      }}>
-                        {value.course}
-                      </h3>
-                      <div className="Society_Card_ImageDescription ">
+            {getPaperFilterData.Semester ?
+              (
+                <div className="TesDisplayCardContainer-f">
+                  <div className="Society_Card">
+                    <h3>
+                      {getPaperFilterData?.course}
+                    </h3>
+                    <div className="Society_Card_ImageDescription">
+                      {getPaperFilterData ? (
                         <FileData
-                          course={value?.course}
-                          Year={value?.Year}
-                          Semester={value?.Semester}
-                          _id={value?._id}
-                          
+                          course={getPaperFilterData?.course}
+                          Year={getPaperFilterData?.Year}
+                          Semester={getPaperFilterData?.Semester}
+                          _id={getPaperFilterData?._id}
                         />
-                        <div className="Society_Describe">
-                          <h4
-                          style={{
-                            fontFamily: "SF Pro Display"
-                          }}>{value.Year}</h4>
-                          <h4
-                          style={{
-                            fontFamily: "SF Pro Display"
-                          }}> Semester : {value.Semester}</h4>
-                        </div>
+                      ) : (
+                        "  "
+                      )}
+                      <div className="Society_Describe">
+                        <h4>{getPaperFilterData.Year}</h4>
+                        <h4> Semester : {getPaperFilterData?.Semester}</h4>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            ) : ( */}
-              <div className="TesDisplayCardContainer">
-                {/* {console.log(getPaperFilterData)} */}
-                <div className="Society_Card">
-                  <h3>
-                    {getPaperFilterData?.course}
-                    
-                  </h3>
-                  <div className="Society_Card_ImageDescription">
-                    {getPaperFilterData ? (
-                      <FileData
-                        course={getPaperFilterData?.course}
-                        Year={getPaperFilterData?.Year}
-                        Semester={getPaperFilterData?.Semester}
-                        _id={getPaperFilterData?._id}
-                      />
-                    ) : (
-                      "  "
-                    )}
-                    <div className="Society_Describe">
-                      <h4>{getPaperFilterData.Year}</h4>
-                      <h4> Semester : {getPaperFilterData?.Semester}</h4>
-                    </div>
                   </div>
-                </div>
-              </div>
-            {/* )} */}
+                </div>) : " "}
           </div>
         </div>
       </div>

@@ -87,23 +87,18 @@ const QuestionPaperDisplay = () => {
 
   return (
     <>
-      <Header />
-      <Navbar />
-      <Helmet title="Display Question Paper" />
+    <Helmet title="SGTBIMIT | Previous Year Papers" />
+    <Header />
+    <Navbar />
       <div className="SocietyDisplayContainer"
-      style="background-image: url('../../images/bg-frame.png') !important"
+      style={{
+        fontFamily: "SF Pro Display"
+      }}
       >
         <div className="Testimonial_DetailContainer">
           <div className="TesHeaderCard">
-            <div className="TesDisplayHeading-f">
-              <h1
-              style={{
-                fontFamily:"SF Pro Display-Bold",
-                fontSize: "min(4rem, 8vw)",
-              }}
-              >
-                
-                Prev Year Papers</h1>
+            <div className="TesDisplayHeading">
+              <h1>PREVIOUS YEAR PAPERS</h1>
             </div>
             <div className="filterContainer-f">
               <span className="NameAndSelect-f">

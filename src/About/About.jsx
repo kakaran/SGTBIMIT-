@@ -14,7 +14,7 @@ export default function About() {
 
                 <div className='about-container'>
                     <div className='about-title'>
-                        About SGTBIMIT
+                        ABOUT SGTBIMIT
                     </div>
                     <div className='about-content'>
                         <img src={require("../images/college.jpg")} alt="" className='clg-img' />
@@ -26,7 +26,7 @@ export default function About() {
                 </div>
                 <div className="history-container">
                     <div className="about-title">
-                        History
+                        HISTORY
                     </div>
                     <p>
                         <strong>Sri Guru Tegh Bahadur Institute of Management & Information Technology</strong>, a SIKH Institution, was founded by the DSGMC, with the primary objective of providing University Education in a nice atmosphere for deserving students irrespective of caste and creed.

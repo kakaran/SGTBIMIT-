@@ -15,7 +15,7 @@ export default function AcademicCal() {
             <Navbar />
 
             <section className='acad-cal'>
-                <h1>Academic Calendar</h1>
+                <h1>ACADEMIC CALENDAR</h1>
                 {isPending && <Loader />}
                 <div className="cal-container">
                     <div className="cal-grid heading">

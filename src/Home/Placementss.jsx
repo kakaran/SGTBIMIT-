@@ -34,7 +34,7 @@ export default function Placements({ isTitle = true }) {
             type: "spring"
           }}
         >
-          Placements and Internships.
+          PLACEMENT AND INTERNSHIPS
         </motion.h1>}
         <div className="placement-bg"></div>
         {isPending && <Loader />}

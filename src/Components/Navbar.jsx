@@ -155,7 +155,7 @@ export default function Navbar() {
           </div>
 
         </div>
-        <div className="nav-item" data-index="5">
+        {/* <div className="nav-item" data-index="5">
           <div>SOCIETY<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="5">
             {societies && societies.map((society) => {
@@ -167,9 +167,9 @@ export default function Navbar() {
             })}
           </div>
 
-        </div>
+        </div> */}
         <div className="nav-item" data-index="6">
-          <div>EVENTS<img src={arrow} alt="" /></div>
+          <div>SOCIETY & CLUB<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="6">
             {events && events.map((event, i)=>(
               <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>

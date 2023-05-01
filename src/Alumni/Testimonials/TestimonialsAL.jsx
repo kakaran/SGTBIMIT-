@@ -11,7 +11,7 @@ export default function TestimonialsAL() {
             <Header />
             <Navbar />
             <section className='test-al-section'>
-                <h1>Testimonials</h1>
+                <h1>TESTIMONIALS</h1>
                 <div className="t-grid">
                     {[...Array(12)].map((x, i) => {
                         return (

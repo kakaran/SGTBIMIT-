@@ -6,7 +6,8 @@ import { BsFillFilterCircleFill } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+
 
 export default function Events() {
   const { id } = useParams();
@@ -106,35 +107,44 @@ export default function Events() {
                     }}
                   />
                 </span>
-                {eventYearController && (
-                  <motion.div 
-                  className="FilterData"
-                  initial={{
-                    scale: 0,
-                  }}
-                  animate={{
-                    scale: 1,
-                  }}
-                  >
-                    {events.Years.map((value) => {
-                      return (
-                        <>
-                          <div className="EventsYear">
-                            <h5
-                              onClick={() => {
-                                setEventFilter(value.year);
-                                setEventYearController(!eventYearController);
-                              }}
-                              style={{ cursor: "pointer" }}
-                            >
-                              {value.year}
-                            </h5>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </motion.div>
-                ) }
+                <AnimatePresence mode="wait">
+                  {eventYearController && (
+                    <motion.div
+                      className="FilterData"
+                      initial={{
+                        scale: 0,
+                      }}
+                      animate={{
+                        scale: 1,
+                      }}
+                      exit={{
+                        scale: 0,
+                      }}
+
+                      style={{
+                        transformOrigin: 'top'
+                      }}
+                    >
+                      {events.Years.map((value) => {
+                        return (
+                          <>
+                            <div className="EventsYear">
+                              <h5
+                                onClick={() => {
+                                  setEventFilter(value.year);
+                                  setEventYearController(!eventYearController);
+                                }}
+                                style={{ cursor: "pointer" }}
+                              >
+                                {value.year}
+                              </h5>
+                            </div>
+                          </>
+                        );
+                      })}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
             {events.Years.map((year, i) => {

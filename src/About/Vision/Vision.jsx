@@ -2,18 +2,32 @@ import React, { useEffect } from "react";
 import { Header, Navbar, Footer } from "../../Components";
 import "./Vision.css";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 export default function Vision() {
-  useEffect(()=>{
+  useEffect(() => {
     document.querySelector(".about-nav-link").classList.remove("dropdown-active-item")
-  },[])
- 
+  }, [])
+
   return (
     <>
-    <Helmet title="SGTBIMIT | Vision" />
+      <Helmet title="SGTBIMIT | Vision" />
       <Header />
       <Navbar />
-      <div className="Vision_Container">
+      <motion.div
+        initial={{
+          x: "-100vw",
+        }}
+        animate={{
+          x: 0,
+        }}
+        exit={{
+          x: '100vw',
+        }}
+        transition={{
+          duration: .25,
+        }}
+        className="Vision_Container">
         <h1>VISION AND MISSION</h1>
         <div className="Detail_ImageContainer">
           <div className="VisionDetail">
@@ -47,10 +61,10 @@ export default function Vision() {
             </ul>
           </div>
           <div className="VisionImage">
-          <img src={require("../../images/vm.jpg")} alt="" />
+            <img src={require("../../images/vm.jpg")} alt="" />
           </div>
         </div>
-      </div>
+      </motion.div>
       <Footer />
     </>
   );

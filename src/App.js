@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from './Home/Home.jsx'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import './styles.css'
 import AdminisCarousel from './About/GoverningBody/AdminisCarousel.jsx'
 import About from './About/About'
@@ -70,86 +70,88 @@ import CollaborationsAdd from './Pages/Collabrations/Collab_Add/Collab_Add.jsx'
 import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_Display.jsx'
 import ForgetPassword from './Login/ForgetPassword.jsx'
 import Notice_Display from './Pages/Notice/Notice_Display/Notice_Display.jsx'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
- 
+  const location = useLocation()
 
   return (
-    <Router>
-      <Routes>
-        <Route index element={<Home />}></Route>
-        <Route path="/about" element={<About />} />
-        <Route path='/about/governing-body' element={<AdminisCarousel />} />
-        <Route path="/about/vision-and-mission" element={<Vision />} />
-        <Route path="/director-readmore" element={<DirectorReadMore />} />
-        <Route path='/society/:id' element={<Society />} />
-        <Route path='/academics/faculty' element={<Faculty />} />
-        <Route path='/academics/e-resources' element={<EResources />} />
-        <Route path='/academics/examinations' element={<Examination />} />
-        <Route path='/admission/fees' element={<Fees />} />
-        <Route path='/academics/syllabus' element={<Syllabus />} />
-        <Route path='/admission/courses-eligibility' element={<Eligibility />} />
-        <Route path='/admission/notices' element={<Notice />} />
-        <Route path='/admission/notices/:id' element={<NoticePDF />} />
-        <Route path='/alumini/gallery' element={<Gallery />} />
-        <Route path='/academics/courses/bba' element={<Bba />} />
-        <Route path='/academics/courses/bbab&i' element={<BbaBI />} />
-        <Route path='/academics/courses/bca' element={<Bca />} />
-        <Route path='/academics/courses/bcom' element={<Bcom />} />
-        <Route path='/academics/prev-year-papers' element={<QuestionPaper />} />
-        <Route path='/academics/academic-calender' element={<AcademicCal />} />
-        <Route path='/academics/research' element={<Research />} />
-        <Route path='/alumini/alumini-meet' element={<AlumniMeet />} />
-        <Route path='/alumini/testimonials' element={<TestimonialsAL />} />
-        <Route path="/events/:id" element={<Events />} />
-        <Route path='/committees/:id' element={<CommitteePDF />}></Route>
-        <Route path='/alumini/registration' element={<Registration />} />
-        <Route path='/industry/placements' element={<Placements />} />
+      <AnimatePresence mode='wait'>
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />}></Route>
+          <Route path="/about" element={<About />} />
+          <Route path='/about/governing-body' element={<AdminisCarousel />} />
+          <Route path="/about/vision-and-mission" element={<Vision />} />
+          <Route path="/director-readmore" element={<DirectorReadMore />} />
+          <Route path='/society/:id' element={<Society />} />
+          <Route path='/academics/faculty' element={<Faculty />} />
+          <Route path='/academics/e-resources' element={<EResources />} />
+          <Route path='/academics/examinations' element={<Examination />} />
+          <Route path='/admission/fees' element={<Fees />} />
+          <Route path='/academics/syllabus' element={<Syllabus />} />
+          <Route path='/admission/courses-eligibility' element={<Eligibility />} />
+          <Route path='/admission/notices' element={<Notice />} />
+          <Route path='/admission/notices/:id' element={<NoticePDF />} />
+          <Route path='/alumini/gallery' element={<Gallery />} />
+          <Route path='/academics/courses/bba' element={<Bba />} />
+          <Route path='/academics/courses/bbab&i' element={<BbaBI />} />
+          <Route path='/academics/courses/bca' element={<Bca />} />
+          <Route path='/academics/courses/bcom' element={<Bcom />} />
+          <Route path='/academics/prev-year-papers' element={<QuestionPaper />} />
+          <Route path='/academics/academic-calender' element={<AcademicCal />} />
+          <Route path='/academics/research' element={<Research />} />
+          <Route path='/alumini/alumini-meet' element={<AlumniMeet />} />
+          <Route path='/alumini/testimonials' element={<TestimonialsAL />} />
+          <Route path="/events/:id" element={<Events />} />
+          <Route path='/committees/:id' element={<CommitteePDF />}></Route>
+          <Route path='/alumini/registration' element={<Registration />} />
+          <Route path='/industry/placements' element={<Placements />} />
 
-        {/* Admin Routes */}
+          {/* Admin Routes */}
 
-        <Route path='/login' element={<Login />} />
-        <Route path='/dashboard' element={<PrivateRouter />} >
-          <Route path='admin' element={<Dashboard />} />
-          <Route path='admin/Testimonials_Add' element={<Testimonials_ADD />} />
-          <Route path='admin/Testimonials_Display' element={<Testimonial_Display />} />
-          <Route path='admin/Testimonials_Update/:id' element={<Testimonial_Update />} />
-          <Route path='admin/Society_Add' element={<Society_Add />} />
-          <Route path='admin/Society_Display' element={<Society_Display />} />
-          <Route path='admin/Society_Update/:_id' element={<Society_Update />} />
-          <Route path='admin/Faculty_Add' element={<FacultyAdd />} />
-          <Route path='admin/Faculty_Display' element={<FacultyDisplay />} />
-          <Route path='admin/Faculty_Update/:_id' element={<FacultyUpdate />} />
-          <Route path='admin/Administration_Add' element={<AdministrationAdd />} />
-          <Route path='admin/Administration_Display' element={<AdministrationDisplay />} />
-          <Route path='admin/Administration_Update/:_id' element={<AdministrationUpdate />} />
-          <Route path='admin/Placement_Add' element={<PlacementAdd />} />
-          <Route path='admin/Placement_Display' element={<PlacementDisplay />} />
-          <Route path='admin/Placement_Update/:_id' element={<PlacementUpdate />} />
-          <Route path='admin/Recruiters_Add' element={<RecruitersAdd />} />
-          <Route path='admin/Recruiters_Display' element={<RecruitersDisplay />} />
-          <Route path='admin/Recruiters_Update/:_id' element={<RecruitersUpdate />} />
-          <Route path='admin/Collaborations_Add' element={<CollaborationsAdd />} />
-          <Route path='admin/Collaborations_Display' element={<CollaborationsDisplay />} />
-          <Route path='admin/EResources_Add' element={<EResourcesAdd />} />
-          <Route path='admin/EResources_Display' element={<EResourcesDisplay />} />
-          <Route path='admin/EResources_Update/:_id' element={<EResourcesUpdate />} />
-          <Route path='admin/Calender_Add' element={<CalenderAdd />} />
-          <Route path='admin/Calender_Display' element={<CalenderDisplay />} />
-          <Route path='admin/Calender_Update' element={<CalenderUpdate />} />
-          <Route path='admin/Prev_Year_Paper_Dislay' element={<QuestionPaperDisplay />} />
-          <Route path='admin/Prev_Year_Paper_Add' element={<QuestionPaperAdd />} />
-          <Route path='admin/Prev_Year_Paper_Update/:course/:Year/:Semester/:_id' element={<QuestionPaperUpdate />} />
-          <Route path='admin/Notice_Add' element={<NoticeAdd />} />
-          <Route path='admin/Notice_Display' element={<Notice_Display />} />
-        </Route>
-        <Route path='/admin/forgetPassword/:_id/:email/:status'element={<ForgetPassword/>} />
-        <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />
-        {/* <Route path='/admin/login' element={<Login />} /> */}
+          <Route path='/login' element={<Login />} />
+          <Route path='/dashboard' element={<PrivateRouter />} >
+            <Route path='admin' element={<Dashboard />} />
+            <Route path='admin/Testimonials_Add' element={<Testimonials_ADD />} />
+            <Route path='admin/Testimonials_Display' element={<Testimonial_Display />} />
+            <Route path='admin/Testimonials_Update/:id' element={<Testimonial_Update />} />
+            <Route path='admin/Society_Add' element={<Society_Add />} />
+            <Route path='admin/Society_Display' element={<Society_Display />} />
+            <Route path='admin/Society_Update/:_id' element={<Society_Update />} />
+            <Route path='admin/Faculty_Add' element={<FacultyAdd />} />
+            <Route path='admin/Faculty_Display' element={<FacultyDisplay />} />
+            <Route path='admin/Faculty_Update/:_id' element={<FacultyUpdate />} />
+            <Route path='admin/Administration_Add' element={<AdministrationAdd />} />
+            <Route path='admin/Administration_Display' element={<AdministrationDisplay />} />
+            <Route path='admin/Administration_Update/:_id' element={<AdministrationUpdate />} />
+            <Route path='admin/Placement_Add' element={<PlacementAdd />} />
+            <Route path='admin/Placement_Display' element={<PlacementDisplay />} />
+            <Route path='admin/Placement_Update/:_id' element={<PlacementUpdate />} />
+            <Route path='admin/Recruiters_Add' element={<RecruitersAdd />} />
+            <Route path='admin/Recruiters_Display' element={<RecruitersDisplay />} />
+            <Route path='admin/Recruiters_Update/:_id' element={<RecruitersUpdate />} />
+            <Route path='admin/Collaborations_Add' element={<CollaborationsAdd />} />
+            <Route path='admin/Collaborations_Display' element={<CollaborationsDisplay />} />
+            <Route path='admin/EResources_Add' element={<EResourcesAdd />} />
+            <Route path='admin/EResources_Display' element={<EResourcesDisplay />} />
+            <Route path='admin/EResources_Update/:_id' element={<EResourcesUpdate />} />
+            <Route path='admin/Calender_Add' element={<CalenderAdd />} />
+            <Route path='admin/Calender_Display' element={<CalenderDisplay />} />
+            <Route path='admin/Calender_Update' element={<CalenderUpdate />} />
+            <Route path='admin/Prev_Year_Paper_Dislay' element={<QuestionPaperDisplay />} />
+            <Route path='admin/Prev_Year_Paper_Add' element={<QuestionPaperAdd />} />
+            <Route path='admin/Prev_Year_Paper_Update/:course/:Year/:Semester/:_id' element={<QuestionPaperUpdate />} />
+            <Route path='admin/Notice_Add' element={<NoticeAdd />} />
+            <Route path='admin/Notice_Display' element={<Notice_Display />} />
+          </Route>
+          <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
+          <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />
+          {/* <Route path='/admin/login' element={<Login />} /> */}
 
 
-      </Routes>
-    </Router>
+        </Routes>
+      </AnimatePresence>
+
   );
 }
 

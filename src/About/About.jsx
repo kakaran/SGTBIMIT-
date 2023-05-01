@@ -4,13 +4,27 @@ import Navbar from '../Components/Navbar'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import { Helmet } from 'react-helmet'
+import { motion } from 'framer-motion'
 export default function About() {
     return (
-        <>
+        <main>
         <Helmet title="SGTBIMIT | About us" />
             <Header />
             <Navbar />
-            <section className='about'>
+            <motion.section
+            initial={{
+                x: "-100vw",
+              }}
+              animate={{
+                x: 0,
+              }}
+              exit={{
+                x: '100vw',
+              }}
+              transition={{
+                duration: .25,
+              }}
+            className='about'>
 
                 <div className='about-container'>
                     <div className='about-title'>
@@ -47,8 +61,8 @@ export default function About() {
                         Today, we have four U.G courses (BCA , BBA(G) & BBA(B&I), B.Com(H)) . At present, we have well educated teaching staff members & non-teaching staff in service.
                     </p>
                 </div>
-            </section>
+            </motion.section>
             <Footer />
-        </>
+        </main>
     )
 }

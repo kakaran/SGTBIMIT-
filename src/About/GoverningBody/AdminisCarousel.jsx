@@ -4,6 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import "./adminis.css";
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from "react-helmet";
+import { motion } from 'framer-motion'
 export default function AdminisCarousel() {
 
   const { data: adminisArray, isPending, error } = useFetch(`${process.env.REACT_APP_API_URL}/Administration/Administration_Display`)
@@ -14,15 +15,28 @@ export default function AdminisCarousel() {
       .classList.remove("dropdown-active-item");
   }, []);
 
-    const numAscending = adminisArray ? [...adminisArray].sort((a, b) => a.Index - b.Index) : adminisArray
+  const numAscending = adminisArray ? [...adminisArray].sort((a, b) => a.Index - b.Index) : adminisArray
   return (
     <>
-    <Helmet title="SGTBIMIT | Governing Body" />
+      <Helmet title="SGTBIMIT | Governing Body" />
       <Header></Header>
       <Navbar></Navbar>
-      <section className="adminis-section">
+      <motion.section
+        initial={{
+          x: "-100vw",
+        }}
+        animate={{
+          x: 0,
+        }}
+        exit={{
+          x: '100vw',
+        }}
+        transition={{
+          duration: .25,
+        }}
+        className="adminis-section">
         {isPending && <Loader />}
-        {error && <div className="error">{error}</div> }
+        {error && <div className="error">{error}</div>}
         <Carousel
           showThumbs={false}
           interval={4000}
@@ -50,8 +64,8 @@ export default function AdminisCarousel() {
               </div>
             ))}
         </Carousel>
-      </section>
-      <Footer></Footer>
+      </motion.section>
+      <Footer />
     </>
   );
 }

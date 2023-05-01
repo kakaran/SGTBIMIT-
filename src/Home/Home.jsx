@@ -13,41 +13,52 @@ import Admission from '../Components/Admission'
 import { Header, Navbar, Footer, Loader2 } from '../Components'
 import Committees from './Committees/Committees'
 import { Helmet } from 'react-helmet'
-
+import { motion } from 'framer-motion'
 export default function Home() {
 
   const [isPending, setIsPending] = useState(true)
   useEffect(() => {
-    setTimeout(() => {
       setIsPending(false)
-    }, 1000)
   }, [])
 
   return (
 
-    <>
+    <main>
       <Helmet title='SGTBIMIT | Home' />
+
+      <Header />
+      <Navbar />
       {isPending && <Loader2 />}
       {!isPending && (
-        <>
-          
-          <Header />
-          <Navbar />
-          <ImageCarousel />
-          <Welcome />
-          <Testimonials />
-          <DirectorMsg />
-          <Committees />
-          <Placementss />
-          <Collaboration />
-          <Recruiters />
-          <Map />
-          <Admission />
-          <Footer />
-        </>
+          <motion.section
+            initial={{
+              x: "-100vw",
+            }}
+            animate={{
+              x: 0,
+            }}
+            exit={{
+              x: '100vw',
+            }}
+            transition={{
+              duration: .25,
+            }}
+            >
+            <ImageCarousel />
+            <Welcome />
+            <Testimonials />
+            <DirectorMsg />
+            <Committees />
+            <Placementss />
+            <Collaboration />
+            <Recruiters />
+            <Map />
+            <Admission />
+            <Footer />
+          </motion.section>
       )
       }
-    </>
+    </main>
 
   )
 }

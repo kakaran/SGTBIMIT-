@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Header, Navbar, Footer } from '../../Components'
+import { Header, Navbar, Footer, Loader } from '../../Components'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FileData from "./FileDataa";
@@ -10,6 +10,8 @@ const QuestionPaperDisplay = () => {
   // const [render, setRender] = useState(0);
   // const [getSociety, setSociety] = useState([]);
   // const [dataReset, setDataReset] = useState(true);
+  const [isPending, setIsPending] = useState(false)
+
   const [getPaperFilter, setPaperfilter] = useState({
     course: "",
     Year: "",
@@ -35,12 +37,14 @@ const QuestionPaperDisplay = () => {
   const SinglePaperDisplay = async () => {
     try {
       // console.log(getPaperFilter);
+      setIsPending(true)
       const Detail = (
         await axios.get(
           `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
         )
       ).data;
       // console.log(Detail);
+      setIsPending(false)
 
       setPaperFilterData({
         course: Detail?.Data[0]?.course,
@@ -166,6 +170,7 @@ const QuestionPaperDisplay = () => {
           {getPaperFilterData.Semester ?
             (
               <div className="mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-10 my-4 col-span-2 w-full" >
+                {isPending && <Loader />}
                 <div className="flex flex-col gap-4 border-b-1 border-slate-400">
                   <div className="text-6xl my-bold">
                     {getPaperFilterData?.course}

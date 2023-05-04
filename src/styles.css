@@ -54,7 +54,9 @@ body,
 .my-md {
     font-family: "SF Pro Display-Medium";
 }
-
+.code{
+    font-family: monospace;
+}
 .block {
     position: absolute;
     width: 20px;

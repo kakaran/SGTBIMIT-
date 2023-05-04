@@ -50,7 +50,7 @@ const FileData = (props) => {
                   "_blank"
                 );
               }}
-              className="my-md rounded-md p-5 hover:shadow-md hover:bg-white cursor-pointer"
+              className="my-md rounded-md p-5 hover:shadow-md hover:bg-white cursor-pointer code"
             >
               {value.replace(".pdf", "")}
             </div>

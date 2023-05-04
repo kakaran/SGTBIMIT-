@@ -12,13 +12,13 @@ const AlumniMeet = () => {
             <Navbar></Navbar>
             <motion.section
                 initial={{
-                    x: "-100vw",
+                    x: "100vw",
                 }}
                 animate={{
                     x: 0,
                 }}
                 exit={{
-                    x: '100vw',
+                    x: '-100vw',
                 }}
                 transition={{
                     duration: .25,

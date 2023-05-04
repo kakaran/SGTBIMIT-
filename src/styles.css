@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 :root {
     --primary-clr: #243f56;
     --secondary-clr: #4fb291;
@@ -44,6 +46,13 @@ body,
     margin: 0;
     display: flex;
     flex-direction: column;
+}
+
+.my-bold {
+    font-family: "SF Pro Display-Bold";
+}
+.my-md {
+    font-family: "SF Pro Display-Medium";
 }
 
 .block {

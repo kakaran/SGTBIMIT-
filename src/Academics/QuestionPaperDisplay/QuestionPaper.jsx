@@ -87,106 +87,107 @@ const QuestionPaperDisplay = () => {
 
   return (
     <>
-    <Helmet title="SGTBIMIT | Previous Year Papers" />
-    <Header />
-    <Navbar />
-      <div className="SocietyDisplayContainer"
-      style={{
-        fontFamily: "SF Pro Display"
-      }}
+      <Helmet title="SGTBIMIT | Previous Year Papers" />
+      <Header />
+      <Navbar />
+      <div
+        className="question-section relative flex flex-col w-full"
       >
-        <div className="Testimonial_DetailContainer">
-          <div className="TesHeaderCard">
-            <div className="TesDisplayHeading">
-              <h1>PREVIOUS YEAR PAPERS</h1>
+        <div>
+          <h1 className="my-bold text-6xl text-center">Previous Year Papers</h1>
+        </div>
+        <div className="grid grid-cols-3 mx-auto gap-8 w-[95%]">
+          <div className="flex flex-col w-full text-4xl py-8 px-11 bg-slate-100 rounded-md shadow-xl mx-auto gap-11" >
+            <span className="flex flex-col gap-3">
+              <div className="my-bold">Course</div>
+              <select
+                name="course"
+                id=""
+                placeholder="course"
+                value={getPaperFilter.course}
+                onChange={(e) => {
+                  filterData(e.target.value);
+                  Onchagetesdetail(e);
+                }}
+                className="outline-none border-none py-2 px-4 text-slate-400 text-2xl"
+              >
+                <option value=" ">Select Course</option>
+                <option value="BCA">BCA</option>;
+                <option value="BBA">BBA</option>;
+                <option value="BBA B&I">BBA B&I</option>;
+                <option value="BCOM">BCOM</option>;
+              </select>
+            </span>
+            <span className="flex flex-col gap-4">
+              <div className="my-bold ">Year</div>
+              <select
+                name="Year"
+                id=""
+                placeholder="Year"
+                value={getPaperFilter.Year}
+                onChange={Onchagetesdetail}
+                className="outline-none border-none py-2 px-4 text-slate-400 text-2xl"
+              >
+                <option value=" ">Select Year</option>
+                {filter?.Years?.map((value) => {
+                  return <option value={value.year}>{value.year}</option>;
+                })}
+              </select>
+            </span>
+            <span className="flex flex-col gap-4">
+              <div className="my-bold">Semester</div>
+              <select
+                name="Semester"
+                id=""
+                placeholder="Semester"
+                onChange={Onchagetesdetail}
+                value={getPaperFilter.Semester}
+                className="outline-none border-none py-2 px-4 text-slate-400 text-2xl"
+              >
+                <option value=" ">Select Semester</option>
+                {filter?.Years?.map((value) => {
+                  if (value.year == getPaperFilter.Year) {
+                    return value.Semesters.map((value1) => {
+                      return (
+                        <option value={value1.Semester}>
+                          {value1.Semester}
+                        </option>
+                      );
+                    });
+                  }
+                })}
+              </select>
+            </span>
+            <div className="flex flex-col gap-4">
+              <button onClick={SinglePaperDisplay} className="rounded-xl bg-[#005e93] px-4 py-2 text-2xl text-white">Search</button>
+              <button onClick={ResetPaperData} className="rounded-xl bg-[#005e93] px-4 py-2 text-2xl text-white">Clear</button>
             </div>
-            <div className="filterContainer-f">
-              <span className="NameAndSelect-f">
-                <h4>Course</h4>
-                <select
-                  name="course"
-                  id=""
-                  placeholder="course"
-                  value={getPaperFilter.course}
-                  onChange={(e) => {
-                    filterData(e.target.value);
-                    Onchagetesdetail(e);
-                  }}
-                >
-                  <option value=" ">Select Course</option>
-                  <option value="BCA">BCA</option>;
-                  <option value="BBA">BBA</option>;
-                  <option value="BBA B&I">BBA B&I</option>;
-                  <option value="BCOM">BCOM</option>;
-                </select>
-              </span>
-              <span className="NameAndSelect-f">
-                <h4>Year</h4>
-                <select
-                  name="Year"
-                  id=""
-                  placeholder="Year"
-                  value={getPaperFilter.Year}
-                  onChange={Onchagetesdetail}
-                >
-                  <option value=" ">Select Year</option>
-                  {filter?.Years?.map((value) => {
-                    return <option value={value.year}>{value.year}</option>;
-                  })}
-                </select>
-              </span>
-              <span className="NameAndSelect-f">
-                <h4>Semester</h4>
-                <select
-                  name="Semester"
-                  id=""
-                  placeholder="Semester"
-                  onChange={Onchagetesdetail}
-                  value={getPaperFilter.Semester}
-                >
-                  <option value=" ">Select Semester</option>
-                  {filter?.Years?.map((value) => {
-                    if (value.year == getPaperFilter.Year) {
-                      return value.Semesters.map((value1) => {
-                        return (
-                          <option value={value1.Semester}>
-                            {value1.Semester}
-                          </option>
-                        );
-                      });
-                    }
-                  })}
-                </select>
-              </span>
-              <button onClick={SinglePaperDisplay} className="button-30-f">Search</button>
-              <button onClick={ResetPaperData} className="button-30-f">Clear</button>
-            </div>
-            {getPaperFilterData.Semester ?
-              (
-                <div className="TesDisplayCardContainer-f">
-                  <div className="Society_Card">
-                    <h3>
-                      {getPaperFilterData?.course}
-                    </h3>
-                    <div className="Society_Card_ImageDescription">
-                      {getPaperFilterData ? (
-                        <FileData
-                          course={getPaperFilterData?.course}
-                          Year={getPaperFilterData?.Year}
-                          Semester={getPaperFilterData?.Semester}
-                          _id={getPaperFilterData?._id}
-                        />
-                      ) : (
-                        "  "
-                      )}
-                      <div className="Society_Describe">
-                        <h4>{getPaperFilterData.Year}</h4>
-                        <h4> Semester : {getPaperFilterData?.Semester}</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>) : " "}
           </div>
+          {getPaperFilterData.Semester ?
+            (
+              <div className="mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-10 my-4 col-span-2 w-full" >
+                <div className="flex flex-col gap-4 border-b-1 border-slate-400">
+                  <div className="text-6xl my-bold">
+                    {getPaperFilterData?.course}
+                  </div>
+                  <div className="text-slate-400 text-2xl">
+                    <div>{getPaperFilterData.Year}</div>
+                    <div> {"Semester " + getPaperFilterData?.Semester}</div>
+                  </div>
+                </div>
+                <div>
+                  {getPaperFilterData ? (
+                    <FileData
+                      course={getPaperFilterData?.course}
+                      Year={getPaperFilterData?.Year}
+                      Semester={getPaperFilterData?.Semester}
+                      _id={getPaperFilterData?._id}
+                    />
+                  ) : (
+                    "  "
+                  )}
+                </div>
+              </div>) : " "}
         </div>
       </div>
       <Footer />

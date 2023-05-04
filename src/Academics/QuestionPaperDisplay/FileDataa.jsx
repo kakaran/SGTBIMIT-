@@ -22,47 +22,38 @@ const FileData = (props) => {
   };
 
   useEffect(() => {
-    if(getPaperName){
+    if (getPaperName) {
       paperDataRecover();
     }
-  }, [render,props]);
+  }, [render, props]);
 
 
 
   return (
-    <motion.div className="FileNames-f Paper_detail-f"
-    initial={{
-      opacity: 0,
-    }}
-    whileInView={{
-      opacity: 1,
-    }}
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      className="text-3xl grid grid-cols-1 gap-4 p-5 mt-5 rounded-xl bg-slate-50"
     >
       {getPaperName?.map((value, Index) => {
         return (
-          <div className="FileName">
-            <span
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: "30px",
+
+          <div>
+            <div
+              onClick={() => {
+                window.open(
+                  `/Prev_Year_Paper_PDF_Display/${props._id}/${Index}/${value}`,
+                  "_blank"
+                );
               }}
+              className="my-md rounded-md p-5 hover:shadow-md hover:bg-white cursor-pointer"
             >
-              <h4
-                style={{  
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  window.open(
-                    `/Prev_Year_Paper_PDF_Display/${props._id}/${Index}/${value}`,
-                    "_blank"
-                  );
-                }}
-              >
-                {value}
-              </h4>
-            </span>
+              {value.replace(".pdf", "")}
+            </div>
           </div>
         );
       })}

@@ -3,24 +3,15 @@ import { Carousel } from 'react-responsive-carousel'
 import { CustomArrow, CustomArrowNotActive } from '../Components/Carousel'
 import { motion } from 'framer-motion'
 import useFetch from '../useFetch'
+import _ from 'lodash'
 
 export default function Collaboration() {
   const { data: collabs, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Display`)
 
   
 
-  let collabsChunks = []
-  let i = 0
-  const count = 4
-  collabs && (
-
-    collabs.forEach(() => {
-      let res = collabs.slice(i, i + count)
-      if (res.length === 0) return
-      collabsChunks.push(res)
-      i = i + count
-    })
-  )
+  let collabsChunks = collabs ? _.chunk(collabs, 4) : []
+  
   const [currentS, setCurrentS] = useState(0)
   const handleSlideChange = (index) => {
     setCurrentS(index)

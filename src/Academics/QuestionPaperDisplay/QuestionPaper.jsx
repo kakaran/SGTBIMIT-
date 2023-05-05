@@ -11,7 +11,7 @@ const QuestionPaperDisplay = () => {
   // const [getSociety, setSociety] = useState([]);
   // const [dataReset, setDataReset] = useState(true);
   const [isPending, setIsPending] = useState(false)
-
+  const [firstRender, setFirstRender] = useState(false)
   const [getPaperFilter, setPaperfilter] = useState({
     course: "",
     Year: "",
@@ -37,14 +37,12 @@ const QuestionPaperDisplay = () => {
   const SinglePaperDisplay = async () => {
     try {
       // console.log(getPaperFilter);
-      setIsPending(true)
       const Detail = (
         await axios.get(
           `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
         )
       ).data;
       // console.log(Detail);
-      setIsPending(false)
 
       setPaperFilterData({
         course: Detail?.Data[0]?.course,
@@ -53,9 +51,11 @@ const QuestionPaperDisplay = () => {
         _id: Detail?.Data[0]?._id,
       });
 
+      setIsPending(false)
       // setDataReset(false);
     } catch (error) {
       console.log(error);
+      setIsPending(false)
     }
   };
 
@@ -100,7 +100,7 @@ const QuestionPaperDisplay = () => {
         <div>
           <h1 className="my-bold text-6xl text-center">Previous Year Papers</h1>
         </div>
-        <div className="grid grid-cols-3 mx-auto gap-8 w-[95%]">
+        <div className={`mx-auto gap-8 transition-all duration-500 ${firstRender ? "grid grid-cols-3 w-[95%]" : "w-[500px]"}`}>
           <div className="flex flex-col w-full text-4xl py-8 px-11 bg-slate-100 rounded-md shadow-xl mx-auto gap-11" >
             <span className="flex flex-col gap-3">
               <div className="my-bold">Course</div>
@@ -163,36 +163,44 @@ const QuestionPaperDisplay = () => {
               </select>
             </span>
             <div className="flex flex-col gap-4">
-              <button onClick={SinglePaperDisplay} className="rounded-xl bg-[#005e93] px-4 py-2 text-2xl text-white">Search</button>
+              <button onClick={() => {
+                setIsPending(true)
+                setFirstRender(true)
+                SinglePaperDisplay()
+              }} className="rounded-xl bg-[#005e93] px-4 py-2 text-2xl text-white">Search</button>
               <button onClick={ResetPaperData} className="rounded-xl bg-[#005e93] px-4 py-2 text-2xl text-white">Clear</button>
             </div>
           </div>
-          {getPaperFilterData.Semester ?
+          {getPaperFilterData.Semester &&
             (
-              <div className="mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-10 my-4 col-span-2 w-full" >
+              <>
                 {isPending && <Loader />}
-                <div className="flex flex-col gap-4 border-b-1 border-slate-400">
-                  <div className="text-6xl my-bold">
-                    {getPaperFilterData?.course}
+                {!isPending && (
+                  <div className="mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-10 my-4 col-span-2 w-full" >
+                    <div className="flex flex-col gap-4 border-b-1 border-slate-400">
+                      <div className="text-6xl my-bold">
+                        {getPaperFilterData?.course}
+                      </div>
+                      <div className="text-slate-400 text-2xl">
+                        <div>{getPaperFilterData.Year}</div>
+                        <div> {"Semester " + getPaperFilterData?.Semester}</div>
+                      </div>
+                    </div>
+                    <div>
+                      {getPaperFilterData && (
+                        <FileData
+                          course={getPaperFilterData?.course}
+                          Year={getPaperFilterData?.Year}
+                          Semester={getPaperFilterData?.Semester}
+                          _id={getPaperFilterData?._id}
+                        />
+                      )
+                      }
+                    </div>
                   </div>
-                  <div className="text-slate-400 text-2xl">
-                    <div>{getPaperFilterData.Year}</div>
-                    <div> {"Semester " + getPaperFilterData?.Semester}</div>
-                  </div>
-                </div>
-                <div>
-                  {getPaperFilterData ? (
-                    <FileData
-                      course={getPaperFilterData?.course}
-                      Year={getPaperFilterData?.Year}
-                      Semester={getPaperFilterData?.Semester}
-                      _id={getPaperFilterData?._id}
-                    />
-                  ) : (
-                    "  "
-                  )}
-                </div>
-              </div>) : " "}
+                )}
+              </>
+            ) }
         </div>
       </div>
       <Footer />

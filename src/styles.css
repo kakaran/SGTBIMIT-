@@ -66,6 +66,9 @@ body,
     background-color: var(--secondary-clr);
     z-index: 101;
 }
+.my-text-4{
+    font-size: min(4rem, 8vw);
+}
 
 .left-block {
     left: 0;

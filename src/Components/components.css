@@ -325,7 +325,7 @@ nav img {
   left: 0;
   background-color: var(--secondary-clr);
   width: max-content;
-  z-index: 10;
+  z-index: 11;
   padding-block: min(2rem, 2vh);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;

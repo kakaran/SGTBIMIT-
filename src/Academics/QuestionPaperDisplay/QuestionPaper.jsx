@@ -95,15 +95,20 @@ const QuestionPaperDisplay = () => {
       <Header />
       <Navbar />
       <div
-        className="question-section relative flex flex-col w-full"
+        className="relative flex flex-col w-full"
       >
+        <div className="gradient-bg"></div>
         <div>
-          <h1 className="my-bold text-6xl text-center">Previous Year Papers</h1>
+          <h1 className="my-bold text-center bg-clip-text text-transparent my-text-4"
+            style={{ backgroundImage: "linear-gradient(to right, #2563eb, #0891b2)", }}
+          >Previous Year Papers</h1>
         </div>
-        <div className={`mx-auto gap-8 transition-all duration-500 ${firstRender ? "grid grid-cols-3 w-[95%]" : "w-[500px]"}`}>
-          <div className="flex flex-col w-full text-4xl py-8 px-11 bg-slate-100 rounded-md shadow-xl mx-auto gap-11" >
+        <div className={`mx-auto gap-8 transition-all duration-500 z-10 ${firstRender ? "grid grid-cols-4 w-[95%]" : "w-[500px]"}`}>
+          <div className="flex flex-col w-full h-max text-4xl py-8 px-11 bg-slate-100 rounded-md shadow-xl mx-auto gap-11" >
             <span className="flex flex-col gap-3">
-              <div className="my-bold">Course</div>
+              <div className={`my-bold ${firstRender && 'bg-clip-text text-transparent'}`}
+              style={{ backgroundImage: firstRender && "linear-gradient(to right, #2563eb, #0891b2)", }}
+              >Course</div>
               <select
                 name="course"
                 id=""
@@ -123,7 +128,8 @@ const QuestionPaperDisplay = () => {
               </select>
             </span>
             <span className="flex flex-col gap-4">
-              <div className="my-bold ">Year</div>
+              <div className={`my-bold ${firstRender && 'bg-clip-text text-transparent'}`}
+              style={{ backgroundImage: firstRender && "linear-gradient(to right, #2563eb, #0891b2)", }}>Year</div>
               <select
                 name="Year"
                 id=""
@@ -139,7 +145,8 @@ const QuestionPaperDisplay = () => {
               </select>
             </span>
             <span className="flex flex-col gap-4">
-              <div className="my-bold">Semester</div>
+              <div className={`my-bold ${firstRender && 'bg-clip-text text-transparent'}`}
+              style={{ backgroundImage: firstRender && "linear-gradient(to right, #2563eb, #0891b2)", }}>Semester</div>
               <select
                 name="Semester"
                 id=""
@@ -162,13 +169,22 @@ const QuestionPaperDisplay = () => {
                 })}
               </select>
             </span>
-            <div className="flex flex-col gap-4">
+            <div className="flex justify-center gap-4">
               <button onClick={() => {
                 setIsPending(true)
                 setFirstRender(true)
                 SinglePaperDisplay()
-              }} className="rounded-xl bg-[#005e93] px-4 py-2 text-2xl text-white">Search</button>
-              <button onClick={ResetPaperData} className="rounded-xl bg-[#005e93] px-4 py-2 text-2xl text-white">Clear</button>
+              }} className="rounded-xl px-4 py-2 text-2xl text-transparent bg-clip-text my-bold"
+                style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}
+              >
+                Search
+              </button>
+              <button onClick={ResetPaperData} className="rounded-xl px-4 py-2 text-2xl text-transparent bg-clip-text my-bold"
+                style={{
+                  backgroundImage: "linear-gradient(to right, #4ade80, #22c55e)",
+                }}>
+                Clear
+              </button>
             </div>
           </div>
           {getPaperFilterData.Semester &&
@@ -176,9 +192,11 @@ const QuestionPaperDisplay = () => {
               <>
                 {isPending && <Loader />}
                 {!isPending && (
-                  <div className="mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-10 my-4 col-span-2 w-full" >
+                  <div className="mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-10 my-4 col-span-3 w-full" >
                     <div className="flex flex-col gap-4 border-b-1 border-slate-400">
-                      <div className="text-6xl my-bold">
+                      <div className="text-6xl my-bold bg-clip-text text-transparent"
+                      style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}
+                      >
                         {getPaperFilterData?.course}
                       </div>
                       <div className="text-slate-400 text-2xl">
@@ -200,7 +218,7 @@ const QuestionPaperDisplay = () => {
                   </div>
                 )}
               </>
-            ) }
+            )}
         </div>
       </div>
       <Footer />

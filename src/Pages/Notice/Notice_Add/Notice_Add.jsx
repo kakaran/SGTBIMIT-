@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
 import "../../Society/Society_Add/Society_Add.css";
-import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
+// import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
 import imageCompression from 'browser-image-compression';
 import { Helmet } from "react-helmet";

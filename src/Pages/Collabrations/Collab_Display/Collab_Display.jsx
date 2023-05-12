@@ -102,7 +102,7 @@ const CollaborationsDisplay = () => {
                             CollabsDelete(value?._id);
                           }}
                           style={{ color: "#d00000" }}
-                        />aaaaaaaaaaaaaaaaaaaaaaaaa
+                        />
                       </span>
                     </Card>
                   </div>

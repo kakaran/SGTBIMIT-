@@ -8,6 +8,9 @@ const AdminMenu = () => {
   const [isHomeActive, setIsHomeActive] = useState(false);
   const [isSUBTestimonialActive, setIsSUBTestimonialActive] = useState(false);
   const [isSUBSocietyActive, setIsSUBSocietyActive] = useState(false);
+  const [isSUBEventsActive, setIsSUBEventsActive] = useState(false);
+  const [isSUBEgallaryActive, setIsSUBEgallaryActive] = useState(false);
+  const [isSUBEhandlerActive, setIsSUBEhandlerActive] = useState(false);
   const [isSUBFacultyActive, setIsSUBFacultyActive] = useState(false);
   const [isSUBPlacementActive, setIsSUBPlacementActive] = useState(false);
   const [isSUBRecruitersActive, setIsSUBRecruitersActive] = useState(false);
@@ -15,7 +18,14 @@ const AdminMenu = () => {
   const [isSUBAdministrationActive, setIsSUBAdministrationActive] =
     useState(false);
   const [isSUBAdmissionActive, setIsSUBAdmissionActive] = useState(false);
+  const [isSUBAgallaryActive, setIsSUBAgallaryActive] = useState(false);
+  const [isSUBRegistrationActive, setIsSUBRegistrationActive] = useState(false);
+  const [isSUBAtestimonialsActive, setIsSUBAtestimonialsActive] = useState(false);
+  const [isSUBStarsActive, setIsSUBStarsActive] = useState(false);
   const [isAboutActive, setIsAboutActive] = useState(false);
+  const [isAlumniActive, setIsAlumniActive] = useState(false);
+  const [isInterfaceActive, setIsInterfaceActive] = useState(false);
+  const [isSocietiesActive, setIsSocietiesActive] = useState(false);
   const [isAcademicsActive, setIsAcademicsActive] = useState(false);
   const [isSUBEresourcesActive, setIsSUBEresourcesActive] = useState(false);
   const [isQuestionPaperActive, setIsQuestionPaperActive] = useState(false);
@@ -85,7 +95,7 @@ const AdminMenu = () => {
                     </span>
                   </div>
                 )}
-                
+
                 <p
                   onClick={() => {
                     setIsSUBFacultyActive(!isSUBFacultyActive);
@@ -175,7 +185,7 @@ const AdminMenu = () => {
                       >
                         COLLABORATIONS DISPLAY
                       </p>
-                      </span>
+                    </span>
                   </div>
                 )}
 
@@ -263,46 +273,148 @@ const AdminMenu = () => {
             </div>
           )}
         </div>
+
         <div className="Categories">
           <span
             className="categories_Header"
             onClick={() => {
-              setIsSUBSocietyActive(!isSUBSocietyActive);
+              setIsSocietiesActive(!isSocietiesActive);
             }}
           >
             <span>
               <ImBoxAdd className="CatHeadIcons" />
-              <h3>SOCIETY</h3>
+              <h3>SOCITIES AND CLUBS</h3>
             </span>
             <IoIosArrowDown className="CatHeadIcons" />
           </span>
-          {isSUBSocietyActive && (
+          {isSocietiesActive && (
             <div className="Categoriesdropdown">
               <span>
                 <p
                   onClick={() => {
-                    navigate("/dashboard/admin/Society_Add");
+                    setIsSUBSocietyActive(!isSUBSocietyActive);
                   }}
                   style={{
                     backgroundColor: "#e0e1dd",
                   }}
                 >
-                  SOCIETY ADD
+                  SOCIETIES <IoIosArrowDown className="CatHeadIcons" />
                 </p>
+                {isSUBSocietyActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Add");
+                        }}
+                      >
+                        SOCIETY ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Display");
+                        }}
+                      >
+                        SOCIETY DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
                 <p
                   onClick={() => {
-                    navigate("/dashboard/admin/Society_Display");
+                    setIsSUBEventsActive(!isSUBEventsActive);
                   }}
                   style={{
                     backgroundColor: "#e0e1dd",
                   }}
                 >
-                  SOCIETY DISPLAY
+                  EVENTS <IoIosArrowDown className="CatHeadIcons" />
                 </p>
+                {isSUBEventsActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Add");
+                        }}
+                      >
+                        EVENTS ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Display");
+                        }}
+                      >
+                        EVENTS DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+                <p
+                  onClick={() => {
+                    setIsSUBEgallaryActive(!isSUBEgallaryActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  EVENTS GALLARY <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBEgallaryActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Add");
+                        }}
+                      >
+                        EVENTS GALLARY ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Display");
+                        }}
+                      >
+                        EVENTS GALLARY DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+                <p
+                  onClick={() => {
+                    setIsSUBEhandlerActive(!isSUBEhandlerActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  EVENT HANDLER <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBEhandlerActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Add");
+                        }}
+                      >
+                        EVENT HANDLER ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Society_Display");
+                        }}
+                      >
+                        EVENT HANDLER DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
               </span>
             </div>
           )}
         </div>
+
         <div className="Categories">
           <span
             className="categories_Header"
@@ -413,6 +525,7 @@ const AdminMenu = () => {
             </div>
           )}
         </div>
+
         <div className="Categories">
           <span
             className="categories_Header"
@@ -449,6 +562,168 @@ const AdminMenu = () => {
                 >
                   NOTICE DISPLAY
                 </p>
+              </span>
+            </div>
+          )}
+        </div>
+
+        <div className="Categories">
+          <span
+            className="categories_Header"
+            onClick={() => {
+              setIsAlumniActive(!isAlumniActive);
+            }}
+          >
+            <span>
+              <ImBoxAdd className="CatHeadIcons" />
+              <h3>ALUMNI</h3>
+            </span>
+            <IoIosArrowDown className="CatHeadIcons" />
+          </span>
+          {isAlumniActive && (
+            <div className="Categoriesdropdown">
+              <span>
+                <p
+                  onClick={() => {
+                    setIsSUBAtestimonialsActive(!isSUBAtestimonialsActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  TESTIMONIALS <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBAtestimonialsActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Testimonial_Add");
+                        }}
+                      >
+                        TESTIMONIALS ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Testimonial_Display");
+                        }}
+                      >
+                        TESTIMONIALS DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+                <p
+                  onClick={() => {
+                    setIsSUBAgallaryActive(!isSUBAgallaryActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  GALLARY <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBAgallaryActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Prev_Year_Paper_Add");
+                        }}
+                      >
+                        GALLARY ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Prev_Year_Paper_Dislay");
+                        }}
+                      >
+                        GALLARY DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+                <p
+                  onClick={() => {
+                    setIsSUBRegistrationActive(!isSUBRegistrationActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  REGISTRATION <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBRegistrationActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Calender_Add");
+                        }}
+                      >
+                        REGISTRATION ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Calender_Display");
+                        }}
+                      >
+                        REGISTRATION DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+              </span>
+            </div>
+          )}
+        </div>
+
+        <div className="Categories">
+          <span
+            className="categories_Header"
+            onClick={() => {
+              setIsInterfaceActive(!isInterfaceActive);
+            }}
+          >
+            <span>
+              <ImBoxAdd className="CatHeadIcons" />
+              <h3>INDUSTRY INTERFACE</h3>
+            </span>
+            <IoIosArrowDown className="CatHeadIcons" />
+          </span>
+          {isInterfaceActive && (
+            <div className="Categoriesdropdown">
+              <span>
+                <p
+                  onClick={() => {
+                    setIsSUBStarsActive(!isSUBStarsActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  FEATURED STARS <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBStarsActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/EResources_Add");
+                        }}
+                      >
+                        STARS ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/EResources_Display");
+                        }}
+                      >
+                        STARS DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
               </span>
             </div>
           )}

@@ -189,7 +189,7 @@ const QuestionPaperDisplay = () => {
                           }}
                           onClick={() => {
                             navigator(
-                              `/admin/Society_Update/${getPaperFilterData?._id}`
+                              `/admin/Question_Paper_Update_Update/${getPaperFilterData?._id}`
                             );
                           }}
                         />

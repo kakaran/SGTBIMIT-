@@ -45,7 +45,7 @@ import AdministrationDisplay from './Pages/Administration/Administration_Display
 import AdministrationUpdate from "./Pages/Administration/Administration_Update/AdministrationUpdate.jsx"
 import Testimonials_ADD from './Pages/Testimonials/Testimonials_ADD/Testimonials_ADD.jsx'
 import Testimonial_Display from './Pages/Testimonials/Testimonials_Display/Testimonial_Display.jsx'
-import Society_Add from "../src/Pages/Society/Society_Add/Society_Add"
+import Society_Add from "./Pages/Society/Society_Add/Society_Add.jsx"
 import Society_Display from './Pages/Society/Society_Display/Society_Display.jsx'
 import PlacementDisplay from './Pages/Placement and Internship/Placement_Display/Placement_Display.jsx'
 import PlacementUpdate from './Pages/Placement and Internship/Placement_Update/Placement_Update.jsx'
@@ -71,6 +71,9 @@ import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_D
 import ForgetPassword from './Login/ForgetPassword.jsx'
 import Notice_Display from './Pages/Notice/Notice_Display/Notice_Display.jsx'
 import { AnimatePresence } from 'framer-motion'
+import AlumniTesti_Add from './Pages/Alumni/Testimonials/Testi_Add/Testi_Add.jsx'
+import AlumniTesti_Display from './Pages/Alumni/Testimonials/Testi_Display/Testi_Display.jsx'
+import AlumniTesti_Update from './Pages/Alumni/Testimonials/Testi_Update/Testi_Update.jsx'
 
 function App() {
   const location = useLocation()
@@ -143,6 +146,9 @@ function App() {
             <Route path='admin/Prev_Year_Paper_Update/:course/:Year/:Semester/:_id' element={<QuestionPaperUpdate />} />
             <Route path='admin/Notice_Add' element={<NoticeAdd />} />
             <Route path='admin/Notice_Display' element={<Notice_Display />} />
+            <Route path='admin/Testimonial_Add' element={<AlumniTesti_Add />} />
+            <Route path='admin/Testimonial_Display' element={<AlumniTesti_Display />} />
+            {/* <Route path='admin/Testimonial_Update/:id' element={<AlumniTesti_Update />} /> */}
           </Route>
           <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
           <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />

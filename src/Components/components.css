@@ -439,14 +439,13 @@ footer {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  width: min(1000px, 100%);
+  width: min(800px, 100%);
   justify-content: center;
   padding: min(4rem, 4vw);
-  gap: min(4rem, 4vw);
 }
 
 .footer-grid img {
-  width: min(75px, 10vw);
+  width: min(50px, 10vw);
   margin-inline: auto;
   cursor: pointer;
 }

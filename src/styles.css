@@ -1,5 +1,5 @@
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap');
 :root {
     --primary-clr: #243f56;
     --secondary-clr: #4fb291;
@@ -26,8 +26,6 @@
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: "SF Pro Display", sans-serif;
 }

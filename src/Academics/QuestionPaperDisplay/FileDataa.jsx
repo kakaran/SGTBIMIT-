@@ -37,7 +37,7 @@ const FileData = (props) => {
       whileInView={{
         opacity: 1,
       }}
-      className="text-3xl grid grid-cols-1 gap-4 p-5 mt-5 rounded-xl bg-slate-50"
+      className="text-3xl grid grid-cols-1 gap-4 mt-5 rounded-xl bg-slate-50"
     >
       {getPaperName?.map((value, Index) => {
         return (
@@ -50,7 +50,7 @@ const FileData = (props) => {
                   "_blank"
                 );
               }}
-              className="my-md rounded-md p-5 hover:shadow-md hover:bg-white cursor-pointer code"
+              className="my-md rounded-md p-5 hover:shadow-md hover:bg-white cursor-pointer code text-[min(2rem,4vw)]"
             >
               {value.replace(".pdf", "")}
             </div>

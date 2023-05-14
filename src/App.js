@@ -35,18 +35,18 @@ import QuestionPaper from './Academics/QuestionPaperDisplay/QuestionPaper.jsx'
 
 
 import Dashboard from './Login/Dashboard.jsx'
-import Testimonial_Update from './Pages/Testimonials/Testimonial_Update/Testimonial_Update.jsx'
-import Society_Update from './Pages/Society/Society_Update/Society_Update.jsx'
+import TestimonialUpdate from './Pages/Testimonials/Testimonial_Update/Testimonial_Update.jsx'
+import SocietyUpdate from './Pages/Society/Society_Update/Society_Update.jsx'
 import FacultyAdd from './Pages/Faculty/Faculty_Add/FacultyAdd.jsx'
 import FacultyDisplay from './Pages/Faculty/Faculty_Display/FacultyDisplay.jsx'
 import FacultyUpdate from './Pages/Faculty/Faculty_Update/FacultyUpdate.jsx'
 import AdministrationAdd from './Pages/Administration/Administration_Add/AdministrationAdd.jsx'
 import AdministrationDisplay from './Pages/Administration/Administration_Display/AdministrationDisplay.jsx'
 import AdministrationUpdate from "./Pages/Administration/Administration_Update/AdministrationUpdate.jsx"
-import Testimonials_ADD from './Pages/Testimonials/Testimonials_ADD/Testimonials_ADD.jsx'
-import Testimonial_Display from './Pages/Testimonials/Testimonials_Display/Testimonial_Display.jsx'
-import Society_Add from "./Pages/Society/Society_Add/Society_Add.jsx"
-import Society_Display from './Pages/Society/Society_Display/Society_Display.jsx'
+import TestimonialsADD from './Pages/Testimonials/Testimonials_ADD/Testimonials_ADD.jsx'
+import TestimonialDisplay from './Pages/Testimonials/Testimonials_Display/Testimonial_Display.jsx'
+import SocietyAdd from "./Pages/Society/Society_Add/Society_Add.jsx"
+import SocietyDisplay from './Pages/Society/Society_Display/Society_Display.jsx'
 import PlacementDisplay from './Pages/Placement and Internship/Placement_Display/Placement_Display.jsx'
 import PlacementUpdate from './Pages/Placement and Internship/Placement_Update/Placement_Update.jsx'
 import PlacementAdd from './Pages/Placement and Internship/Placement_Add/Placement_Add.jsx'
@@ -69,11 +69,17 @@ import NoticeAdd from './Pages/Notice/Notice_Add/Notice_Add.jsx'
 import CollaborationsAdd from './Pages/Collabrations/Collab_Add/Collab_Add.jsx'
 import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_Display.jsx'
 import ForgetPassword from './Login/ForgetPassword.jsx'
-import Notice_Display from './Pages/Notice/Notice_Display/Notice_Display.jsx'
+import NoticeDisplay from './Pages/Notice/Notice_Display/Notice_Display.jsx'
 import { AnimatePresence } from 'framer-motion'
-import AlumniTesti_Add from './Pages/Alumni/Testimonials/Testi_Add/Testi_Add.jsx'
-import AlumniTesti_Display from './Pages/Alumni/Testimonials/Testi_Display/Testi_Display.jsx'
-import AlumniTesti_Update from './Pages/Alumni/Testimonials/Testi_Update/Testi_Update.jsx'
+import AlumniTestiAdd from './Pages/Alumni/Testimonials/Testi_Add/Testi_Add.jsx'
+import AlumniTestiDisplay from './Pages/Alumni/Testimonials/Testi_Display/Testi_Display.jsx'
+import AlumniTestiUpdate from './Pages/Alumni/Testimonials/Testi_Update/Testi_Update.jsx'
+import StarsAdd from './Pages/Industry Interface/Featured Stars/Star_Add/Star_Add.jsx'
+import StarsDisplay from './Pages/Industry Interface/Featured Stars/Star_Display/Star_Display.jsx'
+import StarsUpdate from './Pages/Industry Interface/Featured Stars/Star_Update/Star_Update.jsx'
+import RegistrationAdd from './Pages/Alumni/Registration/Registration_Add/Registration_Add.jsx'
+import RegistrationDisplay from './Pages/Alumni/Registration/Registration_Display/Registration_Display.jsx'
+
 
 function App() {
   const location = useLocation()
@@ -115,12 +121,12 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/dashboard' element={<PrivateRouter />} >
             <Route path='admin' element={<Dashboard />} />
-            <Route path='admin/Testimonials_Add' element={<Testimonials_ADD />} />
-            <Route path='admin/Testimonials_Display' element={<Testimonial_Display />} />
-            <Route path='admin/Testimonials_Update/:id' element={<Testimonial_Update />} />
-            <Route path='admin/Society_Add' element={<Society_Add />} />
-            <Route path='admin/Society_Display' element={<Society_Display />} />
-            <Route path='admin/Society_Update/:_id' element={<Society_Update />} />
+            <Route path='admin/Testimonials_Add' element={<TestimonialsADD />} />
+            <Route path='admin/Testimonials_Display' element={<TestimonialDisplay />} />
+            <Route path='admin/Testimonials_Update/:id' element={<TestimonialUpdate />} />
+            <Route path='admin/Society_Add' element={<SocietyAdd />} />
+            <Route path='admin/Society_Display' element={<SocietyDisplay />} />
+            <Route path='admin/Society_Update/:_id' element={<SocietyUpdate />} />
             <Route path='admin/Faculty_Add' element={<FacultyAdd />} />
             <Route path='admin/Faculty_Display' element={<FacultyDisplay />} />
             <Route path='admin/Faculty_Update/:_id' element={<FacultyUpdate />} />
@@ -145,10 +151,15 @@ function App() {
             <Route path='admin/Prev_Year_Paper_Add' element={<QuestionPaperAdd />} />
             <Route path='admin/Prev_Year_Paper_Update/:course/:Year/:Semester/:_id' element={<QuestionPaperUpdate />} />
             <Route path='admin/Notice_Add' element={<NoticeAdd />} />
-            <Route path='admin/Notice_Display' element={<Notice_Display />} />
-            <Route path='admin/Testimonial_Add' element={<AlumniTesti_Add />} />
-            <Route path='admin/Testimonial_Display' element={<AlumniTesti_Display />} />
-            {/* <Route path='admin/Testimonial_Update/:id' element={<AlumniTesti_Update />} /> */}
+            <Route path='admin/Notice_Display' element={<NoticeDisplay />} />
+            <Route path='admin/Testimonial_Add' element={<AlumniTestiAdd />} />
+            <Route path='admin/Testimonial_Display' element={<AlumniTestiDisplay />} />
+            <Route path='admin/Testimonial_Update/:id' element={<AlumniTestiUpdate />} />
+            <Route path='admin/PlacementFeature_Add' element={<StarsAdd />} />
+            <Route path='admin/PlacementFeature_Display' element={<StarsDisplay />} />
+            <Route path='admin/PlacementFeature_Update/:id' element={<StarsUpdate />} />
+            <Route path='admin/Registration_Add' element={<RegistrationAdd />} />
+            <Route path='admin/Registration_Display' element={<RegistrationDisplay />} />
           </Route>
           <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
           <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />

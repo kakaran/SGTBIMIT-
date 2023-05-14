@@ -658,14 +658,14 @@ const AdminMenu = () => {
                     <span>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Calender_Add");
+                          navigate("/dashboard/admin/Registration_Add");
                         }}
                       >
                         REGISTRATION ADD
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Calender_Display");
+                          navigate("/dashboard/admin/Registration_Display");
                         }}
                       >
                         REGISTRATION DISPLAY
@@ -709,14 +709,14 @@ const AdminMenu = () => {
                     <span>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/EResources_Add");
+                          navigate("/dashboard/admin/PlacementFeature_Add");
                         }}
                       >
                         STARS ADD
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/EResources_Display");
+                          navigate("/dashboard/admin/PlacementFeature_Display");
                         }}
                       >
                         STARS DISPLAY

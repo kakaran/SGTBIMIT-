@@ -86,7 +86,7 @@ const EResourcesDisplay = () => {
                               key="edit"
                               onClick={() => {
                                 navigator(
-                                  `/admin/EResources_Update/${value._id}`
+                                  `/dashboard/admin/EResources_Update/${value._id}`
                                 );
                               }}
                             />,

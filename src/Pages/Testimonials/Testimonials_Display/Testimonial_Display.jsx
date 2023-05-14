@@ -86,7 +86,7 @@ const Testimonial_Display = () => {
                               key="edit"
                               onClick={() => {
                                 navigator(
-                                  `/admin/Testimonials_Update/${value._id}`
+                                  `/dashboard/admin/Testimonials_Update/${value._id}`
                                 );
                               }}
                             />,

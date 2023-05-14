@@ -140,7 +140,7 @@ function App() {
             <Route path='admin/EResources_Update/:_id' element={<EResourcesUpdate />} />
             <Route path='admin/Calender_Add' element={<CalenderAdd />} />
             <Route path='admin/Calender_Display' element={<CalenderDisplay />} />
-            <Route path='admin/Calender_Update' element={<CalenderUpdate />} />
+            <Route path='admin/Calender_Update/:id' element={<CalenderUpdate />} />
             <Route path='admin/Prev_Year_Paper_Dislay' element={<QuestionPaperDisplay />} />
             <Route path='admin/Prev_Year_Paper_Add' element={<QuestionPaperAdd />} />
             <Route path='admin/Prev_Year_Paper_Update/:course/:Year/:Semester/:_id' element={<QuestionPaperUpdate />} />

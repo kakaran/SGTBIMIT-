@@ -96,7 +96,7 @@ const PlacementDisplay = () => {
                             color: "#adb5bd",
                           }}
                           onClick={() => {
-                            navigator(`/admin/Placement_Update/${value._id}`);
+                            navigator(`/dashboard/admin/Placement_Update/${value._id}`);
                           }}
                         />
                         <RiDeleteBin6Line

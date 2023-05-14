@@ -74,7 +74,7 @@ const Society_Display = () => {
                             color: "#adb5bd",
                           }}
                           onClick={() => {
-                            navigator(`/admin/Society_Update/${value._id}`);
+                            navigator(`/dashboard/admin/Society_Update/${value._id}`);
                           }}
                         />
                         <RiDeleteBin6Line

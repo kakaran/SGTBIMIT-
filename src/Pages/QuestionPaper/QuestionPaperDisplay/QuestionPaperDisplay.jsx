@@ -189,7 +189,7 @@ const QuestionPaperDisplay = () => {
                           }}
                           onClick={() => {
                             navigator(
-                              `/admin/Question_Paper_Update_Update/${getPaperFilterData?._id}`
+                              `/dashboard/admin/Prev_Year_Paper_Update/${getPaperFilter?.course}/${getPaperFilter?.Year}/${getPaperFilter?.Semester}/${getPaperFilterData?._id}`
                             );
                           }}
                         />

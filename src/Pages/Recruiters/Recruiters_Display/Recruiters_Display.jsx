@@ -96,7 +96,7 @@ const RecruitersDisplay = () => {
                             color: "#adb5bd",
                           }}
                           onClick={() => {
-                            navigator(`/admin/recruiters_Update/${value._id}`);
+                            navigator(`/dashboard/admin/recruiters_Update/${value._id}`);
                           }}
                         />
                         <RiDeleteBin6Line

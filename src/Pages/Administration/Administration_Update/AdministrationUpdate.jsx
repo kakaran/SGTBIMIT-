@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
@@ -68,7 +69,7 @@ const Society_Update = () => {
     try {
       let formData = new FormData();
       let Imagefile = await compresFile()
-      formData.append("image", Imagefile, filedata.name);
+      filedata && formData.append("image", Imagefile, filedata.name);
       formData.append("name", GovernUpdate.name);
       formData.append("position", GovernUpdate.position);
       formData.append("shortNote", GovernUpdate.shortNote);

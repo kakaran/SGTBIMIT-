@@ -86,7 +86,7 @@ const CalenderDisplay = () => {
                               key="edit"
                               onClick={() => {
                                 navigator(
-                                  `/admin/CalendarUpdate/${value._id}`
+                                  `/dashboard/admin/Calender_Update/${value._id}`
                                 );
                               }}
                             />,

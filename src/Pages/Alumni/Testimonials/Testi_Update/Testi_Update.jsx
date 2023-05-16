@@ -134,7 +134,7 @@ const AlumniTesti_Update = () => {
                   />
                 ) : (
                   <img
-                    src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${_id}`}
+                    src={`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

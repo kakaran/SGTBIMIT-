@@ -20,7 +20,7 @@ const StarsDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacemetFeature_Display`)
+          await axios.get(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Display`)
         ).data;
         setStars(data);
         setRender(0);
@@ -35,7 +35,7 @@ const StarsDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${value}`}
+        src={`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${value}`}
         alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
@@ -87,7 +87,7 @@ const StarsDisplay = () => {
                         />
                       </div>
                       <span className="FacultyCardController">
-                        <BiEditAlt
+                        {/* <BiEditAlt
                           style={{
                             paddingRight: "10px",
                             borderRight: "1px solid #f0f0f0",
@@ -98,7 +98,7 @@ const StarsDisplay = () => {
                           onClick={() => {
                             navigator(`/dashboard/admin/Placement_Update/${value._id}`);
                           }}
-                        />
+                        /> */}
                         <RiDeleteBin6Line
                           className="TestBin"
                           onClick={() => {

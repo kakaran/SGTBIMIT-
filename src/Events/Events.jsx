@@ -109,7 +109,7 @@ export default function Events() {
                 </span>
                 <AnimatePresence mode="wait">
                   {eventYearController && (
-                    <motion.div
+                    <motion.div viewport={{ once: true }}
                       className="FilterData"
                       initial={{
                         scale: 0,

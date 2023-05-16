@@ -16,10 +16,12 @@ export default function CommitteePDF() {
             <Helmet>
                 <title>{filteredCommittee.name} </title>
             </Helmet>
-            <iframe
-                src={filteredCommittee.pdf}
+            <embed
+                src={`${filteredCommittee.pdf}#toolbar=0`}
+                type='application/pdf'
                 className='com-pdf'
                 title="com-pdf"
+                frameborder="0"
             />
         </>
     )

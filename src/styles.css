@@ -1,8 +1,9 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap');
+
 :root {
-    --primary-clr: #243f56;
-    --secondary-clr: #4fb291;
+    --primary-clr: #BF1717;
+    --secondary-clr: #A52E2E;
 }
 
 @font-face {
@@ -49,12 +50,15 @@ body,
 .my-bold {
     font-family: "SF Pro Display-Bold";
 }
+
 .my-md {
     font-family: "SF Pro Display-Medium";
 }
-.code{
+
+.code {
     font-family: monospace;
 }
+
 .block {
     position: absolute;
     width: 20px;
@@ -64,7 +68,8 @@ body,
     background-color: var(--secondary-clr);
     z-index: 101;
 }
-.my-text-4{
+
+.my-text-4 {
     font-size: min(4rem, 8vw);
 }
 

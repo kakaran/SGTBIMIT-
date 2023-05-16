@@ -8,9 +8,9 @@ const AlumniMeet = () => {
     return (
         <>
             <Helmet title='SGTBIMIT | Alumini Meet' />
-            <Header></Header>
-            <Navbar></Navbar>
-            <motion.section
+            <Header />
+            <Navbar />
+            <motion.section viewport={{ once: true }}
                 initial={{
                     x: "100vw",
                 }}
@@ -22,7 +22,7 @@ const AlumniMeet = () => {
                 }}
                 transition={{
                     duration: .25,
-                }}  
+                }}
                 className="alumini-meet-section"
             >
                 <div className='alumnimeet'>
@@ -61,7 +61,7 @@ const AlumniMeet = () => {
                         Various cultural, creative and fun activities had been planned for them. They thoroughly enjoyed performances which included Bharatnatyam, poetry, band performance. Danish Hilal, Delhi Gharana Sufi singer also captivated the audience with his melodious voice. Before they left they all also enjoyed a grand dinner. The convenor is thankful to Subham and Neha, pass-out of 2015, for their wonderful anchoring of the programme. A special thanks to all teachers-in-charge and their representatives for working on every minute detail meticulously and making it a roaring success. Our non-teaching staff has been very cooperative and they deserve appreciation. This programme would have not been possible without the guidance of the Principal and Mr. Shashi Shekhar Prasad Singh, Secretary, Staff Council. The convenor wishes to create a regular platform for continuous interaction between alumni and their alma mater, and promote ‘Satyawatian’ as a brand name in times to come. </p>
                 </div>
             </motion.section>
-            <Footer></Footer>
+            <Footer />
         </>
     )
 }

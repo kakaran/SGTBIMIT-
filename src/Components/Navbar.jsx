@@ -2,10 +2,9 @@ import React, { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import useFetch from '../useFetch'
 export default function Navbar() {
-  const { data: events, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
+  const { data: events } = useFetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
 
   const arrow = require("../images/down.png")
-  const { data: societies } = useFetch(`${process.env.REACT_APP_API_URL}/Society/Society_Display`)
 
   const myRef = useRef(null)
   useEffect(() => {
@@ -173,7 +172,7 @@ export default function Navbar() {
           <div className="dropdown" data-index="6">
             {events && events.map((event, i) => (
               <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
-                <div className="dropdown-item" style={{textTransform: "uppercase"}}> {event.name} </div>
+                <div className="dropdown-item" style={{ textTransform: "uppercase" }}> {event.name} </div>
               </NavLink>
             ))}
           </div>

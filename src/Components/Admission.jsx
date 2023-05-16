@@ -32,7 +32,7 @@ export default function Admission() {
         Email: admissionFormDetail.Email,
         PNumber : admissionFormDetail.PNumber,
         Course : admissionFormDetail.Course})).data
-        if(data.status == "success"){
+        if(data.status === "success"){
             toast.success(`${data.message}`, {
                 position: "top-center",
                 autoClose: 5000,

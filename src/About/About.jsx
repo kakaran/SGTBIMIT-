@@ -8,23 +8,23 @@ import { motion } from 'framer-motion'
 export default function About() {
     return (
         <main>
-        <Helmet title="SGTBIMIT | About us" />
+            <Helmet title="SGTBIMIT | About us" />
             <Header />
             <Navbar />
-            <motion.section
-            initial={{
-                x: "100vw",
-              }}
-              animate={{
-                x: 0,
-              }}
-              exit={{
-                x: '-100vw',
-              }}
-              transition={{
-                duration: .25,
-              }}
-            className='about'>
+            <motion.section viewport={{ once: true }}
+                initial={{
+                    x: "100vw",
+                }}
+                animate={{
+                    x: 0,
+                }}
+                exit={{
+                    x: '-100vw',
+                }}
+                transition={{
+                    duration: .25,
+                }}
+                className='about'>
 
                 <div className='about-container'>
                     <div className='about-title'>

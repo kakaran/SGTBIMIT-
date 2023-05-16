@@ -7,7 +7,7 @@ export default function Welcome() {
   return (
     <section className="welcome"
     >
-      <motion.div className="welcome-img"
+      <motion.div viewport={{ once: true }} className="welcome-img"
         initial={{
           scale: 0
         }}
@@ -22,7 +22,7 @@ export default function Welcome() {
         <img src={require("../images/gtbji.png")} alt="" />
       </motion.div>
       <div className='welcome-text'>
-        <motion.h1
+        <motion.h1 viewport={{ once: true }}
           initial={{
             x: 400
           }}
@@ -34,9 +34,9 @@ export default function Welcome() {
             type: 'spring'
           }}
         >
-          Welcome to SGTBIMIT
+          Welcome to  <span className='my-bold bg-clip-text text-transparent' style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}>SGTBIMIT</span>
         </motion.h1>
-        <motion.p
+        <motion.p viewport={{ once: true }}
           initial={{
             x: -400
           }}
@@ -50,7 +50,7 @@ export default function Welcome() {
           SGTBIMIT ascertains, preserves and disseminates knowledge. Since the establishment of SGTBIMIT in 2008, it has aimed to promote excellence in professional education and inspire research and extension work in the emerging areas of higher education in Management, Banking, Insurance and Information Technology. "A" degree level institute, approved by Directorate of Higher Education (Govt of NCT of Delhi) certified by ISO 9001:2015 and affiliated to Guru Gobind Singh Indraprastha University, Delhi. Located in the heart of the city, adjoining Gurudwara Nanak Piao, hardly 1 km away from North Campus (DU) and Model town Metro Station. Ever since its inception, SGTBIMIT has consistently shaped students who have outshined in academics and professional endeavors.
 
         </motion.p>
-        <motion.button
+        <motion.button viewport={{ once: true }}
           className="develop-skills-btn"
           type="button"
           initial={{

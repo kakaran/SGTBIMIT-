@@ -9,7 +9,7 @@ export default function Testimonials() {
     return (
 
         <section className="test-section">
-            <motion.h1
+            <motion.h1 viewport={{ once: true }}
                 className='t-heading'
                 initial={{
                     x: 400
@@ -25,17 +25,17 @@ export default function Testimonials() {
                 WHAT STUDENTS SAY ABOUT US
             </motion.h1>
             {isPending && <Loader />}
-            <motion.div className="test-carousel-container"
-            initial={{
-                x: -400
-              }}
-              whileInView={{
-                x: 0
-              }}
-              transition={{
-                duration: 0.5,
-                type: 'spring'
-              }}
+            <motion.div viewport={{ once: true }} className="test-carousel-container"
+                initial={{
+                    x: -400
+                }}
+                whileInView={{
+                    x: 0
+                }}
+                transition={{
+                    duration: 0.5,
+                    type: 'spring'
+                }}
             >
                 {testimonials &&
                     <Carousel
@@ -48,17 +48,17 @@ export default function Testimonials() {
                                 <div className="test">
                                     <div className="card">
                                         <img src={require("../images/quote.png")} alt="" className="test-quote" />
-                                        <motion.div 
-                                        className="card-content"
-                                        initial={{
-                                            opacity: 0
-                                          }}
-                                          whileInView={{
-                                            opacity: 1
-                                          }}
-                                          transition={{
-                                            duration: 1,
-                                          }}
+                                        <motion.div viewport={{ once: true }}
+                                            className="card-content"
+                                            initial={{
+                                                opacity: 0
+                                            }}
+                                            whileInView={{
+                                                opacity: 1
+                                            }}
+                                            transition={{
+                                                duration: 1,
+                                            }}
                                         >
                                             <p>{testimonial.detail}</p>
                                             <div className="testi-name">
@@ -67,19 +67,19 @@ export default function Testimonials() {
                                             </div>
                                         </motion.div>
                                         <div className="testimonial-img">
-                                            <motion.img 
-                                            src={require("../images/sgtbimit.png")} 
-                                            alt=""
-                                            initial={{
-                                                y: -400
-                                              }}
-                                              whileInView={{
-                                                y: 0
-                                              }}
-                                              transition={{
-                                                duration: 0.5,
-                                                type: 'spring'
-                                              }} 
+                                            <motion.img viewport={{ once: true }}
+                                                src={require("../images/sgtbimit.png")}
+                                                alt=""
+                                                initial={{
+                                                    y: -400
+                                                }}
+                                                whileInView={{
+                                                    y: 0
+                                                }}
+                                                transition={{
+                                                    duration: 0.5,
+                                                    type: 'spring'
+                                                }}
                                             />
                                         </div>
                                     </div>

@@ -64,7 +64,7 @@ header {
 .header-btns button {
   border: none;
   outline: none;
-  background-color: var(--primary-clr);
+  background: #C42E2E;
   padding: min(1rem, 1vw);
   color: white;
   letter-spacing: .125em;
@@ -88,8 +88,9 @@ header {
 .logo {
   width: min(300px, 20%);
 }
-.logo img{
- width: min(175px, 100%);
+
+.logo img {
+  width: min(175px, 100%);
 }
 
 .clg-heading-wrapper p {
@@ -124,11 +125,13 @@ header {
   width: 100%;
 
 }
-.header-news a{
+
+.header-news a {
   color: blue;
   text-transform: uppercase;
 }
-.header-news a:hover{
+
+.header-news a:hover {
   color: red;
 }
 
@@ -244,7 +247,7 @@ header {
 
 }
 
-.AdmissionRadiobuttonsContainer{
+.AdmissionRadiobuttonsContainer {
   display: flex;
   gap: 25px;
 }
@@ -270,13 +273,17 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: linear-gradient(105.7deg, #616871 0%, #0B1E2C 100%);
+  background: linear-gradient(105.7deg, var(--primary-clr) 0%, var(--secondary-clr) 100%);
   color: white;
   padding: min(1.5rem, 1.5vw);
   gap: min(2rem, 4vw);
   font-size: min(1.125rem, 1.5vw);
   font-weight: 600;
   visibility: visible;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100000;
 }
 
 nav a {

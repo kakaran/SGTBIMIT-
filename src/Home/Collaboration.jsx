@@ -6,12 +6,12 @@ import useFetch from '../useFetch'
 import _ from 'lodash'
 
 export default function Collaboration() {
-  const { data: collabs, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Display`)
+  const { data: collabs } = useFetch(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Display`)
 
-  
+
 
   let collabsChunks = collabs ? _.chunk(collabs, 4) : []
-  
+
   const [currentS, setCurrentS] = useState(0)
   const handleSlideChange = (index) => {
     setCurrentS(index)
@@ -20,7 +20,7 @@ export default function Collaboration() {
   return (
     <section className='collab'>
       <div className="collab-container">
-        <motion.h1
+        <motion.h1 viewport={{ once: true }}
           initial={{
             x: 400
           }}
@@ -35,7 +35,7 @@ export default function Collaboration() {
           COLLABORATIONS
         </motion.h1>
 
-        <motion.div
+        <motion.div viewport={{ once: true }}
           className="collab-grid-container"
           initial={{
             x: -400

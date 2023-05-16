@@ -46,7 +46,7 @@ export default function Recruiters({ isTitle = true }) {
   }
   return (
     <section className='recruiters'>
-      {isTitle && <motion.h1
+      {isTitle && <motion.h1 viewport={{ once: true }}
         initial={{
           x: 400
         }}
@@ -60,7 +60,7 @@ export default function Recruiters({ isTitle = true }) {
       >
         OUR RECRUITERS
       </motion.h1>}
-      <motion.div
+      <motion.div viewport={{ once: true }}
         className="recruiters-container"
         ref={carouselRef}
         initial={{

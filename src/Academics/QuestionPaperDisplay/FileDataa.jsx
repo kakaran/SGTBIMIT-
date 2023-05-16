@@ -30,7 +30,7 @@ const FileData = (props) => {
 
 
   return (
-    <motion.div
+    <motion.div viewport={{ once: true }}
       initial={{
         opacity: 0,
       }}

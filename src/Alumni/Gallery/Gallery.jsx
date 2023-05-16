@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './gallery.css'
-import { Header, Navbar, Footer, Loader } from '../../Components'
+import { Header, Navbar, Footer } from '../../Components'
 import { Carousel } from 'react-responsive-carousel'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet'
@@ -22,7 +22,7 @@ export default function Gallery() {
                                 <p className="text">Infra</p>
                             </div>}
                             {isCarouselActive && (
-                                <motion.section
+                                <motion.section viewport={{ once: true }}
                                     className="gallery-carousel-section"
                                     initial={{
                                         scale: 0,
@@ -32,7 +32,7 @@ export default function Gallery() {
                                     }}
                                 >
                                     <div className="gallery-carousel-container">
-                                        <img src={require("../../images/cancel.png")} className="carousel-close-btn" onClick={() => setIsCarouselActive(false)} />
+                                        <img src={require("../../images/cancel.png")} className="carousel-close-btn" onClick={() => setIsCarouselActive(false)} alt='' />
                                         <Carousel>
                                             {[...Array(6)].map((x, i) => (
                                                 <div className="gallery-carousel-item">

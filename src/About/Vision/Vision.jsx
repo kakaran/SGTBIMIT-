@@ -14,7 +14,7 @@ export default function Vision() {
       <Helmet title="SGTBIMIT | Vision" />
       <Header />
       <Navbar />
-      <motion.div
+      <motion.div viewport={{ once: true }}
         initial={{
           x: "100vw",
         }}

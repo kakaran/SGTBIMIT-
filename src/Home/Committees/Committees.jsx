@@ -9,7 +9,7 @@ export default function Committees() {
     <section className="committees">
       <div className="committees-container" >
         {committees.map((committee, i) => (
-          <motion.div
+          <motion.div viewport={{ once: true }}
             className="committee-item"
             key={committee.name}
             initial={{
@@ -29,31 +29,32 @@ export default function Committees() {
               className="committee-img"
             >
               <Link
-                  to={`/committees/${committee.id}`}
-                  target='_blank'
-                >
-              <motion.img
-                src={committee.image}
-                alt="cant load"
-                initial={{
-                  scale: 0,
-                  opacity: 0,
-                }}
-                whileInView={{
-                  scale: 1,
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 0.2,
-                  delay: i * 0.15,
-                }}
-              /></Link>
+                to={`/committees/${committee.id}`}
+                target='_blank'
+              >
+                <motion.img viewport={{ once: true }}
+                  src={committee.image}
+                  alt="cant load"
+                  initial={{
+                    scale: 0,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    scale: 1,
+                    opacity: 1,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                    delay: i * 0.15,
+                  }}
+                />
+              </Link>
             </div>
             <Link
               to={`/committees/${committee.id}`}
               target='_blank'
             >
-              <motion.a
+              <motion.a viewport={{ once: true }}
                 initial={{
                   scale: 0,
                 }}
@@ -69,7 +70,7 @@ export default function Committees() {
                 <span>View PDF</span>
               </motion.a>
             </Link>
-            <motion.div
+            <motion.div viewport={{ once: true }}
               className="committee-content"
               initial={{
                 opacity: 0,
@@ -84,10 +85,10 @@ export default function Committees() {
             >
               <h1>
                 <Link
-                style={{
-                  color: 'black',
-                  fontFamily: "SF Pro Display-Bold"
-                }}
+                  style={{
+                    color: 'white',
+                    fontFamily: "SF Pro Display-Bold"
+                  }}
                   to={`/committees/${committee.id}`}
                   target='_blank'
                 >

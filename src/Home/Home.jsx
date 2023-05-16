@@ -6,8 +6,8 @@ import ImageCarousel from './ImageCarousel'
 import Testimonials from './Testimonials'
 import DirectorMsg from './DirectorMsg'
 import Placementss from './Placementss'
-import Collaboration from './Collaboration'
-import Recruiters from './Recruiters'
+/* import Collaboration from './Collaboration'
+import Recruiters from './Recruiters' */
 import Map from './Map'
 import Admission from '../Components/Admission'
 import { Header, Navbar, Footer, Loader2 } from '../Components'
@@ -18,7 +18,7 @@ export default function Home() {
 
   const [isPending, setIsPending] = useState(true)
   useEffect(() => {
-      setIsPending(false)
+    setIsPending(false)
   }, [])
 
   return (
@@ -30,32 +30,32 @@ export default function Home() {
       <Navbar />
       {isPending && <Loader2 />}
       {!isPending && (
-          <motion.section
-            initial={{
-              x: "100vw",
-            }}
-            animate={{
-              x: 0,
-            }}
-            exit={{
-              x: '-100vw',
-            }}
-            transition={{
-              duration: .25,
-            }}
-            >
-            <ImageCarousel />
-            <Welcome />
-            <Testimonials />
-            <DirectorMsg />
-            <Committees />
-            <Placementss />
-            <Collaboration />
-            <Recruiters />
-            <Map />
-            <Admission />
-            <Footer />
-          </motion.section>
+        <motion.section viewport={{ once: true }}
+          initial={{
+            x: "100vw",
+          }}
+          animate={{
+            x: 0,
+          }}
+          exit={{
+            x: '-100vw',
+          }}
+          transition={{
+            duration: .25,
+          }}
+        >
+          <ImageCarousel />
+          <Welcome />
+          <Testimonials />
+          <DirectorMsg />
+          <Committees />
+          <Placementss />
+          {/*             <Collaboration />
+            <Recruiters /> */}
+          <Map />
+          <Admission />
+          <Footer />
+        </motion.section>
       )
       }
     </main>

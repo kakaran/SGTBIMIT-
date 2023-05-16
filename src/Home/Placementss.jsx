@@ -2,25 +2,26 @@ import React, { useEffect, useRef } from 'react'
 import Loader from '../Components/Loader'
 import useFetch from '../useFetch'
 import { motion } from 'framer-motion'
+import AutoHorizontalScroll from './AutoHorizontalScroll'
 
 
 export default function Placements({ isTitle = true }) {
-  const scrollRef = useRef(null)
-  const handleClick = (e) => {
-    scrollRef.current.scrollLeft += 400
-  }
-
+  /*   const scrollRef = useRef(null)
+    const handleClick = (e) => {
+      scrollRef.current.scrollLeft += 400
+    }
+   */
   const { data: placementArray, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Display`)
 
-  useEffect(() => {
-    scrollRef.current.scrollLeft = 0
-  }, [placementArray])
-
+  /*   useEffect(() => {
+      scrollRef.current.scrollLeft = 0
+    }, [placementArray])
+   */
   return (
 
     <section className='placements'>
       <div className="placements-container">
-        {isTitle && <motion.h1
+        {isTitle && <motion.h1 viewport={{ once: true }}
           initial={{
             opacity: 0,
             x: 400,
@@ -36,22 +37,9 @@ export default function Placements({ isTitle = true }) {
         >
           PLACEMENT AND INTERNSHIPS
         </motion.h1>}
-        <div className="placement-bg"></div>
+        {/*         <div className="placement-bg"></div> */}
         {isPending && <Loader />}
-        <motion.div className="placement-grid"
-          ref={scrollRef}
-          initial={{
-            opacity: 0,
-            x: -100,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          transition={{
-            duration: 1,
-            type: "spring"
-          }}>
+        <AutoHorizontalScroll>
           {placementArray &&
             placementArray.map((placement, i) => {
               return (
@@ -64,8 +52,8 @@ export default function Placements({ isTitle = true }) {
             })
           }
           <div className="blank place-card"></div>
-        </motion.div>
-{/*         <button type='button' onClick={(e) => { handleClick(e) }} className='scroll-btn'>Scroll</button> */}
+        </AutoHorizontalScroll>
+        {/*         <button type='button' onClick={(e) => { handleClick(e) }} className='scroll-btn'>Scroll</button> */}
       </div>
 
 

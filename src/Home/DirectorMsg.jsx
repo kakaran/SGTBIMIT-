@@ -1,12 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import useFetch from '../useFetch'
 export default function DirectorMsg() {
 
-  const { data: director, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Administration/Single_Administration_Display/:_id`)
   return (
     <section className="director-msg">
-      <motion.h1
+      <motion.h1 viewport={{ once: true }}
         className='director-heading'
         initial={{
           x: 400
@@ -21,7 +19,7 @@ export default function DirectorMsg() {
       >
         DIRECTOR'S NOTE
       </motion.h1>
-      <motion.div className='director-container'
+      <motion.div viewport={{ once: true }} className='director-container'
         initial={{
           x: -400
         }}

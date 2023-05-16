@@ -21,7 +21,7 @@ export default function AdminisCarousel() {
       <Helmet title="SGTBIMIT | Governing Body" />
       <Header></Header>
       <Navbar></Navbar>
-      <motion.section
+      <motion.section viewport={{ once: true }}
         initial={{
           x: "100vw",
         }}

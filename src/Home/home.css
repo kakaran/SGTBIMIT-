@@ -131,6 +131,7 @@
 
 .test-section h1 {
     font-size: min(4rem, 8vw);
+    color: #084A9E;
 }
 
 .test-section .control-arrow {
@@ -463,7 +464,7 @@
 .placements-container>h1 {
     font-size: min(4rem, 8vw);
     font-family: "SF Pro Display-Bold";
-    color: #2d2d2d;
+    color: #084A9E;
 }
 
 .placement-bg {
@@ -518,8 +519,8 @@
     position: relative;
     background-color: white;
     padding: min(1rem, 1vw);
-    border-radius: 22px;
-    border: 1px solid red;
+    border-radius: 10px;
+    border: 1px solid var(--primary-clr);
 }
 
 .placements img {

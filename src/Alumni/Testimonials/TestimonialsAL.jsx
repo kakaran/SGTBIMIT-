@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet'
 export default function TestimonialsAL() {
     return (
         <>
-        <Helmet title='SGTBIMIT | Alumini Testimonials' />
+            <Helmet title='SGTBIMIT | Alumini Testimonials' />
             <Header />
             <Navbar />
             <section className='test-al-section'>
@@ -16,7 +16,7 @@ export default function TestimonialsAL() {
                     {[...Array(12)].map((x, i) => {
                         return (
                             <div className="t-card">
-                                <img src={""}className="card-img" alt='placeholder for images' />
+                                <img src={""} className="card-img" alt='placeholder for images' />
                                 <div className="card-info">
                                     <p className="text-body">I put some random interesting text here of more than 2 lines.</p>
                                     <p className="text-title">Author</p>

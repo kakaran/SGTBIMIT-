@@ -3,7 +3,7 @@
     background-size: 100%;
 }
 
-.personal-details{
+.personal-details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-block: min(4rem, 4vw);
@@ -11,11 +11,12 @@
     margin-inline: auto;
 
 }
-.alumniform-other{
+
+.alumniform-other {
     grid-column: 2;
 }
 
-.registeration-section h1{
+.registeration-section h1 {
     font-family: "SF Pro Display-Bold";
     color: #2d2d2d;
     text-align: center;
@@ -31,29 +32,36 @@
     font-size: 24px;
 }
 
-.personal-details h2{
+.personal-details h2 {
     text-align: center;
     font-size: 30px;
 }
 
 
-.personal-details button{
+.personal-details button {
     border: none;
     outline: none;
     border-radius: 15px;
     padding: 1rem 2rem;
-    background-color: #005E93;
+    background-color: var(--primary-clr);
     color: white;
     font-size: 1.5rem;
+    margin-top: 2rem;
 }
+
 .personal-details label {
     border: none;
     outline: none;
 }
+
 .personal-details input:not(input[type=radio]) {
-    border: 2px solid rgb(0, 0, 255, 0.2);
+    border: 1px solid var(--primary-clr);
     border-radius: 5px;
     outline: none;
     height: 30px;
 
+}
+
+.personal-details input:not(input[type=radio]):focus {
+    border: 2px solid var(--primary-clr);
 }

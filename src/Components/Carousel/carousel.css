@@ -7,7 +7,8 @@
     display: flex;
     align-items: center;
 }
-.custom-arrow img{
+
+.custom-arrow img {
     width: var(--width);
 }
 
@@ -15,17 +16,21 @@
     transform: translateY(-50%);
     right: 0;
 }
-.custom-arrow-left{
+
+.custom-arrow-left {
     right: calc(var(--width) + 20px);
     transform: rotate(180deg) translateY(50%);
 }
-.inactive-arrow{
+
+.inactive-arrow {
     cursor: not-allowed;
 }
-.inactive-arrow img{
+
+.inactive-arrow img {
     transform: rotate(180deg);
 }
-.custom-status{
+
+.custom-status {
     position: absolute;
     transform: translateY(-50%);
     color: #6B6B6B;

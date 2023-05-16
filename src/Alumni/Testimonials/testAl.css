@@ -5,7 +5,7 @@
     padding: min(2rem, 2vw);
 }
 
-.test-al-section > h1{
+.test-al-section>h1 {
     font-family: "SF Pro Display-Bold";
     font-size: min(4rem, 8vw);
     text-align: center;
@@ -18,10 +18,10 @@
     place-items: center;
     margin-inline: auto;
     gap: min(5rem, 5vw);
-    
+
 }
 
-.t-card{
+.t-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,20 +33,23 @@
     background-color: white;
 
 }
-.card-img{
+
+.card-img {
     width: 50%;
     aspect-ratio: 1;
     outline: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;;
+    border-radius: 50%;
+    ;
 }
-.card-info{
+
+.card-info {
     margin-top: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.card-info p{
+.card-info p {
     text-align: justify;
     font-size: min(1.37rem, 3vw);
 }
@@ -55,7 +58,14 @@
     .test-al-section {
         background-image: none;
     }
-    .t-grid{
+
+    .t-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 800px) {
+    .t-grid {
+        grid-template-columns: 1fr;
     }
 }

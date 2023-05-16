@@ -47,6 +47,10 @@ export default function Committees() {
                     duration: 0.2,
                     delay: i * 0.15,
                   }}
+
+                  style={{
+                    filter: "brightness(2)"
+                  }}
                 />
               </Link>
             </div>
@@ -67,7 +71,7 @@ export default function Committees() {
                 }}
               >
                 <img src={require("../../images/pdf-icon.png")} alt="" />
-                <span>View PDF</span>
+                <span>View Data</span>
               </motion.a>
             </Link>
             <motion.div viewport={{ once: true }}

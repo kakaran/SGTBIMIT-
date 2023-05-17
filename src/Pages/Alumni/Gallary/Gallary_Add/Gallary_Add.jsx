@@ -4,10 +4,9 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminHeader from "../../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../../Components/AdminMenu/AdminMenu";
 import "../../../Society/Society_Add/Society_Add.css";
-import "../../../QuestionPaper/QuestionPaperAdd/QuestionPaperAdd.css";
+// import "../../../QuestionPaper/QuestionPaperAdd/QuestionPaperAdd.css";
 import "../../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
-import { Helmet } from "react-helmet";
 import imageCompression from 'browser-image-compression';
 
 const AGalleryAdd = () => {
@@ -93,7 +92,6 @@ const AGalleryAdd = () => {
 
     return (
         <>
-            <Helmet title="Add Question Paper" />
             <div className="societyAddConatiner">
                 <div className="SideBar">
                     <AdminMenu />

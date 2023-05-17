@@ -1,12 +1,14 @@
 .registeration-section {
-    background: url('../../images/bg-frame.png');
+  background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
     background-size: 100%;
+    display: grid;
+    place-items: center;
 }
 
-.personal-details {
+/* .personal-details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-block: min(4rem, 4vw);
+    padding-block:   min(4rem, 4vw);
     width: min(1500px, 100%);
     margin-inline: auto;
 
@@ -64,4 +66,218 @@
 
 .personal-details input:not(input[type=radio]):focus {
     border: 2px solid var(--primary-clr);
+} */
+
+
+.container{
+  max-width:800px;
+  width: 100%;
+  background-color: #fff;
+  padding: 35px 40px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
+.container .title{
+  font-size: 30px;
+  font-weight: 1000;
+  position: relative;
+  color: black;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 35px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
+}
+
+.title2{
+    font-size: 22px;
+    text-align: center;
+    font-weight:700;
+    text-transform: capitalize;
+    display: block;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #1f567c;
+}
+ form .gender-details .gender-title{
+  font-size: 16px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #1f567c;
+   border-color: #c5e6fc;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
+ }
+ form .button input:hover{
+
+  background: linear-gradient(-135deg, #c5e6fc, #1f567c, #c5e6fc);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+      
+}
+
+form .edu-details .detail3{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .cat{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .cat label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .cat label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot1:checked ~ .cat label .one,
+ #dot2:checked ~ .cat label .two,
+ #dot3:checked ~ .cat label .three,
+#dot4:checked ~ .cat label .four{
+   background: #1f567c;
+   border-color: #c5e6fc;
+ }
+form input[type="radio"]{
+    display: none;}
+
+.details3{
+  font-weight: 500;
+  margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.input3 input{
+    height: 45px;
+  width: 30%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.input3 input:focus,
+.input3 input:valid{
+  border-color: #1f567c;
+}
+
+@media(max-width: 459px){
+  .container .content .cat{
+    flex-direction: column;
+  }
+}
+
+
+
+  .input3 input{
+    width:auto;
+  }

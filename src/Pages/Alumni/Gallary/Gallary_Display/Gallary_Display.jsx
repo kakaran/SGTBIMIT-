@@ -7,6 +7,7 @@ import axios from "axios";
 const Gallary_Display = () => {
   const API_URL = process.env.REACT_APP_API_URL;
   const [aluminData, setAluminiData] = useState();
+  const { aluminimglen, setAluminimglen } = useState();
 
   useEffect(() => {
     const alumDataGet = async () => {
@@ -24,6 +25,25 @@ const Gallary_Display = () => {
     };
     alumDataGet();
   }, []);
+
+//   const aluminiimagelength = async (_id) => {
+//     try {
+//       const data = (
+//         await axios(`${API_URL}/Alumini/gallery/alumini_Images_length/${_id}`)
+//       ).data;
+//     //   console.log(data);
+//       for (let i = 0; i < data; i++) {
+//         return (
+//           <img
+//             src={`${API_URL}/Alumini/gallery/aluminiDisplayImages/${_id}/${i}`}
+//             alt=""
+//           />
+//         );
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
 
   return (
     <>
@@ -45,7 +65,7 @@ const Gallary_Display = () => {
                     <h1>{value.category}</h1>
                   </div>
                   <div className="multiple_Images_scroller">
-                   {}
+                    {/* {aluminiimagelength(value._id)} */}
                   </div>
                 </div>
               );

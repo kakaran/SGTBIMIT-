@@ -336,14 +336,14 @@ const AdminMenu = () => {
                     <span>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Society_Add");
+                          navigate("/dashboard/admin/Event_Add");
                         }}
                       >
                         EVENTS ADD
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Society_Display");
+                          navigate("/dashboard/admin/Event_Display");
                         }}
                       >
                         EVENTS DISPLAY

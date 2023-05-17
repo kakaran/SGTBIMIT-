@@ -9,7 +9,7 @@ const AdminMenu = () => {
   const [isSUBTestimonialActive, setIsSUBTestimonialActive] = useState(false);
   const [isSUBSocietyActive, setIsSUBSocietyActive] = useState(false);
   const [isSUBEventsActive, setIsSUBEventsActive] = useState(false);
-  const [isSUBEgallaryActive, setIsSUBEgallaryActive] = useState(false);
+  const [isSUBEgalleryActive, setIsSUBEgalleryActive] = useState(false);
   const [isSUBEhandlerActive, setIsSUBEhandlerActive] = useState(false);
   const [isSUBFacultyActive, setIsSUBFacultyActive] = useState(false);
   const [isSUBPlacementActive, setIsSUBPlacementActive] = useState(false);
@@ -17,8 +17,9 @@ const AdminMenu = () => {
   const [isSUBCollabsActive, setIsSUBCollabsActive] = useState(false);
   const [isSUBAdministrationActive, setIsSUBAdministrationActive] =
     useState(false);
-  const [isSUBAdmissionActive, setIsSUBAdmissionActive] = useState(false);
-  const [isSUBAgallaryActive, setIsSUBAgallaryActive] = useState(false);
+  const [isAdmissionActive, setIsAdmissionActive] = useState(false);
+  const[isSUBNoticeActive, setIsSUBNoticeActive] = useState(false);
+  const [isSUBAgalleryActive, setIsSUBAgalleryActive] = useState(false);
   const [isSUBRegistrationActive, setIsSUBRegistrationActive] = useState(false);
   const [isSUBAtestimonialsActive, setIsSUBAtestimonialsActive] = useState(false);
   const [isSUBStarsActive, setIsSUBStarsActive] = useState(false);
@@ -352,15 +353,15 @@ const AdminMenu = () => {
                 )}
                 <p
                   onClick={() => {
-                    setIsSUBEgallaryActive(!isSUBEgallaryActive);
+                    setIsSUBEgalleryActive(!isSUBEgalleryActive);
                   }}
                   style={{
                     backgroundColor: "#e0e1dd",
                   }}
                 >
-                  EVENTS GALLARY <IoIosArrowDown className="CatHeadIcons" />
+                  EVENTS GALLERY <IoIosArrowDown className="CatHeadIcons" />
                 </p>
-                {isSUBEgallaryActive && (
+                {isSUBEgalleryActive && (
                   <div className="Categoriesdropdown">
                     <span>
                       <p
@@ -368,14 +369,14 @@ const AdminMenu = () => {
                           navigate("/dashboard/admin/Society_Add");
                         }}
                       >
-                        EVENTS GALLARY ADD
+                        EVENTS GALLERY ADD
                       </p>
                       <p
                         onClick={() => {
                           navigate("/dashboard/admin/Society_Display");
                         }}
                       >
-                        EVENTS GALLARY DISPLAY
+                        EVENTS GALLERY DISPLAY
                       </p>
                     </span>
                   </div>
@@ -530,7 +531,7 @@ const AdminMenu = () => {
           <span
             className="categories_Header"
             onClick={() => {
-              setIsSUBAdmissionActive(!isSUBAdmissionActive);
+              setIsAdmissionActive(!isAdmissionActive);
             }}
           >
             <span>
@@ -539,29 +540,39 @@ const AdminMenu = () => {
             </span>
             <IoIosArrowDown className="CatHeadIcons" />
           </span>
-          {isSUBAdmissionActive && (
+          {isAdmissionActive && (
             <div className="Categoriesdropdown">
               <span>
                 <p
                   onClick={() => {
-                    navigate("/dashboard/admin/Notice_Add");
+                    setIsSUBNoticeActive(!isSUBNoticeActive);
                   }}
                   style={{
                     backgroundColor: "#e0e1dd",
                   }}
                 >
-                  NOTICE ADD
+                  NOTICES <IoIosArrowDown className="CatHeadIcons" />
                 </p>
-                <p
-                  onClick={() => {
-                    navigate("/dashboard/admin/Notice_Display");
-                  }}
-                  style={{
-                    backgroundColor: "#e0e1dd",
-                  }}
-                >
-                  NOTICE DISPLAY
-                </p>
+                {isSUBNoticeActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Notice_Add");
+                        }}
+                      >
+                        NOTICE ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Notice_Display");
+                        }}
+                      >
+                        NOTICE DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
               </span>
             </div>
           )}
@@ -615,30 +626,30 @@ const AdminMenu = () => {
                 )}
                 <p
                   onClick={() => {
-                    setIsSUBAgallaryActive(!isSUBAgallaryActive);
+                    setIsSUBAgalleryActive(!isSUBAgalleryActive);
                   }}
                   style={{
                     backgroundColor: "#e0e1dd",
                   }}
                 >
-                  GALLARY <IoIosArrowDown className="CatHeadIcons" />
+                  GALLERY <IoIosArrowDown className="CatHeadIcons" />
                 </p>
-                {isSUBAgallaryActive && (
+                {isSUBAgalleryActive && (
                   <div className="Categoriesdropdown">
                     <span>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Prev_Year_Paper_Add");
+                          navigate("/dashboard/admin/Alumini/gallery/aluminiAddImage");
                         }}
                       >
-                        GALLARY ADD
+                        GALLERY ADD
                       </p>
                       <p
                         onClick={() => {
                           navigate("/dashboard/admin/Prev_Year_Paper_Dislay");
                         }}
                       >
-                        GALLARY DISPLAY
+                        GALLERY DISPLAY
                       </p>
                     </span>
                   </div>

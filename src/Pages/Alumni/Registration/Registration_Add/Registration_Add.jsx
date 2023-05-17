@@ -104,7 +104,7 @@ const RegistrationAdd = () => {
                 onChange={Onchagetesdetail}
               />
               <input
-                type="number"
+                type="text"
                 name="MNumber"
                 id=""
                 placeholder="Mobile Number"

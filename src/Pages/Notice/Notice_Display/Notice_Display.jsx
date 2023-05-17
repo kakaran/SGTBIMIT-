@@ -3,10 +3,13 @@ import AdminMenu from '../../../Components/AdminMenu/AdminMenu'
 import AdminHeader from '../../../Components/AdminHeader/AdminHeader'
 import axios from 'axios';
 import { Card } from 'antd';
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 
 const Notice_Display = () => {
     const[NoticeDataDisplay, setNoticeDataDisplay] = useState();
+    const [render, setRender] = useState(0);
+
     useEffect(() => {
         const NoticeDataGet = async () => {
             try {
@@ -18,7 +21,23 @@ const Notice_Display = () => {
             }
         }
         NoticeDataGet()
-    }, [])
+    }, [render])
+
+    const NoticeDelete = async (value) => {
+        try {
+          const _id = value;
+          await axios.post(`${process.env.REACT_APP_API_URL}/Notice/Notice_Delete`, {
+            _id,
+          });
+          setRender(1)
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+    const detailStyle = {
+        fontFamily: "'Abel', sans-serif",
+      };
 
     return (
         <>
@@ -34,13 +53,19 @@ const Notice_Display = () => {
                             {NoticeDataDisplay?.map((value) => {
                                 return (
                                     <Card
-                                        title={value?.Name}
-                                        bordered={true}
-                                        style={{
-                                            width: 400,
-                                            // fontSize : "20px"
-                                        }}
-                                    >
+                                        title={value.Name}
+                                        bordered={false}
+                                        extra={
+                                            <RiDeleteBin6Line
+                                            className="TestBin"
+                                            onClick={() => {
+                                                NoticeDelete(value._id);
+                                            }}
+                                            style={{ color: "#d00000" }}
+                                            />
+                                        }
+                                        style={{ width: 400, marginTop: 16, detailStyle }}
+                                        >
                                         <p>{value?.Detail}</p>
                                     </Card>
                                 )

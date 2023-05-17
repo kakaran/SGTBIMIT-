@@ -80,6 +80,10 @@ import StarsUpdate from './Pages/Industry Interface/Featured Stars/Star_Update/S
 import RegistrationAdd from './Pages/Alumni/Registration/Registration_Add/Registration_Add.jsx'
 import RegistrationDisplay from './Pages/Alumni/Registration/Registration_Display/Registration_Display.jsx'
 import AGalleryAdd from './Pages/Alumni/Gallary/Gallary_Add/Gallary_Add.jsx'
+import GallaryDisplay from './Pages/Alumni/Gallary/Gallary_Display/Gallary_Display.jsx'
+import EventAdd from './Pages/Society/Event/Event_Add/Event_Add.jsx'
+import EventDisplay from './Pages/Society/Event/Event_Display/Event_Display.jsx'
+import EventUpdate from './Pages/Society/Event/Event_Update/Event_Update.jsx'
 
 
 function App() {
@@ -162,6 +166,11 @@ function App() {
             <Route path='admin/Registration_Add' element={<RegistrationAdd />} />
             <Route path='admin/Registration_Display' element={<RegistrationDisplay />} />
             <Route path='admin/Alumini/gallery/aluminiAddImage' element={<AGalleryAdd />} />
+            <Route path='admin/Alumini/gallery/aluminiDisplay' element={<GallaryDisplay />} />
+
+            <Route path='admin/Event_Add' element={<EventAdd />}/>
+            <Route path='admin/Event_Display' element={<EventDisplay />}/>
+            <Route path='admin/Event_Update/:id' element={<EventUpdate />}/>
           </Route>
           <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
           <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />

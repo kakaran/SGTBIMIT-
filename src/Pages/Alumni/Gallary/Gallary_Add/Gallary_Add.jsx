@@ -4,10 +4,9 @@ import "react-toastify/dist/ReactToastify.css";
 import AdminHeader from "../../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../../Components/AdminMenu/AdminMenu";
 import "../../../Society/Society_Add/Society_Add.css";
-import "../../../QuestionPaper/QuestionPaperAdd/QuestionPaperAdd.css";
+// import "../../../QuestionPaper/QuestionPaperAdd/QuestionPaperAdd.css";
 import "../../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
-import { Helmet } from "react-helmet";
 import imageCompression from 'browser-image-compression';
 
 const AGalleryAdd = () => {
@@ -16,6 +15,7 @@ const AGalleryAdd = () => {
     });
 
     const [filedata, setFileData] = useState([]);
+    const [singleFiledata,setSingleFiledata] = useState()
 
     function handleFileInputChange(event) {
         const files = event.target.files;
@@ -46,16 +46,19 @@ const AGalleryAdd = () => {
         try {
             let formData = new FormData();
             if (filedata.length) {
+                
                 for (let i = 0; i < filedata.length; i++) {
-                    formData.append("file", filedata[i]);
+                    const compressedFile = await imageCompression(filedata[i], options);
+                    formData.append("images", compressedFile,filedata[i]?.name);
                 }
             } else {
-                formData.append("file", filedata);
+                const compressedFile = await imageCompression(filedata, options);
+                formData.append("images", compressedFile,filedata?.name);
             }
 
-            const compressedFile = await imageCompression(filedata, options);
+            const compressedFile = await imageCompression(singleFiledata, options);
             console.log(compressedFile);
-            formData.append("image", compressedFile, filedata.name);
+            formData.append("image", compressedFile, filedata?.name);
             formData.append("category", societUpdate.category);
             const data1 = (
                 await axios.post(`${process.env.REACT_APP_API_URL}/Alumini/gallery/aluminiAddImage`, formData, {
@@ -93,7 +96,6 @@ const AGalleryAdd = () => {
 
     return (
         <>
-            <Helmet title="Add Question Paper" />
             <div className="societyAddConatiner">
                 <div className="SideBar">
                     <AdminMenu />
@@ -113,7 +115,7 @@ const AGalleryAdd = () => {
                                 name="image"
                                 id="ImageUpload"
                                 onChange={(e) => {
-                                    setFileData(e.target.files[0]);
+                                    setSingleFiledata(e.target.files[0]);
                                 }}
                                 style={{ width: "200px", height: "150px" }}
                             />

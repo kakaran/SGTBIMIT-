@@ -1,0 +1,66 @@
+.GalleryCardContainer{
+    width: 100%;
+    border : 1px solid black;
+}
+
+.AluminCard{
+    width: 90%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.image_Categories{
+    display: flex;
+    gap: 30px;
+    padding:10px ;
+    border-bottom: 1px solid #979dac;
+    align-items: center;
+}
+
+
+.image_Categories img{
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.multiple_Images_scroller{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: scroll;
+}
+
+.multiple_Images_scroller img{
+    width: 250px;
+    height: 250px;
+    border-radius:10px ;
+}
+
+.multiple_Images_scroller::-webkit-scrollbar-track {
+    background: #D4D4D4;
+    border-radius: 9px;
+    border-top: 3px solid #f5f5f5;
+    border-bottom: 3px solid #f5f5f5;
+}
+
+
+/* .EventScroller::-webkit-scrollbar-track-piece
+{
+	background: transparent;
+    border-radius: 9px;
+    height: 2px;
+} */
+
+.multiple_Images_scroller::-webkit-scrollbar {
+    background-color: white;
+    overflow: visible;
+    height: 7.9px;
+    background: transparent;
+}
+
+.multiple_Images_scroller::-webkit-scrollbar-thumb {
+    background-color: #005E93;
+    border-radius: 9px;
+}

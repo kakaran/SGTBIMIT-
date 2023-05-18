@@ -1,11 +1,17 @@
 .Vision_Container {
-    text-align: center;
     padding: 10px 0px;
     background: url("../../images/bg-frame.png");
     background-size: 100%;
 }
 
-.Vision_Container h1 {
+@media (max-width: 1000px) {
+    .Vision_Container {
+        background-image: none;
+    }
+
+}
+
+/* .Vision_Container h1 {
     font-size: min(4rem, 8vw);
     font-family: "SF Pro Display-Bold";
     color: #2d2d2d;
@@ -116,4 +122,4 @@
         height: 350px;
         width: 320px;
     }
-}
+} */

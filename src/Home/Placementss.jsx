@@ -51,7 +51,10 @@ export default function Placements({ isTitle = true }) {
               )
             })
           }
-          <div className="blank place-card"></div>
+          <div className="blank place-card max-lg:hidden"></div>
+          <div className="blank place-card max-lg:hidden"></div>
+          <div className="blank place-card max-lg:hidden"></div>
+          <div className="blank place-card max-lg:hidden"></div>
         </AutoHorizontalScroll>
         {/*         <button type='button' onClick={(e) => { handleClick(e) }} className='scroll-btn'>Scroll</button> */}
       </div>

@@ -28,19 +28,32 @@ export default function Vision() {
           duration: .25,
         }}
         className="Vision_Container">
-        <h1>VISION AND MISSION</h1>
-        <div className="Detail_ImageContainer">
-          <div className="VisionDetail">
-            <h3>OUR VISION</h3>
-            <p>
+        <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
+          <div>
+            <h1 className="my-bold text-[min(4rem,8vw)]">
+              Our Vision
+            </h1>
+            <p className="text-2xl text-justify">
               To facilitate integrated, secure, competitive and scalable digital
               learning in the long run by preparing young professionals to match
               the Global Standards of institute-industry interface with
               entrepreneurial capabilities of accepting new challenges with a
               holistic concern for a better life, environment and society.
             </p>
-            <h3>OUR MISSION</h3>
-            <ul>
+          </div>
+          <div className="flex justify-center items-center">
+            <img src={require("../../images/vission.jpg")} alt="" className=" mix-blend-multiply w-96" />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
+          <div className="flex justify-center items-center">
+            <img src={require("../../images/mission.jpg")} alt="" className=" mix-blend-multiply w-96" />
+          </div>
+          <div>
+            <h1 className="my-bold text-[min(4rem,8vw)]">
+              Our Mission
+            </h1>
+            <ul className="text-2xl text-justify">
               <li>
                 To impart high quality educational content for development of
                 perspective, talented and dynamic students as catalysts of
@@ -60,9 +73,7 @@ export default function Vision() {
               </li>
             </ul>
           </div>
-          <div className="VisionImage">
-            <img src={require("../../images/vm.jpg")} alt="" />
-          </div>
+
         </div>
       </motion.div>
       <Footer />

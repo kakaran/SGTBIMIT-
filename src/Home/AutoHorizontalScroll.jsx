@@ -45,12 +45,12 @@ const AutoHorizontalScroll = ({ children }) => {
                 {children}
             </div>
             <div className='mx-auto my-4 flex gap-5 items-center w-full relative justify-center'>
-                <AiOutlineArrowLeft size="min(3rem, 3vw)"
+                <AiOutlineArrowLeft size="min(3rem, 5vw)"
                     className=' cursor-pointer'
                     color='#A52E2E'
                     onClick={handleClickNext} />
                 <div className="h-[3px] w-1/2 bg-[#A52E2E]"></div>
-                <AiOutlineArrowRight size="min(3rem, 3vw)"
+                <AiOutlineArrowRight size="min(3rem, 5vw)"
                     color='#A52E2E'
                     className=' cursor-pointer'
                     onClick={handleClickPrev} />

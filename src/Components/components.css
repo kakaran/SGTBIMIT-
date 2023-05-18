@@ -276,8 +276,8 @@ nav {
   background: linear-gradient(105.7deg, var(--primary-clr) 0%, var(--secondary-clr) 100%);
   color: white;
   padding: min(1.5rem, 1.5vw);
-  gap: min(2rem, 4vw);
-  font-size: min(1.125rem, 1.5vw);
+  gap: min(1rem, 1vw);
+  font-size: min(1.25rem, 2vw);
   font-weight: 600;
   visibility: visible;
   position: sticky;

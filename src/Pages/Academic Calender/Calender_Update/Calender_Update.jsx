@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
@@ -16,12 +17,7 @@ const CalenderUpdate = () => {
   useEffect(() => {
     const TestSingleData = async () => {
       try {
-        const data = (
-          await axios.post(
-            `${process.env.REACT_APP_API_URL}/Calendar/CalendarSingle`,
-            { id }
-          )
-        ).data;
+        const data = (await axios.get(`${process.env.REACT_APP_API_URL}/Calendar/CalendarSingle/${id}`)).data;
         setSingleData({
           Date: data?.source?.Date,
           Event: data?.source?.Event,
@@ -36,12 +32,7 @@ const CalenderUpdate = () => {
   const CalenderUpdate = async (e) => {
     e.preventDefault();
     try {
-      const data = (
-        await axios.post(
-          `${process.env.REACT_APP_API_URL}/Calendar/CalendarUpdate/${id}`,
-          { SingleData }
-        )
-      ).data;
+      const data = await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarUpdate/${id}`,SingleData);
     } catch (error) {
       console.log(error);
     }

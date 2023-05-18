@@ -34,11 +34,8 @@ const CalenderDisplay = () => {
   }, [render]);
 
   const CalenderDelete = async (value) => {
-    try {
-      const _id = value;
-      await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarDelete`, {
-        _id,
-      });
+    try {     
+      await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarDelete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);

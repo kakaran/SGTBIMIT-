@@ -6,20 +6,20 @@ import "../../Testimonials/Testimonials_ADD/Testimonials_ADD.css";
 import { Helmet } from 'react-helmet'
 
 const CalenderAdd = () => {
-  const [calenderUpdate, setCalenderUpdate] = useState({
-    Date: "",
-    Event: "",
-  });
 
-  const Onchagetesdetail = (e) => {
-    setCalenderUpdate({ ...calenderUpdate, [e.target.name]: e.target.value });
-  };
+  const [Date,setdate] = useState("");
+  const [Event,setevent] = useState("");
+
+  // const Onchagetesdetail = (e) => {
+  //   setCalenderUpdate({ ...calenderUpdate, [e.target.name]: e.target.value });
+  // };
+
+  const data = {Date,Event};
 
   const CalenderAdd = async () => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarAdd`, {
-        calenderUpdate,
-      });
+      const add = await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarAdd`,data);
+      console.log(add);
     } catch (error) {
       console.log(error);
     }
@@ -44,20 +44,18 @@ const CalenderAdd = () => {
                 name="Date"
                 id=""
                 placeholder="Date"
-                onChange={Onchagetesdetail}
+                onChange={(e) => setdate(e.target.value)}
               />
               <input
                 type="text"
                 name="Event"
                 id=""
                 placeholder="Event"
-                onChange={Onchagetesdetail}
+                onChange={(e) => setevent(e.target.value)}
               />
               <button
                 className="button-19"
-                onClick={() => {
-                  CalenderAdd();
-                }}
+                onClick={CalenderAdd}
               >
                 Submit
               </button>

@@ -16,12 +16,8 @@ const EResourcesUpdate = () => {
   useEffect(() => {
     const TestSingleData = async () => {
       try {
-        const data = (
-          await axios.post(
-            `${process.env.REACT_APP_API_URL}/E_Resources/EResources_Single_Display`,
-            { id }
-          )
-        ).data;
+        const data = await axios.get(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Single_Display/${id}`).data;
+        console.log(data);
         setSingleData({
           name: data?.source?.name,
           url: data?.source?.url,

@@ -35,7 +35,7 @@ export default function DirectorMsg() {
         <p className='dr-note'>
           “Those who walk on the path of truth shall be praised throughout the world”
           <b className='dir-bold'>
-            &nbsp; Sri Guru Granth Sahib Ji &nbsp;
+            &nbsp; ~ Sri Guru Granth Sahib Ji &nbsp;
           </b>
           We at Sri Guru Tegh Bahadur Institute of Management & Information Technology endeavor to follow Gurbani in letter and spirit. The management and staff of SGTBIMIT work on a mission and treat students with utmost love & compassion.
         </p>

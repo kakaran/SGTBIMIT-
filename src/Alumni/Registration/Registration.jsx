@@ -9,125 +9,132 @@ export default function Registration() {
             <Helmet title='SGTBIMIT | Alumini Registeration' />
             <Header />
             <Navbar />
-            <div className="container">
-                <div className="title">Registration</div>
-                <div className="content">
+           
+            <div className='grid place-items-center py-10 backgroundreg'>
+                <div className="reg-container">
+                    <div className="title my-bold text-[50px]">Registration</div>
+                    <div className="content">
 
-                    <form>
-                        <div className="title2">PERSONAL DETAILS</div>
-                        <div className="user-details">
-                            <div className="input-box">
-                                <span className="details">First Name</span>
-                                <input type="text" placeholder="Enter your name" required></input>
+                        <form>
+                            <div className="my-bold text-[30px] text-center my-5">PERSONAL DETAILS</div>
+                            <div className="user-details">
+                                <div className="input-box">
+                                    <span className="details">First Name</span>
+                                    <input type="text" placeholder="Enter your name" required></input>
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Last Name</span>
+                                    <input type="text" placeholder="Enter your Last name" required></input>
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Email</span>
+                                    <input type="text" placeholder="Enter your email" required></input>
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Mobile Number</span>
+                                    <input type="text" placeholder="Enter your number" required></input>
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Address</span>
+                                    <input type="text" placeholder="Enter your Address" required></input>
+                                </div>
+                                <div className="input-box">
+                                    <span className="details">Adhaar Number</span>
+                                    <input type="text" placeholder="Enter your Adhaar number" required></input>
+                                </div>
                             </div>
-                            <div className="input-box">
-                                <span className="details">Last Name</span>
-                                <input type="text" placeholder="Enter your Last name" required></input>
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Email</span>
-                                <input type="text" placeholder="Enter your email" required></input>
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Mobile Number</span>
-                                <input type="text" placeholder="Enter your number" required></input>
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Address</span>
-                                <input type="text" placeholder="Enter your Address" required></input>
-                            </div>
-                            <div className="input-box">
-                                <span className="details">Adhaar Number</span>
-                                <input type="text" placeholder="Enter your Adhaar number" required></input>
-                            </div>
-                        </div>
-                        <div className="gender-details">
-                            <input type="radio" name="gender" id="dot-1"></input>
-                            <input type="radio" name="gender" id="dot-2"></input>
-                            <input type="radio" name="gender" id="dot-3"></input>
-                            <span className="gender-title">Gender</span>
-                            <div className="category">
-                                <label for="dot-1">
-                                    <span className="dot one"></span>
-                                    <span className="gender">Male</span>
-                                </label>
-                                <label for="dot-2">
-                                    <span className="dot two"></span>
-                                    <span className="gender">Female</span>
-                                </label>
-                                <label for="dot-3">
-                                    <span className="dot three"></span>
-                                    <span className="gender">Prefer not to say</span>
-                                </label>
-                            </div>
-                        </div><br />
-                        <div className="title2">HIGHER EDUCATION DETAILS</div>
-                        <div className="edu-details">
-                            <input type="radio" name="high" id="dot1" />
-                            <input type="radio" name="high" id="dot2" />
-                            <input type="radio" name="high" id="dot3" />
-                            <input type="radio" name="high" id="dot4" />
-                            <span className="details3">Higher Education</span>
-                            <div className="cat">
-                                <label for="dot1">
-                                    <span className="dot one"></span>
-                                    <span className="high">BCA</span>
-                                </label>
-                                <label for="dot2">
-                                    <span className="dot two"></span>
-                                    <span className="high">BBA</span>
-                                </label>
-                                <label for="dot3">
-                                    <span className="dot three"></span>
-                                    <span className="high">BBA(B&I)</span>
-                                </label>
-                                <label for="dot4">
-                                    <span className="dot four"></span>
-                                    <span className="high">BCOMM</span>
-                                </label>
-                            </div>
-                        </div><br />
+                            <div className="gender-details">
 
-                        <label for="Year" className="details3">Year</label>
-                        <div className="input3">
-                            <input type="text" placeholder="Enter Year" required></input>
-                        </div>
-                        <label for="Employed">Employed</label>
-                        <div>
-                            <div>
-                                <input type="radio" id="yes" name="employed" value="Yes" />
-                                <label for="yes">YES</label>
+
+
+                                <span className="gender-title">Gender</span>
+                                <div className="category">
+                                    <label htmlFor="dot-1">
+                                        <input type="radio" name="gender" id="dot-1"></input>
+                                        <span className="gender">Male</span>
+                                    </label>
+                                    <label htmlFor="dot-2">
+                                        <input type="radio" name="gender" id="dot-2"></input>
+                                        <span className="gender">Female</span>
+                                    </label>
+                                    <label htmlFor="dot-3">
+                                        <input type="radio" name="gender" id="dot-3"></input>
+                                        <span className="gender">Prefer not to say</span>
+                                    </label>
                                 </div>
-                                <div>
-                                <input type="radio" id="no" name="employed" value="no" />
-                                <label for="no">NO</label>
+                            </div><br />
+                            <div className="my-bold text-[30px] text-center my-5">HIGHER EDUCATION DETAILS</div>
+                            <div className="edu-details">
+
+
+
+
+                                <span className="details3">Higher Education</span>
+                                <div className="cat">
+                                    <label htmlFor="dot1">
+                                        <input type="radio" name="high" id="dot1" />
+                                        <span className="high">BCA</span>
+                                    </label>
+                                    <label htmlFor="dot2">
+                                        <input type="radio" name="high" id="dot2" />
+                                        <span className="high">BBA</span>
+                                    </label>
+                                    <label htmlFor="dot3">
+                                        <input type="radio" name="high" id="dot3" />
+                                        <span className="high">BBA(B&I)</span>
+                                    </label>
+                                    <label htmlFor="dot4">
+                                        <input type="radio" name="high" id="dot4" />
+                                        <span className="high">BCOMM</span>
+                                    </label>
                                 </div>
-                        </div>  
-                        <div className='title2'>CURRENT WORKING DETAILS </div>
-                        <div className='working-data' >
-                            <label for="placement">Placement provided by SGTBIMIT</label>
+                            </div><br />
+
+                            <label htmlFor="Year" className="details3">Year</label>
+                            <div className="input3">
+                                <input type="text" placeholder="Enter Year" required></input>
+                            </div>
+                            <label htmlFor="Employed">Employed</label>
                             <div>
                                 <div>
-                                    <input type="radio" id="yes-p" name="Placement" value="yes" />
-                                    <label for="yes-p">YES</label>
+                                    <input type="radio" id="yes" name="employed" value="Yes" />
+                                    <label htmlFor="yes">YES</label>
                                 </div>
                                 <div>
-                                    <input type="radio" id="no-p" name="Placement" value="no" />
-                                    <label for="no-p">NO</label>
+                                    <input type="radio" id="no" name="employed" value="no" />
+                                    <label htmlFor="no">NO</label>
                                 </div>
                             </div>
-                            <label for="Organization">Present Organization</label>
-                            <input type="text" /> <br/>
-                            <label for= "Designation">Current Designation</label>
-                            <input type="text" />     
-                        </div>                          
-                                <div className="button">
-                                    <input type="submit" value="Register"></input>
+                            <div className='my-bold text-[30px] text-center my-5'>CURRENT WORKING DETAILS </div>
+                            <div className='working-data' >
+                                <label htmlFor="placement">Placement provided by SGTBIMIT</label>
+                                <div>
+                                    <div>
+                                        <input type="radio" id="yes-p" name="Placement" value="yes" />
+                                        <label htmlFor="yes-p">YES</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="dot2" name="Placement" value="no" />
+                                        <label htmlFor="dot2">NO</label>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
+                                <label htmlFor="Organization">Present Organization</label>
+                                <div className="input-box">
+                                    <input type="text" />
+                                </div> <br />
+                                <label htmlFor="Designation">Current Designation</label>
+                                <div className="input-box">
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className="button">
+                                <input type="submit" value="Register"></input>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <Footer />
-            </>
-            )
+            </div>
+            <Footer />
+        </>
+    )
 }

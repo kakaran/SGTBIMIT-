@@ -1,4 +1,4 @@
-.registeration-section {
+/*.registeration-section {
   background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
     background-size: 100%;
     display: grid;
@@ -69,21 +69,92 @@
 } */
 
 
-.container{
-  max-width:800px;
+
+/* .personal-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-block:   min(4rem, 4vw);
+    width: min(1500px, 100%);
+    margin-inline: auto;
+
+}
+
+.alumniform-other {
+    grid-column: 2;
+}
+
+.registeration-section h1 {
+    font-family: "SF Pro Display-Bold";
+    color: #2d2d2d;
+    text-align: center;
+    font-size: min(4rem, 4vw);
+}
+
+
+.personal-details {
+    display: flex;
+    flex-direction: column;
+    width: min(800px, 100%);
+    gap: .25rem;
+    font-size: 24px;
+}
+
+.personal-details h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.personal-details button {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    background-color: var(--primary-clr);
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.personal-details label {
+    border: none;
+    outline: none;
+}
+
+.personal-details input:not(input[type=radio]) {
+    border: 1px solid var(--primary-clr);
+    border-radius: 5px;
+    outline: none;
+    height: 30px;
+
+}
+
+.personal-details input:not(input[type=radio]):focus {
+    border: 2px solid var(--primary-clr);
+} */
+
+.backgroundreg{
+  background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
+}
+.reg-container {
+  max-width: 800px;
   width: 100%;
   background-color: #fff;
   padding: 35px 40px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
-.container .title{
-  font-size: 30px;
+
+.reg-container .title {
+  font-size: min(3rem, 5vw);
   font-weight: 1000;
   position: relative;
   color: black;
+  padding: 0;
+  margin: 0;
 }
-.container .title::before{
+
+.reg-container .title::before {
   content: "";
   position: absolute;
   left: 0;
@@ -94,31 +165,35 @@
   background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
 }
 
-.title2{
-    font-size: 22px;
-    text-align: center;
-    font-weight:700;
-    text-transform: capitalize;
-    display: block;
-    margin-top: 2%;
-    margin-bottom: 4%;
+.title2 {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: capitalize;
+  display: block;
+  margin-top: 2%;
+  margin-bottom: 4%;
 }
-.content form .user-details{
+
+.content form .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-form .user-details .input-box{
+
+form .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
-form .input-box span.details{
+
+form .input-box span.details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.user-details .input-box input{
+
+.input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -129,26 +204,31 @@ form .input-box span.details{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
+
+.input-box input:focus,
+.input-box input:valid {
   border-color: #1f567c;
 }
- form .gender-details .gender-title{
+
+form .gender-details .gender-title {
   font-size: 16px;
   font-weight: 500;
- }
- form .category{
-   display: flex;
-   width: 80%;
-   margin: 14px 0 ;
-   justify-content: space-between;
- }
- form .category label{
-   display: flex;
-   align-items: center;
-   cursor: pointer;
- }
- form .category label .dot{
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
   height: 18px;
   width: 18px;
   border-radius: 50%;
@@ -157,78 +237,89 @@ form .input-box span.details{
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
- #dot-1:checked ~ .category label .one,
- #dot-2:checked ~ .category label .two,
- #dot-3:checked ~ .category label .three{
-   background: #1f567c;
-   border-color: #c5e6fc;
- }
- form input[type="radio"]{
-   display: none;
- }
- form .button{
-   height: 45px;
-   margin: 35px 0
- }
- form .button input{
-   height: 100%;
-   width: 100%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
- }
- form .button input:hover{
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #1f567c;
+  border-color: #c5e6fc;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
+}
+
+
+form .button input:hover {
 
   background: linear-gradient(-135deg, #c5e6fc, #1f567c, #c5e6fc);
-  }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
 }
-form .user-details .input-box{
+
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .input-box {
     margin-bottom: 15px;
     width: 100%;
   }
-  form .category{
+
+  form .category {
     width: 100%;
   }
-  .content form .user-details{
+
+  .content form .user-details {
     max-height: 300px;
     overflow-y: scroll;
   }
-  .user-details::-webkit-scrollbar{
+
+  .user-details::-webkit-scrollbar {
     width: 5px;
   }
-  }
-  @media(max-width: 459px){
-  .container .content .category{
-    flex-direction: column;
-  }
-      
 }
 
-form .edu-details .detail3{
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+
+}
+
+form .edu-details .detail3 {
   font-size: 20px;
   font-weight: 500;
- }
- form .cat{
-   display: flex;
-   width: 80%;
-   margin: 14px 0 ;
-   justify-content: space-between;
- }
- form .cat label{
-   display: flex;
-   align-items: center;
-   cursor: pointer;
- }
- form .cat label .dot{
+}
+
+form .cat {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .cat label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .cat label .dot {
   height: 18px;
   width: 18px;
   border-radius: 50%;
@@ -237,24 +328,24 @@ form .edu-details .detail3{
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
- #dot1:checked ~ .cat label .one,
- #dot2:checked ~ .cat label .two,
- #dot3:checked ~ .cat label .three,
-#dot4:checked ~ .cat label .four{
-   background: #1f567c;
-   border-color: #c5e6fc;
- }
-form input[type="radio"]{
-    display: none;}
 
-.details3{
-  font-weight: 500;
-  margin-bottom: 5px;
-    font-size: 16px;
+#dot1:checked~.cat label .one,
+#dot2:checked~.cat label .two,
+#dot3:checked~.cat label .three,
+#dot4:checked~.cat label .four {
+  background: #1f567c;
+  border-color: #c5e6fc;
 }
 
-.input3 input{
-    height: 45px;
+
+.details3 {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.input3 input {
+  height: 45px;
   width: 30%;
   outline: none;
   font-size: 16px;
@@ -266,18 +357,18 @@ form input[type="radio"]{
 }
 
 .input3 input:focus,
-.input3 input:valid{
+.input3 input:valid {
   border-color: #1f567c;
 }
 
-@media(max-width: 459px){
-  .container .content .cat{
+@media(max-width: 459px) {
+  .container .content .cat {
     flex-direction: column;
   }
 }
 
 
 
-  .input3 input{
-    width:auto;
-  }
+.input3 input {
+  width: auto;
+}

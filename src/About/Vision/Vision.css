@@ -45,6 +45,10 @@
     padding: 0px;
 }
 
+.VisionDetail li {
+    padding: 5px;
+}
+
 .VisionImage {
     height: 750px;
     width: 550px;

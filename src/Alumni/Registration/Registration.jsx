@@ -93,7 +93,7 @@ export default function Registration() {
                             <label htmlFor="Year" className="details3">Year</label>
                             <div className="input3">
                                 <input type="text" placeholder="Enter Year" required></input>
-                            </div>
+                            </div> <br/>
                             <label htmlFor="Employed">Employed</label>
                             <div>
                                 <div>
@@ -116,15 +116,15 @@ export default function Registration() {
                                     <div>
                                         <input type="radio" id="dot2" name="Placement" value="no" />
                                         <label htmlFor="dot2">NO</label>
-                                    </div>
+                                    </div> <br/>
                                 </div>
                                 <label htmlFor="Organization">Present Organization</label>
                                 <div className="input-box">
-                                    <input type="text" />
+                                    <input type="text" placeholder='Present Organization'/>
                                 </div> <br />
                                 <label htmlFor="Designation">Current Designation</label>
                                 <div className="input-box">
-                                    <input type="text" />
+                                    <input type="text" placeholder='Current Designation' />
                                 </div>
                             </div>
                             <div className="button">

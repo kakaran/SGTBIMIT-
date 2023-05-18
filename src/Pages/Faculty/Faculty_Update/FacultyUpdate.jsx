@@ -17,7 +17,7 @@ const FacultyUpdate = () => {
   });
   const { _id } = useParams();
 
-  const [filedata, setFileData] = useState();
+  const [filedata, setFileData] = useState("");
 
   const Onchagetesdetail = (e) => {
     setFacultyUpdate({ ...facultyUpdate, [e.target.name]: e.target.value });
@@ -65,7 +65,7 @@ const FacultyUpdate = () => {
     try {
       let formData = new FormData();
       let Imagefile = await compresFile()
-      formData.append("image", Imagefile, filedata.name);
+      filedata && formData.append("image", Imagefile);
       formData.append("name", facultyUpdate.name);
       formData.append("post", facultyUpdate.post);
       formData.append("detail", facultyUpdate.detail);

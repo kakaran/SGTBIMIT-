@@ -2,98 +2,140 @@ import React from 'react'
 import './registration.css'
 import { Header, Navbar, Footer } from '../../Components'
 import { Helmet } from 'react-helmet'
+import { ToastContainer, toast } from 'react-toastify'
 
 export default function Registration() {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const bodyy = {
+            Fname: e.target.Fname.value,
+            Lname: e.target.Lname.value,
+            Email: e.target.Email.value,
+            MNumber: e.target.MNumber.value,
+            Address: e.target.Address.value,
+            AdhaarNo: e.target.AdhaarNo.value,
+            Gender: e.target.Gender.value,
+            course: e.target.course.value,
+            Year: e.target.Year.value,
+            employed: e.target.employed.value,
+            placement: e.target.placement.value,
+            presentOrgani: e.target.presentOrgani.value,
+            CurrentDesignation: e.target.CurrentDesignation.value,
+        }
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/Registration/Registration_Add`, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(bodyy)
+        })
+        const status = res.status
+        const message = await res.text()
+        if (status === 200) {
+            toast.success(`${message}`, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            })
+        } else if (status === 500) {
+            toast.error(`${message}`, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            })
+        }
+    }
     return (
         <>
             <Helmet title='SGTBIMIT | Alumini Registeration' />
             <Header />
             <Navbar />
-           
+
             <div className='grid place-items-center py-10 backgroundreg'>
                 <div className="reg-container">
                     <div className="title my-bold text-[50px]">Registration</div>
                     <div className="content">
 
-                        <form>
+                        <form action={`${process.env.REACT_APP_API_URL}/Registration/Registration_Add`} method='POST' onSubmit={(e) => { handleSubmit(e) }}>
                             <div className="my-bold text-[30px] text-center my-5">PERSONAL DETAILS</div>
                             <div className="user-details">
                                 <div className="input-box">
                                     <span className="details">First Name</span>
-                                    <input type="text" placeholder="Enter your name" required></input>
+                                    <input type="text" placeholder="Enter your name" required name='Fname'></input>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Last Name</span>
-                                    <input type="text" placeholder="Enter your Last name" required></input>
+                                    <input type="text" placeholder="Enter your Last name" required name='Lname'></input>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Email</span>
-                                    <input type="text" placeholder="Enter your email" required></input>
+                                    <input type="text" placeholder="Enter your email" required name='Email'></input>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Mobile Number</span>
-                                    <input type="text" placeholder="Enter your number" required></input>
+                                    <input type="number" placeholder="Enter your number" required name='MNumber'></input>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Address</span>
-                                    <input type="text" placeholder="Enter your Address" required></input>
+                                    <input type="text" placeholder="Enter your Address" required name='Address'></input>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Adhaar Number</span>
-                                    <input type="text" placeholder="Enter your Adhaar number" required></input>
+                                    <input type="number" placeholder="Enter your Adhaar number" required name='AdhaarNo'></input>
                                 </div>
                             </div>
                             <div className="gender-details">
-
-
-
                                 <span className="gender-title">Gender</span>
                                 <div className="category">
                                     <label htmlFor="dot-1">
-                                        <input type="radio" name="gender" id="dot-1"></input>
+                                        <input type="radio" name="Gender" id="dot-1" value="Male"></input>
                                         <span className="gender">Male</span>
                                     </label>
                                     <label htmlFor="dot-2">
-                                        <input type="radio" name="gender" id="dot-2"></input>
+                                        <input type="radio" name="Gender" id="dot-2" value="Female"></input>
                                         <span className="gender">Female</span>
                                     </label>
                                     <label htmlFor="dot-3">
-                                        <input type="radio" name="gender" id="dot-3"></input>
+                                        <input type="radio" name="Gender" id="dot-3" value="Not Prefer"></input>
                                         <span className="gender">Prefer not to say</span>
                                     </label>
                                 </div>
                             </div><br />
                             <div className="my-bold text-[30px] text-center my-5">HIGHER EDUCATION DETAILS</div>
                             <div className="edu-details">
-
-
-
-
                                 <span className="details3">Higher Education</span>
                                 <div className="cat">
                                     <label htmlFor="dot1">
-                                        <input type="radio" name="high" id="dot1" />
+                                        <input type="radio" name="course" id="dot1" value="BCA" />
                                         <span className="high">BCA</span>
                                     </label>
                                     <label htmlFor="dot2">
-                                        <input type="radio" name="high" id="dot2" />
+                                        <input type="radio" name="course" id="dot2" value="BBA" />
                                         <span className="high">BBA</span>
                                     </label>
                                     <label htmlFor="dot3">
-                                        <input type="radio" name="high" id="dot3" />
+                                        <input type="radio" name="course" id="dot3" value="BBA B&I" />
                                         <span className="high">BBA(B&I)</span>
                                     </label>
                                     <label htmlFor="dot4">
-                                        <input type="radio" name="high" id="dot4" />
-                                        <span className="high">BCOMM</span>
+                                        <input type="radio" name="course" id="dot4" value="BCOM" />
+                                        <span className="high">BCOM</span>
                                     </label>
                                 </div>
                             </div><br />
 
                             <label htmlFor="Year" className="details3">Year</label>
                             <div className="input3">
-                                <input type="text" placeholder="Enter Year" required></input>
-                            </div> <br/>
+                                <input type="number" placeholder="Enter Year" required name='Year'></input>
+                            </div> <br />
                             <label htmlFor="Employed">Employed</label>
                             <div>
                                 <div>
@@ -110,31 +152,33 @@ export default function Registration() {
                                 <label htmlFor="placement">Placement provided by SGTBIMIT</label>
                                 <div>
                                     <div>
-                                        <input type="radio" id="yes-p" name="Placement" value="yes" />
+                                        <input type="radio" id="yes-p" name="placement" value="Yes" />
                                         <label htmlFor="yes-p">YES</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="dot2" name="Placement" value="no" />
+                                        <input type="radio" id="dot2" name="placement" value="No" />
                                         <label htmlFor="dot2">NO</label>
-                                    </div> <br/>
+                                    </div> <br />
                                 </div>
                                 <label htmlFor="Organization">Present Organization</label>
                                 <div className="input-box">
-                                    <input type="text" placeholder='Present Organization'/>
+                                    <input type="text" placeholder='Present Organization' name='presentOrgani' />
                                 </div> <br />
                                 <label htmlFor="Designation">Current Designation</label>
                                 <div className="input-box">
-                                    <input type="text" placeholder='Current Designation' />
+                                    <input type="text" placeholder='Current Designation' name='CurrentDesignation' />
                                 </div>
                             </div>
                             <div className="button">
                                 <input type="submit" value="Register"></input>
                             </div>
+                            <ToastContainer />
                         </form>
                     </div>
                 </div>
             </div>
             <Footer />
+
         </>
     )
 }

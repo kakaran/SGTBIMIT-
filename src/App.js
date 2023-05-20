@@ -86,13 +86,6 @@ import EventUpdate from './Pages/Society/Event/Event_Update/Event_Update.jsx'
 
 
 function App() {
-  const fetchData = async () => {
-    const data = await fetch('https://college-copy.vercel.app/')
-    console.log(await data.json())
-  }
-  fetchData()
-
-
   const location = useLocation()
 
   return (

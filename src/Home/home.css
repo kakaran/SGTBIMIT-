@@ -408,7 +408,7 @@
     color: #fff;
 }
 
-.committee-item a>a {
+.committee-item a>div {
     display: flex;
     align-items: center;
     gap: 1rem;

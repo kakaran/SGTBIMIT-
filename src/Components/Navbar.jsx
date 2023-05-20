@@ -81,7 +81,7 @@ export default function Navbar() {
           <div>ACADEMICS<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="2">
             <div className="dropdown-item courses-dropdown-container">
-              <div className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>COURSES</div>
+              <div>COURSES</div>
               <div className="dropdown courses-dropdown">
                 <NavLink to="/academics/courses/bca" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
                   <div className="dropdown-item">BCA</div>
@@ -171,7 +171,7 @@ export default function Navbar() {
           <div>SOCIETY & CLUB<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="6">
             {events && events.map((event, i) => (
-              <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+              <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={`${event + i}`}>
                 <div className="dropdown-item" style={{ textTransform: "uppercase" }}> {event.name} </div>
               </NavLink>
             ))}

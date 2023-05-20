@@ -8,6 +8,8 @@
     height: 870px;
     width: 250px;
     border-right: 0.5px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
 }
 
 .Categories {
@@ -65,8 +67,8 @@
 }
 
 
-@media (min-width : 1495px){
-    .AdminMenuContainer{
+@media (min-width : 1495px) {
+    .AdminMenuContainer {
         height: 740px;
     }
 }

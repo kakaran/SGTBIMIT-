@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ImBoxAdd } from "react-icons/im";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdDashboard } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { pages } from "../../constants/paths";
 import "./AdminMenu.css";
 const AdminMenu = () => {
   const [isHomeActive, setIsHomeActive] = useState(false);
@@ -18,7 +19,7 @@ const AdminMenu = () => {
   const [isSUBAdministrationActive, setIsSUBAdministrationActive] =
     useState(false);
   const [isAdmissionActive, setIsAdmissionActive] = useState(false);
-  const[isSUBNoticeActive, setIsSUBNoticeActive] = useState(false);
+  const [isSUBNoticeActive, setIsSUBNoticeActive] = useState(false);
   const [isSUBAgalleryActive, setIsSUBAgalleryActive] = useState(false);
   const [isSUBRegistrationActive, setIsSUBRegistrationActive] = useState(false);
   const [isSUBAtestimonialsActive, setIsSUBAtestimonialsActive] = useState(false);
@@ -34,9 +35,47 @@ const AdminMenu = () => {
 
   const navigate = useNavigate();
 
+  const [query, setQuery] = useState("")
+  const [searchedPages, setSearchedPages] = useState([])
+
+  const setPages = () => {
+    if (!query) {
+      setSearchedPages([])
+      return
+    }
+    //console.log(query);
+    const searchedPages = pages.filter((page) => page.name.toLowerCase().includes(query.toLowerCase()))
+    setSearchedPages(searchedPages)
+  }
+  useEffect(() => {
+    setPages()
+  }, [query])
+
   return (
     <>
       <div className="AdminMenuContainer">
+        <div className="mx-auto flex flex-col w-full">
+          <input type="text"
+            onChange={(e) => {
+              setQuery(e.target.value)
+            }}
+            value={query}
+            placeholder="Search..."
+            className="rounded-full px-[1em] py-[.8em] focus:outline-none focus:border-cyan-500"
+            onFocus={() => setPages()}
+            onBlur={() => setSearchedPages([])}
+            name="search"
+          />
+          {searchedPages &&
+            <div className="flex flex-col justify-center items-start my-4">
+              {searchedPages.map((page, index) => {
+                /* if (index > 5) return (<></>) */
+                return (
+                  <div className="px-2 py-2 bg-gray-200 w-full border-b-2 border-0 border-b-white border-solid text-gray-900 rounded-sm cursor-pointer hover:bg-gray-300" onClick={() => { navigate(page.path) }}> {page.name} </div>
+                )
+              })}
+            </div>}
+        </div >
         <div
           className="Categories"
           onClick={() => {
@@ -739,7 +778,7 @@ const AdminMenu = () => {
             </div>
           )}
         </div>
-      </div>
+      </div >
     </>
   );
 };

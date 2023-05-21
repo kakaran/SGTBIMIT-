@@ -351,36 +351,7 @@ const AdminMenu = () => {
                     </span>
                   </div>
                 )}
-                <p
-                  onClick={() => {
-                    setIsSUBEgalleryActive(!isSUBEgalleryActive);
-                  }}
-                  style={{
-                    backgroundColor: "#e0e1dd",
-                  }}
-                >
-                  EVENTS GALLERY <IoIosArrowDown className="CatHeadIcons" />
-                </p>
-                {isSUBEgalleryActive && (
-                  <div className="Categoriesdropdown">
-                    <span>
-                      <p
-                        onClick={() => {
-                          navigate("/dashboard/admin/Society_Add");
-                        }}
-                      >
-                        EVENTS GALLERY ADD
-                      </p>
-                      <p
-                        onClick={() => {
-                          navigate("/dashboard/admin/Society_Display");
-                        }}
-                      >
-                        EVENTS GALLERY DISPLAY
-                      </p>
-                    </span>
-                  </div>
-                )}
+
                 <p
                   onClick={() => {
                     setIsSUBEhandlerActive(!isSUBEhandlerActive);
@@ -667,13 +638,6 @@ const AdminMenu = () => {
                 {isSUBRegistrationActive && (
                   <div className="Categoriesdropdown">
                     <span>
-                      <p
-                        onClick={() => {
-                          navigate("/dashboard/admin/Registration_Add");
-                        }}
-                      >
-                        REGISTRATION ADD
-                      </p>
                       <p
                         onClick={() => {
                           navigate("/dashboard/admin/Registration_Display");

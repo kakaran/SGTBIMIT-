@@ -32,6 +32,9 @@ export default function DirectorMsg() {
         }}
       >
         <img src={require("../images/quote.png")} alt="" className="dir-quote" />
+        <div className="director-img">
+          <img src={require("../images/director.jpg")} alt="cant load" />
+        </div>
         <p className='dr-note'>
           “Those who walk on the path of truth shall be praised throughout the world”
           <b className='dir-bold'>
@@ -42,12 +45,7 @@ export default function DirectorMsg() {
         <div className="director-position">
           Prof. Dr. Navneet Kaur - Director, SGTBIMIT
         </div>
-        <div
-          className="director-img"
-        >
-          <img src={require("../images/director.jpg")} alt="cant load" />
 
-        </div>
       </motion.div>
     </section>
   )

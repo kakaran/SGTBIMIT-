@@ -62,6 +62,7 @@ export default function Header() {
               <Link
                 to={`/admission/notices/${notice._id}`}
                 target='_blank'
+                className='text-[20px]'
               >
                 {` ${notice.Name} ||`}
               </Link>

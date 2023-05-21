@@ -88,6 +88,7 @@ export default function Events() {
                     src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${events._id}/${image._id}`}
                     alt="cant load"
                     className="event-carousel-img"
+                    key={image._id}
                   />
                 ))}
               </Carousel>
@@ -125,21 +126,19 @@ export default function Events() {
                         transformOrigin: 'top'
                       }}
                     >
-                      {events.Years.map((value) => {
+                      {events.Years.map((value, i) => {
                         return (
-                          <>
-                            <div className="EventsYear">
-                              <h5
-                                onClick={() => {
-                                  setEventFilter(value.year);
-                                  setEventYearController(!eventYearController);
-                                }}
-                                style={{ cursor: "pointer" }}
-                              >
-                                {value.year}
-                              </h5>
-                            </div>
-                          </>
+                          <div className="EventsYear" key={`Years-${i}`}>
+                            <h5
+                              onClick={() => {
+                                setEventFilter(value.year);
+                                setEventYearController(!eventYearController);
+                              }}
+                              style={{ cursor: "pointer" }}
+                            >
+                              {value.year}
+                            </h5>
+                          </div>
                         );
                       })}
                     </motion.div>
@@ -148,10 +147,9 @@ export default function Events() {
               </div>
             </div>
             {events.Years.map((year, i) => {
-              console.log(year);
               if (eventFilter === year.year) {
                 return (
-                  <div className="events-container">
+                  <div className="events-container" key={`Year-${i}`}>
                     {/* <h1
                 style={{
                     fontFamily: "SF Pro Display-Bold",
@@ -161,10 +159,10 @@ export default function Events() {
             > {year.year} </h1> */}
 
                     <div className="EventScroller">
-                      {year.Events.map((singleEvent) => {
+                      {year.Events.map((singleEvent, i) => {
                         console.log(singleEvent)
                         return (
-                          <div className="eventCardConatainer">
+                          <div className="eventCardConatainer" key={`Event-${i}`}>
                             <div className="event-card">
                               <p>{year.year}</p>
                               <img

@@ -58,7 +58,7 @@ export default function Committees() {
               to={`/committees/${committee.id}`}
               target='_blank'
             >
-              <motion.a viewport={{ once: true }}
+              <motion.div viewport={{ once: true }}
                 initial={{
                   scale: 0,
                 }}
@@ -72,7 +72,7 @@ export default function Committees() {
               >
                 <img src={require("../../images/pdf-icon.png")} alt="" />
                 <span>View Data</span>
-              </motion.a>
+              </motion.div>
             </Link>
             <motion.div viewport={{ once: true }}
               className="committee-content"

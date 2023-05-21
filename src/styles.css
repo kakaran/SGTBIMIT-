@@ -4,6 +4,8 @@
 :root {
     --primary-clr: #BF1717;
     --secondary-clr: #A52E2E;
+    --primary-blue: #084A9E;
+
 }
 
 @font-face {
@@ -11,6 +13,7 @@
     src: url("../public/fonts/SFPRODISPLAYREGULAR.OTF");
     font-style: normal;
 }
+
 
 @font-face {
     font-family: "SF Pro Display-Bold";

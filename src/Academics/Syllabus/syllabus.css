@@ -1,10 +1,11 @@
 .syllabus {
     background: url("../../images/bg-frame.png");
-    background-size:100%;
-    margin-bottom: min(2rem,2vw);
+    background-size: 100%;
+    padding-top: min(2rem, 2vw);
+    margin-bottom: min(2rem, 2vw);
 }
 
-.syllabus h1 {
+/* .syllabus h1 {
     font-size: min(4rem, 8vw);
     width: 90%;
     text-align: center;
@@ -83,4 +84,13 @@ td>a {
     }
 
     
+} */
+
+
+.grid-hide {
+    grid-template-rows: 0fr;
+}
+
+.grid-show {
+    grid-template-rows: 1fr;
 }

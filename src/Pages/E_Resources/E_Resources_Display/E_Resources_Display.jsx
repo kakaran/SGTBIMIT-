@@ -35,10 +35,7 @@ const EResourcesDisplay = () => {
 
   const EresourcesDelete = async (value) => {
     try {
-      const _id = value;
-      await axios.post(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Delete`, {
-        _id,
-      });
+      await axios.delete(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);

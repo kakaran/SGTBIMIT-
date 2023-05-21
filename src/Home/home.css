@@ -56,7 +56,7 @@
 
 .welcome-text h1 {
     font-size: min(4rem, 8vw);
-    color: #084A9E;
+    color: var(--primary-blue);
     font-family: "SF Pro Display-Bold";
 }
 
@@ -131,7 +131,7 @@
 
 .test-section h1 {
     font-size: min(4rem, 8vw);
-    color: #084A9E;
+    color: var(--primary-blue);
 }
 
 .test-section .control-arrow {
@@ -146,6 +146,10 @@
 .test {
     margin-inline: auto;
     width: 100%;
+}
+
+.test h1 {
+    font-size: min(3rem, 5vw);
 }
 
 .t-heading {
@@ -165,6 +169,7 @@
     position: relative;
     z-index: 10;
     box-shadow: 10px 20px 50px -20px #DCDCDC;
+    min-height: 600px;
 }
 
 .test-quote {
@@ -187,7 +192,7 @@
 
 .card p {
     font-size: min(2.5rem, 5vw);
-    line-height: 50px;
+    line-height: min(3rem, 5.5vw);
     color: #606060;
     text-align: start;
     z-index: 2;
@@ -205,7 +210,7 @@
 
 .card h1 {
     color: #B53232;
-    line-height: 36px;
+    line-height: min(2rem, 3vw);
     margin-block: 1.5rem;
     text-align: start;
     font-family: "SF Pro Display-Bold";
@@ -215,38 +220,42 @@
     background: linear-gradient(123.5deg, #FFFFFF 23.2%, #EAF4FF 74.08%);
     position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     padding-top: 2rem;
 }
 
 .testimonial-img img {
-    width: 50% !important;
+    width: 70% !important;
 }
 
 @media(max-width: 1000px) {
-    .test-carousel {
+
+    /*     .test-carousel {
         width: 400px !important;
     }
-
+ */
     .test {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, max-content);
     }
+
+    .card {
+        grid-template-columns: 1fr;
+        padding-bottom: 0;
+
+    }
+
+    .testimonial-img {
+        background-image: none;
+        justify-content: center;
+
+    }
 }
 
 @media(max-width: 600px) {
-    .card {
-        padding: 3rem;
-    }
-
-    .test h1 {
-        font-size: 2.2rem !important;
-    }
 
     .test p {
-        font-size: 1rem !important;
         text-align: justify;
     }
 }
@@ -261,7 +270,7 @@
 .director-heading {
     font-size: min(3.75rem, 7.5vw);
     margin-block: 12px;
-    color: #084A9E;
+    color: var(--primary-blue);
     font-family: "SF Pro Display-Bold";
 }
 
@@ -287,12 +296,8 @@
     font-size: min(2.5rem, 5vw);
     width: min(820px, 85%);
     line-height: 50px;
-    -webkit-text-stroke: #005E93 0.5px;
 }
 
-.dir-bold {
-    -webkit-text-stroke: #005E93 0px;
-}
 
 .director-img {
     position: absolute;
@@ -324,6 +329,24 @@
     background-color: white;
     position: absolute;
     transform: translate(-130%, 6px);
+}
+
+
+@media (max-width: 1000px) {
+    .director-container {
+        width: 100%;
+    }
+
+    .director-img {
+        position: static;
+        margin-inline: auto;
+
+    }
+
+    .director-img img {
+        border-radius: 20px;
+        @apply shadow-2xl
+    }
 }
 
 /* .wmk {
@@ -362,7 +385,8 @@
 
 /* Committees */
 .committees {
-    padding: 4rem;
+    padding-block: 4rem;
+    padding-inline: min(4rem, 4vw);
 }
 
 .committees-container {
@@ -384,7 +408,7 @@
     color: #fff;
 }
 
-.committee-item a>a {
+.committee-item a>div {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -443,6 +467,11 @@
     .committees-container {
         grid-template-columns: auto;
         grid-template-rows: repeat(4, 1fr);
+        gap: 6rem;
+    }
+
+    .committee-img {
+        transform: translate(0, -50%);
     }
 }
 
@@ -464,7 +493,7 @@
 .placements-container>h1 {
     font-size: min(4rem, 8vw);
     font-family: "SF Pro Display-Bold";
-    color: #084A9E;
+    color: var(--primary-blue);
 }
 
 .placement-bg {
@@ -525,13 +554,14 @@
 
 .placements img {
     border-radius: 10px;
-    width: 100%;
+    width: 100% !important;
     aspect-ratio: 91.6/100;
 }
 
 .blank {
     box-shadow: none;
     background-color: transparent;
+    border: none;
 }
 
 .place-heading {
@@ -679,7 +709,7 @@
 
 .map-container h1 {
     font-size: min(4rem, 8vw);
-    color: #084A9E !important;
+    color: var(--primary-blue) !important;
 
 }
 
@@ -687,7 +717,7 @@
     box-shadow: 10px 10px 27px 5px rgba(125, 162, 178, 0.5);
     background-color: white;
     border-radius: 20px;
-    padding: min(1.5rem, 1.5vw) min(2rem, 2vw);
+    padding: min(1.5rem, 2vw) min(2rem, 3vw);
     position: relative;
     width: 60%;
     margin-block: 2.5%;
@@ -751,8 +781,8 @@
 }
 
 .chip {
-    padding: min(0.75rem, 0.75vw) min(1.5rem, 1.5vw);
-    border-radius: min(1.75rem, 1.75vw);
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.75em;
     background: var(--secondary-clr);
     color: white;
     display: flex;
@@ -770,7 +800,28 @@
     border-radius: 20px;
 }
 
+@media (max-width: 1000px) {
+    .map-container {
+        flex-direction: column;
+    }
 
+    .map-frame {
+        width: 100%;
+        margin-left: 0px;
+        height: 500px;
+    }
+
+    .address-container {
+        width: 100%;
+    }
+
+    .chips {
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+}
 
 
 

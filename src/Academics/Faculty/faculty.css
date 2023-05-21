@@ -4,9 +4,10 @@
     align-items: center;
     padding: min(2rem, 2vw);
     background: url("../../images/bg-frame.png");
+    background-size: 100%;
 }
 
-.faculty-content{
+.faculty-content {
     color: rgba(0, 0, 0, 0.75);
     font-size: min(1.5rem, 3vw);
 }
@@ -21,7 +22,8 @@
     color: #2d2d2d;
     text-align: center;
 }
-.faculty-container > p {
+
+.faculty-container>p {
     text-align: center;
 }
 
@@ -57,20 +59,23 @@
     color: #2d2d2d;
 }
 
-.fac-name{
+.fac-name {
     display: flex;
     flex-direction: column;
     padding: min(1rem, 1vw);
-    
+
 }
+
 .fac-name h2,
-.fac-name p{
+.fac-name p {
     margin: 0;
 }
-.fac-name >p{
+
+.fac-name>p {
     color: rgba(0, 0, 0, 0.6);
     font-size: min(1.2rem, 2.4vw);
 }
+
 .fac-details {
     padding-top: min(3rem, 3vw);
     font-size: min(1.5rem, 3vw);

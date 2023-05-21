@@ -11,7 +11,7 @@ import Statistics from './Statistics/Statistics'
 
 export default function Placements() {
 
-    
+
     return (
 
         <>
@@ -36,7 +36,7 @@ export default function Placements() {
                 </section>
 
                 <section className='placement-about-section' id='placement-about'>
-                    <img src={ellipse} alt="" />
+                    <img src={ellipse} alt="" className='max-lg:hidden' />
                     <div className='layered-title'>
                         <h1>ABOUT US</h1>
                         <h2>About us</h2>
@@ -60,10 +60,12 @@ export default function Placements() {
                     <h2 className='placement-about-us'
                         style={{
                             marginInline: 'auto',
+                            zIndex: '10'
                         }}
                     >01/About Us</h2>
                     <h1 style={{
-                        marginBottom: "4rem"
+                        marginBottom: "4rem",
+                        zIndex: '10'
                     }}>Featured Stars</h1>
                     <Placementss isTitle={false} />
                     <div className="vertical-line"
@@ -86,7 +88,6 @@ export default function Placements() {
                 <Statistics />
 
 
-                
 
 
 
@@ -105,7 +106,8 @@ export default function Placements() {
 
 
 
-               {/*  <ul className='points'>
+
+                {/*  <ul className='points'>
                     <li>To invite industries and putative companies with the aim of providing employment to students and assisting them in the placement process.</li>
                     <li>To organize lectures and workshops for students to provide supplemental information on career counselling.</li>
                     <li>To provide interview techniques, soft skills development through placement seminars and pre-placement talks.</li>

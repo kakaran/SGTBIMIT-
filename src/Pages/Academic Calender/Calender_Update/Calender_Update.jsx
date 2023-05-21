@@ -19,8 +19,8 @@ const CalenderUpdate = () => {
       try {
         const data = (await axios.get(`${process.env.REACT_APP_API_URL}/Calendar/CalendarSingle/${id}`)).data;
         setSingleData({
-          Date: data?.source?.Date,
-          Event: data?.source?.Event,
+          Date: data?.Date,
+          Event: data?.Event,
         });
       } catch (error) {
         console.log(error);

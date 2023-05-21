@@ -31,7 +31,7 @@ const FileData = (props) => {
     try {
       const _id = value;
       console.log(_id);
-      await axios.get(
+      await axios.delete(
         `${process.env.REACT_APP_API_URL}/QuestionPaper/Paper_Delete/${_id}/${Number(
           Index
         )}`

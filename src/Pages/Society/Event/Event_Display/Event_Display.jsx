@@ -7,50 +7,65 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import FileData from "./FileData";
-import "../../../QuestionPaper/QuestionPaperDisplay/QuestionPaperDisplay.css"
+import "../../../QuestionPaper/QuestionPaperDisplay/QuestionPaperDisplay.css";
 import { Helmet } from "react-helmet";
 
 const EventDisplay = () => {
   // const [render, setRender] = useState(0);
   // const [getSociety, setSociety] = useState([]);
   // const [dataReset, setDataReset] = useState(true);
-  const [getPaperFilter, setPaperfilter] = useState({
+  const [getEventFilter, setEventFilter] = useState({
     year: "",
     eventHandler: "",
   });
 
-  const [getPaperFilterData, setPaperFilterData] = useState({
-    year: "",
-    eventHandler: "",
-    _id: "",
+  const [EventsAaray, setEventAaray] = useState({
+    Events : ""
   });
+
+  const [eventsData, setEventsData] = useState();
 
   const [filter, setfilter] = useState({});
 
   const Onchagetesdetail = (e) => {
-    setPaperfilter({ ...getPaperFilter, [e.target.name]: e.target.value });
+    setEventFilter({ ...getEventFilter, [e.target.name]: e.target.value });
   };
 
   const navigator = useNavigate("");
 
-  //-------------------- Single Document Data get ----------------------//
-  const SinglePaperDisplay = async () => {
+  //-------------------- Event Handler Data get ----------------------//
+  const EventHandlerData = async () => {
     try {
-      // console.log(getPaperFilter);
-      const Detail = (
+      const Data = (
         await axios.get(
-          `${process.env.REACT_APP_API_URL}/Event/Single_Event_Display/${getPaperFilter.year}/${getPaperFilter.eventHandler}`
+          `${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`
         )
       ).data;
-      // console.log(Detail);
+      if (Data) {
+        setEventsData(Data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
 
-      setPaperFilterData({
-        year: Detail?.Data[0]?.year,
-        eventHandler: Detail?.Data[0]?.eventHandler,
-        _id: Detail?.Data[0]?._id,
+    const EventsFind = async () => {
+      eventsData.map((value) => {
+        if (value.name == getEventFilter.eventHandler) {
+          value.Years.map((value) => {
+            if (value.year == getEventFilter.year) {
+              setEventAaray({Events : value?.Events})
+            }
+          });
+        }
       });
+    };
+  
 
-      // setDataReset(false);
+  const EventsData = async () => {
+    try {
+      const data = await axios.get();
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +75,9 @@ const EventDisplay = () => {
   const PaperDelete = async (value) => {
     try {
       const _id = value;
-      await axios.get(`${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}`);
+      await axios.get(
+        `${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}`
+      );
       // setRender(1);
     } catch (error) {
       console.log(error);
@@ -70,14 +87,12 @@ const EventDisplay = () => {
   //----------- Reset the Data --------------//
   const ResetPaperData = async () => {
     // setRender(1);
-    setPaperfilter({
+    setEventFilter({
       year: " ",
       eventHandler: " ",
     });
-    setPaperFilterData({
-      year: "",
-      eventHandler: "",
-      _id: "",
+    setEventAaray({
+      Events : " "
     })
   };
 
@@ -95,6 +110,12 @@ const EventDisplay = () => {
     }
   };
 
+  useEffect(() => {
+    EventHandlerData();
+  }, []);
+
+  console.log(EventsAaray);
+
   return (
     <>
       <Helmet title="Display Events" />
@@ -110,88 +131,49 @@ const EventDisplay = () => {
             </div>
             <div className="filterContainer">
               <span className="NameAndSelect">
-                <h4>Year</h4>
+                <h4>Events </h4>
                 <select
-                  name="year"
+                  name="eventHandler"
                   id=""
-                  placeholder="Year"
-                  value={getPaperFilter.year}
+                  placeholder="Events"
+                  value={getEventFilter.eventHandler}
                   onChange={Onchagetesdetail}
                 >
-                  <option value=" ">Select Year</option>
-                  {filter?.years?.map((value) => {
-                    return <option value={value.year}>{value.year}</option>;
+                  <option value=" ">Select Event</option>
+                  {eventsData?.map((value) => {
+                    return <option value={value.name}>{value.name}</option>;
                   })}
                 </select>
               </span>
               <span className="NameAndSelect">
-                <h4>Event Handler</h4>
+                <h4>Year</h4>
                 <select
-                  name="eventHandler"
+                  name="year"
                   id=""
-                  placeholder="Event Handler"
+                  placeholder="year"
                   onChange={Onchagetesdetail}
-                  value={getPaperFilter.eventHandler}
+                  value={getEventFilter.year}
                 >
-                  <option value=" ">Select Event Handler</option>
-                  {filter?.years?.map((value) => {
-                    if (value.year == getPaperFilter.year) {
-                      return value.eventHandler.map((value1) => {
+                  <option value=" ">Select Year</option>
+                  {eventsData?.map((value) => {
+                    if (value.name == getEventFilter.eventHandler) {
+                      return value.Years.map((value1) => {
                         return (
-                          <option value={value1.eventHandler}>
-                            {value1.eventHandler}
-                          </option>
+                          <option value={value1.year}>{value1.year}</option>
                         );
                       });
                     }
                   })}
                 </select>
               </span>
-              <button onClick={SinglePaperDisplay} className="button-30">Search</button>
-              <button onClick={ResetPaperData} className="button-30">Clear</button>
+              <button onClick={EventsFind} className="button-30">
+                Search
+              </button>
+              <button onClick={ResetPaperData} className="button-30">
+                Clear
+              </button>
             </div>
-            {getPaperFilterData.Semester ?
-              (
-                <div className="TesDisplayCardContainer">
-                  <div className="Society_Card">
-                      <span>
-                        <BiEditAlt
-                          style={{
-                            paddingRight: "10px",
-                            width: "32px",
-                            color: "#adb5bd",
-                          }}
-                          onClick={() => {
-                            navigator(
-                              `/dashboard/admin/Prev_Year_Paper_Update/${getPaperFilter?.course}/${getPaperFilter?.Year}/${getPaperFilter?.Semester}/${getPaperFilterData?._id}`
-                            );
-                          }}
-                        />
-                        <RiDeleteBin6Line
-                          className="TestBin"
-                          onClick={() => {
-                            PaperDelete(getPaperFilterData?._id);
-                          }}
-                          style={{ color: "#d00000" }}
-                        />
-                      </span>
-                    <div className="Society_Card_ImageDescription">
-                      {getPaperFilterData ? (
-                        <FileData
-                          Year={getPaperFilterData?.year}
-                          eventHandler={getPaperFilterData?.eventHandler}
-                          _id={getPaperFilterData?._id}
-                        />
-                      ) : (
-                        "  "
-                      )}
-                      <div className="Society_Describe">
-                        <h4>{getPaperFilterData.year}</h4>
-                        <h4> Event Handler : {getPaperFilterData?.eventHandler}</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>) : " "}
+            {eventsData?.Events ? <h1>hi</h1> : " "}
           </div>
         </div>
       </div>

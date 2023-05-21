@@ -61,11 +61,11 @@ export default function Registration() {
 
             <div className='grid place-items-center py-10 backgroundreg'>
                 <div className="reg-container">
-                    <div className="title my-bold text-[50px]">Registration</div>
+                    <div className="title my-bold text-[50px] heading-reg">Registration</div>
                     <div className="content">
 
                         <form action={`${process.env.REACT_APP_API_URL}/Registration/Registration_Add`} method='POST' onSubmit={(e) => { handleSubmit(e) }}>
-                            <div className="my-bold text-[30px] text-center my-5">PERSONAL DETAILS</div>
+                            <div className="my-bold text-[30px] text-center my-5 head-titles">PERSONAL DETAILS</div>
                             <div className="user-details">
                                 <div className="input-box">
                                     <span className="details">First Name</span>
@@ -109,7 +109,7 @@ export default function Registration() {
                                     </label>
                                 </div>
                             </div><br />
-                            <div className="my-bold text-[30px] text-center my-5">HIGHER EDUCATION DETAILS</div>
+                            <div className="my-bold text-[30px] text-center my-5 head-titles">HIGHER EDUCATION DETAILS</div>
                             <div className="edu-details">
                                 <span className="details3">Higher Education</span>
                                 <div className="cat">
@@ -136,35 +136,35 @@ export default function Registration() {
                             <div className="input3">
                                 <input type="number" placeholder="Enter Year" required name='Year'></input>
                             </div> <br />
-                            <label htmlFor="Employed">Employed</label>
-                            <div>
-                                <div>
+                            <label htmlFor="Employed" className="Emphead">Employed</label>
+                            <div> <br />
+                                <div className='input4'>
                                     <input type="radio" id="yes" name="employed" value="Yes" />
                                     <label htmlFor="yes">YES</label>
                                 </div>
-                                <div>
+                                <div className='input5'>
                                     <input type="radio" id="no" name="employed" value="no" />
                                     <label htmlFor="no">NO</label>
                                 </div>
                             </div>
-                            <div className='my-bold text-[30px] text-center my-5'>CURRENT WORKING DETAILS </div>
+                            <div className='my-bold text-[30px] text-center my-5 head-titles'>CURRENT WORKING DETAILS </div>
                             <div className='working-data' >
-                                <label htmlFor="placement">Placement provided by SGTBIMIT</label>
-                                <div>
-                                    <div>
+                                <label htmlFor="placement" className='place-head'>Placement provided by SGTBIMIT</label>
+                                <div> <br />
+                                    <div className='place-1'>
                                         <input type="radio" id="yes-p" name="placement" value="Yes" />
                                         <label htmlFor="yes-p">YES</label>
                                     </div>
-                                    <div>
-                                        <input type="radio" id="dot2" name="placement" value="No" />
-                                        <label htmlFor="dot2">NO</label>
+                                    <div className='place-2'>
+                                        <input type="radio" id="no-p" name="placement" value="No" />
+                                        <label htmlFor="no-p">NO</label>
                                     </div> <br />
                                 </div>
-                                <label htmlFor="Organization">Present Organization</label>
+                                <label htmlFor="Organization" className='org-head'>Present Organization</label>
                                 <div className="input-box">
                                     <input type="text" placeholder='Present Organization' name='presentOrgani' />
                                 </div> <br />
-                                <label htmlFor="Designation">Current Designation</label>
+                                <label htmlFor="Designation" className='des-head'>Current Designation</label>
                                 <div className="input-box">
                                     <input type="text" placeholder='Current Designation' name='CurrentDesignation' />
                                 </div>

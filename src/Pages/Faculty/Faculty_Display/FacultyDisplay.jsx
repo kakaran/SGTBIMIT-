@@ -46,7 +46,7 @@ const FacultyDisplay = () => {
     try {
       const _id = value;
       // console.log(_id);
-      await axios.post(`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Delete/${_id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);

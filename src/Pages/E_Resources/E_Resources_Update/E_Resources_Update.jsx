@@ -11,12 +11,12 @@ const EResourcesUpdate = () => {
     url: "",
   });
 
-  const { id } = useParams();
+  const {_id} = useParams();
 
   useEffect(() => {
     const TestSingleData = async () => {
       try {
-        const data = await axios.get(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Single_Display/${id}`).data;
+        const data = await axios.get(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Single_Display/${_id}`).data;
         console.log(data);
         setSingleData({
           name: data?.source?.name,
@@ -27,28 +27,23 @@ const EResourcesUpdate = () => {
       }
     };
     TestSingleData();
-  }, [id]);
+  }, [_id]);
 
   const EResoucesUpdate = async (e) => {
     e.preventDefault();
     try {
       const data = (
-        await axios.post(
-          `${process.env.REACT_APP_API_URL}/E_Resources/EResources_Update/${id}`,
-          { SingleData }
-        )
-      ).data;
+        await axios.post(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Update/${_id}`,SingleData)
+        ).data;
+      console.log(data)
     } catch (error) {
       console.log(error);
     }
   };
 
   const Onchagetesdetail = (e) => {
-    setSingleData((SingleData) => ({
-      ...SingleData,
-      [e.target.name]: e.target.value,
-    }));
-  };
+    setSingleData({...SingleData, [e.target.name]: e.target.value})
+  }
 
   return (
     <>
@@ -69,7 +64,7 @@ const EResourcesUpdate = () => {
                 name="name"
                 id="name"
                 placeholder="Name"
-                value={SingleData.name}
+                value={SingleData?.name}
                 onChange={Onchagetesdetail}
               />
               <input
@@ -77,7 +72,7 @@ const EResourcesUpdate = () => {
                 name="url"
                 id="url"
                 placeholder="URL"
-                value={SingleData.url}
+                value={SingleData?.url}
                 onChange={Onchagetesdetail}
               />
               <button className="button-19" onClick={EResoucesUpdate}>

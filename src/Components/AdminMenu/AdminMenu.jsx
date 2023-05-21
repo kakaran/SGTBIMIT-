@@ -63,7 +63,7 @@ const AdminMenu = () => {
             placeholder="Search..."
             className="rounded-full px-[1em] py-[.8em] focus:outline-none focus:border-cyan-500"
             onFocus={() => setPages()}
-            onBlur={() => setSearchedPages([])}
+            onBlur={() => setTimeout(() => { setSearchedPages([]) }, 100)}
             name="search"
           />
           {searchedPages &&
@@ -71,7 +71,7 @@ const AdminMenu = () => {
               {searchedPages.map((page, index) => {
                 /* if (index > 5) return (<></>) */
                 return (
-                  <div className="px-2 py-2 bg-gray-200 w-full border-b-2 border-0 border-b-white border-solid text-gray-900 rounded-sm cursor-pointer hover:bg-gray-300" onClick={() => { navigate(page.path) }}> {page.name} </div>
+                  <div className="px-2 py-2 bg-gray-200 w-full border-b-2 border-0 border-b-white border-solid text-gray-900 rounded-sm cursor-pointer hover:bg-gray-300" onClick={() => { navigate(page.path); console.log(page.path); }}> {page.name} </div>
                 )
               })}
             </div>}

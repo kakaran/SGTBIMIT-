@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 const AlumniMeet = () => {
     return (
         <>
-            <Helmet title='SGTBIMIT | Alumini Meet' />
+            <Helmet title='SGTBIMIT | Alumni Meet' />
             <Header />
             <Navbar />
             <motion.section viewport={{ once: true }}
@@ -26,7 +26,7 @@ const AlumniMeet = () => {
                 className="alumini-meet-section"
             >
                 <div className='alumnimeet'>
-                    <h1>ALUMINI MEET</h1>
+                    <h1>ALUMNI MEET</h1>
                     <h2>ABOUT US</h2>
                     <p>The Alumni Association of Sri Guru Tegh Bahadur Institute of Management and Information Technology evolved to bridge the wide chasm existing between college and career life. It is committed to all youngsters who graduate and face challenges of the competitive, professional world to remain a part of their alma mater. The idea took shape and the formation of the Alumni Association turned into reality. The reputation of an educational institution lies within its students – Past and Present. Faculty and staff also play a vital role. The reputation grows when it keeps producing successful graduates continuously – intelligent, innovative and effective in their respective fields.</p>
                     <p><h3>Our Mission:</h3>

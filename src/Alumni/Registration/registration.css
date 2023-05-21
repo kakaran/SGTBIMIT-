@@ -134,8 +134,9 @@
 } */
 
 .backgroundreg{
-  background: linear-gradient(135deg, #c5e6fc, #1f567c, #c5e6fc);
+  background: url("../../images/bg-frame.png");
 }
+
 .reg-container {
   max-width: 800px;
   width: 100%;
@@ -185,6 +186,7 @@
 form .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
+  font-size: 20px;
 }
 
 form .input-box span.details {
@@ -197,7 +199,7 @@ form .input-box span.details {
   height: 45px;
   width: 100%;
   outline: none;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px;
   padding-left: 15px;
   border: 1px solid #ccc;
@@ -211,8 +213,9 @@ form .input-box span.details {
 }
 
 form .gender-details .gender-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
+  font-size: 25px;
 }
 
 form .category {
@@ -226,6 +229,7 @@ form .category label {
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-size: 20px;
 }
 
 form .category label .dot {
@@ -247,7 +251,8 @@ form .category label .dot {
 
 form .button {
   height: 45px;
-  margin: 35px 0
+  margin: 35px 0;
+  font-size: 15px;
 }
 
 form .button input {
@@ -256,7 +261,7 @@ form .button input {
   border-radius: 5px;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
@@ -278,6 +283,7 @@ form .button input:hover {
   form .input-box {
     margin-bottom: 15px;
     width: 100%;
+    font-size: 20px;
   }
 
   form .category {
@@ -311,6 +317,7 @@ form .cat {
   width: 80%;
   margin: 14px 0;
   justify-content: space-between;
+  font-size: 20px;
 }
 
 form .cat label {
@@ -341,14 +348,14 @@ form .cat label .dot {
 .details3 {
   font-weight: 500;
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 25px;
 }
 
 .input3 input {
   height: 45px;
   width: 30%;
   outline: none;
-  font-size: 16px;
+  font-size: 25px;
   border-radius: 5px;
   padding-left: 15px;
   border: 1px solid #ccc;
@@ -372,3 +379,21 @@ form .cat label .dot {
 .input3 input {
   width: auto;
 }
+
+.input4, .place-1{
+ font-size: 20px;
+}
+.place-2{
+  font-size: 20px;
+}
+
+.Emphead , .org-head, .des-head, .place-head{
+  font-size: 25px;
+
+}
+
+
+.head-titles{
+  color: #1f567c;
+}
+

@@ -37,8 +37,8 @@ const RegistrationAdd = () => {
   const FacultyAdd = async () => {
     try {
       let formData = new FormData();
-      const compressedFile = await imageCompression(filedata, options);
-      console.log(compressedFile);
+      // const compressedFile = await imageCompression(filedata, options);
+      // console.log(compressedFile);
     //   formData.append("image", compressedFile, filedata.name);
       formData.append("Fname", regisUpdate.Fname);
       formData.append("Lname", regisUpdate.Lname);
@@ -53,17 +53,9 @@ const RegistrationAdd = () => {
       formData.append("presentOrgani", regisUpdate.presentOrgani);
       formData.append("CurrentDesignation", regisUpdate.CurrentDesignation);
       const data1 = (
-        await axios.post(
-          `${process.env.REACT_APP_API_URL}/Registration/Registration_Add`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
+        await axios.post(`${process.env.REACT_APP_API_URL}/Registration/Registration_Add`,formData)
       ).data;
-      // console.log(data1);
+      console.log(data1);
     } catch (error) {
       console.log(error);
     }

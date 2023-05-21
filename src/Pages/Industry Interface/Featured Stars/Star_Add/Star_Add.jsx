@@ -9,9 +9,10 @@ import { Helmet } from "react-helmet";
 
 const StarsAdd = () => {
   const [starsUpdate, setStarsUpdate] = useState({
-    name: "",
+    Name: "",
+    Course : "",
     image: "",
-    companyName: "",
+    CompanyImage: "",
   });
   const [filedata, setFileData] = useState();
 
@@ -31,12 +32,12 @@ const StarsAdd = () => {
       const compressedFile = await imageCompression(filedata, options);
       console.log(compressedFile);
       formData.append("image", compressedFile, filedata.name);
-      formData.append("name", starsUpdate.name);
-      formData.append("companyName", starsUpdate.companyName);
+      formData.append("name", starsUpdate.Name);
+      formData.append("Course", starsUpdate.Course);
+      formData.append("CompanyImage", starsUpdate.CompanyImage);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Add`,
-          formData,
+          `${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Add`,formData,
           {
             headers: {
               "Content-Type": "multipart/form-data",
@@ -44,7 +45,7 @@ const StarsAdd = () => {
           }
         )
       ).data;
-      // console.log(data1);
+      console.log(data1);
     } catch (error) {
       console.log(error);
     }
@@ -65,18 +66,30 @@ const StarsAdd = () => {
             <div className="SocietyForm">
               <input
                 type="text"
-                name="name"
+                name="Name"
                 id=""
                 placeholder="Name"
                 onChange={Onchagetesdetail}
               />
               <input
                 type="text"
-                name="companyName"
+                name="Course"
                 id=""
-                placeholder="Company Name"
+                placeholder="Couse"
                 onChange={Onchagetesdetail}
               />
+              <div className="Message_image">
+                <input
+                  type="file"
+                  name="image"
+                  id="ImageUpload"
+                  onChange={(e) => {
+                    setFileData(e.target.files[0]);
+                  }}
+                  style={{ width: "200px", height: "150px" }}
+                />
+              </div>
+
               <div className="Message_image">
                 <input
                   type="file"

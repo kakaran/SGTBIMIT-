@@ -1,7 +1,7 @@
 .examination-section {
     background: url("../../images//bg-frame.png");
     background-size: 100%;
-    padding: min(2rem, 2vw);
+    padding: min(2rem, 3vw);
 }
 
 @media (max-width: 1000px) {

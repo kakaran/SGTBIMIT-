@@ -99,10 +99,10 @@ export default function Examination() {
           Tips for Students
         </h1>
         <div className='w-full max-w-[1500px] mx-auto'>
-          <h1 className='my-bold text-[var(--primary-clr)] text-[min(2.5rem,4vw)]'>
+          <h1 className='my-bold text-[var(--primary-clr)] text-[min(3rem,6vw)]'>
             {_.capitalize(_.toLower("IMPORTANT TIPS TO BE KEPT IN MIND BEFORE/DURING CAMPUS PLACEMENT DRIVE"))}
           </h1>
-          <p className='text-gray-500 text-3xl text-justify'>
+          <p className='text-gray-500 text-[min(1.5rem,4vw)] leading-[min(2rem,5vw)] text-justify'>
             Most of you are undergoing professional courses like B-Tech, MCA and MBA. In this competitive world, these professional courses are looked upon as an assurance of getting a good job. These courses provide opportunities to participate in campus placement drives. Nowadays, companies conducting placement drive are willing to take all the skilled and talented students at first hand. So, they generally visit the campus at the earliest to select skilled students. However, most of the students don’t have the exposure and experience of campus placement drive and the bound to feel nervous. We bring you some important tips that you should keep in mind during a campus placement drive.
           </p>
           <div className='flex flex-col gap-5'>
@@ -122,7 +122,7 @@ export default function Examination() {
                           {tip.title.split("").slice(1).join("")}
                         </span>
                       </h1>
-                      <p className='text-2xl text-gray-600 text-justify'>
+                      <p className='text-[min(1.5rem,4vw)] leading-[min(2rem,5vw)] text-gray-600 text-justify'>
                         {tip.desc}
                       </p>
                     </div>
@@ -135,18 +135,13 @@ export default function Examination() {
                       {tip.id}.
                     </div> */}
                     <div>
-                      <h1 className='text-[var(--primary-blue)] m-0'>
-                        <span className='my-bold text-[min(4rem,8vw)]'>
-                          {tip.title.split("")[0]}
-                        </span>
-                        <span className='my-bold text-[min(2rem,4vw)]'>
-                          {tip.title.split("").slice(1).join("")}
-                        </span>
+                      <h1 className='text-[var(--primary-blue)] m-0 my-bold text-[min(2rem,5vw)]'>
+                        {tip.title}
                       </h1>
                       <div className=''>
                         {tip.desc.map(dress => (
-                          <p className='text-2xl text-gray-600'>
-                            {dress}
+                          <p className='text-[min(1.5rem,4vw)] leading-[min(2rem,4vw)] text-gray-600 ml-5'>
+                            <span className='text-[var(--primary-blue)]'>→</span> {dress}
                           </p>
                         ))}
                       </div>

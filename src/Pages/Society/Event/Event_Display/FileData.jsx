@@ -11,7 +11,7 @@ const FileData = (props) => {
   const paperDataRecover = async () => {
     try {
       const data = await axios.get(
-        `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${props.course}/${props.Year}/${props.Semester}`
+        `${process.env.REACT_APP_API_URL}/Event/Single_Event_Display/${props.year}/${props.eventHandler}`
       );
       // console.log(data);
       setPaperName(data.data.FileNames);
@@ -31,8 +31,8 @@ const FileData = (props) => {
     try {
       const _id = value;
       console.log(_id);
-      await axios.delete(
-        `${process.env.REACT_APP_API_URL}/QuestionPaper/Paper_Delete/${_id}/${Number(
+      await axios.get(
+        `${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}/${Number(
           Index
         )}`
       );

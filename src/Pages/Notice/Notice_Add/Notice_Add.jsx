@@ -96,8 +96,9 @@ const NoticeAdd = () => {
               ></textarea>
               <select name="Categories" id="" onChange={Onchagetesdetail}>
                 <option value=" ">Select Category</option>
-                <option value="important">Important</option>
-                <option value="normal">Normal</option>
+                <option value="admission">Admission</option>
+                <option value="academic">Academic</option>
+                <option value="others">Others</option>
               </select>
               <div className="Message_image">
                 <input

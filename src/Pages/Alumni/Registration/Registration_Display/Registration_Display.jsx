@@ -35,7 +35,7 @@ const RegistrationDisplay = () => {
 
   const TestimonialDelete = async (value) => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/Registration/Registration_Delete/${value}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/Registration/Registration_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);

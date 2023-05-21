@@ -30,7 +30,7 @@ export default function Vision() {
         className="Vision_Container">
         <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
           <div>
-            <h1 className="my-bold text-[min(4rem,8vw)]">
+            <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">
               Our Vision
             </h1>
             <p className="text-2xl text-justify">
@@ -50,7 +50,7 @@ export default function Vision() {
             <img src={require("../../images/mission.jpg")} alt="" className=" mix-blend-multiply w-96" />
           </div>
           <div>
-            <h1 className="my-bold text-[min(4rem,8vw)]">
+            <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">
               Our Mission
             </h1>
             <ul className="text-2xl text-justify">

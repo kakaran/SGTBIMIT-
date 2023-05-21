@@ -19,7 +19,7 @@
 .faculty-container h1 {
     font-size: min(4rem, 8vw);
     font-family: "SF Pro Display-Bold";
-    color: #2d2d2d;
+    color: var(--primary-blue);
     text-align: center;
 }
 
@@ -55,7 +55,7 @@
 
 .faculty-card h2 {
     font-family: "SF Pro Display-Bold";
-    font-size: min(3rem, 6vw);
+    font-size: min(2.5rem, 5vw);
     color: #2d2d2d;
 }
 
@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: column;
     padding: min(1rem, 1vw);
-
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .fac-name h2,
@@ -73,16 +73,20 @@
 
 .fac-name>p {
     color: rgba(0, 0, 0, 0.6);
-    font-size: min(1.2rem, 2.4vw);
+    font-size: min(1.5rem, 2.5vw);
 }
 
 .fac-details {
     padding-top: min(3rem, 3vw);
     font-size: min(1.5rem, 3vw);
-    border-top: 2px solid rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     gap: min(1rem, 1vw);
+    margin-top: auto;
+}
+
+.fac-details * {
+    margin: 0;
 }
 
 @media(max-width: 1200px) {

@@ -1,40 +1,45 @@
-.courses-section{
+.courses-section {
     background-image: url("../../images/bg-frame.png");
     width: 100%;
 }
 
-.courses>h1{
-    font-size: min(4rem,8vw);
+.courses>h1 {
+    font-size: min(4rem, 8vw);
     font-family: "SF Pro Display-Bold";
     text-align: center;
-    color: #2d2d2d;
+    color: var(--primary-blue);
 }
-.courses>p{
-    font-size: min(1.5rem,4vw);
+
+.courses>p {
+    font-size: min(1.5rem, 4vw);
     text-align: justify;
 }
-.diploma h1{
-    font-size: min(2rem,4vw);
+
+.diploma h1 {
+    font-size: min(2rem, 4vw);
     font-family: "SF Pro Display-Bold";
 }
 
-.list-wrapper{
+.list-wrapper {
     margin-inline: auto;
     width: min(1000px, 100%);
     position: relative;
 }
-.list-wrapper h1{
+
+.list-wrapper h1 {
     font-size: min(1.37rem, 3vw);
     color: black;
 }
-.list-wrapper p{
-    font-size: min(1.37rem,3vw);
+
+.list-wrapper p {
+    font-size: min(1.37rem, 3vw);
     text-align: justify;
     min-width: 90%;
     margin-inline: auto;
 }
-.list-wrapper button{
-    font-size: min(2rem,4vw);
+
+.list-wrapper button {
+    font-size: min(2rem, 4vw);
     background-color: var(--primary-clr);
     color: white;
     border-radius: 0.5rem;
@@ -43,11 +48,12 @@
     padding: 1rem;
 }
 
-.diploma{
+.diploma {
     text-align: center;
-    
+
 }
-.courses{
+
+.courses {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,13 +61,14 @@
     padding: 1rem;
     margin-inline: auto;
 }
+
 .content,
 .content-1,
-.content-2{
-/*    display: none; */
+.content-2 {
+    /*    display: none; */
 }
 
-.courses img{
+.courses img {
     margin-inline: auto;
-   
+
 }

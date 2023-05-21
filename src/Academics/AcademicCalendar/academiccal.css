@@ -24,15 +24,15 @@
 
 }
 
-.cal-grid>*:not(.heading) {
+.cal-grid>* {
     border: 2px solid rgb(1, 39, 59);
     text-align: center;
     padding: min(1rem, 1vw);
-    font-size: 24px;
+    font-size: min(1.25rem, 2.5vw);
 }
 
-.heading {
-    font-weight: bolder;
+.heading>* {
+    font-family: "SF Pro Display-Bold";
     font-size: min(2.5rem, 5vw);
     background-color: var(--primary-clr);
     color: white;
@@ -44,6 +44,7 @@
     font-family: "SF Pro Display-Bold";
     color: var(--primary-blue);
 }
+
 
 @media(max-width: 1000px) {
     .acad-cal {

@@ -1,14 +1,21 @@
 .about {
     width: 100%;
     margin-inline: auto;
-    margin-bottom: min(7rem, 7vw);
-    padding-top: 2.5rem;
+    padding: min(1.5rem, 1.5vw);
+    padding-bottom: min(7rem, 7vw);
     position: relative;
     background: url("../images/bg-frame.png");
     background-size: contain;
+    background-repeat: repeat-y;
 }
 
-.about-container {
+@media(max-width: 1000px) {
+    .about {
+        background-image: none;
+    }
+}
+
+/* .about-container {
     width: min(1000px, 100%);
     margin-inline: auto;
 }
@@ -62,4 +69,4 @@
         align-items: center;
     }
 
-}
+} */

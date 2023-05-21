@@ -1,11 +1,12 @@
-.acad-cal{
+.acad-cal {
     background: url("../../images/bg-frame.png");
-    background-size:contain;
-    margin-bottom: min(2rem,2vw);
+    background-size: contain;
+    margin-bottom: min(2rem, 2vw);
 }
 
 
-.cal-container{
+
+.cal-container {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: min(1000px, 100%);
     background: white;
@@ -14,32 +15,38 @@
     border-radius: 10px;
 
 }
-.cal-grid{
+
+.cal-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     margin-inline: auto;
 
 }
-.cal-grid>*{
+
+.cal-grid>*:not(.heading) {
     border: 2px solid rgb(1, 39, 59);
     text-align: center;
-    padding: min(1rem,1vw);
+    padding: min(1rem, 1vw);
     font-size: 24px;
 }
-.heading{
+
+.heading {
     font-weight: bolder;
-    font-size: min(2rem,4vw);
-    text-decoration: underline;
+    font-size: min(2.5rem, 5vw);
+    background-color: var(--primary-clr);
+    color: white;
 }
-.acad-cal h1{
-    font-size: min(4rem,8vw);
+
+.acad-cal h1 {
+    font-size: min(4rem, 8vw);
     text-align: center;
     font-family: "SF Pro Display-Bold";
-    color: #2d2d2d;
+    color: var(--primary-blue);
 }
-@media(max-width: 1000px){
-    .acad-cal{
+
+@media(max-width: 1000px) {
+    .acad-cal {
         background-image: none;
     }
 }

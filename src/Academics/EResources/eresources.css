@@ -1,44 +1,46 @@
-.e-resources-container{
+.e-resources-container {
     width: min(1500px, 100%);
     margin-inline: auto;
     margin-block: 2rem;
 }
-.e-resources-container h1{
+
+.e-resources-container h1 {
     font-size: min(4rem, 8vw);
     text-align: center;
     font-family: "SF Pro Display-Bold";
-    color: #2d2d2d;
-    
+    color: var(--primary-blue);
+
 }
 
 
-.resources-headings{
+.resources-headings {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    background-color: black;
+    background-color: var(--primary-clr);
     color: white;
 }
 
-.resources-headings>*{
+.resources-headings>* {
     font-family: "SF Pro Display-Bold";
     padding: min(1rem, 2vw);
     font-size: min(1.5rem, 4vw);
     text-align: center;
 }
-.e-resources-flex{
+
+.e-resources-flex {
     display: flex;
     flex-direction: column;
-    margin: min(1.5rem,1.5vw )
-
+    margin: min(1.5rem, 1.5vw)
 }
 
-.e-resources-item{
+.e-resources-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
 }
-.e-resources-item > *{
+
+.e-resources-item>* {
     border: 1px solid black;
     padding: min(1rem, 2vw);
     font-size: min(1.5rem, 4vw);
@@ -47,7 +49,8 @@
     height: 100%;
 
 }
-.e-resources{
+
+.e-resources {
     background: url("../../images/bg-frame.png");
-    background-size:100%;
+    background-size: 100%;
 }

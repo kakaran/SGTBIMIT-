@@ -6,42 +6,90 @@ import axios from "axios";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import FileData from "./FileData";
+import "../../../QuestionPaper/QuestionPaperDisplay/QuestionPaperDisplay.css"
 import { Helmet } from "react-helmet";
 
 const EventDisplay = () => {
-  const [render, setRender] = useState(0);
-  const [getSociety, setSociety] = useState([]);
+  // const [render, setRender] = useState(0);
+  // const [getSociety, setSociety] = useState([]);
+  // const [dataReset, setDataReset] = useState(true);
+  const [getPaperFilter, setPaperfilter] = useState({
+    year: "",
+    eventHandler: "",
+  });
+
+  const [getPaperFilterData, setPaperFilterData] = useState({
+    year: "",
+    eventHandler: "",
+    _id: "",
+  });
+
+  const [filter, setfilter] = useState({});
+
+  const Onchagetesdetail = (e) => {
+    setPaperfilter({ ...getPaperFilter, [e.target.name]: e.target.value });
+  };
+
   const navigator = useNavigate("");
 
-  useEffect(() => {
-    const TestimonialsDataGet = async () => {
-      try {
-        const data = (
-          await axios.get(`${process.env.REACT_APP_API_URL}/Event/Event_Display`)
-        ).data;
-        setSociety(data);
-        setRender(0);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    TestimonialsDataGet();
-    ImagesGet()
-  }, [render]);
+  //-------------------- Single Document Data get ----------------------//
+  const SinglePaperDisplay = async () => {
+    try {
+      // console.log(getPaperFilter);
+      const Detail = (
+        await axios.get(
+          `${process.env.REACT_APP_API_URL}/Event/Single_Event_Display/${getPaperFilter.year}/${getPaperFilter.eventHandler}`
+        )
+      ).data;
+      // console.log(Detail);
 
-  const ImagesGet = (value) =>{
-    return (<img
-      src={`${process.env.REACT_APP_API_URL}/Event/Event_Image_Display/${value}`}
-      alt=""
-    />)
-  }
+      setPaperFilterData({
+        year: Detail?.Data[0]?.year,
+        eventHandler: Detail?.Data[0]?.eventHandler,
+        _id: Detail?.Data[0]?._id,
+      });
 
-  const SocietyDelete = async (value) => {
+      // setDataReset(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //--------------- Question Paper Delete ----------------//
+  const PaperDelete = async (value) => {
     try {
       const _id = value;
-      console.log(_id);
-      await axios.post(`${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}`);
-      setRender(1);
+      await axios.get(`${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}`);
+      // setRender(1);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //----------- Reset the Data --------------//
+  const ResetPaperData = async () => {
+    // setRender(1);
+    setPaperfilter({
+      year: " ",
+      eventHandler: " ",
+    });
+    setPaperFilterData({
+      year: "",
+      eventHandler: "",
+      _id: "",
+    })
+  };
+
+  //--------------- Get the Filter Data ----------------------//
+  const filterData = async (course) => {
+    try {
+      const data = (
+        await axios.get(
+          `${process.env.REACT_APP_API_URL}/QuestionPaper/Filter_Data/${course}`
+        )
+      ).data;
+      setfilter(data[0]);
     } catch (error) {
       console.log(error);
     }
@@ -49,7 +97,7 @@ const EventDisplay = () => {
 
   return (
     <>
-    <Helmet title="Display Society" />
+      <Helmet title="Display Events" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />
@@ -60,12 +108,52 @@ const EventDisplay = () => {
             <div className="TesDisplayHeading">
               <h1>Events</h1>
             </div>
-            <div className="TesDisplayCardContainer">
-              {getSociety.map((value) => {
-                return (
+            <div className="filterContainer">
+              <span className="NameAndSelect">
+                <h4>Year</h4>
+                <select
+                  name="year"
+                  id=""
+                  placeholder="Year"
+                  value={getPaperFilter.year}
+                  onChange={Onchagetesdetail}
+                >
+                  <option value=" ">Select Year</option>
+                  {filter?.years?.map((value) => {
+                    return <option value={value.year}>{value.year}</option>;
+                  })}
+                </select>
+              </span>
+              <span className="NameAndSelect">
+                <h4>Event Handler</h4>
+                <select
+                  name="eventHandler"
+                  id=""
+                  placeholder="Event Handler"
+                  onChange={Onchagetesdetail}
+                  value={getPaperFilter.eventHandler}
+                >
+                  <option value=" ">Select Event Handler</option>
+                  {filter?.years?.map((value) => {
+                    if (value.year == getPaperFilter.year) {
+                      return value.eventHandler.map((value1) => {
+                        return (
+                          <option value={value1.eventHandler}>
+                            {value1.eventHandler}
+                          </option>
+                        );
+                      });
+                    }
+                  })}
+                </select>
+              </span>
+              <button onClick={SinglePaperDisplay} className="button-30">Search</button>
+              <button onClick={ResetPaperData} className="button-30">Clear</button>
+            </div>
+            {getPaperFilterData.Semester ?
+              (
+                <div className="TesDisplayCardContainer">
                   <div className="Society_Card">
-                    <h3>
-                      {value.name}
                       <span>
                         <BiEditAlt
                           style={{
@@ -74,30 +162,36 @@ const EventDisplay = () => {
                             color: "#adb5bd",
                           }}
                           onClick={() => {
-                            navigator(`/dashboard/admin/Event_Update/${value._id}`);
+                            navigator(
+                              `/dashboard/admin/Prev_Year_Paper_Update/${getPaperFilter?.course}/${getPaperFilter?.Year}/${getPaperFilter?.Semester}/${getPaperFilterData?._id}`
+                            );
                           }}
                         />
                         <RiDeleteBin6Line
                           className="TestBin"
                           onClick={() => {
-                            SocietyDelete(value._id);
+                            PaperDelete(getPaperFilterData?._id);
                           }}
                           style={{ color: "#d00000" }}
                         />
                       </span>
-                    </h3>
                     <div className="Society_Card_ImageDescription">
-                    {ImagesGet(value?._id)}
+                      {getPaperFilterData ? (
+                        <FileData
+                          Year={getPaperFilterData?.year}
+                          eventHandler={getPaperFilterData?.eventHandler}
+                          _id={getPaperFilterData?._id}
+                        />
+                      ) : (
+                        "  "
+                      )}
                       <div className="Society_Describe">
-                        <h4>{value.eventHandler}</h4>
-                        <p>{value.detail}</p>
+                        <h4>{getPaperFilterData.year}</h4>
+                        <h4> Event Handler : {getPaperFilterData?.eventHandler}</h4>
                       </div>
-                      {/* carosol */}
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>) : " "}
           </div>
         </div>
       </div>

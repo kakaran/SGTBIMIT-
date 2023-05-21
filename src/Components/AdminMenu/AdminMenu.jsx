@@ -10,7 +10,6 @@ const AdminMenu = () => {
   const [isSUBTestimonialActive, setIsSUBTestimonialActive] = useState(false);
   const [isSUBSocietyActive, setIsSUBSocietyActive] = useState(false);
   const [isSUBEventsActive, setIsSUBEventsActive] = useState(false);
-  const [isSUBEgalleryActive, setIsSUBEgalleryActive] = useState(false);
   const [isSUBEhandlerActive, setIsSUBEhandlerActive] = useState(false);
   const [isSUBFacultyActive, setIsSUBFacultyActive] = useState(false);
   const [isSUBPlacementActive, setIsSUBPlacementActive] = useState(false);
@@ -406,14 +405,14 @@ const AdminMenu = () => {
                     <span>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Society_Add");
+                          navigate("/dashboard/admin/EventHandler_Add");
                         }}
                       >
                         EVENT HANDLER ADD
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Society_Display");
+                          navigate("/dashboard/admin/EventHandler_Display");
                         }}
                       >
                         EVENT HANDLER DISPLAY

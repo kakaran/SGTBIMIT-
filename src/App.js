@@ -83,6 +83,7 @@ import GallaryDisplay from './Pages/Alumni/Gallary/Gallary_Display/Gallary_Displ
 import EventAdd from './Pages/Society/Event/Event_Add/Event_Add.jsx'
 import EventDisplay from './Pages/Society/Event/Event_Display/Event_Display.jsx'
 import EventUpdate from './Pages/Society/Event/Event_Update/Event_Update.jsx'
+import EventHAdd from './Pages/Society/Event_Handler/EventHandler_Add/EventH_Add.jsx'
 
 
 function App() {
@@ -170,6 +171,7 @@ function App() {
           <Route path='admin/Event_Add' element={<EventAdd />} />
           <Route path='admin/Event_Display' element={<EventDisplay />} />
           <Route path='admin/Event_Update/:id' element={<EventUpdate />} />
+          <Route path='admin/EventHandler_Add' element={<EventHAdd />} />
         </Route>
         <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
         <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />

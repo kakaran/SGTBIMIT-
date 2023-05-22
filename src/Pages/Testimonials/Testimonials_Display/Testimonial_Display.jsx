@@ -35,10 +35,7 @@ const Testimonial_Display = () => {
 
   const TestimonialDelete = async (value) => {
     try {
-      const _id = value;
-      await axios.post(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Delete`, {
-        _id,
-      });
+      await axios.delete(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);
@@ -92,6 +89,8 @@ const Testimonial_Display = () => {
                             />,
                           ]}
                         >
+                        {value.Course}
+                        {value.Year}
                           {value.detail}
                         </Card>
                       </div>

@@ -17,7 +17,7 @@ const Testimonial_Update = () => {
     const TestSingleData = async () => {
       try {
         const data = (
-          await axios.post(
+          await axios.get(
             `${process.env.REACT_APP_API_URL}/Testimonial/single_Testimonial_Display`,
             { id }
           )

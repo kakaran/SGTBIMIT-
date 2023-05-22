@@ -15,7 +15,8 @@ export default function Faculty() {
             <section className='faculty'>
                 <div className="faculty-container">
                     <h1 className="faculty-title">Core Faculty</h1>
-                    <p className="faculty-content">SGTBIMIT has very diversified and experienced faculties of their domains that works day in day out for their students to make them industry ready</p>
+                    <p className="faculty-content my-bold">SGTBIMIT has very diversified and experienced faculties of their domains that works day in day out for their students to make them industry ready</p>
+                    {isPending && <div className='flex justify-center items-center'> <Loader /> </div>}
                     <div className="faculty-grid">
                         {facultyData && facultyData.map(({ _id, name, post, detail, Department }, i) => (
                             <div className="faculty-card">

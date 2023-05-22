@@ -4,7 +4,7 @@
 }
 
 .courses>h1 {
-    font-size: min(4rem, 8vw);
+    font-size: min(3rem, 5vw);
     font-family: "SF Pro Display-Bold";
     text-align: center;
     color: var(--primary-blue);

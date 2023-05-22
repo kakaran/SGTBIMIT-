@@ -14,7 +14,7 @@ export default function BbaBI() {
       <section className="courses-section">
         <div className='courses'>
           <img src={require("../../images/bba.jpg")} alt="cant load" />
-          <h1>BACHELORS OF BUSINESS ADMINISTRATION (BANKING & INSURANCE)</h1>
+          <h1>BACHELORS OF BUSINESS ADMINISTRATION <br /> (BANKING & INSURANCE)</h1>
           <p>
           BBA (B&I) is a prestigious program offered by Sri Guru Tegh Bahadur Institute of 
           Management and Information Technology (SGTBIMIT). The program aims to equip 

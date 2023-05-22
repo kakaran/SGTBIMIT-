@@ -380,11 +380,8 @@ form .cat label .dot {
   width: auto;
 }
 
-.input4, .place-1{
+.input4, .place-1, .place-2, .input5{
  font-size: 20px;
-}
-.place-2{
-  font-size: 20px;
 }
 
 .Emphead , .org-head, .des-head, .place-head{

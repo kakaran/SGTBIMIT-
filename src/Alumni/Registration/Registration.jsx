@@ -136,8 +136,9 @@ export default function Registration() {
                             <div className="input3">
                                 <input type="number" placeholder="Enter Year" required name='Year'></input>
                             </div> <br />
-                            <label htmlFor="Employed" className="Emphead">Employed</label>
-                            <div> <br />
+                            <label htmlFor="Employed" className="Emphead">Employed </label> 
+                            <br /><br />
+                            <div className="flex gap-5"> <br />
                                 <div className='input4'>
                                     <input type="radio" id="yes" name="employed" value="Yes" />
                                     <label htmlFor="yes">YES</label>
@@ -149,8 +150,8 @@ export default function Registration() {
                             </div>
                             <div className='my-bold text-[30px] text-center my-5 head-titles'>CURRENT WORKING DETAILS </div>
                             <div className='working-data' >
-                                <label htmlFor="placement" className='place-head'>Placement provided by SGTBIMIT</label>
-                                <div> <br />
+                                <label htmlFor="placement" className='place-head'>Placement provided by SGTBIMIT</label> <br/> <br />
+                                <div className='flex gap-5'> <br />
                                     <div className='place-1'>
                                         <input type="radio" id="yes-p" name="placement" value="Yes" />
                                         <label htmlFor="yes-p">YES</label>
@@ -158,8 +159,8 @@ export default function Registration() {
                                     <div className='place-2'>
                                         <input type="radio" id="no-p" name="placement" value="No" />
                                         <label htmlFor="no-p">NO</label>
-                                    </div> <br />
-                                </div>
+                                    </div> <br/>
+                                </div><br/>
                                 <label htmlFor="Organization" className='org-head'>Present Organization</label>
                                 <div className="input-box">
                                     <input type="text" placeholder='Present Organization' name='presentOrgani' />

@@ -14,7 +14,7 @@ export default function Map() {
     },
     {
       type: "Location",
-      detail: "Sri Guru Tegh Bahadur Institute Of Management and Information Technology, Gujranwala Town, Delhi-33",
+      detail: "Adjacent to Gurudwara Nanak Piao, State Bank Colony, Near Model Town Metro Station, Delhi-110009",
       image: require("../images/map-icon.png")
     }
   ]
@@ -62,7 +62,7 @@ export default function Map() {
               <img src={require("../images/pdf-icon.png")} alt="" style={{ filter: "brightness(0) invert(1)" }} />
               <span>Download Brochure</span>
             </button>
-            <button className="chip">
+            <button className="chip" onClick={() => { window.open("https://youtu.be/bfeek8jSpeI") }}>
               <img src={require("../images/campus-icon.png")} alt="" />
               <span>Campus Tour</span>
             </button>

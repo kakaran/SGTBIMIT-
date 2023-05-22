@@ -7,6 +7,8 @@ import BBABI from '../../Assets/BBA-BI-Syllabus.pdf';
 import BBA from '../../Assets/BBA-SYLLABUS.pdf';
 import { Helmet } from 'react-helmet';
 import { AiOutlinePlusSquare, AiOutlineMinusSquare } from 'react-icons/ai'
+import { motion } from 'framer-motion';
+import { routingAnimations } from '../../constants';
 
 export default function Syllabus() {
     const [selected, setSelected] = useState(null)
@@ -49,7 +51,14 @@ export default function Syllabus() {
             <Header />
             <Navbar />
 
-            <section className="syllabus">
+            <motion.section className="syllabus"
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <div className="w-[min(1200px,100%)] flex flex-col gap-5 mx-auto">
                     {courses.map((course, i) => (
                         <div className="flex flex-col transition-all" key={i}>
@@ -79,7 +88,7 @@ export default function Syllabus() {
                         </div>
                     ))}
                 </div>
-            </section>
+            </motion.section>
 
             <Footer />
         </>

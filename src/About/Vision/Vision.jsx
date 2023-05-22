@@ -3,6 +3,7 @@ import { Header, Navbar, Footer } from "../../Components";
 import "./Vision.css";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import { routingAnimations } from "../../constants";
 
 export default function Vision() {
   useEffect(() => {
@@ -14,26 +15,19 @@ export default function Vision() {
       <Helmet title="SGTBIMIT | Vision" />
       <Header />
       <Navbar />
-      <motion.div viewport={{ once: true }}
-        initial={{
-          x: "100vw",
-        }}
-        animate={{
-          x: 0,
-        }}
-        exit={{
-          x: '-100vw',
-        }}
-        transition={{
-          duration: .25,
-        }}
+      <motion.div viewport='viewport'
+        initial='initial'
+        animate='animate'
+        exit='exit'
+        transition='transition'
+        variants={routingAnimations}
         className="Vision_Container">
         <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
           <div>
             <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">
               Our Vision
             </h1>
-            <p className="text-2xl text-justify">
+            <p className="text-2xl text-justify leading-[2em] text-gray-800">
               To facilitate integrated, secure, competitive and scalable digital
               learning in the long run by preparing young professionals to match
               the Global Standards of institute-industry interface with
@@ -53,7 +47,7 @@ export default function Vision() {
             <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">
               Our Mission
             </h1>
-            <ul className="text-2xl text-justify">
+            <ul className="text-2xl text-justify leading-[2em] text-gray-800">
               <li>
                 To impart high quality educational content for development of
                 perspective, talented and dynamic students as catalysts of

@@ -28,6 +28,11 @@ const EventAdd = () => {
         setSocieUpdate({ ...societUpdate, [e.target.name]: e.target.value });
     };
 
+    const options = {
+        maxSizeMB: 1,
+        maxWidthOrHeight: 1920,
+        useWebWorker: true,
+    }
     async function handleFileInputChange(event) {
         const files = event.target.files;
         const newImages = [];
@@ -46,11 +51,6 @@ const EventAdd = () => {
     }
 
 
-    const options = {
-        maxSizeMB: 1,
-        maxWidthOrHeight: 1920,
-        useWebWorker: true,
-    }
 
     const SocietyAdd = async () => {
         try {

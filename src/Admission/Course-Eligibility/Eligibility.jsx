@@ -2,6 +2,8 @@ import React from "react";
 import { Header, Navbar, Footer } from "../../Components";
 import "./Eligibility.css";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
+import { routingAnimations } from "../../constants";
 
 export default function Eligibility() {
 
@@ -10,7 +12,14 @@ export default function Eligibility() {
             <Helmet title="SGTBIMIT | Courses Eligibility" />
             <Header />
             <Navbar />
-            <section className="eli-section">
+            <motion.section className="eli-section"
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <div className="eli_container">
                     <h1>ELIGIBILITY FOR COURSES</h1>
                     <div className="btns">
@@ -96,7 +105,7 @@ export default function Eligibility() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
             <Footer />
         </>
     )

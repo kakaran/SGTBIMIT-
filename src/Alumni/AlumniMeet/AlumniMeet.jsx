@@ -3,6 +3,7 @@ import './alumnimeet.css'
 import { Header, Navbar, Footer } from '../../Components'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
+import { routingAnimations } from '../../constants'
 
 const AlumniMeet = () => {
     return (
@@ -10,34 +11,27 @@ const AlumniMeet = () => {
             <Helmet title='SGTBIMIT | Alumni Meet' />
             <Header />
             <Navbar />
-            <motion.section viewport={{ once: true }}
-                initial={{
-                    x: "100vw",
-                }}
-                animate={{
-                    x: 0,
-                }}
-                exit={{
-                    x: '-100vw',
-                }}
-                transition={{
-                    duration: .25,
-                }}
+            <motion.section viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
                 className="alumini-meet-section"
             >
                 <div className='alumnimeet'>
                     <h1>ALUMNI MEET</h1>
                     <div className='flex'>
-                    <h2 className='m-0'>
-                        <span className='ahead'>
-                            A
-                        </span>
-                    </h2>
-                    <div className='bgblue'>
-                        <div className='para1'>
-                            <h2> <span className='bouthead'>bout Us</span></h2>
-                            <p>The Alumni Association of Sri Guru Tegh Bahadur Institute of Management and Information Technology evolved to bridge the wide chasm existing between college and career life. It is committed to all youngsters who graduate and face challenges of the competitive, professional world to remain a part of their alma mater. The idea took shape and the formation of the Alumni Association turned into reality. The reputation of an educational institution lies within its students – Past and Present. Faculty and staff also play a vital role. The reputation grows when it keeps producing successful graduates continuously – intelligent, innovative and effective in their respective fields.</p> </div>
-                    </div>
+                        <h2 className='m-0'>
+                            <span className='ahead'>
+                                A
+                            </span>
+                        </h2>
+                        <div className='bgblue'>
+                            <div className='para1'>
+                                <h2> <span className='bouthead'>bout Us</span></h2>
+                                <p>The Alumni Association of Sri Guru Tegh Bahadur Institute of Management and Information Technology evolved to bridge the wide chasm existing between college and career life. It is committed to all youngsters who graduate and face challenges of the competitive, professional world to remain a part of their alma mater. The idea took shape and the formation of the Alumni Association turned into reality. The reputation of an educational institution lies within its students – Past and Present. Faculty and staff also play a vital role. The reputation grows when it keeps producing successful graduates continuously – intelligent, innovative and effective in their respective fields.</p> </div>
+                        </div>
                     </div>
                     <p><h3>Our Mission:</h3>
                         <ul>

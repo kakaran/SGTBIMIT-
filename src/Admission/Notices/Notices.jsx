@@ -4,6 +4,8 @@ import "./Notices.css"
 import useFetch from "../../useFetch"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
+import { motion } from "framer-motion"
+import { routingAnimations } from "../../constants"
 
 export default function Notice() {
 
@@ -15,7 +17,14 @@ export default function Notice() {
             <Header />
             <Navbar />
             <>
-                <section className="notices-section">
+                <motion.section className="notices-section"
+                    viewport='viewport'
+                    initial='initial'
+                    animate='animate'
+                    exit='exit'
+                    transition='transition'
+                    variants={routingAnimations}
+                >
                     <h1>NOTICES</h1>
                     {isPending && <Loader />}
                     <div className="notices-grid">
@@ -30,7 +39,7 @@ export default function Notice() {
 
                         )).reverse()}
                     </div>
-                </section>
+                </motion.section>
             </>
             <Footer />
         </>

@@ -5,6 +5,7 @@ import "./adminis.css";
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from "react-helmet";
 import { motion } from 'framer-motion'
+import { routingAnimations } from "../../constants";
 export default function AdminisCarousel() {
 
   const { data: adminisArray, isPending, error } = useFetch(`${process.env.REACT_APP_API_URL}/Administration/Administration_Display`)
@@ -21,20 +22,14 @@ export default function AdminisCarousel() {
       <Helmet title="SGTBIMIT | Governing Body" />
       <Header></Header>
       <Navbar></Navbar>
-      <motion.section viewport={{ once: true }}
-        initial={{
-          x: "100vw",
-        }}
-        animate={{
-          x: 0,
-        }}
-        exit={{
-          x: '-100vw',
-        }}
-        transition={{
-          duration: .25,
-        }}
-        className="adminis-section">
+      <motion.section viewport='viewport'
+        initial='initial'
+        animate='animate'
+        exit='exit'
+        transition='transition'
+        variants={routingAnimations}
+        className="adminis-section"
+      >
         {isPending && <Loader />}
         {error && <div className="error">{error}</div>}
         <Carousel
@@ -60,7 +55,7 @@ export default function AdminisCarousel() {
                   WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!
                   <strong>{adminis.shortNote}</strong>
                 </strong>
-                <p className="long-note"> {adminis?.longNote} </p>
+                <p className="long-note leading-[2em] text-gray-800"> {adminis?.longNote} </p>
               </div>
             ))}
         </Carousel>

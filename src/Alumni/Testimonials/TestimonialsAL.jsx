@@ -2,6 +2,8 @@ import React from 'react'
 import './testAl.css'
 import { Header, Navbar, Footer } from '../../Components'
 import { Helmet } from 'react-helmet'
+import { motion } from 'framer-motion'
+import { routingAnimations } from '../../constants'
 
 
 export default function TestimonialsAL() {
@@ -10,7 +12,14 @@ export default function TestimonialsAL() {
             <Helmet title='SGTBIMIT | Alumini Testimonials' />
             <Header />
             <Navbar />
-            <section className='test-al-section'>
+            <motion.section className='test-al-section'
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <h1>TESTIMONIALS</h1>
                 <div className="t-grid">
                     {[...Array(12)].map((x, i) => {
@@ -25,7 +34,7 @@ export default function TestimonialsAL() {
                         )
                     })}
                 </div>
-            </section>
+            </motion.section>
             <Footer />
         </>
     )

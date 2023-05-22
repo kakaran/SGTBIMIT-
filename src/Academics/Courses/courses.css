@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 .courses-section {
     background-image: url("../../images/bg-frame.png");
     width: 100%;
@@ -13,6 +15,7 @@
 .courses>p {
     font-size: min(1.5rem, 4vw);
     text-align: justify;
+    @apply leading-[2em] text-gray-800;
 }
 
 .diploma h1 {

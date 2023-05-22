@@ -8,6 +8,8 @@ import img from '../../images/place-img.png'
 import Recruiters from '../../Home/Recruiters'
 import Placementss from '../../Home/Placementss'
 import Statistics from './Statistics/Statistics'
+import { motion } from 'framer-motion'
+import { routingAnimations } from '../../constants'
 
 export default function Placements() {
 
@@ -19,7 +21,14 @@ export default function Placements() {
             <Header />
             <Navbar />
 
-            <main className="placement-cell">
+            <motion.main className="placement-cell"
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <section className="placement-cell-section">
                     <h1>
                         Dream big & <br />
@@ -87,26 +96,6 @@ export default function Placements() {
                 </section>
                 <Statistics />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {/*  <ul className='points'>
                     <li>To invite industries and putative companies with the aim of providing employment to students and assisting them in the placement process.</li>
                     <li>To organize lectures and workshops for students to provide supplemental information on career counselling.</li>
@@ -140,7 +129,7 @@ export default function Placements() {
  */}
 
 
-            </main>
+            </motion.main>
             <Footer />
         </>
     )

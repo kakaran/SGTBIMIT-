@@ -2,6 +2,8 @@ import React from "react";
 import { Header, Navbar, Footer } from "../../Components";
 import "./Fees.css";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
+import { routingAnimations } from "../../constants";
 
 export default function Fees() {
 
@@ -10,7 +12,14 @@ export default function Fees() {
             <Helmet title="SGTBIMIT | Fees" />
             <Header />
             <Navbar />
-            <div className="Fees">
+            <motion.div className="Fees"
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <h1>FEES STRUCTURE</h1>
                 <div className="structure">
                     <div className="box">
@@ -25,7 +34,7 @@ export default function Fees() {
                                 Fee Noted : The mentioned fee structure is subject to change.
                             </p>
                         </div>
-                        <div>
+                        <div className="mt-auto">
                             <button onClick={(e) => {
                                 window.location.href = "./courses-eligibility";
                             }} className="more">Learn More</button>
@@ -44,7 +53,7 @@ export default function Fees() {
                                 Fee Noted : The mentioned fee structure is subject to change.
                             </p>
                         </div>
-                        <div>
+                        <div className="mt-auto">
                             <button onClick={(e) => {
                                 window.location.href = "./courses-eligibility";
                             }} className="more">Learn More</button>
@@ -82,14 +91,14 @@ export default function Fees() {
                                 Fee Noted : The mentioned fee structure is subject to change.
                             </p>
                         </div>
-                        <div>
+                        <div className="mt-auto">
                             <button onClick={(e) => {
                                 window.location.href = "./courses-eligibility";
                             }} className="more">Learn More</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <Footer />
         </>
     )

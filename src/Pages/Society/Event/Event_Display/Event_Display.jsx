@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import FileData from "./FileData";
 import "../../../QuestionPaper/QuestionPaperDisplay/QuestionPaperDisplay.css";
 import { Helmet } from "react-helmet";
+import _ from 'lodash'
 
 const EventDisplay = () => {
   // const [render, setRender] = useState(0);
@@ -54,15 +55,16 @@ const EventDisplay = () => {
   const EventsFind = async () => {
 
     eventsData.map((value) => {
-      if (value.name == getEventFilter.eventHandler) {
-        value.Years.map((value) => {
-          if (value.year == getEventFilter.year) {
+      if (value?.name == getEventFilter?.eventHandler) {
+        value?.Years?.map((value) => {
+          if (value?.year == getEventFilter?.year) {
             setEventAaray({ Events: value?.Events })
           }
         });
       }
     });
     setRender(1)
+    console.log(EventsAaray);
   };
 
 
@@ -78,7 +80,7 @@ const EventDisplay = () => {
   const PaperDelete = async (value) => {
     try {
       const _id = value;
-      await axios.get(
+      await axios.delete(
         `${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}`
       );
       // setRender(1);
@@ -176,11 +178,31 @@ const EventDisplay = () => {
                 Clear
               </button>
             </div>
-            {/* {render ? <div className="flex flex-col">
-              {eventsData.map(events => (
-                <>{events.Event_id.name}</>
-              ))}
-            </div> : " "} */}
+            {render &&
+              <div className="flex flex-wrap justify-between gap-5">
+                {EventsAaray?.Events?.map(events => (
+                  <div className="flex flex-col w-96 shadow-md bg-white p-5">
+                    <h1 className="my-bold text-xl m-0 pb-2" style={{ borderBottom: "1px solid gray" }}>
+                      {_.startCase(_.toLower(events.Event_id?.name))}
+                    </h1>
+                    <div className="flex justify-between gap-2 items-center mb-5">
+                      <h2 className="my-bold text-lg text-slate-500 m-0">
+                        {_.startCase(_.toLower(events.Event_id?.eventHandler))}
+                      </h2>
+                      <h4 className="my-bold text-sm text-slate-500 m-0">
+                        {events.Event_id?.year}
+                      </h4>
+                    </div>
+                    <img src={`${process.env.REACT_APP_API_URL}/Event/Event_MainImage_Display/${events.Event_id?._id}`} alt="cant load" className="rounded-md object-fill w-full aspect-video mt-auto" />
+                    <div className="flex justify-between p-5">
+                      <div onClick={() => { PaperDelete(events.Event_id?._id) }}>
+                        <RiDeleteBin6Line color="red" size="1.5rem" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            }
           </div>
         </div>
       </div>

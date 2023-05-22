@@ -1,13 +1,12 @@
 .faculty {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     padding: min(2rem, 2vw);
     background: url("../../images/bg-frame.png");
     background-size: 100%;
 }
 
-.faculty-content {
+/* .faculty-content {
     color: rgba(0, 0, 0, 0.75);
     font-size: min(1.5rem, 3vw);
 }
@@ -95,4 +94,4 @@
         grid-template-columns: repeat(2, min(380px, 45%));
         place-content: center;
     }
-}
+} */

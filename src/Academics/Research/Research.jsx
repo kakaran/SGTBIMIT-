@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import { Carousel } from 'react-responsive-carousel'
 import researchCardImg from '../../images/research-card-img.png'
 import { Helmet } from 'react-helmet'
+import { motion } from 'framer-motion'
+import { routingAnimations } from '../../constants'
+
 
 export default function Research() {
     const research = [
@@ -50,7 +53,14 @@ export default function Research() {
             <Helmet title="SGTBIMIT | Research" />
             <Header />
             <Navbar />
-            <section className='research-section'>
+            <motion.section className='research-section'
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <div className="research-img">
                     <img src={img} alt="cant load" />
                 </div>
@@ -107,7 +117,7 @@ export default function Research() {
                         ))}
                     </Carousel>
                 </div>
-            </section>
+            </motion.section>
             <Footer />
         </>
     )

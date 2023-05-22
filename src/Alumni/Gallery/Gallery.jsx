@@ -4,6 +4,7 @@ import { Header, Navbar, Footer } from '../../Components'
 import { Carousel } from 'react-responsive-carousel'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet'
+import { routingAnimations } from '../../constants'
 
 export default function Gallery() {
     const [isCarouselActive, setIsCarouselActive] = useState(false)
@@ -12,7 +13,14 @@ export default function Gallery() {
             <Helmet title='SGTBIMIT | Alumini Gallery' />
             <Header />
             <Navbar />
-            <section className='gallery-section'>
+            <motion.section className='gallery-section'
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <div className="head1">GALLERY</div>
                 <div className="gallery-box">
                     {[...Array(9)].map((x, i) => (
@@ -46,7 +54,7 @@ export default function Gallery() {
                         </>
                     ))}
                 </div>
-            </section>
+            </motion.section>
             <Footer />
         </>
     )

@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import FileData from "./FileDataa";
 import "./QuestionPaperDisplay.css"
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
+import { routingAnimations } from "../../constants";
 
 const QuestionPaperDisplay = () => {
   // const [render, setRender] = useState(0);
@@ -94,8 +96,14 @@ const QuestionPaperDisplay = () => {
       <Helmet title="SGTBIMIT | Previous Year Papers" />
       <Header />
       <Navbar />
-      <div
+      <motion.section
         className="relative flex flex-col w-full"
+        viewport='viewport'
+        initial='initial'
+        animate='animate'
+        exit='exit'
+        transition='transition'
+        variants={routingAnimations}
       >
         <div className="gradient-bg"></div>
         <div>
@@ -218,7 +226,7 @@ const QuestionPaperDisplay = () => {
               </>
             )}
         </div>
-      </div>
+      </motion.section>
       <Footer />
     </>
   );

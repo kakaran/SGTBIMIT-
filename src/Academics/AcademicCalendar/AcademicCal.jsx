@@ -3,6 +3,8 @@ import './academiccal.css'
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import useFetch from '../../useFetch'
 import { Helmet } from 'react-helmet'
+import { motion } from 'framer-motion'
+import { routingAnimations } from '../../constants'
 
 export default function AcademicCal() {
     const { data: calendar, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Calendar/CalendarDisplay`)
@@ -14,7 +16,14 @@ export default function AcademicCal() {
             <Header />
             <Navbar />
 
-            <section className='acad-cal'>
+            <motion.section className='acad-cal'
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <h1>ACADEMIC CALENDAR</h1>
                 {isPending && <Loader />}
                 <div className="cal-container">
@@ -40,7 +49,7 @@ export default function AcademicCal() {
                         )
                     })}
                 </div>
-            </section>
+            </motion.section>
             <Footer />
         </>
     )

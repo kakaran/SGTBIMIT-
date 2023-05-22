@@ -14,6 +14,7 @@ import { Header, Navbar, Footer, Loader2 } from '../Components'
 import Committees from './Committees/Committees'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
+import { routingAnimations } from '../constants'
 export default function Home() {
 
   const [isPending, setIsPending] = useState(true)
@@ -30,26 +31,19 @@ export default function Home() {
       <Navbar />
       {isPending && <Loader2 />}
       {!isPending && (
-        <motion.section viewport={{ once: true }}
-          initial={{
-            x: "100vw",
-          }}
-          animate={{
-            x: 0,
-          }}
-          exit={{
-            x: '-100vw',
-          }}
-          transition={{
-            duration: .25,
-          }}
+        <motion.section viewport='viewport'
+          initial='initial'
+          animate='animate'
+          exit='exit'
+          transition='transition'
+          variants={routingAnimations}
         >
           <ImageCarousel />
           <Welcome />
           <DirectorMsg />
-          <Testimonials />
           <Committees />
           <Placementss />
+          <Testimonials />
           {/*             <Collaboration />
             <Recruiters /> */}
           <Map />

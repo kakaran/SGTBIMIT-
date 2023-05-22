@@ -1,20 +1,21 @@
+@tailwind utilities;
+
 .Fees {
     background-image: url("../../images/bg-frame.png");
     background-size: 100%;
 }
 
-.Fees > h1{
+.Fees>h1 {
     font-size: min(4rem, 8vw);
     text-align: center;
     font-family: "SF Pro Display-Bold";
-    color:#1f567c;
+    color: var(--primary-blue);
 
 }
 
-.structure
-{
+.structure {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
     width: min(1200px, 100%);
     height: auto;
@@ -23,63 +24,62 @@
     margin-bottom: 2rem;
 }
 
-.box 
-{
+.box {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
     border-radius: 1.6rem;
     max-width: 90%;
-    height: 540px;
+    height: 100%;
+    padding-bottom: min(2rem, 2vw);
 }
 
-.icon
-{
+.icon {
     width: 100%;
     margin-inline: auto;
-    background-color: var(--primary-clr);
+    background-color: var(--primary-blue);
     /* border: 1px solid black; */
     border-radius: 1.5rem 1.5rem 0 0;
 }
 
-.icon> h1{
+.icon>h1 {
     /* border: 1px solid; */
     font-size: min(3.4rem, 6.8vw);
     text-align: center;
     color: white;
 }
 
-.info{
+.info {
     /* border: 1px solid; */
     margin: min(1.5rem, 2vw);
 }
 
-.info> h3{
+.info>h3 {
     text-align: center;
     font-size: 30px;
     margin: 10px;
 }
 
-.info > p{
+.info>p {
     font-size: min(1.5rem, 3vw);
     line-height: 30px;
     text-align: justify;
+    @apply text-gray-800 leading-[2em];
 }
 
-.less > button{
+/* .less>button {
     margin-block: 0;
     bottom: 10px;
-}
+} */
 
-.more
-{
+.more {
     border: none;
     border-radius: 20px;
     font-size: min(2rem, 3vw);
     margin-inline: auto;
     padding: 1rem 3rem;
-    margin-block: 1rem;
+    margin-top: auto;
     background-color: var(--secondary-clr);
     color: white;
     position: relative;
@@ -106,12 +106,13 @@
     }
  } */
 
- @media(max-width: 800px){
-    .structure{
+@media(max-width: 800px) {
+    .structure {
         grid-template-columns: 1fr;
     }
-    .box{
+
+    .box {
         height: 450px;
         width: 90%;
     }
- }
+}

@@ -3,6 +3,8 @@ import './registration.css'
 import { Header, Navbar, Footer } from '../../Components'
 import { Helmet } from 'react-helmet'
 import { ToastContainer, toast } from 'react-toastify'
+import { motion } from 'framer-motion'
+import { routingAnimations } from '../../constants'
 
 export default function Registration() {
     const handleSubmit = async (e) => {
@@ -59,7 +61,14 @@ export default function Registration() {
             <Header />
             <Navbar />
 
-            <div className='grid place-items-center py-10 backgroundreg'>
+            <motion.section className='grid place-items-center py-10 backgroundreg'
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}
+            >
                 <div className="reg-container">
                     <div className="title my-bold text-[50px] heading-reg">Registration</div>
                     <div className="content">
@@ -136,7 +145,7 @@ export default function Registration() {
                             <div className="input3">
                                 <input type="number" placeholder="Enter Year" required name='Year'></input>
                             </div> <br />
-                            <label htmlFor="Employed" className="Emphead">Employed </label> 
+                            <label htmlFor="Employed" className="Emphead">Employed </label>
                             <br /><br />
                             <div className="flex gap-5"> <br />
                                 <div className='input4'>
@@ -150,7 +159,7 @@ export default function Registration() {
                             </div>
                             <div className='my-bold text-[30px] text-center my-5 head-titles'>CURRENT WORKING DETAILS </div>
                             <div className='working-data' >
-                                <label htmlFor="placement" className='place-head'>Placement provided by SGTBIMIT</label> <br/> <br />
+                                <label htmlFor="placement" className='place-head'>Placement provided by SGTBIMIT</label> <br /> <br />
                                 <div className='flex gap-5'> <br />
                                     <div className='place-1'>
                                         <input type="radio" id="yes-p" name="placement" value="Yes" />
@@ -159,8 +168,8 @@ export default function Registration() {
                                     <div className='place-2'>
                                         <input type="radio" id="no-p" name="placement" value="No" />
                                         <label htmlFor="no-p">NO</label>
-                                    </div> <br/>
-                                </div><br/>
+                                    </div> <br />
+                                </div><br />
                                 <label htmlFor="Organization" className='org-head'>Present Organization</label>
                                 <div className="input-box">
                                     <input type="text" placeholder='Present Organization' name='presentOrgani' />
@@ -177,7 +186,7 @@ export default function Registration() {
                         </form>
                     </div>
                 </div>
-            </div>
+            </motion.section>
             <Footer />
 
         </>

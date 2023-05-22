@@ -4,17 +4,24 @@ import { Link } from 'react-router-dom'
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import useFetch from '../../useFetch'
 import { Helmet } from 'react-helmet'
-
+import { motion } from 'framer-motion'
+import { routingAnimations } from '../../constants'
 
 export default function EResources() {
 
     const { data: eResources, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Display`)
     return (
         <>
-        <Helmet title="SGTBIMIT | E-Resources" />
+            <Helmet title="SGTBIMIT | E-Resources" />
             <Header />
             <Navbar />
-            <section className='e-resources'>
+            <motion.section className='e-resources'
+                viewport='viewport'
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                transition='transition'
+                variants={routingAnimations}>
                 <div className="e-resources-container">
                     <h1>SGTBIMIT DIGITAL LIBRARY (E-RESOURCES)</h1>
                     <div className="e-resources-flex">
@@ -41,7 +48,7 @@ export default function EResources() {
                         })}
                     </div>
                 </div>
-            </section>
+            </motion.section>
             <Footer />
         </>
     )

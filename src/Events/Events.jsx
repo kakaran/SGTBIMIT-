@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import { motion, AnimatePresence } from 'framer-motion'
+import { routingAnimations } from "../constants";
 
 
 export default function Events() {
@@ -60,97 +61,107 @@ export default function Events() {
       <Helmet title={events?.name} />
       <Header />
       <Navbar />
-      {!events && <Loader />}
-      {events && (
-        <section className="event-section">
-          <div className="event-header">
-            <div className="gradient" />
-            <img
-              src={`${API_URL}/Eventhandler/EventHandleR_Heder_Image/${events._id}`}
-              alt=""
-            />
-            <div className="event-header-title">
-              <p>
-                Home {">"} Societies {">"} {events.name}
-              </p>
-              <h1> {events.name} </h1>
-            </div>
-          </div>
-          <div className="about-event-section">
-            <div className="about-event">
-              <h1>About {events.name}</h1>
-              <p>{events.detail}</p>
-            </div>
-            <div className="about-event-carousel">
-              <Carousel showThumbs={false} showIndicators={false} >
-                {events.images.map((image) => (
-                  <img
-                    src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${events._id}/${image._id}`}
-                    alt="cant load"
-                    className="event-carousel-img"
-                    key={image._id}
-                  />
-                ))}
-              </Carousel>
-            </div>
-          </div>
-          <section className="events-section-1">
-            <div className="events-header">
-              <div className="EventFilterContainer">
-                <span className="EventFilterHeader">
-                  <h4 type="button">Events</h4>
-                  <BsFillFilterCircleFill
-                    size="min(4rem, 5vw)"
-                    color="#005E93"
-                    cursor="pointer"
-                    onClick={() => {
-                      setEventYearController(!eventYearController);
-                    }}
-                  />
-                </span>
-                <AnimatePresence mode="wait">
-                  {eventYearController && (
-                    <motion.div viewport={{ once: true }}
-                      className="FilterData"
-                      initial={{
-                        scale: 0,
-                      }}
-                      animate={{
-                        scale: 1,
-                      }}
-                      exit={{
-                        scale: 0,
-                      }}
-
-                      style={{
-                        transformOrigin: 'top'
-                      }}
-                    >
-                      {events.Years.map((value, i) => {
-                        return (
-                          <div className="EventsYear" key={`Years-${i}`}>
-                            <h5
-                              onClick={() => {
-                                setEventFilter(value.year);
-                                setEventYearController(!eventYearController);
-                              }}
-                              style={{ cursor: "pointer" }}
-                            >
-                              {value.year}
-                            </h5>
-                          </div>
-                        );
-                      })}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+      <motion.section className="event-section"
+        viewport='viewport'
+        initial='initial'
+        animate='animate'
+        exit='exit'
+        transition='transition'
+        variants={routingAnimations}
+      >
+        <div className="flex w-full justify-center items-center">
+          {!events && <Loader />}
+        </div>
+        {events && (
+          <>
+            <div className="event-header">
+              <div className="gradient" />
+              <img
+                src={`${API_URL}/Eventhandler/EventHandleR_Heder_Image/${events?._id}`}
+                alt=""
+              />
+              <div className="event-header-title">
+                <p>
+                  Home {">"} Societies {">"} {events?.name}
+                </p>
+                <h1> {events?.name} </h1>
               </div>
             </div>
-            {events.Years.map((year, i) => {
-              if (eventFilter === year.year) {
-                return (
-                  <div className="events-container" key={`Year-${i}`}>
-                    {/* <h1
+            <div className="about-event-section">
+              <div className="about-event">
+                <h1>About {events?.name}</h1>
+                <p>{events?.detail}</p>
+              </div>
+              <div className="about-event-carousel">
+                <Carousel showThumbs={false} showIndicators={false} >
+                  {events?.images?.map((image) => (
+                    <img
+                      src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${events?._id}/${image?._id}`}
+                      alt="cant load"
+                      className="event-carousel-img"
+                      key={image?._id}
+                    />
+                  ))}
+                </Carousel>
+              </div>
+            </div>
+            <section className="events-section-1">
+              <div className="events-header">
+                <div className="EventFilterContainer">
+                  <span className="EventFilterHeader">
+                    <h4 type="button">Events</h4>
+                    <BsFillFilterCircleFill
+                      size="min(4rem, 5vw)"
+                      color="#005E93"
+                      cursor="pointer"
+                      onClick={() => {
+                        setEventYearController(!eventYearController);
+                      }}
+                    />
+                  </span>
+                  <AnimatePresence mode="wait">
+                    {eventYearController && (
+                      <motion.div viewport={{ once: true }}
+                        className="FilterData"
+                        initial={{
+                          scale: 0,
+                        }}
+                        animate={{
+                          scale: 1,
+                        }}
+                        exit={{
+                          scale: 0,
+                        }}
+
+                        style={{
+                          transformOrigin: 'top'
+                        }}
+                      >
+                        {events.Years.map((value, i) => {
+                          return (
+                            <div className="EventsYear" key={`Years-${i}`}>
+                              <h5
+                                onClick={() => {
+                                  setEventFilter(value.year);
+                                  setEventYearController(!eventYearController);
+                                }}
+                                style={{ cursor: "pointer" }}
+                              >
+                                {value?.year}
+                              </h5>
+                            </div>
+                          );
+                        })}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+              {events.Years.map((year, i) => {
+                if (eventFilter === year?.year) {
+                  return (
+                    <div className="events-container" key={`Year-${i}`}>
+                      {/* <h1
                 style={{
                     fontFamily: "SF Pro Display-Bold",
                     fontSize: "min(3rem, 6vw)",
@@ -158,30 +169,31 @@ export default function Events() {
                 }}
             > {year.year} </h1> */}
 
-                    <div className="EventScroller">
-                      {year.Events.map((singleEvent, i) => {
-                        return (
-                          <div className="eventCardConatainer" key={`Event-${i}`}>
-                            <div className="event-card">
-                              <p>{year.year}</p>
-                              <img
-                                src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent.Event_id._id}`}
-                                alt="cant load"
-                              />
-                              <h1> {singleEvent.Event_id.name} </h1>
-                              <p> {singleEvent.Event_id.detail} </p>
+                      <div className="EventScroller">
+                        {year.Events.map((singleEvent, i) => {
+                          return (
+                            <div className="eventCardConatainer" key={`Event-${i}`}>
+                              <div className="event-card">
+                                <p>{year?.year}</p>
+                                <img
+                                  src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent?.Event_id?._id}`}
+                                  alt="cant load"
+                                />
+                                <h1> {singleEvent?.Event_id?.name} </h1>
+                                <p> {singleEvent?.Event_id?.detail} </p>
+                              </div>
                             </div>
-                          </div>
-                        )
-                      })}
+                          )
+                        })}
+                      </div>
                     </div>
-                  </div>
-                )
-              }
-            })}
-          </section>
-        </section>
-      )}
+                  )
+                }
+              })}
+            </section>
+          </>
+        )}
+      </motion.section>
       <Footer />
     </>
   );

@@ -20,7 +20,7 @@ const StarsDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Display`)
+          await axios.get(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Display`)
         ).data;
         setStars(data);
         setRender(0);
@@ -34,9 +34,7 @@ const StarsDisplay = () => {
 
   const ImagesGet = (value) => {
     return (
-      <img
-        src={`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${value}`}
-        alt=""
+      <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${value}`} alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
     );
@@ -44,9 +42,7 @@ const StarsDisplay = () => {
 
   const PlacementDelete = async (value) => {
     try {
-      const _id = value;
-      // console.log(_id);
-      await axios.post(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Delete/${_id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Delete/${value}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -70,21 +66,10 @@ const StarsDisplay = () => {
               {getStars.map((value) => {
                 return (
                   <div className="FacultyCard">
-                    <Card
-                      hoverable
-                      style={{
-                        width: 240,
-                      }}
-                      cover={
-                        ImagesGet(value?._id)
-                      }
-                    >
+                    <Card hoverable style={{width: 240,}} cover={ImagesGet(value?._id)}>
                       <div className="FacultyCardtitle">
-                        <Meta title={value?.name} bordered={false} style={{ padding: "10px" }} />
-                        <Meta
-                          title={value?.companyName}
-                        // description={value?.companyName}
-                        />
+                        <Meta title={value?.Name} bordered={false} style={{ padding: "10px" }} />
+                        <Meta title={value?.Course} />
                       </div>
                       <span className="FacultyCardController">
                         {/* <BiEditAlt

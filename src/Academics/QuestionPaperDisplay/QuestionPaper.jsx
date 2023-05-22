@@ -119,7 +119,7 @@ const QuestionPaperDisplay = () => {
                   filterData(e.target.value);
                   Onchagetesdetail(e);
                 }}
-                className="outline-none border-none py-2 px-4 text-slate-400 text-2xl"
+                className="outline-none border-none py-2 px-4 text-2xl"
               >
                 <option value=" ">Select Course</option>
                 <option value="BCA">BCA</option>;
@@ -136,7 +136,7 @@ const QuestionPaperDisplay = () => {
                 placeholder="Year"
                 value={getPaperFilter.Year}
                 onChange={Onchagetesdetail}
-                className="outline-none border-none py-2 px-4 text-slate-400 text-2xl"
+                className="outline-none border-none py-2 px-4 text-2xl"
               >
                 <option value=" ">Select Year</option>
                 {filter?.Years?.map((value) => {
@@ -152,7 +152,7 @@ const QuestionPaperDisplay = () => {
                 placeholder="Semester"
                 onChange={Onchagetesdetail}
                 value={getPaperFilter.Semester}
-                className="outline-none border-none py-2 px-4 text-slate-400 text-2xl"
+                className="outline-none border-none py-2 px-4 text-2xl"
               >
                 <option value=" ">Select Semester</option>
                 {filter?.Years?.map((value) => {

@@ -10,7 +10,6 @@ const AdminMenu = () => {
   const [isSUBTestimonialActive, setIsSUBTestimonialActive] = useState(false);
   const [isSUBSocietyActive, setIsSUBSocietyActive] = useState(false);
   const [isSUBEventsActive, setIsSUBEventsActive] = useState(false);
-  const [isSUBEgalleryActive, setIsSUBEgalleryActive] = useState(false);
   const [isSUBEhandlerActive, setIsSUBEhandlerActive] = useState(false);
   const [isSUBFacultyActive, setIsSUBFacultyActive] = useState(false);
   const [isSUBPlacementActive, setIsSUBPlacementActive] = useState(false);
@@ -390,36 +389,7 @@ const AdminMenu = () => {
                     </span>
                   </div>
                 )}
-                <p
-                  onClick={() => {
-                    setIsSUBEgalleryActive(!isSUBEgalleryActive);
-                  }}
-                  style={{
-                    backgroundColor: "#e0e1dd",
-                  }}
-                >
-                  EVENTS GALLERY <IoIosArrowDown className="CatHeadIcons" />
-                </p>
-                {isSUBEgalleryActive && (
-                  <div className="Categoriesdropdown">
-                    <span>
-                      <p
-                        onClick={() => {
-                          navigate("/dashboard/admin/Society_Add");
-                        }}
-                      >
-                        EVENTS GALLERY ADD
-                      </p>
-                      <p
-                        onClick={() => {
-                          navigate("/dashboard/admin/Society_Display");
-                        }}
-                      >
-                        EVENTS GALLERY DISPLAY
-                      </p>
-                    </span>
-                  </div>
-                )}
+
                 <p
                   onClick={() => {
                     setIsSUBEhandlerActive(!isSUBEhandlerActive);
@@ -435,14 +405,14 @@ const AdminMenu = () => {
                     <span>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Society_Add");
+                          navigate("/dashboard/admin/EventHandler_Add");
                         }}
                       >
                         EVENT HANDLER ADD
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Society_Display");
+                          navigate("/dashboard/admin/EventHandler_Display");
                         }}
                       >
                         EVENT HANDLER DISPLAY
@@ -706,13 +676,6 @@ const AdminMenu = () => {
                 {isSUBRegistrationActive && (
                   <div className="Categoriesdropdown">
                     <span>
-                      <p
-                        onClick={() => {
-                          navigate("/dashboard/admin/Registration_Add");
-                        }}
-                      >
-                        REGISTRATION ADD
-                      </p>
                       <p
                         onClick={() => {
                           navigate("/dashboard/admin/Registration_Display");

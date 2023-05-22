@@ -3,6 +3,7 @@ import './faculty.css'
 import useFetch from '../../useFetch'
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from 'react-helmet'
+import _ from 'lodash'
 export default function Faculty() {
     const { data: facultyData, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Display`)
 
@@ -21,17 +22,19 @@ export default function Faculty() {
                             <div className="faculty-card">
                                 <img src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" />
                                 <div className='fac-name'>
-                                    <h2 className="faculty-name">{name}</h2>
+                                    <h2 className="faculty-name">{_.startCase(_.toLower(name))}</h2>
                                     <p>{post}</p>
-                                    <div className='fac-details'>
-                                        <p className="faculty-note">{detail}</p>
-                                        <p className="faculty-department">
-                                            <span style={{
-                                                fontFamily: "SF Pro Display-Bold"
-                                            }}>{"Department: "}</span>
-                                            {Department}
-                                        </p>
-                                    </div>
+                                </div>
+                                <div className='fac-details'>
+                                    <p className="faculty-note">{detail}</p>
+                                    <p className="faculty-department">
+                                        <span style={{
+                                            fontFamily: "SF Pro Display-Bold"
+                                        }}>
+                                            {"Department: "}
+                                        </span>
+                                        {Department}
+                                    </p>
                                 </div>
                             </div>
                         )

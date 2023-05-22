@@ -35,10 +35,7 @@ const RegistrationDisplay = () => {
 
   const TestimonialDelete = async (value) => {
     try {
-      const _id = value;
-      await axios.post(`${process.env.REACT_APP_API_URL}/Registration/Registration_Delete`, {
-        _id,
-      });
+      await axios.delete(`${process.env.REACT_APP_API_URL}/Registration/Registration_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);
@@ -81,27 +78,17 @@ const RegistrationDisplay = () => {
                             />
                           }
                           style={{ width: 300, marginTop: 16, detailStyle }}
-                          actions={[
-                            <EditOutlined
-                              key="edit"
-                              onClick={() => {
-                                navigator(
-                                  `/dashboard/admin/Registration_Update/${value._id}`
-                                );
-                              }}
-                            />,
-                          ]}
                         >
-                        Last Name: {value.Lname}
-                        Email: {value.Email}
-                        Mobile Number: {value.MNumber}        
-                        Address: {value.Address}
-                        Adhaar Card No: {value.AdhaarNo}
-                        Course: {value.course}
-                        Year: {value.Year}
-                        Employed: {value.employed}
-                        Placement by SGTBIMIT: {value.placement}
-                        Present Organization: {value.presentOrgani}
+                        Last Name: {value.Lname}<br/>
+                        Email: {value.Email}<br/>
+                        Mobile Number: {value.MNumber}<br/>
+                        Address: {value.Address}<br/>
+                        Adhaar Card No: {value.AdhaarNo}<br/>
+                        Course: {value.course}<br/>
+                        Year: {value.Year}<br/>
+                        Employed: {value.employed}<br/>
+                        Placement by SGTBIMIT: {value.placement}<br/>
+                        Present Organization: {value.presentOrgani}<br/>
                         Current Designation: {value.CurrentDesignation}
                         </Card>
                       </div>

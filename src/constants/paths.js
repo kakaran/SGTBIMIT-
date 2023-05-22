@@ -21,7 +21,7 @@ export const pages = [
     },
     {
         path: '/dashboard/admin/Faculty_Display',
-        name: 'Display Society'
+        name: 'Display Faculty'
     },
     {
         path: '/dashboard/admin/Administration_Add',

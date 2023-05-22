@@ -11,7 +11,7 @@
     font-size: min(4rem, 8vw);
     text-align: center;
     font-family: "SF Pro Display-Bold";
-    color: #2d2d2d;
+    color: var(--primary-blue);
 }
 
 .notices-grid {
@@ -31,7 +31,7 @@
 
 /* .notice-card:nth-child(2n-2) {
     border: 2px solid #21548c;
-} */        
+} */
 
 .notice-card:nth-child(2n-1) {
     border: 2px solid #d74746;
@@ -102,7 +102,7 @@
 }
 
 @media(max-width: 1300px) {
-    .notices-grid{
+    .notices-grid {
         grid-template-columns: 1fr;
     }
 }

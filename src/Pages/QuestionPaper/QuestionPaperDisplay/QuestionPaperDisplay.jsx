@@ -63,7 +63,7 @@ const QuestionPaperDisplay = () => {
   const PaperDelete = async (value) => {
     try {
       const _id = value;
-      await axios.get(`${process.env.REACT_APP_API_URL}/QuestionPaper/Year_Delete/${_id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/QuestionPaper/Year_Delete/${_id}`);
       // setRender(1);
     } catch (error) {
       console.log(error);

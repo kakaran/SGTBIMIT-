@@ -1,9 +1,16 @@
 .examination-section {
     background: url("../../images//bg-frame.png");
     background-size: 100%;
-
+    padding: min(2rem, 3vw);
 }
 
+@media (max-width: 1000px) {
+    .examination-section {
+        background: none;
+    }
+}
+
+/* 
 .examination {
     text-align: justify;
     padding: 1rem;
@@ -38,4 +45,4 @@
 .examination li {
     font-size: 24px;
     font-family: "SF Pro Display";
-}
+} */

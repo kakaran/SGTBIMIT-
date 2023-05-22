@@ -46,8 +46,8 @@ export default function Home() {
         >
           <ImageCarousel />
           <Welcome />
-          <Testimonials />
           <DirectorMsg />
+          <Testimonials />
           <Committees />
           <Placementss />
           {/*             <Collaboration />

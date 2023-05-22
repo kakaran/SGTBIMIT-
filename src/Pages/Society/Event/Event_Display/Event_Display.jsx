@@ -26,6 +26,7 @@ const EventDisplay = () => {
   const [eventsData, setEventsData] = useState();
 
   const [filter, setfilter] = useState({});
+  const [render, setRender] = useState(0)
 
   const Onchagetesdetail = (e) => {
     setEventFilter({ ...getEventFilter, [e.target.name]: e.target.value });
@@ -51,6 +52,7 @@ const EventDisplay = () => {
 
 
   const EventsFind = async () => {
+
     eventsData.map((value) => {
       if (value.name == getEventFilter.eventHandler) {
         value.Years.map((value) => {
@@ -60,6 +62,7 @@ const EventDisplay = () => {
         });
       }
     });
+    setRender(1)
   };
 
 
@@ -173,8 +176,8 @@ const EventDisplay = () => {
                 Clear
               </button>
             </div>
-            {/* {eventsData[0] ? <div className="flex flex-col">
-              {eventsData[0].map(events => (
+            {/* {render ? <div className="flex flex-col">
+              {eventsData.map(events => (
                 <>{events.Event_id.name}</>
               ))}
             </div> : " "} */}

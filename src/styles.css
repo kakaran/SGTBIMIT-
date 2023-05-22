@@ -32,6 +32,7 @@
 *::after {
     box-sizing: border-box;
     font-family: "SF Pro Display", sans-serif;
+    text-align: justify;
 }
 
 html {

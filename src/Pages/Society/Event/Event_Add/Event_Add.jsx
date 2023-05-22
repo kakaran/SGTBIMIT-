@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AdminHeader from "../../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../../Components/AdminMenu/AdminMenu";
 import "../../Society_Add/Society_Add.css";
@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 
 
 const EventAdd = () => {
+
     const [societUpdate, setSocieUpdate] = useState({
         name: "",
         year: "",
@@ -16,29 +17,34 @@ const EventAdd = () => {
         detail: "",
     });
     const [filedata, setFileData] = useState();
+    const [otherimage, setOtherImage] = useState()
+    const [eventData, setEventData] = useState([])
+    const eventGet = async () => {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
+        setEventData(await res.json())
+    }
 
     const Onchagetesdetail = (e) => {
         setSocieUpdate({ ...societUpdate, [e.target.name]: e.target.value });
     };
 
-    // async function handleFileInputChange(event) {
-    //     const files = event.target.files;
-    //     const newImages = [];
+    async function handleFileInputChange(event) {
+        const files = event.target.files;
+        const newImages = [];
 
-    //     if (files.length) {
-    //         for (let i = 0; i < files.length; i++) {
-    //             const compressedFile = await imageCompression(files[i], options);
+        if (files.length) {
+            for (let i = 0; i < files.length; i++) {
+                const compressedFile = await imageCompression(files[i], options);
 
-    //             newImages.push(compressedFile);
-    //         }
+                newImages.push(compressedFile);
+            }
 
-    //         setFileData(newImages);
-    //     } else {
-    //         setFileData(files);
-    //     }
-    // }
+            setOtherImage(newImages);
+        } else {
+            setOtherImage(files);
+        }
+    }
 
-    const [otherimage, setOtherImage] = useState()
 
     const options = {
         maxSizeMB: 1,
@@ -50,22 +56,24 @@ const EventAdd = () => {
         try {
             let formData = new FormData();
             const compressedFile = await imageCompression(filedata, options);
-            formData.append("image", compressedFile, filedata.name);
+            formData.append("mainImage", compressedFile, filedata.name);
             formData.append("name", societUpdate.name);
             formData.append("year", societUpdate.year);
             formData.append("eventHandler", societUpdate.eventHandler);
             formData.append("detail", societUpdate.detail);
 
+            console.log(otherimage);
             if (otherimage.length) {
-
                 for (let i = 0; i < otherimage.length; i++) {
                     const compressedFile = await imageCompression(otherimage[i], options);
-                    formData.append("images", compressedFile, otherimage[i]?.name);
+                    console.log(`${compressedFile} ${i}`);
+                    formData.append("Images", compressedFile, otherimage[i]?.name);
                 }
             } else {
                 const compressedFile = await imageCompression(otherimage, options);
-                formData.append("images", compressedFile, otherimage?.name);
+                formData.append("Images", compressedFile, otherimage?.name);
             }
+            console.log("hi");
             const data1 = (
                 await axios.post(
                     `${process.env.REACT_APP_API_URL}/Event/Event_Add`,
@@ -82,6 +90,9 @@ const EventAdd = () => {
             console.log(error);
         }
     };
+    useEffect(() => {
+        eventGet();
+    }, []);
     return (
         <>
             <Helmet title="Add Event" />
@@ -96,38 +107,48 @@ const EventAdd = () => {
                             <h1>Create a new Event</h1>
                         </div>
                         <div className="SocietyForm">
+                            <label htmlFor="name" className="my-bold text-lg">Name: </label>
                             <input
                                 type="text"
                                 name="name"
-                                id=""
+                                id="name"
                                 placeholder="Name"
                                 onChange={Onchagetesdetail}
                             />
+                            <label htmlFor="year" className="my-bold text-lg">Year:</label>
                             <input
                                 type="text"
                                 name="year"
-                                id=""
+                                id="year"
                                 placeholder="Year"
                                 onChange={Onchagetesdetail}
                             />
-                            <input
+                            {/* <input
                                 type="text"
                                 name="eventHandler"
                                 id=""
                                 placeholder="Event Handler"
                                 onChange={Onchagetesdetail}
-                            />
+                            /> */}
+                            <label htmlFor="eventHandler" className="my-bold text-lg">Event Handler: </label>
+                            <select name="eventHandler" id="eventHandler" placeholder="Event Handler" onChange={Onchagetesdetail}>
+                                {eventData && eventData.map(event => (
+                                    <option value={event.name}>{event.name}</option>
+                                ))}
+                            </select>
+                            <label htmlFor="detail" className="my-bold text-lg">Detail:</label>
                             <textarea
                                 name="detail"
-                                id=""
+                                id="detail"
                                 cols="15"
                                 rows="5"
                                 placeholder="Detail"
                                 onChange={Onchagetesdetail}
                             ></textarea>
-                            <span style={{ fontFamily: "'Abel', sans-serif", fontSize: "18px" }}>
+                            {/* <span style={{ fontFamily: "'Abel', sans-serif", fontSize: "18px" }}>
                                 Enter the Main Image:
-                            </span>
+                            </span> */}
+                            <label htmlFor="imageUpload" className="my-bold text-lg">Enter the Main Image:</label>
                             <input
                                 type="file"
                                 name="image"
@@ -137,15 +158,16 @@ const EventAdd = () => {
                                 }}
                                 style={{ width: "200px", height: "150px" }}
                             />
-                            <span style={{ fontFamily: "'Abel', sans-serif", fontSize: "18px" }}>
+                            {/* <span style={{ fontFamily: "'Abel', sans-serif", fontSize: "18px" }}>
                                 Enter Other Images:
-                            </span>
+                            </span> */}
+                            <label htmlFor="ImagesUpload" className="my-bold text-lg">Enter Other Images:</label>
                             <input
                                 type="file"
                                 name="file"
-                                id="ImageUpload"
+                                id="ImagesUpload"
                                 multiple
-                                onChange={setOtherImage}
+                                onChange={handleFileInputChange}
                                 style={{ width: "200px", height: "150px" }}
                             />
 

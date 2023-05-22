@@ -573,7 +573,7 @@
 
 .place-card p {
     font-size: min(1.25rem, 2.5vw);
-    color: #C0C0C0;
+    color: var(--primary-clr);
     margin-top: 0;
     margin-bottom: 1rem;
 }

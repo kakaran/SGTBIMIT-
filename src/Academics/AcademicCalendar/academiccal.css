@@ -2,6 +2,7 @@
     background: url("../../images/bg-frame.png");
     background-size: contain;
     margin-bottom: min(2rem, 2vw);
+    background-size: 100%;
 }
 
 

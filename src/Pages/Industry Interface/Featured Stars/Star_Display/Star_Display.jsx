@@ -42,7 +42,7 @@ const StarsDisplay = () => {
 
   const CompanyImageGet = ({ id }) => {
     return (
-      <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_CompanyImg_Display/${id}`} alt="cant load" className="h-32 rounded-[20%] w-max" />
+      <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_CompanyImg_Display/${id}`} alt="cant load" className="w-16 mx-auto rounded-[20%]" />
     )
   }
 
@@ -76,8 +76,9 @@ const StarsDisplay = () => {
                       <div className="FacultyCardtitle">
                         <Meta title={value?.Name} bordered={false} style={{ padding: "10px" }} />
                         <Meta title={value?.Course} />
+                        <CompanyImageGet id={value._id} />
                       </div>
-                      <span className="FacultyCardController flex flex-col">
+                      <span className="FacultyCardController">
                         {/* <BiEditAlt
                           style={{
                             paddingRight: "10px",
@@ -90,7 +91,6 @@ const StarsDisplay = () => {
                             navigator(`/dashboard/admin/Placement_Update/${value._id}`);
                           }}
                         /> */}
-                        <CompanyImageGet id={value._id} />
                         <RiDeleteBin6Line
                           className="TestBin"
                           onClick={() => {

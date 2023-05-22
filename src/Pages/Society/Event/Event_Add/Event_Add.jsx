@@ -21,20 +21,24 @@ const EventAdd = () => {
         setSocieUpdate({ ...societUpdate, [e.target.name]: e.target.value });
     };
 
-    function handleFileInputChange(event) {
-        const files = event.target.files;
-        const newImages = [];
+    // async function handleFileInputChange(event) {
+    //     const files = event.target.files;
+    //     const newImages = [];
 
-        if (files.length) {
-            for (let i = 0; i < files.length; i++) {
-                newImages.push(files[i]);
-            }
+    //     if (files.length) {
+    //         for (let i = 0; i < files.length; i++) {
+    //             const compressedFile = await imageCompression(files[i], options);
 
-            setFileData(newImages);
-        } else {
-            setFileData(files);
-        }
-    }
+    //             newImages.push(compressedFile);
+    //         }
+
+    //         setFileData(newImages);
+    //     } else {
+    //         setFileData(files);
+    //     }
+    // }
+
+    const [otherimage, setOtherImage] = useState()
 
     const options = {
         maxSizeMB: 1,
@@ -46,22 +50,21 @@ const EventAdd = () => {
         try {
             let formData = new FormData();
             const compressedFile = await imageCompression(filedata, options);
-            console.log(compressedFile);
             formData.append("image", compressedFile, filedata.name);
             formData.append("name", societUpdate.name);
             formData.append("year", societUpdate.year);
             formData.append("eventHandler", societUpdate.eventHandler);
             formData.append("detail", societUpdate.detail);
 
-            if (filedata.length) {
+            if (otherimage.length) {
 
-                for (let i = 0; i < filedata.length; i++) {
-                    const compressedFile = await imageCompression(filedata[i], options);
-                    formData.append("images", compressedFile, filedata[i]?.name);
+                for (let i = 0; i < otherimage.length; i++) {
+                    const compressedFile = await imageCompression(otherimage[i], options);
+                    formData.append("images", compressedFile, otherimage[i]?.name);
                 }
             } else {
-                const compressedFile = await imageCompression(filedata, options);
-                formData.append("images", compressedFile, filedata?.name);
+                const compressedFile = await imageCompression(otherimage, options);
+                formData.append("images", compressedFile, otherimage?.name);
             }
             const data1 = (
                 await axios.post(
@@ -142,7 +145,7 @@ const EventAdd = () => {
                                 name="file"
                                 id="ImageUpload"
                                 multiple
-                                onChange={handleFileInputChange}
+                                onChange={setOtherImage}
                                 style={{ width: "200px", height: "150px" }}
                             />
 

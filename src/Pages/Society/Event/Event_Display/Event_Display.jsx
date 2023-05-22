@@ -20,7 +20,7 @@ const EventDisplay = () => {
   });
 
   const [EventsAaray, setEventAaray] = useState({
-    Events : ""
+    Events: ""
   });
 
   const [eventsData, setEventsData] = useState();
@@ -38,30 +38,30 @@ const EventDisplay = () => {
     try {
       const Data = (
         await axios.get(
-          `${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`
+          `${process.env.REACT_APP_API_URL}/Eventhandler/AllEvents_Display`
         )
       ).data;
       if (Data) {
-        setEventsData(Data);
+        setEventsData(Data.data);
       }
     } catch (error) {
       console.log(error);
     }
   };
-  
 
-    const EventsFind = async () => {
-      eventsData.map((value) => {
-        if (value.name == getEventFilter.eventHandler) {
-          value.Years.map((value) => {
-            if (value.year == getEventFilter.year) {
-              setEventAaray({Events : value?.Events})
-            }
-          });
-        }
-      });
-    };
-  
+
+  const EventsFind = async () => {
+    eventsData.map((value) => {
+      if (value.name == getEventFilter.eventHandler) {
+        value.Years.map((value) => {
+          if (value.year == getEventFilter.year) {
+            setEventAaray({ Events: value?.Events })
+          }
+        });
+      }
+    });
+  };
+
 
   const EventsData = async () => {
     try {
@@ -92,7 +92,7 @@ const EventDisplay = () => {
       eventHandler: " ",
     });
     setEventAaray({
-      Events : " "
+      Events: " "
     })
   };
 
@@ -173,7 +173,11 @@ const EventDisplay = () => {
                 Clear
               </button>
             </div>
-            {eventsData?.Events ? <h1>hi</h1> : " "}
+            {/* {eventsData[0] ? <div className="flex flex-col">
+              {eventsData[0].map(events => (
+                <>{events.Event_id.name}</>
+              ))}
+            </div> : " "} */}
           </div>
         </div>
       </div>

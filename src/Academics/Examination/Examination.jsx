@@ -42,7 +42,7 @@ const tips = [
   },
   {
     id: 6,
-    title: "Mock Interview \Test Preparation",
+    title: "Mock Interview / Test Preparation",
     desc: "As with every skill you’ve ever learned, you have to learn the techniques and then practice, practice, practice. A mock interview is an indispensable tool in preparing for an actual interview, and, when done well, closely monitors what you could expect during your actual interview. However, a mock interview will only be as good as the participants make it. Do your best to recreate actual interview conditions by being as formal and professional as possible. The mock interviewer should stay in character throughout the interview and the interviewee must act as though s/he is in an actual interview. By preparing in advance of the interview, candidates can develop a stronger sense of self-confidence. Mock interviews can additionally uncover problems, mistakes or mishaps for the job seeker long before the actual interview occurs. In this way, the candidate is able to work to correct these issues during the practice period, and therefore elevate his or her performance during the actual interview.",
   },
   {

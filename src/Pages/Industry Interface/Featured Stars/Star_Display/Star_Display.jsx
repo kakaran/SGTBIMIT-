@@ -14,7 +14,7 @@ const { Meta } = Card;
 const StarsDisplay = () => {
   const [render, setRender] = useState(0);
   const [getStars, setStars] = useState([]);
-//   const navigator = useNavigate("");
+  //   const navigator = useNavigate("");
 
   useEffect(() => {
     const TestimonialsDataGet = async () => {
@@ -39,6 +39,12 @@ const StarsDisplay = () => {
       />
     );
   };
+
+  const CompanyImageGet = ({ id }) => {
+    return (
+      <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_CompanyImg_Display/${id}`} alt="cant load" className="h-32 rounded-[20%] w-max" />
+    )
+  }
 
   const PlacementDelete = async (value) => {
     try {
@@ -66,12 +72,12 @@ const StarsDisplay = () => {
               {getStars.map((value) => {
                 return (
                   <div className="FacultyCard">
-                    <Card hoverable style={{width: 240,}} cover={ImagesGet(value?._id)}>
+                    <Card hoverable style={{ width: 240, }} cover={ImagesGet(value?._id)}>
                       <div className="FacultyCardtitle">
                         <Meta title={value?.Name} bordered={false} style={{ padding: "10px" }} />
                         <Meta title={value?.Course} />
                       </div>
-                      <span className="FacultyCardController">
+                      <span className="FacultyCardController flex flex-col">
                         {/* <BiEditAlt
                           style={{
                             paddingRight: "10px",
@@ -84,6 +90,7 @@ const StarsDisplay = () => {
                             navigator(`/dashboard/admin/Placement_Update/${value._id}`);
                           }}
                         /> */}
+                        <CompanyImageGet id={value._id} />
                         <RiDeleteBin6Line
                           className="TestBin"
                           onClick={() => {

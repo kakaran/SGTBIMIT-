@@ -160,7 +160,6 @@ export default function Events() {
 
                     <div className="EventScroller">
                       {year.Events.map((singleEvent, i) => {
-                        console.log(singleEvent)
                         return (
                           <div className="eventCardConatainer" key={`Event-${i}`}>
                             <div className="event-card">

@@ -10,12 +10,12 @@ import { Helmet } from "react-helmet";
 const StarsAdd = () => {
   const [starsUpdate, setStarsUpdate] = useState({
     Name: "",
-    Course : "",
+    Course: "",
     image: "",
     CompanyImage: "",
   });
   const [filedata, setFileData] = useState();
-
+  const [image, setImage] = useState()
   const Onchagetesdetail = (e) => {
     setStarsUpdate({ ...starsUpdate, [e.target.name]: e.target.value });
   };
@@ -29,15 +29,16 @@ const StarsAdd = () => {
   const PlacementAdd = async () => {
     try {
       let formData = new FormData();
-      const compressedFile = await imageCompression(filedata, options);
-      console.log(compressedFile);
-      formData.append("image", compressedFile, filedata.name);
-      formData.append("name", starsUpdate.Name);
+      const userImage = await imageCompression(filedata, options);
+      const companyImage = await imageCompression(image, options);
+      console.log(userImage);
+      formData.append("image", userImage, filedata.name);
+      formData.append("Name", starsUpdate.Name);
       formData.append("Course", starsUpdate.Course);
-      formData.append("CompanyImage", starsUpdate.CompanyImage);
+      formData.append("CompanyImage", companyImage, image.name);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Add`,formData,
+          `${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Add`, formData,
           {
             headers: {
               "Content-Type": "multipart/form-data",
@@ -78,11 +79,12 @@ const StarsAdd = () => {
                 placeholder="Couse"
                 onChange={Onchagetesdetail}
               />
-              <div className="Message_image">
+              <div className="Message_image flex-col gap-2" style={{ alignItems: "flex-start" }}>
+                <label htmlFor="sImageUpload" className="my-bold text-lg">Student Image</label>
                 <input
                   type="file"
                   name="image"
-                  id="ImageUpload"
+                  id="sImageUpload"
                   onChange={(e) => {
                     setFileData(e.target.files[0]);
                   }}
@@ -90,13 +92,14 @@ const StarsAdd = () => {
                 />
               </div>
 
-              <div className="Message_image">
+              <div className="Message_image flex-col gap-2" style={{ alignItems: "flex-start" }}>
+                <label htmlFor="ImageUpload" className="my-bold text-lg">Company Image</label>
                 <input
                   type="file"
                   name="image"
                   id="ImageUpload"
                   onChange={(e) => {
-                    setFileData(e.target.files[0]);
+                    setImage(e.target.files[0]);
                   }}
                   style={{ width: "200px", height: "150px" }}
                 />

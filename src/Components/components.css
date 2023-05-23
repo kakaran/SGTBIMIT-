@@ -447,7 +447,7 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   width: min(800px, 100%);
   justify-content: center;
   padding: min(4rem, 4vw);

@@ -9,7 +9,7 @@ export default function Map() {
     },
     {
       type: "Phone Number",
-      detail: "+91-8810230080",
+      detail: "+91-8810230080, 9899333224",
       image: require("../images/phone-icon.png")
     },
     {

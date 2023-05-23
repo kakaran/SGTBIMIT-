@@ -168,7 +168,7 @@ export default function Navbar() {
 
         </div> */}
         <div className="nav-item" data-index="6">
-          <div>SOCIETY & CLUB<img src={arrow} alt="" /></div>
+          <div>SOCIETY & CLUBS<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="6">
             {events && events.map((event, i) => (
               <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={`${event + i}`}>

@@ -35,21 +35,16 @@ const AlumniTesti_Display = () => {
 
   const TestimonialDelete = async (value) => {
     try {
-      const _id = value;
-      await axios.post(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Delete`, {
-        _id,
-      });
+      await axios.delete(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);
     }
   };
 
-  const ImagesGet = (value) => {
+  const ImagesGet = (id) => {
     return (
-      <img
-        src={`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Image_Display/${value}`}
-        alt=""
+      <img src={`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Image_Display/${id}`} alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
     );
@@ -84,9 +79,7 @@ const AlumniTesti_Display = () => {
                         style={{
                             width: 240,
                         }}
-                        cover={
-                            ImagesGet(value?._id)
-                        }
+                        cover={ImagesGet(value?._id)}
                         />
                         <Card
                           title={value.name}

@@ -10,8 +10,15 @@ import Placementss from '../../Home/Placementss'
 import Statistics from './Statistics/Statistics'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
+import AutoHorizontalScroll from '../../Home/AutoHorizontalScroll'
+import useFetch from '../../useFetch'
+import _ from 'lodash'
 
 export default function Placements() {
+
+    const { data: feature, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Display`)
+    console.log(feature ? feature : "");
+
     return (
         <>
             <Helmet title='SGTBIMIT | Placements' />
@@ -35,7 +42,7 @@ export default function Placements() {
                     </p>
                     <a href="#placement-about">
                         <BsArrowDownCircleFill size={"3rem"} color="#005E93" />
-                        <div className="vertical-line" />
+                        <div className="vertical-line max-lg:hidden" />
                     </a>
                 </section>
                 <section className='placement-about-section' id='placement-about'>
@@ -69,7 +76,21 @@ export default function Placements() {
                         marginBottom: "4rem",
                         zIndex: '10'
                     }}>Featured Stars</h1>
-                    <Placementss isTitle={false} />
+                    <div className='w-full px-9'>
+                        <AutoHorizontalScroll>
+                            {feature && feature.map(feat => (
+                                <div className='p-5 border-solid border-2 border-blue-500 rounded-md bg-slate-50 flex flex-col gap-4'>
+                                    <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${feat._id}`} alt="" className='mix-blend-multiply' />
+                                    <div>
+                                        <div className='my-bold text-3xl'>{_.capitalize(_.toLower(feat.Name))}</div>
+                                        <div className='uppercase text-gray-800 text-lg'>{feat.Course}</div>
+                                    </div>
+                                    <div className='h-1 bg-blue-600 rounded-full w-5/6 mx-auto' />
+                                    <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_CompanyImg_Display/${feat._id}`} alt="" className='mix-blend-multiply w-1/2 mx-auto' />
+                                </div>
+                            ))}
+                        </AutoHorizontalScroll>
+                    </div>
                     <div className="vertical-line"
                         style={{
                             marginTop: "min(2rem, 2vw)"

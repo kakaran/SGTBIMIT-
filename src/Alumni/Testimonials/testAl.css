@@ -9,7 +9,7 @@
     font-family: "SF Pro Display-Bold";
     font-size: min(4rem, 8vw);
     text-align: center;
-    color:#1f567c
+    color: #1f567c
 }
 
 .t-grid {
@@ -40,7 +40,7 @@
     aspect-ratio: 1;
     outline: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    ;
+    object-fit: cover;
 }
 
 .card-info {

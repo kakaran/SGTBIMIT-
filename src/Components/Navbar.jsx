@@ -11,34 +11,34 @@ export default function Navbar() {
 
 
   useEffect(() => {
-    document.querySelector(".menu").addEventListener("click", e => {
+    document.querySelector(".menu").addEventListener("click", (e) => {
       document.querySelector("nav").style.transform = "translateX(0%)"
       document.querySelector("nav").style.visibility = "visible"
     })
-    document.querySelector(".nav-close-btn").addEventListener("click", () => {
+    document.querySelector(".nav-close-btn").addEventListener("click", (e) => {
       document.querySelector("nav").style.transform = "translateX(-100%)"
       document.querySelector("nav").style.visibility = "hidden"
     })
-    if (document.body.offsetWidth < 1000) {
+    // if (document.body.offsetWidth < 1000) {
 
-      document.querySelectorAll(".dropdown").forEach(dropdown => {
-        dropdown.style.display = "none"
-      })
-      document.querySelectorAll(".nav-item>*:first-child").forEach((link, i) => {
-        link.addEventListener("click", e => {
-          const dropdowns = document.querySelectorAll(`.dropdown`)
-          dropdowns.forEach((dropdown, j) => {
-            if (dropdown.dataset.index === `${i}`) {
-              if (dropdown.style.display === "none") {
-                dropdown.style.display = "block"
-                return
-              }
-              dropdown.style.display = "none"
-            }
-          })
-        })
-      })
-    }
+    //   document.querySelectorAll(".dropdown").forEach(dropdown => {
+    //     dropdown.style.display = "none"
+    //   })
+    //   document.querySelectorAll(".nav-item>*:first-child").forEach((link, i) => {
+    //     link.addEventListener("click", e => {
+    //       const dropdowns = document.querySelectorAll(`.dropdown`)
+    //       dropdowns.forEach((dropdown, j) => {
+    //         if (dropdown.dataset.index === `${i}`) {
+    //           if (dropdown.style.display === "none") {
+    //             dropdown.style.display = "block"
+    //             return
+    //           }
+    //           dropdown.style.display = "none"
+    //         }
+    //       })
+    //     })
+    //   })
+    // }
   }, [])
 
   const handleFloatClick = (e) => {

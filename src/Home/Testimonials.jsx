@@ -63,12 +63,12 @@ export default function Testimonials() {
                                             <p>{testimonial.detail}</p>
                                             <div className="testi-name">
                                                 <h1>{testimonial.name}</h1>
-                                                <div className="batch">BCA Batch 2014</div>
+                                                <div className="batch">{`${testimonial.Course} Batch ${testimonial.Year}`}</div>
                                             </div>
                                         </motion.div>
                                         <div className="testimonial-img">
                                             <motion.img viewport={{ once: true }}
-                                                src={require("../images/student.png")}
+                                                src={`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Image_Display/${testimonial._id}`}
                                                 alt=""
                                                 initial={{
                                                     y: -400
@@ -80,6 +80,7 @@ export default function Testimonials() {
                                                     duration: 0.5,
                                                     type: 'spring'
                                                 }}
+                                                className='mix-blend-multiply'
                                             />
                                         </div>
                                     </div>

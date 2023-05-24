@@ -16,20 +16,20 @@ const NoticeAdd = () => {
   });
   const [filedata, setFileData] = useState();
 
-  function handleFileInputChange(event) {
-    const files = event.target.files;
-    const newImages = [];
+  // function handleFileInputChange(event) {
+  //   const files = event.target.files;
+  //   const newImages = [];
 
-    if (files.length) {
-      for (let i = 0; i < files.length; i++) {
-        newImages.push(files[i]);
-      }
+  //   if (files.length) {
+  //     for (let i = 0; i < files.length; i++) {
+  //       newImages.push(files[i]);
+  //     }
 
-      setFileData(newImages);
-    } else {
-      setFileData(files);
-    }
-  }
+  //     setFileData(newImages);
+  //   } else {
+  //     setFileData(files);
+  //   }
+  // }
 
   const Onchagetesdetail = (e) => {
     setNoticeUpdate({ ...noticeUpdate, [e.target.name]: e.target.value });
@@ -41,7 +41,7 @@ const NoticeAdd = () => {
     useWebWorker: true,
   }
 
-  const SocietyAdd = async () => {
+  const NoticeAdd = async () => {
     try {
       let formData = new FormData();
       const compressedFile = await imageCompression(filedata, options);
@@ -49,10 +49,10 @@ const NoticeAdd = () => {
       formData.append("Name", noticeUpdate.Name);
       formData.append("Detail", noticeUpdate.Detail);
       formData.append("Categories", noticeUpdate.Categories);
+      formData.append("file", compressedFile, filedata.name);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Notice/Notice_Add`,
-          formData,
+          `${process.env.REACT_APP_API_URL}/Notice/Notice_Add`,formData,
           {
             headers: {
               "Content-Type": "multipart/form-data",
@@ -94,11 +94,13 @@ const NoticeAdd = () => {
                 placeholder="Detail"
                 onChange={Onchagetesdetail}
               ></textarea>
-              <select name="Categories" id="" onChange={Onchagetesdetail}>
-                <option value=" ">Select Category</option>
-                <option value="admission">Admission</option>
-                <option value="academic">Academic</option>
-                <option value="others">Others</option>
+              <select name="Categories" id="" value={noticeUpdate?.Categories} onChange={Onchagetesdetail}
+              >
+                <option value=" ">Select Categories</option>
+                // <option value="Academics">Academics</option>
+                // <option value="Admission">Admission</option>
+                <option value="Important">Important</option>
+                <option value="Normal">Normal</option>
               </select>
               <div className="Message_image">
                 <input
@@ -106,7 +108,9 @@ const NoticeAdd = () => {
                   name="file"
                   id="ImageUpload"
                   multiple
-                  onChange={handleFileInputChange}
+                  onChange={(e) => {
+                    setFileData(e.target.files[0]);
+                  }}
                   style={{ width: "200px", height: "150px" }}
                 />
               </div>
@@ -114,7 +118,7 @@ const NoticeAdd = () => {
               <button
                 className="button-19"
                 onClick={() => {
-                  SocietyAdd();
+                  NoticeAdd();
                 }}
               >
                 Submit

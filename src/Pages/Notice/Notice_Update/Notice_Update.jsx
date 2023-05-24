@@ -1,92 +1,95 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import imageCompression from "browser-image-compression";
-import axios from "axios";
-import "../../Society/Society_Add/Society_Add.css";
-import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
+import { ToastContainer, toast } from "react-toastify";
 import AdminHeader from "../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../Components/AdminMenu/AdminMenu";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import "../../QuestionPaper/QuestionPaperAdd/QuestionPaperAdd.css";
+import "../../Society/Society_Add/Society_Add.css";
+import "../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import { Helmet } from "react-helmet";
 
 const NoticeUpdate = () => {
-  const [noticeUpdate, setNoticeUpdate] = useState({
+  const [societUpdate, setSocieUpdate] = useState({
     Name: "",
     Detail: "",
     Categories: "",
   });
+
   const { _id } = useParams();
 
   const [filedata, setFileData] = useState();
 
+  // function handleFileInputChange(event) {
+  //   const files = event.target.files;
+  //   const newImages = [];
+
+  //   if (files.length) {
+  //     for (let i = 0; i < files.length; i++) {
+  //       newImages.push(files[i]);
+  //     }
+
+  //     setFileData(newImages);
+  //   } else {
+  //     setFileData(files);
+  //   }
+  // }
+
   const Onchagetesdetail = (e) => {
-    setNoticeUpdate({ ...noticeUpdate, [e.target.name]: e.target.value });
+    setSocieUpdate({ ...societUpdate, [e.target.name]: e.target.value });
   };
 
-  const options = {
-    maxSizeMB: 1,
-    maxWidthOrHeight: 1920,
-    useWebWorker: true,
-  };
+ 
 
-  useEffect(() => {
-    const TestSingleData = async () => {
-      try {
-        const data = (
-          await axios.get(
-            `${process.env.REACT_APP_API_URL}/Notice/Notice_File_Display/${_id}`
-          )
-        ).data;
-        setNoticeUpdate({
-          Name: data?.Name,
-          Detail: data?.Detail,
-          Categories: data?.Categories,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    TestSingleData();
-  }, [_id]);
 
-  const compresFile = async () => {
-    if (filedata) {
-      const compressedFile = await imageCompression(filedata, options);
-      return compressedFile
-    } else {
-      return filedata
-    }
-  };
-
-  // console.log(societUpdate);
-
-  const SocietyUpdate = async () => {
+  const NoticeUpdate = async () => {
     try {
       let formData = new FormData();
-      //let Imagefile = await compresFile()
-      //formData.append("file", Imagefile, filedata.name);
-      formData.append("Name", noticeUpdate.Name);
-      formData.append("Detail", noticeUpdate.Detail);
-      formData.append("Categories", noticeUpdate.Categories);
+      if (filedata.length) {
+        for (let i = 0; i < filedata.length; i++) {
+          formData.append("file", filedata[i]);
+        }
+      } else {
+        formData.append("file", filedata);
+      }
+      formData.append("Name", societUpdate.Name);
+      formData.append("Detail", societUpdate.Detail);
+      formData.append("Categories", societUpdate.Categories);
       const data1 = (
-        await axios.post(
-          `${process.env.REACT_APP_API_URL}/Notice/Notice_Update/${_id}`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
-      ).data;
-      console.log(data1);
+        await axios.post(`${process.env.REACT_APP_API_URL}/Notice/Notice_Update/${_id}`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })).data;
+      toast(`${data1.message}`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      // console.log(data1);
     } catch (error) {
       console.log(error);
+      toast.error(`${error.message}`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
-  console.log(noticeUpdate);
   return (
     <>
-      <Helmet title="Update Faculty" />
+      <Helmet title="Update Question Paper" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -95,7 +98,7 @@ const NoticeUpdate = () => {
           <AdminHeader />
           <div className="SocietyFormContainer">
             <div className="Society_Heading">
-              <h1>Update Notice</h1>
+              <h1>Paper Data Update</h1>
             </div>
             <div className="SocietyForm">
               <input
@@ -103,15 +106,7 @@ const NoticeUpdate = () => {
                 name="Name"
                 id=""
                 placeholder="Name"
-                value={noticeUpdate?.Name}
-                onChange={Onchagetesdetail}
-              />
-              <input
-                type="text"
-                name="Categories"
-                id=""
-                placeholder="Categories"
-                value={noticeUpdate?.Categories}
+                value={societUpdate?.Name}
                 onChange={Onchagetesdetail}
               />
               <textarea
@@ -120,50 +115,38 @@ const NoticeUpdate = () => {
                 cols="15"
                 rows="5"
                 placeholder="Detail"
-                value={noticeUpdate?.Detail}
+                value={societUpdate?.Detail}
                 onChange={Onchagetesdetail}
               ></textarea>
+              <select name="Categories" id="" value={societUpdate?.Categories} onChange={Onchagetesdetail}
+              >
+                <option value=" ">Select Categories</option>
+                // <option value="Academics">Academics</option>
+                // <option value="Admission">Admission</option>
+                <option value="Important">Important</option>
+                <option value="Normal">Normal</option>
+              </select>
               <div className="Message_image">
                 <input
                   type="file"
-                  name="image"
-                  accept="image/*"
+                  name="file"
                   id="ImageUpload"
+                  multiple
                   onChange={(e) => {
                     setFileData(e.target.files[0]);
                   }}
-                  style={{ width: "400px", height: "200px" }}
+                  style={{ width: "200px", height: "150px" }}
                 />
-                {/* {filedata ? (
-                  <img
-                    src={URL.createObjectURL(filedata)}
-                    alt=""
-                    style={{
-                      width: "400px",
-                      height: "200px",
-                      borderRadius: "10px",
-                    }}
-                  />
-                ) : (
-                  <img
-                    src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${_id}`}
-                    alt=""
-                    style={{
-                      width: "400px",
-                      height: "200px",
-                      borderRadius: "10px",
-                    }}
-                  />
-                )} */}
               </div>
               <button
                 className="button-19"
-                onClick={() => {
-                  SocietyUpdate();
+                onClick={async () => {
+                  NoticeUpdate();
                 }}
               >
-                Update
+                Submit
               </button>
+              <ToastContainer />
             </div>
           </div>
         </div>

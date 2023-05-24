@@ -4,11 +4,14 @@ import AdminHeader from '../../../Components/AdminHeader/AdminHeader'
 import axios from 'axios';
 import { Card } from 'antd';
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { BiEditAlt } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 
 const Notice_Display = () => {
     const[NoticeDataDisplay, setNoticeDataDisplay] = useState();
     const [render, setRender] = useState(0);
+    const navigator = useNavigate("");
 
     useEffect(() => {
         const NoticeDataGet = async () => {
@@ -25,10 +28,7 @@ const Notice_Display = () => {
 
     const NoticeDelete = async (value) => {
         try {
-          const _id = value;
-          await axios.post(`${process.env.REACT_APP_API_URL}/Notice/Notice_Delete`, {
-            _id,
-          });
+          await axios.delete(`${process.env.REACT_APP_API_URL}/Notice/Notice_Delete/${value}`);
           setRender(1)
         } catch (error) {
           console.log(error);
@@ -67,6 +67,21 @@ const Notice_Display = () => {
                                         style={{ width: 400, marginTop: 16, detailStyle }}
                                         >
                                         <p>{value?.Detail}</p>
+                                        <span>Category: {value?.Categories}</span>
+                                        <span className="FacultyCardController">
+                                        <BiEditAlt
+                                        style={{
+                                            paddingRight: "10px",
+                                            borderRight: "1px solid #f0f0f0",
+                                            width: "35px",
+                                            fontSize: "20px",
+                                            color: "#adb5bd",
+                                        }}
+                                        onClick={() => {
+                                            navigator(`/dashboard/admin/Notice_Update/${value._id}`);
+                                        }}
+                                        />
+                                        </span>
                                     </Card>
                                 )
                             })}

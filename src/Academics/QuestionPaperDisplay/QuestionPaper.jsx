@@ -196,7 +196,7 @@ const QuestionPaperDisplay = () => {
           {getPaperFilterData.Semester &&
             (
               <>
-                {isPending && <Loader />}
+                {isPending && <div className="col-span-3"><Loader /></div>}
                 {!isPending && (
                   <div className={`mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-[min(2.5rem,2vw)] my-4 col-span-3 max-lg:col-span-1 w-full`} >
                     <div className="flex flex-col gap-4 border-b-1 border-slate-400">
@@ -222,7 +222,8 @@ const QuestionPaperDisplay = () => {
                       }
                     </div>
                   </div>
-                )}
+                )
+                }
               </>
             )}
         </div>

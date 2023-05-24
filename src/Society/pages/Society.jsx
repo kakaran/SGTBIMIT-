@@ -27,5 +27,6 @@ export default function Society() {
             </div>
             }
             <Footer />
-        </>)
+        </>
+    )
 }

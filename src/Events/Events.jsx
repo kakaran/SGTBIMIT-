@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { routingAnimations } from "../constants";
 import _ from 'lodash'
 
-
 export default function Events() {
   const { id } = useParams();
   const [events, setEvents] = useState();
@@ -18,8 +17,6 @@ export default function Events() {
   const [eventYearController, setEventYearController] = useState(false);
 
   const API_URL = process.env.REACT_APP_API_URL;
-
-  // const { data: events, isPending } = useFetch(`${API_URL}/Eventhandler/EventHandler_Single_Display/${id}`)
 
   useEffect(() => {
     const EventDataGet = async () => {
@@ -41,22 +38,6 @@ export default function Events() {
 
   console.log(eventFilter);
 
-  // let i = 0
-  // const count = 4
-  // let eventChunks = []
-  // events && (
-  //     event.Years.forEach((e) => {
-  //         e.Events.forEach((ee) => {
-  //             ee.Event_id.images.forEach(() => {
-  //                 let res = ee.Event_id.images.slice(i, i + count)
-  //                 if (res.length === 0) return
-  //                 eventChunks.push(res)
-  //                 i = i + count
-  //             })
-  //         })
-  //     })
-  // )
-  // console.log(eventChunks ? eventChunks : '')
   return (
     <>
       <Helmet title={events?.name} />
@@ -163,14 +144,6 @@ export default function Events() {
                 if (eventFilter === year?.year) {
                   return (
                     <div className="events-container" key={`Year-${i}`}>
-                      {/* <h1
-                style={{
-                    fontFamily: "SF Pro Display-Bold",
-                    fontSize: "min(3rem, 6vw)",
-                    marginTop: 0,
-                }}
-            > {year.year} </h1> */}
-
                       <div className="EventScroller">
                         {year.Events.map((singleEvent, i) => {
                           return (

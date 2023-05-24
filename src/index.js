@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <AuthProvider>
         <Router>
-        <App />
+            <App />
         </Router>
     </AuthProvider>
 );

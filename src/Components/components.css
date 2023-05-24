@@ -275,7 +275,7 @@ nav {
   justify-content: space-around;
   background: linear-gradient(105.7deg, var(--primary-clr) 0%, var(--secondary-clr) 100%);
   color: white;
-  padding: min(1.5rem, 1.5vw);
+  padding-inline: min(1.5rem, 1.5vw);
   gap: min(1rem, 1vw);
   font-size: min(1.5rem, 2vw);
   font-weight: 600;
@@ -284,30 +284,29 @@ nav {
   top: 0;
   left: 0;
   z-index: 100;
+  height: 109px;
 }
 
 nav a {
   color: white;
-  text-decoration: none;
+  height: 100%;
 }
+
 
 .nav-item>*:first-child {
   display: flex;
   gap: min(.7rem, 1vw);
   align-items: center;
-  padding-block: min(1rem, 1vw);
 }
 
 nav>* {
+  /* padding-block: min(2.5rem, 2.5vw); */
   display: flex;
   gap: min(.7rem, 1.3vw);
   cursor: pointer;
   position: relative;
   align-items: center;
-}
-
-.nav-item>a {
-  padding-block: 1rem;
+  height: 100%;
 }
 
 .active,
@@ -336,7 +335,7 @@ nav img {
   z-index: 11;
   padding-block: min(2rem, 2vh);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
-  border-radius: 1rem;
+  border-radius: 10px;
   transition: 250ms;
   font-size: min(1.25rem, 2vw);
 }

@@ -14,7 +14,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: "SF Pro Display-Bold";
     src: url("../public/fonts/SFPRODISPLAYBOLD.OTF");
@@ -50,6 +49,10 @@ body,
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+}
+
 .my-bold {
     font-family: "SF Pro Display-Bold";
 }
@@ -62,32 +65,8 @@ body,
     font-family: monospace;
 }
 
-.block {
-    position: absolute;
-    width: 20px;
-    height: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--secondary-clr);
-    z-index: 101;
-}
-
 .my-text-4 {
     font-size: min(4rem, 8vw);
-}
-
-.left-block {
-    left: 0;
-}
-
-.right-block {
-    right: 0;
-}
-
-@media (max-width: 800px) {
-    .block {
-        display: none;
-    }
 }
 
 button {
@@ -101,10 +80,6 @@ button {
     font-family: 'Edu NSW ACT Foundation', cursive;
 }
 
-.loading {
-    text-align: center;
-}
-
 .show {
     visibility: visible !important;
 }
@@ -113,9 +88,7 @@ button {
     display: block;
 }
 
-
 /* Carousel */
-
 
 .control-arrow {
     position: absolute !important;
@@ -133,11 +106,4 @@ button {
 .carousel-slider {
     position: relative;
     overflow: visible !important;
-}
-
-
-
-
-a {
-    text-decoration: none;
 }

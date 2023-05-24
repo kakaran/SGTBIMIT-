@@ -98,9 +98,6 @@
 
 }
 
-/* .EventFilterContainer{
-    position: relative;
-} */
 .EventFilterHeader {
     display: flex;
     align-items: center;
@@ -155,7 +152,6 @@
     text-overflow: ellipsis;
 }
 
-
 .event-card img {
     width: 100%;
     aspect-ratio: 1;
@@ -179,14 +175,6 @@
     border-bottom: 3px solid #f5f5f5;
 }
 
-
-/* .EventScroller::-webkit-scrollbar-track-piece
-{
-	background: transparent;
-    border-radius: 9px;
-    height: 2px;
-} */
-
 .EventScroller::-webkit-scrollbar {
     background-color: white;
     overflow: visible;
@@ -198,8 +186,6 @@
     background-color: #005E93;
     border-radius: 9px;
 }
-
-
 
 .FilterData {
     z-index: 1000;

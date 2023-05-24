@@ -4,6 +4,7 @@ import useFetch from '../useFetch'
 
 const arrow = require("../images/down.png")
 
+
 export default function Navbar() {
   const { data: events } = useFetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
 
@@ -61,7 +62,7 @@ export default function Navbar() {
           <button className="student-login-btn" type="button">STUDENT - ERP LOGIN</button>
         </div>
         <div className="nav-item" data-index="0">
-          <div><NavLink to="/" className='nav-item'>HOME</NavLink></div>
+          <div className='h-full'><NavLink to="/" className='h-full flex items-center'>HOME</NavLink></div>
         </div>
         <div className="nav-item" data-index="1">
           <div> ABOUT US<img src={arrow} alt="" /></div>
@@ -173,7 +174,7 @@ export default function Navbar() {
           <div className="dropdown" data-index="6">
             {events && events.map((event, i) => (
               <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={`${event + i}`}>
-                <div className="dropdown-item" style={{ textTransform: "uppercase" }}> {event.name} </div>
+                <div className="dropdown-item uppercase"> {event.name} </div>
               </NavLink>
             ))}
           </div>

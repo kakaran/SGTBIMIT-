@@ -85,7 +85,6 @@ import EventDisplay from './Pages/Society/Event/Event_Display/Event_Display.jsx'
 import EventUpdate from './Pages/Society/Event/Event_Update/Event_Update.jsx'
 import EventHAdd from './Pages/Society/Event_Handler/EventHandler_Add/EventH_Add.jsx'
 
-
 function App() {
   const location = useLocation()
 

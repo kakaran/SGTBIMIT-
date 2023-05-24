@@ -28,10 +28,7 @@ const Notice_Display = () => {
 
     const NoticeDelete = async (value) => {
         try {
-          const _id = value;
-          await axios.post(`${process.env.REACT_APP_API_URL}/Notice/Notice_Delete`, {
-            _id,
-          });
+          await axios.delete(`${process.env.REACT_APP_API_URL}/Notice/Notice_Delete/${value}`);
           setRender(1)
         } catch (error) {
           console.log(error);

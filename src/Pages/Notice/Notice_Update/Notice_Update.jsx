@@ -21,35 +21,29 @@ const NoticeUpdate = () => {
 
   const [filedata, setFileData] = useState();
 
-  function handleFileInputChange(event) {
-    const files = event.target.files;
-    const newImages = [];
+  // function handleFileInputChange(event) {
+  //   const files = event.target.files;
+  //   const newImages = [];
 
-    if (files.length) {
-      for (let i = 0; i < files.length; i++) {
-        newImages.push(files[i]);
-      }
+  //   if (files.length) {
+  //     for (let i = 0; i < files.length; i++) {
+  //       newImages.push(files[i]);
+  //     }
 
-      setFileData(newImages);
-    } else {
-      setFileData(files);
-    }
-  }
+  //     setFileData(newImages);
+  //   } else {
+  //     setFileData(files);
+  //   }
+  // }
 
   const Onchagetesdetail = (e) => {
     setSocieUpdate({ ...societUpdate, [e.target.name]: e.target.value });
   };
 
-  // useEffect(() => {
-  //   setSocieUpdate({
-  //     Name: Name,
-  //     Detail: Detail,
-  //     Categories: Categories,
-  //   })
-  // }, [])
+ 
 
 
-  const PaperUpdate = async () => {
+  const NoticeUpdate = async () => {
     try {
       let formData = new FormData();
       if (filedata.length) {
@@ -67,8 +61,7 @@ const NoticeUpdate = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        })
-      ).data;
+        })).data;
       toast(`${data1.message}`, {
         position: "top-center",
         autoClose: 2000,
@@ -128,10 +121,10 @@ const NoticeUpdate = () => {
               <select name="Categories" id="" value={societUpdate?.Categories} onChange={Onchagetesdetail}
               >
                 <option value=" ">Select Categories</option>
-                <option value="Academics">Academics</option>
-                <option value="Admission">Admission</option>
-                <option value="Events">Events</option>
-                <option value="Placements">Placements</option>
+                // <option value="Academics">Academics</option>
+                // <option value="Admission">Admission</option>
+                <option value="Important">Important</option>
+                <option value="Normal">Normal</option>
               </select>
               <div className="Message_image">
                 <input
@@ -139,14 +132,16 @@ const NoticeUpdate = () => {
                   name="file"
                   id="ImageUpload"
                   multiple
-                  onChange={handleFileInputChange}
+                  onChange={(e) => {
+                    setFileData(e.target.files[0]);
+                  }}
                   style={{ width: "200px", height: "150px" }}
                 />
               </div>
               <button
                 className="button-19"
                 onClick={async () => {
-                  PaperUpdate();
+                  NoticeUpdate();
                 }}
               >
                 Submit

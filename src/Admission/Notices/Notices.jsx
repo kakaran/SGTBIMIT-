@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
 import { motion } from "framer-motion"
 import { routingAnimations } from "../../constants"
+import {SlArrowDown} from "react-icons/sl"
 
 export default function Notice() {
 
@@ -26,6 +27,15 @@ export default function Notice() {
                     variants={routingAnimations}
                 >
                     <h1>NOTICES</h1>
+
+                <div className="drop">
+                    <select>
+                        {/* <option value="categories">Select a Category</option> */}
+                        <option value="academics">ACADEMICS</option>
+                        <option value="admission">ADMISSION</option>
+                        <option value="others">OTHERS</option>
+                    </select>
+                </div>
                     {isPending && <Loader />}
                     <div className="notices-grid">
                         {notices && notices.map((notice) => (
@@ -33,7 +43,9 @@ export default function Notice() {
                                 <h1>{notice.Name}</h1>
                                 <p> {notice.Detail} </p>
                                 <div className="notice-file">
-                                    <Link to={`/admission/notices/${notice._id}`} target="_blank">Read More</Link>
+                                    <Link to={`/admission/notices/${notice._id}`} target="_blank">
+                                        Read More <SlArrowDown />
+                                    </Link>
                                 </div>
                             </div>
 

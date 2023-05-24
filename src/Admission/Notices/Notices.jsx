@@ -33,7 +33,8 @@ export default function Notice() {
                         {/* <option value="categories">Select a Category</option> */}
                         <option value="academics">ACADEMICS</option>
                         <option value="admission">ADMISSION</option>
-                        <option value="others">OTHERS</option>
+                        <option value="events">EVENTS</option>
+                        <option value="placements">PLACEMENTS</option>
                     </select>
                 </div>
                     {isPending && <Loader />}

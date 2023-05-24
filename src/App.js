@@ -84,6 +84,7 @@ import EventAdd from './Pages/Society/Event/Event_Add/Event_Add.jsx'
 import EventDisplay from './Pages/Society/Event/Event_Display/Event_Display.jsx'
 import EventUpdate from './Pages/Society/Event/Event_Update/Event_Update.jsx'
 import EventHAdd from './Pages/Society/Event_Handler/EventHandler_Add/EventH_Add.jsx'
+import NoticeUpdate from './Pages/Notice/Notice_Update/Notice_Update.jsx'
 
 
 function App() {
@@ -157,6 +158,7 @@ function App() {
           <Route path='admin/Prev_Year_Paper_Update/:course/:Year/:Semester/:_id' element={<QuestionPaperUpdate />} />
           <Route path='admin/Notice_Add' element={<NoticeAdd />} />
           <Route path='admin/Notice_Display' element={<NoticeDisplay />} />
+          <Route path='admin/Notice_Update/:id' element={<NoticeUpdate />} />
           <Route path='admin/Testimonial_Add' element={<AlumniTestiAdd />} />
           <Route path='admin/Testimonial_Display' element={<AlumniTestiDisplay />} />
           <Route path='admin/Testimonial_Update/:id' element={<AlumniTestiUpdate />} />

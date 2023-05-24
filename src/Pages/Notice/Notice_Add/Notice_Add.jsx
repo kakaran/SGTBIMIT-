@@ -94,11 +94,13 @@ const NoticeAdd = () => {
                 placeholder="Detail"
                 onChange={Onchagetesdetail}
               ></textarea>
-              <select name="Categories" id="" onChange={Onchagetesdetail}>
-                <option value=" ">Select Category</option>
-                <option value="admission">Admission</option>
-                <option value="academic">Academic</option>
-                <option value="others">Others</option>
+              <select name="Categories" id="" value={noticeUpdate?.Categories} onChange={Onchagetesdetail}
+              >
+                <option value=" ">Select Categories</option>
+                <option value="Academics">Academics</option>
+                <option value="Admission">Admission</option>
+                <option value="Events">Events</option>
+                <option value="Placements">Placements</option>
               </select>
               <div className="Message_image">
                 <input

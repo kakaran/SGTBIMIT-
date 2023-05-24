@@ -17,7 +17,7 @@
 }
 
 .gradient {
-    background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -60,8 +60,8 @@
     margin-inline: auto;
 }
 
-@media(max-width: 1000px){
-    .dir-readmore{
+@media(max-width: 1000px) {
+    .dir-readmore {
         background-image: none;
     }
 }

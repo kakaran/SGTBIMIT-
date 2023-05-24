@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import axios from "axios";
 import { motion, AnimatePresence } from 'framer-motion'
 import { routingAnimations } from "../constants";
+import _ from 'lodash'
 
 
 export default function Events() {
@@ -69,9 +70,7 @@ export default function Events() {
         transition='transition'
         variants={routingAnimations}
       >
-        <div className="flex w-full justify-center items-center">
-          {!events && <Loader />}
-        </div>
+        {!events && <Loader />}
         {events && (
           <>
             <div className="event-header">
@@ -82,28 +81,31 @@ export default function Events() {
               />
               <div className="event-header-title">
                 <p>
-                  Home {">"} Societies {">"} {events?.name}
+                  Home {">"} Societies {">"} {_.startCase(_.toLower(events?.name))}
                 </p>
-                <h1> {events?.name} </h1>
+                <h1> {_.startCase(_.toLower(events?.name))} </h1>
               </div>
             </div>
-            <div className="about-event-section">
+            <div className={`about-event-section ${events?.images?.length ? "conditional-event-grid" : ""}`}>
+              <div className="gradient-bg"></div>
               <div className="about-event">
-                <h1>About {events?.name}</h1>
-                <p>{events?.detail}</p>
+                <h1 className='my-bold bg-clip-text text-transparent w-max' style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}>About {_.startCase(_.toLower(events?.name))}</h1>
+                <p className="text-gray-800 leading-[1.5em]">{events?.detail}</p>
               </div>
-              <div className="about-event-carousel">
-                <Carousel showThumbs={false} showIndicators={false} >
-                  {events?.images?.map((image) => (
-                    <img
-                      src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${events?._id}/${image?._id}`}
-                      alt="cant load"
-                      className="event-carousel-img"
-                      key={image?._id}
-                    />
-                  ))}
-                </Carousel>
-              </div>
+              {events?.images?.length ?
+                <div className="about-event-carousel">
+                  <Carousel showThumbs={false} showIndicators={false} >
+                    {events?.images?.map((image) => (
+                      <img
+                        src={`${API_URL}/Eventhandler/EventHandler_Image_Display/${events?._id}/${image?._id}`}
+                        alt="cant load"
+                        className="event-carousel-img"
+                        key={image?._id}
+                      />
+                    ))}
+                  </Carousel>
+                </div> : ""
+              }
             </div>
             <section className="events-section-1">
               <div className="events-header">

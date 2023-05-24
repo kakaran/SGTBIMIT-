@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import useFetch from '../useFetch'
+
+const arrow = require("../images/down.png")
+
 export default function Navbar() {
   const { data: events } = useFetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
 
-  const arrow = require("../images/down.png")
 
-  const myRef = useRef(null)
+
   useEffect(() => {
     document.querySelector(".menu").addEventListener("click", e => {
       document.querySelector("nav").style.transform = "translateX(0%)"
@@ -39,7 +41,6 @@ export default function Navbar() {
   }, [])
 
   const handleFloatClick = (e) => {
-    console.log(myRef)
     document.querySelector(".admission-dialog").classList.add("show")
     document.querySelector(".admission-bg").classList.add("show-bg")
   }
@@ -51,7 +52,7 @@ export default function Navbar() {
       >
         ADMISSION
       </div>
-      <nav>
+      <nav className='shadow-2xl'>
         <div className='nav-close mobile'><img src={require("../images/cancel.png")} alt="cant load" className='nav-close-btn' /></div>
         <div className="header-btns mobile-header-btns mobile">
           <button className="admission-btn" type="button" onClick={() => {

@@ -31,7 +31,7 @@ const AlumniTesti_Update = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Testimonial/single_Testimonial_Display/${_id}`
+            `${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Display/${_id}`
           )
         ).data;
         setTestiUpdate({
@@ -65,7 +65,7 @@ const AlumniTesti_Update = () => {
       formData.append("detail", testiUpdate.detail);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Update/${_id}`,
+          `${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Update/${_id}`,
           formData,
           {
             headers: {
@@ -134,7 +134,7 @@ const AlumniTesti_Update = () => {
                   />
                 ) : (
                   <img
-                    src={`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Image_Display/${_id}`}
+                    src={`${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

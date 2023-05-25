@@ -23,6 +23,8 @@ const AdminMenu = () => {
   const [isSUBRegistrationActive, setIsSUBRegistrationActive] = useState(false);
   const [isSUBAtestimonialsActive, setIsSUBAtestimonialsActive] = useState(false);
   const [isSUBStarsActive, setIsSUBStarsActive] = useState(false);
+  const [isSUBPteamActive, setIsSUBPteamActive] = useState(false);
+  const [isSUBPstatsActive, setIsSUBPstatsActive] = useState(false);
   const [isAboutActive, setIsAboutActive] = useState(false);
   const [isAlumniActive, setIsAlumniActive] = useState(false);
   const [isInterfaceActive, setIsInterfaceActive] = useState(false);
@@ -618,14 +620,14 @@ const AdminMenu = () => {
                     <span>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Testimonial_Add");
+                          navigate("/dashboard/admin/alumini_Testimonial_Add");
                         }}
                       >
                         TESTIMONIALS ADD
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Testimonial_Display");
+                          navigate("/dashboard/admin/alumini_Testimonial_Display");
                         }}
                       >
                         TESTIMONIALS DISPLAY
@@ -733,6 +735,68 @@ const AdminMenu = () => {
                         }}
                       >
                         STARS DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+
+                <p
+                  onClick={() => {
+                    setIsSUBPteamActive(!isSUBPteamActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  PLACEMENT TEAM <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBPteamActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Placement_Team_Add");
+                        }}
+                      >
+                        PLACEMENT TEAM ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Placement_Team_Display");
+                        }}
+                      >
+                        PLACEMENT TEAM DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+
+                <p
+                  onClick={() => {
+                    setIsSUBPstatsActive(!isSUBPstatsActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  PLACEMENT STATICS <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBPstatsActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/placement_Statics_Add");
+                        }}
+                      >
+                        PLACEMENT STATICS ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/placement_Dispaly");
+                        }}
+                      >
+                        PLACEMENT STATICS DISPLAY
                       </p>
                     </span>
                   </div>

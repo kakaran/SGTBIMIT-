@@ -35,7 +35,7 @@ const AlumniTesti_Add = () => {
         formData.append("detail", testiUpdate.detail);
         const data1 = (
           await axios.post(
-            `${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Add`,
+            `${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Add`,
             formData,
             {
               headers: {

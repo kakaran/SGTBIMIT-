@@ -85,6 +85,9 @@ import EventDisplay from './Pages/Society/Event/Event_Display/Event_Display.jsx'
 import EventUpdate from './Pages/Society/Event/Event_Update/Event_Update.jsx'
 import EventHAdd from './Pages/Society/Event_Handler/EventHandler_Add/EventH_Add.jsx'
 import NoticeUpdate from './Pages/Notice/Notice_Update/Notice_Update.jsx'
+import PTeamAdd from './Pages/Industry Interface/Placement Team/PlacementTeam_Add/PlacementTeam_Add.jsx'
+import PTeamDisplay from './Pages/Industry Interface/Placement Team/PlacementTeam_Display/PlacementTeam_Display.jsx'
+import PStatsAdd from './Pages/Industry Interface/Placement Statics/PlacementStats_Add/PlacementStats_Add.jsx'
 
 function App() {
   const location = useLocation()
@@ -158,12 +161,15 @@ function App() {
           <Route path='admin/Notice_Add' element={<NoticeAdd />} />
           <Route path='admin/Notice_Display' element={<NoticeDisplay />} />
           <Route path='admin/Notice_Update/:id' element={<NoticeUpdate />} />
-          <Route path='admin/Testimonial_Add' element={<AlumniTestiAdd />} />
-          <Route path='admin/Testimonial_Display' element={<AlumniTestiDisplay />} />
-          <Route path='admin/Testimonial_Update/:id' element={<AlumniTestiUpdate />} />
+          <Route path='admin/alumini_Testimonial_Add' element={<AlumniTestiAdd />} />
+          <Route path='admin/alumini_Testimonial_Display' element={<AlumniTestiDisplay />} />
+          <Route path='admin/alumini_Testimonial_Update/:id' element={<AlumniTestiUpdate />} />
           <Route path='admin/PlacementFeature_Add' element={<StarsAdd />} />
           <Route path='admin/PlacementFeature_Display' element={<StarsDisplay />} />
           <Route path='admin/PlacementFeature_Update/:id' element={<StarsUpdate />} />
+          <Route path='admin/Placement_Team_Add' element={<PTeamAdd />} />
+          <Route path='admin/Placement_Team_Display' element={<PTeamDisplay />} />
+          <Route path='admin/placement_Statics_Add' element={<PStatsAdd />} />
           <Route path='admin/Registration_Add' element={<RegistrationAdd />} />
           <Route path='admin/Registration_Display' element={<RegistrationDisplay />} />
           <Route path='admin/Alumini/gallery/aluminiAddImage' element={<AGalleryAdd />} />

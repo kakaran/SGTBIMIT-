@@ -77,10 +77,10 @@ export default function Notice() {
                         {(searched && search) && searched.map((notice) => (
                             <div className="notice-card" key={notice._id}>
                                 <h1>{notice.Name}</h1>
-                                <p> {notice.Detail} </p>
+                                <p className="text-gray-700"> {notice.Detail} </p>
                                 <div className="notice-file">
-                                    <Link to={`/admission/notices/${notice._id}`} target="_blank">
-                                        Read More <SlArrowDown />
+                                    <Link to={`/admission/notices/${notice._id}`} target="_blank" className="flex justify-center items-center gap-4 hover:text-white hover:bg-[var(--secondary-clr)]">
+                                        <span className="my-bold">Read More</span>
                                     </Link>
                                 </div>
                             </div>

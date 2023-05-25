@@ -36,12 +36,12 @@ export default function Vision() {
             </p>
           </div>
           <div className="flex justify-center items-center">
-            <img src={require("../../images/vission.jpg")} alt="" className=" mix-blend-multiply w-96" />
+            <img src={require("../../images/vission.jpg")} alt="" className=" w-full" />
           </div>
         </div>
         <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
           <div className="flex justify-center items-center">
-            <img src={require("../../images/mission.jpg")} alt="" className=" mix-blend-multiply w-96" />
+            <img src={require("../../images/mission.png")} alt="" className=" w-full" />
           </div>
           <div>
             <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">

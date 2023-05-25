@@ -313,7 +313,7 @@ nav>* {
 .nav-item>*:first-child:hover {
   border-bottom: 2px solid var(--secondary-clr);
   margin-bottom: -2px;
-  filter: drop-shadow(0 0 10px #0582ca);
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
 }
 
 nav>*:hover .dropdown {

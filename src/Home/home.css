@@ -497,15 +497,6 @@
     color: var(--primary-blue);
 }
 
-.placement-bg {
-    position: absolute;
-    width: 35%;
-    height: calc(100% - var(--scroll-width) - var(--padding));
-    right: 0;
-    top: 0px;
-    background: linear-gradient(270deg, #EDF5FD 15.76%, rgba(255, 255, 255, 0) 94.58%);
-    z-index: 10;
-}
 
 .scroll-btn {
     position: absolute;
@@ -832,6 +823,8 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     gap: 2rem;
+    width: 100%;
+
 }
 
 .auto-horizontal-scroll::-webkit-scrollbar {

@@ -1,6 +1,6 @@
 import React from 'react'
 import './placements.css'
-import { Header, Navbar, Footer } from '../../Components'
+import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from 'react-helmet'
 import { BsArrowDownCircleFill } from 'react-icons/bs'
 import ellipse from '../../images/placement-ellipse.png'
@@ -76,11 +76,12 @@ export default function Placements() {
                         marginBottom: "4rem",
                         zIndex: '10'
                     }}>Featured Stars</h1>
-                    <div className='w-full px-9'>
-                        <AutoHorizontalScroll>
-                            {feature && feature.map(feat => (
-                                <div className='p-5 border-solid border-2 border-blue-500 rounded-md bg-slate-50 flex flex-col gap-4'>
-                                    <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${feat._id}`} alt="" className='mix-blend-multiply' />
+                    <div className='w-full px-9 flex flex-col mx-auto'>
+                        {isPending && <Loader />}
+                        {feature && <AutoHorizontalScroll>
+                            {feature.map(feat => (
+                                <div className='relative p-5 border-solid border-2 border-gray-300 rounded-md bg-white flex flex-col gap-4 min-w-[350px] max-w-[350px] m-0' key={feat.name}>
+                                    <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${feat._id}`} alt="" className='mix-blend-multiply w-full' />
                                     <div>
                                         <div className='my-bold text-3xl'>{_.capitalize(_.toLower(feat.Name))}</div>
                                         <div className='uppercase text-gray-800 text-lg'>{feat.Course}</div>
@@ -89,7 +90,7 @@ export default function Placements() {
                                     <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_CompanyImg_Display/${feat._id}`} alt="" className='mix-blend-multiply w-1/2 mx-auto' />
                                 </div>
                             ))}
-                        </AutoHorizontalScroll>
+                        </AutoHorizontalScroll>}
                     </div>
                     <div className="vertical-line"
                         style={{

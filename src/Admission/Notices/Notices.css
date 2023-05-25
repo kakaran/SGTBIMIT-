@@ -14,7 +14,7 @@
     color: var(--primary-blue);
 }
 
-.drop{
+.drop {
     position: relative;
     width: 100%;
     display: flex;
@@ -23,7 +23,7 @@
     margin-bottom: 50px;
 }
 
-.drop select{
+.drop select {
     background-color: var(--primary-blue);
     color: #fff;
     height: 80px;
@@ -102,7 +102,7 @@
 
 .notice-card p {
     font-size: min(1.5rem, 3vw);
-    color: rgba(0, 0, 0, 0.75);
+    /* color: rgba(0, 0, 0, 0.75); */
     font-family: "SF Pro Display-Medium";
 }
 

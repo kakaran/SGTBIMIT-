@@ -40,7 +40,7 @@ const AutoHorizontalScroll = ({ children }) => {
     }, []);
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col mx-auto'>
             <div className="auto-horizontal-scroll" ref={containerRef}>
                 {children}
             </div>

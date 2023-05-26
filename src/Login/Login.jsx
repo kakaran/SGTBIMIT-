@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useAuth } from '../Context/auth';
 import { ToastContainer, toast } from 'react-toastify';
+import logo from '../images/sgtbimit.png'
 
 
 export default function Login() {
@@ -73,13 +74,13 @@ export default function Login() {
 
     return (
         <>
-            (  <section className="login-section">
-                <img className="login-logo" src={require("../images/sgtbimit.png")} alt="" />
+            <section className="login-section">
+                <img className="login-logo" src={logo} alt="" />
                 <div className="form-container">
                     <p className="login-title">Login</p>
                     <div className="form" >
                         <div className="input-group">
-                            <label for="email">Email</label>
+                            <label htmlFor="email">Email</label>
                             <input type="email" name="email" id="email" placeholder="" onChange={(e) => {
                                 setEamil(e.target.value);
                             }}
@@ -87,7 +88,7 @@ export default function Login() {
                             />
                         </div>
                         <div className="input-group">
-                            <label for="password">Password</label>
+                            <label htmlFor="password">Password</label>
                             <input type="password" name="password" id="password" placeholder="" onChange={(e) => {
                                 setPassword(e.target.value);
                             }}

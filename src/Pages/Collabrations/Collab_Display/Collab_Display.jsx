@@ -17,7 +17,7 @@ const CollaborationsDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Display`)
+          await axios.get(`${import.meta.env.VITE_API_URL}/Collaborations/Collaborations_Display`)
         ).data;
         setCollabs(data);
         setRender(0);
@@ -32,7 +32,7 @@ const CollaborationsDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Image_Display/${value}`}
+        src={`${import.meta.env.VITE_API_URL}/Collaborations/Collaborations_Image_Display/${value}`}
         alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
@@ -43,7 +43,7 @@ const CollaborationsDisplay = () => {
     try {
       const _id = value;
       console.log(_id);
-      await axios.delete(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Delete/${_id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/Collaborations/Collaborations_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);

@@ -52,7 +52,7 @@ const NoticeAdd = () => {
       formData.append("file", compressedFile, filedata.name);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Notice/Notice_Add`,formData,
+          `${import.meta.env.VITE_API_URL}/Notice/Notice_Add`, formData,
           {
             headers: {
               "Content-Type": "multipart/form-data",

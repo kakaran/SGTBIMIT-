@@ -1,21 +1,28 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import email from '../images/email-icon.png'
+import phone from '../images/phone-icon.png'
+import map from '../images/map-icon.png'
+import pdf from '../images/pdf-icon.png'
+import campus from '../images/campus-icon.png'
+import research from '../images/research-icon.png'
+
 export default function Map() {
   const data = [
     {
       type: "Email",
       detail: "sgtbimit@hotmail.com",
-      image: require("../images/email-icon.png")
+      image: email
     },
     {
       type: "Phone Number",
       detail: "+91-8810230080, 9899333224",
-      image: require("../images/phone-icon.png")
+      image: phone
     },
     {
       type: "Location",
       detail: "Adjacent to Gurudwara Nanak Piao, State Bank Colony, Near Model Town Metro Station, Delhi-110009",
-      image: require("../images/map-icon.png")
+      image: map
     }
   ]
 
@@ -59,15 +66,15 @@ export default function Map() {
           </div>
           <div className="chips">
             <button className="chip">
-              <img src={require("../images/pdf-icon.png")} alt="" style={{ filter: "brightness(0) invert(1)" }} />
+              <img src={pdf} alt="" style={{ filter: "brightness(0) invert(1)" }} />
               <span>Download Brochure</span>
             </button>
             <button className="chip" onClick={() => { window.open("https://youtu.be/bfeek8jSpeI") }}>
-              <img src={require("../images/campus-icon.png")} alt="" />
+              <img src={campus} alt="" />
               <span>Campus Tour</span>
             </button>
             <button className="chip">
-              <img src={require("../images/research-icon.png")} alt="" />
+              <img src={research} alt="" />
               <span>Researches</span>
             </button>
           </div>

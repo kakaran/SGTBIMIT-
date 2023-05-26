@@ -27,27 +27,27 @@ const AlumniTesti_Add = () => {
 
   const AddTestimonial = async () => {
     try {
-        let formData = new FormData();
-        const compressedFile = await imageCompression(filedata, options);
-        console.log(compressedFile);
-        formData.append("image", compressedFile, filedata.name);
-        formData.append("name", testiUpdate.name);
-        formData.append("detail", testiUpdate.detail);
-        const data1 = (
-          await axios.post(
-            `${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Add`,
-            formData,
-            {
-              headers: {
-                "Content-Type": "multipart/form-data",
-              },
-            }
-          )
-        ).data;
-        // console.log(data1);
-      } catch (error) {
-        console.log(error);
-      }
+      let formData = new FormData();
+      const compressedFile = await imageCompression(filedata, options);
+      console.log(compressedFile);
+      formData.append("image", compressedFile, filedata.name);
+      formData.append("name", testiUpdate.name);
+      formData.append("detail", testiUpdate.detail);
+      const data1 = (
+        await axios.post(
+          `${import.meta.env.VITE_API_URL}/alumini_Testimonial/alumini_Testimonial_Add`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+      ).data;
+      // console.log(data1);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -80,14 +80,14 @@ const AlumniTesti_Add = () => {
                 onChange={Onchagetesdetail}
               ></textarea>
               <input
-                  type="file"
-                  name="image"
-                  id="ImageUpload"
-                  onChange={(e) => {
-                    setFileData(e.target.files[0]);
-                  }}
-                  style={{ width: "200px", height: "150px" }}
-                />
+                type="file"
+                name="image"
+                id="ImageUpload"
+                onChange={(e) => {
+                  setFileData(e.target.files[0]);
+                }}
+                style={{ width: "200px", height: "150px" }}
+              />
               <button
                 className="button-19"
                 onClick={() => {

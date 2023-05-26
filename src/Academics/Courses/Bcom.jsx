@@ -1,10 +1,10 @@
 import React from 'react'
 import './courses.css'
-import AdditionalDiploma from './AdditionalDiploma'
 import { Header, Navbar, Footer } from '../../Components'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
+import bcom from '../../images/bcom.png'
 
 export default function Bcom() {
     return (
@@ -12,7 +12,7 @@ export default function Bcom() {
             <Helmet title="SGTBIMIT | Bcom" />
             <Header />
             <Navbar />
-            <section className="courses-section"
+            <motion.section className="courses-section"
                 viewport='viewport'
                 initial='initial'
                 animate='animate'
@@ -21,7 +21,7 @@ export default function Bcom() {
                 variants={routingAnimations}
             >
                 <div className='courses'>
-                    <img src={require("../../images/bcom.png")} alt="cant load" />
+                    <img src={bcom} alt="cant load" />
                     <h1>BACHELORS OF COMMERCE</h1>
                     <p>
                         The Bachelor of Commerce (BCom) program offered by Sri Guru
@@ -57,7 +57,7 @@ export default function Bcom() {
                     </p>
                     {/*                     <AdditionalDiploma /> */}
                 </div>
-            </section>
+            </motion.section>
             <Footer></Footer>
         </>
     )

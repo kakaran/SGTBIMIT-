@@ -11,7 +11,7 @@ const FileData = (props) => {
   const paperDataRecover = async () => {
     try {
       const data = await axios.get(
-        `${process.env.REACT_APP_API_URL}/Event/Single_Event_Display/${props.year}/${props.eventHandler}`
+        `${import.meta.env.VITE_API_URL}/Event/Single_Event_Display/${props.year}/${props.eventHandler}`
       );
       // console.log(data);
       setPaperName(data.data.FileNames);
@@ -22,17 +22,17 @@ const FileData = (props) => {
   };
 
   useEffect(() => {
-    if(getPaperName){
+    if (getPaperName) {
       paperDataRecover();
     }
-  }, [render,props]);
+  }, [render, props]);
 
   const SocietyDelete = async (value, Index) => {
     try {
       const _id = value;
       console.log(_id);
       await axios.get(
-        `${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}/${Number(
+        `${import.meta.env.VITE_API_URL}/Event/Event_Delete/${_id}/${Number(
           Index
         )}`
       );

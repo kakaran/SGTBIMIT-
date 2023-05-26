@@ -28,16 +28,16 @@ const PStatsAdd = () => {
   const FacultyAdd = async () => {
     try {
       let formData = new FormData();
-    //   const compressedFile = await imageCompression(filedata, options);
-    //   console.log(compressedFile);
-    //   formData.append("image", compressedFile, filedata.name);
+      //   const compressedFile = await imageCompression(filedata, options);
+      //   console.log(compressedFile);
+      //   formData.append("image", compressedFile, filedata.name);
       formData.append("Year", pstatsUpdate.Year);
       formData.append("Name", pstatsUpdate.Name);
       formData.append("Eligible", pstatsUpdate.Eligible);
       formData.append("Offers", pstatsUpdate.Offers);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/PlacementStatics/placement_Statics_Add`,
+          `${import.meta.env.VITE_API_URL}/PlacementStatics/placement_Statics_Add`,
           formData,
           {
             headers: {
@@ -65,7 +65,7 @@ const PStatsAdd = () => {
               <h1>Add a new Placement Statistics</h1>
             </div>
             <div className="SocietyForm">
-            <input
+              <input
                 type="text"
                 name="Year"
                 id=""

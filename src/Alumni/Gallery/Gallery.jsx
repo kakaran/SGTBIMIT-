@@ -5,6 +5,8 @@ import { Carousel } from 'react-responsive-carousel'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet'
 import { routingAnimations } from '../../constants'
+import p1 from '../../images/p1.jpg'
+import cancel from '../../images/cancel.png'
 
 export default function Gallery() {
     const [isCarouselActive, setIsCarouselActive] = useState(false)
@@ -26,7 +28,7 @@ export default function Gallery() {
                     {[...Array(9)].map((x, i) => (
                         <>
                             {!isCarouselActive && <div className="gallery-box1" onClick={() => { setIsCarouselActive(true) }}>
-                                <img src={require("../../images/p1.jpg")} alt="infra" className="pic" />
+                                <img src={p1} alt="infra" className="pic" />
                                 <p className="text">Infra</p>
                             </div>}
                             {isCarouselActive && (
@@ -40,11 +42,11 @@ export default function Gallery() {
                                     }}
                                 >
                                     <div className="gallery-carousel-container">
-                                        <img src={require("../../images/cancel.png")} className="carousel-close-btn" onClick={() => setIsCarouselActive(false)} alt='' />
+                                        <img src={cancel} className="carousel-close-btn" onClick={() => setIsCarouselActive(false)} alt='' />
                                         <Carousel>
                                             {[...Array(6)].map((x, i) => (
                                                 <div className="gallery-carousel-item">
-                                                    <img src={require("../../images/p1.jpg")} alt="infra" />
+                                                    <img src={p1} alt="infra" />
                                                 </div>
                                             ))}
                                         </Carousel>

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
 
 export default function AcademicCal() {
-    const { data: calendar, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Calendar/CalendarDisplay`)
+    const { data: calendar, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Calendar/CalendarDisplay`)
     console.log(calendar && calendar)
 
     return (

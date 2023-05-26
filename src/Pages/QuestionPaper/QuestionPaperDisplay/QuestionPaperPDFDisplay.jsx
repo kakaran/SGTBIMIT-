@@ -19,7 +19,7 @@ const QuestionPaperPDFDisplay = () => {
     <div>
       <Helmet title="Question Paper PDF" />
       <iframe
-        src={`${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${_id}/${index}`}
+        src={`${import.meta.env.VITE_API_URL}/QuestionPaper/Display/${_id}/${index}`}
         frameborder="0"
         width="100%"
         height={embedHeight}

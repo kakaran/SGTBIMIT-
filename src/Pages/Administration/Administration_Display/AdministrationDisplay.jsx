@@ -20,7 +20,7 @@ const AdministrationDisplay = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Administration/Administration_Display`
+            `${import.meta.env.VITE_API_URL}/Administration/Administration_Display`
           )
         ).data;
         setAdmini(data);
@@ -36,7 +36,7 @@ const AdministrationDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`${process.env.REACT_APP_API_URL}/Administration/AdministrationImageDisplay/${value}`}
+        src={`${import.meta.env.VITE_API_URL}/Administration/AdministrationImageDisplay/${value}`}
         alt=""
         style={{ width: "400px", height: "450px" }}
       />
@@ -48,7 +48,7 @@ const AdministrationDisplay = () => {
       const _id = value;
       console.log(_id);
       await axios.post(
-        `${process.env.REACT_APP_API_URL}/Administration/Administration_Delete/${_id}`
+        `${import.meta.env.VITE_API_URL}/Administration/Administration_Delete/${_id}`
       );
       setRender(1);
     } catch (error) {

@@ -20,7 +20,7 @@ const Testimonial_Display = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Display`
+            `${import.meta.env.VITE_API_URL}/Testimonial/Testimonial_Display`
           )
         ).data;
         console.log(data);
@@ -35,7 +35,7 @@ const Testimonial_Display = () => {
 
   const TestimonialDelete = async (value) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Delete/${value}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/Testimonial/Testimonial_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);
@@ -89,8 +89,8 @@ const Testimonial_Display = () => {
                             />,
                           ]}
                         >
-                        {value.Course}
-                        {value.Year}
+                          {value.Course}
+                          {value.Year}
                           {value.detail}
                         </Card>
                       </div>

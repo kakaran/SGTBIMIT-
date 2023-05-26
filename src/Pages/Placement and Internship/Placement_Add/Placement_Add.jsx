@@ -35,7 +35,7 @@ const PlacementAdd = () => {
       formData.append("companyName", placementUpdate.companyName);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Add`,
+          `${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Add`,
           formData,
           {
             headers: {

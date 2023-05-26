@@ -40,7 +40,7 @@ const EventDisplay = () => {
     try {
       const Data = (
         await axios.get(
-          `${process.env.REACT_APP_API_URL}/Eventhandler/AllEvents_Display`
+          `${import.meta.env.VITE_API_URL}/Eventhandler/AllEvents_Display`
         )
       ).data;
       if (Data) {
@@ -81,7 +81,7 @@ const EventDisplay = () => {
     try {
       const _id = value;
       await axios.delete(
-        `${process.env.REACT_APP_API_URL}/Event/Event_Delete/${_id}`
+        `${import.meta.env.VITE_API_URL}/Event/Event_Delete/${_id}`
       );
       // setRender(1);
     } catch (error) {
@@ -106,7 +106,7 @@ const EventDisplay = () => {
     try {
       const data = (
         await axios.get(
-          `${process.env.REACT_APP_API_URL}/QuestionPaper/Filter_Data/${course}`
+          `${import.meta.env.VITE_API_URL}/QuestionPaper/Filter_Data/${course}`
         )
       ).data;
       setfilter(data[0]);
@@ -193,7 +193,7 @@ const EventDisplay = () => {
                         {events.Event_id?.year}
                       </h4>
                     </div>
-                    <img src={`${process.env.REACT_APP_API_URL}/Event/Event_MainImage_Display/${events.Event_id?._id}`} alt="cant load" className="rounded-md object-fill w-full aspect-video mt-auto" />
+                    <img src={`${import.meta.env.VITE_API_URL}/Event/Event_MainImage_Display/${events.Event_id?._id}`} alt="cant load" className="rounded-md object-fill w-full aspect-video mt-auto" />
                     <div className="flex justify-between p-5">
                       <div onClick={() => { PaperDelete(events.Event_id?._id) }}>
                         <RiDeleteBin6Line color="red" size="1.5rem" />

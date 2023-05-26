@@ -4,14 +4,15 @@ import "./components.css"
 import useFetch from '../useFetch'
 import { Link } from 'react-router-dom'
 import { IoMdSchool, IoMdExit } from 'react-icons/io'
+import logo from '../images/sgtbimit.png'
+import menuImg from '../images/menu.png'
 
 export default function Header() {
-  const { data: notices } = useFetch(`${process.env.REACT_APP_API_URL}/Notice/Notice_Data_Display`)
+  const { data: notices } = useFetch(`${import.meta.env.VITE_API_URL}/Notice/Notice_Data_Display`)
   const filteredNotices = notices ? notices.filter((notice) => (
     notice.Categories === "Important"
   )) : null
 
-  const logo = require('../images/sgtbimit.png')
   useEffect(() => {
     document.querySelector(".admission-btn").addEventListener("click", (e) => {
       document.querySelector(".admission-dialog").classList.add("show")
@@ -52,7 +53,7 @@ export default function Header() {
           <button className="student-login-btn" type="button"><span style={buttonStyle}><IoMdExit />Student - ERP Login</span></button>
         </div>
         <div className="mobile">
-          <img src={require("../images/menu.png")} alt="" height={"50px"} className="menu" />
+          <img src={menuImg} alt="" height={"50px"} className="menu" />
         </div>
       </div>
       <div className="header-news">

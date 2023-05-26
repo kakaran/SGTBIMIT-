@@ -17,7 +17,7 @@ const Testimonials_ADD = () => {
 
   const AddTestimonial = async () => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Add`, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/Testimonial/Testimonial_Add`, {
         testiUpdate,
       });
     } catch (error) {

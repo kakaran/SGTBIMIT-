@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import { routingAnimations } from "../../constants";
 export default function AdminisCarousel() {
 
-  const { data: adminisArray, isPending, error } = useFetch(`${process.env.REACT_APP_API_URL}/Administration/Administration_Display`)
+  const { data: adminisArray, isPending, error } = useFetch(`${import.meta.env.VITE_API_URL}/Administration/Administration_Display`)
 
   useEffect(() => {
     document
@@ -44,7 +44,7 @@ export default function AdminisCarousel() {
               <div className="adminis" key={adminis?.Index}>
 
                 <img
-                  src={`${process.env.REACT_APP_API_URL}/Administration/AdministrationImageDisplay/${adminis._id}`}
+                  src={`${import.meta.env.VITE_API_URL}/Administration/AdministrationImageDisplay/${adminis._id}`}
                   alt="cant load"
                 />
                 <h2 className="adminis-heading">

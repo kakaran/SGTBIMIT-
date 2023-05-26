@@ -35,7 +35,7 @@ const EventUpdate = () => {
             try {
                 const data = (
                     await axios.get(
-                        `${process.env.REACT_APP_API_URL}/Event/Single_Event_Display/${_id}`
+                        `${import.meta.env.VITE_API_URL}/Event/Single_Event_Display/${_id}`
                     )
                 ).data;
                 setSocieUpdate({
@@ -71,7 +71,7 @@ const EventUpdate = () => {
             formData.append("detail", societUpdate.detail);
             const data1 = (
                 await axios.post(
-                    `${process.env.REACT_APP_API_URL}/Event/Event_Update/${_id}`,
+                    `${import.meta.env.VITE_API_URL}/Event/Event_Update/${_id}`,
                     formData,
                     {
                         headers: {
@@ -156,7 +156,7 @@ const EventUpdate = () => {
                                     />
                                 ) : (
                                     <img
-                                        src={`${process.env.REACT_APP_API_URL}/Event/Event_MainImage_Display/${_id}`}
+                                        src={`${import.meta.env.VITE_API_URL}/Event/Event_MainImage_Display/${_id}`}
                                         alt=""
                                         style={{
                                             width: "400px",

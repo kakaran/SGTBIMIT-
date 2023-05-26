@@ -64,7 +64,7 @@ import CalenderDisplay from './Pages/Academic Calender/Calender_Display/Calender
 import CalenderUpdate from './Pages/Academic Calender/Calender_Update/Calender_Update.jsx'
 import Login from './Login/Login.jsx'
 import QuestionPaperUpdate from './Pages/QuestionPaper/QuestionPaperUpdate/QuestionPaperUpdate.jsx'
-import PrivateRouter from './Routes/Private.js'
+import PrivateRouter from './Routes/Private.jsx'
 import NoticeAdd from './Pages/Notice/Notice_Add/Notice_Add.jsx'
 import CollaborationsAdd from './Pages/Collabrations/Collab_Add/Collab_Add.jsx'
 import CollaborationsDisplay from './Pages/Collabrations/Collab_Display/Collab_Display.jsx'

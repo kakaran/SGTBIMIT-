@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 export default function NoticePDF() {
 
   const { id } = useParams()
-  const { data: notices, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Notice/Notice_Data_Display`)
+  const { data: notices, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Notice/Notice_Data_Display`)
 
   const filteredNotice = notices ? notices.filter((notice) => (
     notice._id === id
@@ -27,7 +27,7 @@ export default function NoticePDF() {
 
   return (
     <>
-    <Helmet title={filteredNotice.Name} />
+      <Helmet title={filteredNotice.Name} />
       {isPending && <Loader2 />}
       {!isPending &&
         <>
@@ -38,7 +38,7 @@ export default function NoticePDF() {
           }}
           >{filteredNotice.Name}</h1> */}
           <iframe
-            src={`${process.env.REACT_APP_API_URL}/Notice/Notice_File_Display/${id}`}
+            src={`${import.meta.env.VITE_API_URL}/Notice/Notice_File_Display/${id}`}
             className='embed-pdf'
             frameborder="0"
             width="100%"

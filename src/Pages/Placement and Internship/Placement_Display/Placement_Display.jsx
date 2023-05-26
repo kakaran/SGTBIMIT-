@@ -20,7 +20,7 @@ const PlacementDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Display`)
+          await axios.get(`${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Display`)
         ).data;
         setPlacement(data);
         setRender(0);
@@ -35,7 +35,7 @@ const PlacementDisplay = () => {
   const ImagesGet = (value) => {
     return (
       <img
-        src={`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${value}`}
+        src={`${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${value}`}
         alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
@@ -46,7 +46,7 @@ const PlacementDisplay = () => {
     try {
       const _id = value;
       // console.log(_id);
-      await axios.post(`${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Delete/${_id}`);
+      await axios.post(`${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);

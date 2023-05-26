@@ -41,7 +41,7 @@ const QuestionPaperDisplay = () => {
       // console.log(getPaperFilter);
       const Detail = (
         await axios.get(
-          `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
+          `${import.meta.env.VITE_API_URL}/QuestionPaper/Display/${getPaperFilter.course}/${getPaperFilter.Year}/${getPaperFilter.Semester}`
         )
       ).data;
       // console.log(Detail);
@@ -63,7 +63,7 @@ const QuestionPaperDisplay = () => {
   const PaperDelete = async (value) => {
     try {
       const _id = value;
-      await axios.delete(`${process.env.REACT_APP_API_URL}/QuestionPaper/Year_Delete/${_id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/QuestionPaper/Year_Delete/${_id}`);
       // setRender(1);
     } catch (error) {
       console.log(error);
@@ -91,7 +91,7 @@ const QuestionPaperDisplay = () => {
     try {
       const data = (
         await axios.get(
-          `${process.env.REACT_APP_API_URL}/QuestionPaper/Filter_Data/${course}`
+          `${import.meta.env.VITE_API_URL}/QuestionPaper/Filter_Data/${course}`
         )
       ).data;
       setfilter(data[0]);

@@ -41,7 +41,7 @@ const AdministrationAdd = () => {
       formData.append("longNote", AdminiUpdate.longNote);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Administration/Administration_Add`,
+          `${import.meta.env.VITE_API_URL}/Administration/Administration_Add`,
           formData,
           {
             headers: {

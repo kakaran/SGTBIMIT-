@@ -7,18 +7,18 @@ import { Helmet } from 'react-helmet'
 
 const CalenderAdd = () => {
 
-  const [Date,setdate] = useState("");
-  const [Event,setevent] = useState("");
+  const [Date, setdate] = useState("");
+  const [Event, setevent] = useState("");
 
   // const Onchagetesdetail = (e) => {
   //   setCalenderUpdate({ ...calenderUpdate, [e.target.name]: e.target.value });
   // };
 
-  const data = {Date,Event};
+  const data = { Date, Event };
 
   const CalenderAdd = async () => {
     try {
-      const add = await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarAdd`,data);
+      const add = await axios.post(`${import.meta.env.VITE_API_URL}/Calendar/CalendarAdd`, data);
       console.log(add);
     } catch (error) {
       console.log(error);

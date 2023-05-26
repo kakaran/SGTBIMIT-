@@ -39,7 +39,7 @@ const RegistrationAdd = () => {
       let formData = new FormData();
       // const compressedFile = await imageCompression(filedata, options);
       // console.log(compressedFile);
-    //   formData.append("image", compressedFile, filedata.name);
+      //   formData.append("image", compressedFile, filedata.name);
       formData.append("Fname", regisUpdate.Fname);
       formData.append("Lname", regisUpdate.Lname);
       formData.append("Email", regisUpdate.Email);
@@ -53,7 +53,7 @@ const RegistrationAdd = () => {
       formData.append("presentOrgani", regisUpdate.presentOrgani);
       formData.append("CurrentDesignation", regisUpdate.CurrentDesignation);
       const data1 = (
-        await axios.post(`${process.env.REACT_APP_API_URL}/Registration/Registration_Add`,formData)
+        await axios.post(`${import.meta.env.VITE_API_URL}/Registration/Registration_Add`, formData)
       ).data;
       console.log(data1);
     } catch (error) {
@@ -157,18 +157,18 @@ const RegistrationAdd = () => {
                 placeholder="Current Designation"
                 onChange={Onchagetesdetail}
               />
-              </div>
-              <button
-                className="button-19"
-                onClick={() => {
-                  FacultyAdd();
-                }}
-              >
-                Submit
-              </button>
             </div>
+            <button
+              className="button-19"
+              onClick={() => {
+                FacultyAdd();
+              }}
+            >
+              Submit
+            </button>
           </div>
         </div>
+      </div>
     </>)
 }
 

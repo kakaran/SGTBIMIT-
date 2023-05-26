@@ -24,7 +24,7 @@ export default function Registration() {
             presentOrgani: e.target.presentOrgani.value,
             CurrentDesignation: e.target.CurrentDesignation.value,
         }
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/Registration/Registration_Add`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/Registration/Registration_Add`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(bodyy)
@@ -73,7 +73,7 @@ export default function Registration() {
                     <div className="title my-bold text-[50px] heading-reg">Registration</div>
                     <div className="content">
 
-                        <form action={`${process.env.REACT_APP_API_URL}/Registration/Registration_Add`} method='POST' onSubmit={(e) => { handleSubmit(e) }}>
+                        <form action={`${import.meta.env.VITE_API_URL}/Registration/Registration_Add`} method='POST' onSubmit={(e) => { handleSubmit(e) }}>
                             <div className="my-bold text-[30px] text-center my-5 head-titles">PERSONAL DETAILS</div>
                             <div className="user-details">
                                 <div className="input-box">

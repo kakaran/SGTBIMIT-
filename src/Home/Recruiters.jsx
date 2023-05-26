@@ -34,7 +34,7 @@ export default function Recruiters({ isTitle = true }) {
   const carouselRef = useRef(null)
   const isCarouselVisible = useIsInViewport(carouselRef);
 
-  const { data: recruiters, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Display`)
+  const { data: recruiters, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Recruiters/recruiters_Display`)
 
 
   let recruitersChunks = recruiters ? _.chunk(recruiters, 4) : []
@@ -115,7 +115,7 @@ export default function Recruiters({ isTitle = true }) {
                   {recruiters.map((recruiter, i) => {
                     return (
                       <div className="recruiter-img" key={`rec-img-${i}`}>
-                        <img src={`${process.env.REACT_APP_API_URL}/Recruiters/Recruiter_Image_Display/${recruiter._id}`} key={recruiter._id} alt="cant load" />
+                        <img src={`${import.meta.env.VITE_API_URL}/Recruiters/Recruiter_Image_Display/${recruiter._id}`} key={recruiter._id} alt="cant load" />
 
                       </div>
                     )

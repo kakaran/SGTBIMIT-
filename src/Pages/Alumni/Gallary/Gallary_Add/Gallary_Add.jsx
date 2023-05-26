@@ -15,7 +15,7 @@ const AGalleryAdd = () => {
     });
 
     const [filedata, setFileData] = useState([]);
-    const [singleFiledata,setSingleFiledata] = useState()
+    const [singleFiledata, setSingleFiledata] = useState()
 
     function handleFileInputChange(event) {
         const files = event.target.files;
@@ -46,14 +46,14 @@ const AGalleryAdd = () => {
         try {
             let formData = new FormData();
             if (filedata.length) {
-                
+
                 for (let i = 0; i < filedata.length; i++) {
                     const compressedFile = await imageCompression(filedata[i], options);
-                    formData.append("images", compressedFile,filedata[i]?.name);
+                    formData.append("images", compressedFile, filedata[i]?.name);
                 }
             } else {
                 const compressedFile = await imageCompression(filedata, options);
-                formData.append("images", compressedFile,filedata?.name);
+                formData.append("images", compressedFile, filedata?.name);
             }
 
             const compressedFile = await imageCompression(singleFiledata, options);
@@ -61,7 +61,7 @@ const AGalleryAdd = () => {
             formData.append("image", compressedFile, filedata?.name);
             formData.append("category", societUpdate.category);
             const data1 = (
-                await axios.post(`${process.env.REACT_APP_API_URL}/Alumini/gallery/aluminiAddImage`, formData, {
+                await axios.post(`${import.meta.env.VITE_API_URL}/Alumini/gallery/aluminiAddImage`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     },
@@ -107,8 +107,8 @@ const AGalleryAdd = () => {
                             <h1>Add Alumni Gallery</h1>
                         </div>
                         <div className="SocietyForm">
-                            <span style={{fontFamily: "'Abel', sans-serif", fontSize:"18px"}} >
-                                Enter Main Image: 
+                            <span style={{ fontFamily: "'Abel', sans-serif", fontSize: "18px" }} >
+                                Enter Main Image:
                             </span>
                             <input
                                 type="file"
@@ -126,8 +126,8 @@ const AGalleryAdd = () => {
                                 placeholder="Category"
                                 onChange={Onchagetesdetail}
                             />
-                            <span style={{fontFamily: "'Abel', sans-serif", fontSize:"18px"}} >
-                                Enter Other Images: 
+                            <span style={{ fontFamily: "'Abel', sans-serif", fontSize: "18px" }} >
+                                Enter Other Images:
                             </span>
                             <div className="Message_image">
                                 <input

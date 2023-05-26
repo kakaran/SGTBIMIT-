@@ -33,7 +33,7 @@ const RecruitersAdd = () => {
       formData.append("Name", recruitersUpdate.Name);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Add`,
+          `${import.meta.env.VITE_API_URL}/Recruiters/recruiters_Add`,
           formData,
           {
             headers: {

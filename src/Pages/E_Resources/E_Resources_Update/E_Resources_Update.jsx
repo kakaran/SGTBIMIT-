@@ -11,12 +11,12 @@ const EResourcesUpdate = () => {
     url: "",
   });
 
-  const {_id} = useParams();
+  const { _id } = useParams();
 
   useEffect(() => {
     const TestSingleData = async () => {
       try {
-        const data = await axios.get(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Single_Display/${_id}`).data;
+        const data = await axios.get(`${import.meta.env.VITE_API_URL}/E_Resources/EResources_Single_Display/${_id}`).data;
         console.log(data);
         setSingleData({
           name: data?.source?.name,
@@ -33,8 +33,8 @@ const EResourcesUpdate = () => {
     e.preventDefault();
     try {
       const data = (
-        await axios.post(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Update/${_id}`,SingleData)
-        ).data;
+        await axios.post(`${import.meta.env.VITE_API_URL}/E_Resources/EResources_Update/${_id}`, SingleData)
+      ).data;
       console.log(data)
     } catch (error) {
       console.log(error);
@@ -42,7 +42,7 @@ const EResourcesUpdate = () => {
   };
 
   const Onchagetesdetail = (e) => {
-    setSingleData({...SingleData, [e.target.name]: e.target.value})
+    setSingleData({ ...SingleData, [e.target.name]: e.target.value })
   }
 
   return (

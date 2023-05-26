@@ -34,7 +34,7 @@ const FacultyUpdate = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Faculty/FacultySingle/${_id}`
+            `${import.meta.env.VITE_API_URL}/Faculty/FacultySingle/${_id}`
           )
         ).data;
         setFacultyUpdate({
@@ -72,7 +72,7 @@ const FacultyUpdate = () => {
       formData.append("Department", facultyUpdate.Department);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Faculty/Faculty_Update/${_id}`,
+          `${import.meta.env.VITE_API_URL}/Faculty/Faculty_Update/${_id}`,
           formData,
           {
             headers: {
@@ -157,7 +157,7 @@ const FacultyUpdate = () => {
                   />
                 ) : (
                   <img
-                    src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${_id}`}
+                    src={`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

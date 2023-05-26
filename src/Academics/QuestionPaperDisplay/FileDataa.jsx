@@ -11,7 +11,7 @@ const FileData = (props) => {
   const paperDataRecover = async () => {
     try {
       const data = await axios.get(
-        `${process.env.REACT_APP_API_URL}/QuestionPaper/Display/${props.course}/${props.Year}/${props.Semester}`
+        `${import.meta.env.VITE_API_URL}/QuestionPaper/Display/${props.course}/${props.Year}/${props.Semester}`
       );
       console.log(data);
       setPaperName(data.data.FileNames);

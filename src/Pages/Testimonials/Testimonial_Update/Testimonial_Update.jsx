@@ -18,7 +18,7 @@ const Testimonial_Update = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Testimonial/single_Testimonial_Display`,
+            `${import.meta.env.VITE_API_URL}/Testimonial/single_Testimonial_Display`,
             { id }
           )
         ).data;
@@ -38,7 +38,7 @@ const Testimonial_Update = () => {
     try {
       const data = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Testimonial/Testimonial_Update/${id}`,
+          `${import.meta.env.VITE_API_URL}/Testimonial/Testimonial_Update/${id}`,
           { SingleData }
         )
       ).data;

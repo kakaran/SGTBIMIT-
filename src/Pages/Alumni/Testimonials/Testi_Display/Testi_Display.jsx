@@ -20,7 +20,7 @@ const AlumniTesti_Display = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Display`
+            `${import.meta.env.VITE_API_URL}/alumini_Testimonial/alumini_Testimonial_Display`
           )
         ).data;
         console.log(data);
@@ -35,7 +35,7 @@ const AlumniTesti_Display = () => {
 
   const TestimonialDelete = async (value) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Delete/${value}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/alumini_Testimonial/alumini_Testimonial_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);
@@ -44,7 +44,7 @@ const AlumniTesti_Display = () => {
 
   const ImagesGet = (id) => {
     return (
-      <img src={`${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Image_Display/${id}`} alt=""
+      <img src={`${import.meta.env.VITE_API_URL}/alumini_Testimonial/alumini_Testimonial_Image_Display/${id}`} alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
     );
@@ -75,11 +75,11 @@ const AlumniTesti_Display = () => {
                     <Col span={8}>
                       <div className="TesDisplayCard">
                         <Card
-                        hoverable
-                        style={{
+                          hoverable
+                          style={{
                             width: 240,
-                        }}
-                        cover={ImagesGet(value?._id)}
+                          }}
+                          cover={ImagesGet(value?._id)}
                         />
                         <Card
                           title={value.name}

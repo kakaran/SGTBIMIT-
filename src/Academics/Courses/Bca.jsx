@@ -1,10 +1,10 @@
 import React from 'react'
 import './courses.css'
-import AdditionalDiploma from './AdditionalDiploma'
 import { Header, Navbar, Footer } from '../../Components'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
+import bca from '../../images/bca.jpg'
 
 export default function Bca() {
 
@@ -22,7 +22,7 @@ export default function Bca() {
         variants={routingAnimations}
       >
         <div className='courses'>
-          <img src={require("../../images/bca.jpg")} alt="cant load" />
+          <img src={bca} alt="cant load" />
           <h1>BACHELORS OF COMPUTER APPLICATIONS</h1>
           <p>
             The Bachelor of Computer Applications (BCA) program offered by

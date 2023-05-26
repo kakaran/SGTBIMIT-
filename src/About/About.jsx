@@ -4,6 +4,8 @@ import { Header, Navbar, Footer } from '../Components'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../constants/RoutingAnimations'
+import college from '../images/college.jpg'
+
 export default function About() {
     return (
         <main>
@@ -26,7 +28,7 @@ export default function About() {
                         <p className='text-justify'>
                             SGTBIMIT ascertains, preserves and disseminates knowledge. Since the establishment of SGTBIMIT in 2008, it has aimed to promote excellence in professional education and insp​ire research and extension work in the emerging areas of higher education in Management, Banking, Insurance and Information Technology. "A" degree level institute, approved by D​irectorate of Higher Education (Govt of NCT of Delhi) certified by ISO 9001:2015 and affiliated to Guru Gobind Singh Indraprastha University, Delhi. Located in the heart of the city, adjoining Gurudwara Nanak Piao, hardly 1 km away from North Campus (DU) and Model town Metro Station. Ever since its inception, SGTBIMIT has consistently shaped students who have outshined in academics and professional endeavors.
                         </p>
-                        <img src={require("../images/college.jpg")} alt="" className='w-full rounded-lg' />
+                        <img src={college} alt="" className='w-full rounded-lg' />
                     </div>
 
                     <div className='text-justify leading-[2.5em] text-gray-800'>

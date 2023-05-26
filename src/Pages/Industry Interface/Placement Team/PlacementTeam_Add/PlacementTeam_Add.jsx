@@ -36,7 +36,7 @@ const PTeamAdd = () => {
       formData.append("Categories", pteamUpdate.Categories);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/PlacementTeam/Placement_Team_Add`,
+          `${import.meta.env.VITE_API_URL}/PlacementTeam/Placement_Team_Add`,
           formData,
           {
             headers: {

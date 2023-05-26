@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import gtb from '../images/gtbji.png'
+import arrow from '../images/VectorskillsArrow.png'
 
 export default function Welcome() {
 
@@ -19,7 +21,7 @@ export default function Welcome() {
           type: 'spring'
         }}
       >
-        <img src={require("../images/gtbji.png")} alt="" />
+        <img src={gtb} alt="" />
       </motion.div>
       <div className='welcome-text'>
         <motion.h1 viewport={{ once: true }}
@@ -68,7 +70,7 @@ export default function Welcome() {
           <Link to="/skills" className="skills-text">
             Develop your skills with SGTBIMIT
           </Link>
-          <img src={require("../images/VectorskillsArrow.png")} alt="cant load" className="skill-arrow" />
+          <img src={arrow} alt="cant load" className="skill-arrow" />
 
         </motion.button>
       </div>

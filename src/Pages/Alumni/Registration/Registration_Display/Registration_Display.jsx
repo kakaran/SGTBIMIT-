@@ -20,7 +20,7 @@ const RegistrationDisplay = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Registration/Registration_Display`
+            `${import.meta.env.VITE_API_URL}/Registration/Registration_Display`
           )
         ).data;
         console.log(data);
@@ -35,7 +35,7 @@ const RegistrationDisplay = () => {
 
   const TestimonialDelete = async (value) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/Registration/Registration_Delete/${value}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/Registration/Registration_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);
@@ -79,17 +79,17 @@ const RegistrationDisplay = () => {
                           }
                           style={{ width: 300, marginTop: 16, detailStyle }}
                         >
-                        Last Name: {value.Lname}<br/>
-                        Email: {value.Email}<br/>
-                        Mobile Number: {value.MNumber}<br/>
-                        Address: {value.Address}<br/>
-                        Adhaar Card No: {value.AdhaarNo}<br/>
-                        Course: {value.course}<br/>
-                        Year: {value.Year}<br/>
-                        Employed: {value.employed}<br/>
-                        Placement by SGTBIMIT: {value.placement}<br/>
-                        Present Organization: {value.presentOrgani}<br/>
-                        Current Designation: {value.CurrentDesignation}
+                          Last Name: {value.Lname}<br />
+                          Email: {value.Email}<br />
+                          Mobile Number: {value.MNumber}<br />
+                          Address: {value.Address}<br />
+                          Adhaar Card No: {value.AdhaarNo}<br />
+                          Course: {value.course}<br />
+                          Year: {value.Year}<br />
+                          Employed: {value.employed}<br />
+                          Placement by SGTBIMIT: {value.placement}<br />
+                          Present Organization: {value.presentOrgani}<br />
+                          Current Designation: {value.CurrentDesignation}
                         </Card>
                       </div>
                     </Col>

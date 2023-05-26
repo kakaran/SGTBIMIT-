@@ -16,7 +16,7 @@ export default function Events() {
   const [eventFilter, setEventFilter] = useState();
   const [eventYearController, setEventYearController] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const EventDataGet = async () => {

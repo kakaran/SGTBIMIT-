@@ -38,7 +38,7 @@ const FacultyAdd = () => {
       formData.append("Department", facultyUpdate.Department);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Faculty/Faculty_Add`,
+          `${import.meta.env.VITE_API_URL}/Faculty/Faculty_Add`,
           formData,
           {
             headers: {

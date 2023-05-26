@@ -1,10 +1,10 @@
 import React from 'react'
 import './courses.css'
-import AdditionalDiploma from './AdditionalDiploma'
 import { Header, Navbar, Footer } from '../../Components'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
+import bba from '../../images/bba.jpg'
 
 export default function Bba() {
   return (
@@ -22,7 +22,7 @@ export default function Bba() {
       >
         <div className='courses'>
 
-          <img src={require("../../images/bba.jpg")} alt="cant load" />
+          <img src={bba} alt="cant load" />
           <h1>BACHELORS OF BUSINESS ADMINISTRATION</h1>
           <p>
             "According to Peter Drucker, leadership involves elevating an individual's vision to greater

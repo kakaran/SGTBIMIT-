@@ -20,7 +20,7 @@ const EventAdd = () => {
     const [otherimage, setOtherImage] = useState()
     const [eventData, setEventData] = useState([])
     const eventGet = async () => {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Display`)
         setEventData(await res.json())
     }
 
@@ -76,7 +76,7 @@ const EventAdd = () => {
             console.log("hi");
             const data1 = (
                 await axios.post(
-                    `${process.env.REACT_APP_API_URL}/Event/Event_Add`,
+                    `${import.meta.env.VITE_API_URL}/Event/Event_Add`,
                     formData,
                     {
                         headers: {

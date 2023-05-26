@@ -9,7 +9,7 @@ import { routingAnimations } from '../../constants'
 
 export default function EResources() {
 
-    const { data: eResources, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Display`)
+    const { data: eResources, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/E_Resources/EResources_Display`)
     return (
         <>
             <Helmet title="SGTBIMIT | E-Resources" />

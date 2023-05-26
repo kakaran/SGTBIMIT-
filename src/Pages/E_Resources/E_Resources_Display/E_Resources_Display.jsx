@@ -20,7 +20,7 @@ const EResourcesDisplay = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/E_Resources/EResources_Display`
+            `${import.meta.env.VITE_API_URL}/E_Resources/EResources_Display`
           )
         ).data;
         console.log(data);
@@ -35,7 +35,7 @@ const EResourcesDisplay = () => {
 
   const EresourcesDelete = async (value) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/E_Resources/EResources_Delete/${value}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/E_Resources/EResources_Delete/${value}`);
       setRender(1)
     } catch (error) {
       console.log(error);

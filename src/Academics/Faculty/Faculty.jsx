@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
 
 export default function Faculty() {
-    const { data: facultyData, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Display`)
+    const { data: facultyData, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Display`)
 
     return (
         <>
@@ -30,7 +30,7 @@ export default function Faculty() {
                     <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5 place-items-center">
                         {facultyData && facultyData.map(({ _id, name, post, detail, Department }, i) => (
                             <div className="flex flex-col items-center p-5 shadow-md bg-white w-[70%] h-full">
-                                <img src={`${process.env.REACT_APP_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" className='w-[85%] mx-auto rounded-md' />
+                                <img src={`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" className='w-[85%] mx-auto rounded-md' />
                                 <div className='mt-auto'>
                                     <h2 className="my-bold text-[min(2.5rem,5vw)] mt-3 mb-0 text-center">{_.startCase(_.toLower(name)).replace("Dr ", "Dr. ")}</h2>
                                     <p className='text-[var(--primary-clr)] leading-[2em] text-[min(1.5rem,2vw)] m-0 text-center'>{post}</p>

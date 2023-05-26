@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import cancelImg from '../images/cancel.png'
 
 
 export default function Admission() {
@@ -28,7 +29,7 @@ export default function Admission() {
 
     const AdmissionDataSubmit = async () => {
         try {
-            const data = (await axios.post(`${process.env.REACT_APP_API_URL}/Admission/Request`, {
+            const data = (await axios.post(`${import.meta.env.VITE_API_URL}/Admission/Request`, {
                 Name: admissionFormDetail.Name,
                 Email: admissionFormDetail.Email,
                 PNumber: admissionFormDetail.PNumber,
@@ -70,7 +71,7 @@ export default function Admission() {
             <div className="admission-bg"></div>
             <div className='admission-dialog'>
 
-                <img src={require("../images/cancel.png")} alt="cant load" className='close-btn' onClick={(e) => closeHandle(e)} />
+                <img src={cancelImg} alt="cant load" className='close-btn' onClick={(e) => closeHandle(e)} />
                 <h1 className='admission-title'>ADMISSION FORM</h1>
                 <div className='hurry'>Hurry, Fill your Admission Form right now</div>
                 <div className="admission-form">

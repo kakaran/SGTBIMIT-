@@ -52,7 +52,7 @@ const QuestionPaperAdd = () => {
       formData.append("Year", societUpdate.Year);
       formData.append("Semester", societUpdate.Semester);
       const data1 = (
-        await axios.post(`${process.env.REACT_APP_API_URL}/QuestionPaper/Add`, formData, {
+        await axios.post(`${import.meta.env.VITE_API_URL}/QuestionPaper/Add`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

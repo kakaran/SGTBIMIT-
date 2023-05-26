@@ -1,10 +1,10 @@
 import React from 'react'
 import './courses.css'
 import { Header, Navbar, Footer } from '../../Components'
-import AdditionalDiploma from './AdditionalDiploma'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
+import bbaBI from '../../images/bba.jpg'
 
 export default function BbaBI() {
   return (
@@ -21,7 +21,7 @@ export default function BbaBI() {
         variants={routingAnimations}
       >
         <div className='courses'>
-          <img src={require("../../images/bba.jpg")} alt="cant load" />
+          <img src={bbaBI} alt="cant load" />
           <h1>BACHELORS OF BUSINESS ADMINISTRATION <br /> (BANKING & INSURANCE)</h1>
           <p>
             BBA (B&I) is a prestigious program offered by Sri Guru Tegh Bahadur Institute of

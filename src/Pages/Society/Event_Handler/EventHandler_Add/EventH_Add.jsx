@@ -11,9 +11,9 @@ import { Helmet } from "react-helmet";
 const EventHAdd = () => {
     const [societUpdate, setSocieUpdate] = useState({
         name: "",
-        detail:"",
+        detail: "",
         year: "",
-        Events:"",
+        Events: "",
     });
     const [filedata, setFileData] = useState();
 
@@ -49,7 +49,7 @@ const EventHAdd = () => {
             console.log(compressedFile);
             formData.append("image", compressedFile, filedata.name);
             formData.append("name", societUpdate.name);
-            formData.append("detail", societUpdate.detail); 
+            formData.append("detail", societUpdate.detail);
             formData.append("year", societUpdate.year);
             formData.append("Events", societUpdate.Events);
 
@@ -66,7 +66,7 @@ const EventHAdd = () => {
             }
             const data1 = (
                 await axios.post(
-                    `${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Add`,
+                    `${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Add`,
                     formData,
                     {
                         headers: {

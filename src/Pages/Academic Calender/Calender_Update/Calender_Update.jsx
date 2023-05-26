@@ -17,7 +17,7 @@ const CalenderUpdate = () => {
   useEffect(() => {
     const TestSingleData = async () => {
       try {
-        const data = (await axios.get(`${process.env.REACT_APP_API_URL}/Calendar/CalendarSingle/${id}`)).data;
+        const data = (await axios.get(`${import.meta.env.VITE_API_URL}/Calendar/CalendarSingle/${id}`)).data;
         setSingleData({
           Date: data?.Date,
           Event: data?.Event,
@@ -32,7 +32,7 @@ const CalenderUpdate = () => {
   const CalenderUpdate = async (e) => {
     e.preventDefault();
     try {
-      const data = await axios.post(`${process.env.REACT_APP_API_URL}/Calendar/CalendarUpdate/${id}`,SingleData);
+      const data = await axios.post(`${import.meta.env.VITE_API_URL}/Calendar/CalendarUpdate/${id}`, SingleData);
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +47,7 @@ const CalenderUpdate = () => {
 
   return (
     <>
-    <Helmet title="Update Calendar" />
+      <Helmet title="Update Calendar" />
       <div className="TestimonialUpdateContainer" style={{ display: "flex" }}>
         <div className="SideBar">
           <AdminMenu />

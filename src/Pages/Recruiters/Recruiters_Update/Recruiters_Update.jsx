@@ -32,7 +32,7 @@ const RecruitersUpdate = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Single_Display/${_id}`
+            `${import.meta.env.VITE_API_URL}/Recruiters/recruiters_Single_Display/${_id}`
           )
         ).data;
         console.log(data);
@@ -64,7 +64,7 @@ const RecruitersUpdate = () => {
       formData.append("Name", recruitersUpdate.Name);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Recruiters/recruiters_Update/${_id}`,
+          `${import.meta.env.VITE_API_URL}/Recruiters/recruiters_Update/${_id}`,
           formData,
           {
             headers: {
@@ -124,7 +124,7 @@ const RecruitersUpdate = () => {
                   />
                 ) : (
                   <img
-                    src={`${process.env.REACT_APP_API_URL}/Recruiters/Recruiter_Image_Display/${_id}`}
+                    src={`${import.meta.env.VITE_API_URL}/Recruiters/Recruiter_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

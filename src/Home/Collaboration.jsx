@@ -6,7 +6,7 @@ import useFetch from '../useFetch'
 import _ from 'lodash'
 
 export default function Collaboration() {
-  const { data: collabs } = useFetch(`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Display`)
+  const { data: collabs } = useFetch(`${import.meta.env.VITE_API_URL}/Collaborations/Collaborations_Display`)
 
 
 
@@ -78,7 +78,7 @@ export default function Collaboration() {
               <div className="collab-grid" key={`${i}collabgrid`}>
                 {collabss.map((collab, i) => (
                   <div className="collab-img" key={`${i}collabimg`}>
-                    <img src={`${process.env.REACT_APP_API_URL}/Collaborations/Collaborations_Image_Display/${collab._id}`} alt="" />
+                    <img src={`${import.meta.env.VITE_API_URL}/Collaborations/Collaborations_Image_Display/${collab._id}`} alt="" />
                   </div>
                 ))}
               </div>

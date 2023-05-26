@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import useFetch from '../useFetch'
+import cancelImg from '../images/cancel.png'
 
-const arrow = require("../images/down.png")
+import arrow from "../images/down.png"
 
 
 export default function Navbar() {
-  const { data: events } = useFetch(`${process.env.REACT_APP_API_URL}/Eventhandler/EventHandler_Display`)
+  const { data: events } = useFetch(`${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Display`)
 
 
 
@@ -19,26 +20,26 @@ export default function Navbar() {
       document.querySelector("nav").style.transform = "translateX(-100%)"
       document.querySelector("nav").style.visibility = "hidden"
     })
-    // if (document.body.offsetWidth < 1000) {
+    if (document.body.offsetWidth < 1000) {
 
-    //   document.querySelectorAll(".dropdown").forEach(dropdown => {
-    //     dropdown.style.display = "none"
-    //   })
-    //   document.querySelectorAll(".nav-item>*:first-child").forEach((link, i) => {
-    //     link.addEventListener("click", e => {
-    //       const dropdowns = document.querySelectorAll(`.dropdown`)
-    //       dropdowns.forEach((dropdown, j) => {
-    //         if (dropdown.dataset.index === `${i}`) {
-    //           if (dropdown.style.display === "none") {
-    //             dropdown.style.display = "block"
-    //             return
-    //           }
-    //           dropdown.style.display = "none"
-    //         }
-    //       })
-    //     })
-    //   })
-    // }
+      document.querySelectorAll(".dropdown").forEach(dropdown => {
+        dropdown.style.display = "none"
+      })
+      document.querySelectorAll(".nav-item>*:first-child").forEach((link, i) => {
+        link.addEventListener("click", e => {
+          const dropdowns = document.querySelectorAll(`.dropdown`)
+          dropdowns.forEach((dropdown, j) => {
+            if (dropdown.dataset.index === `${i}`) {
+              if (dropdown.style.display === "none") {
+                dropdown.style.display = "block"
+                return
+              }
+              dropdown.style.display = "none"
+            }
+          })
+        })
+      })
+    }
   }, [])
 
   const handleFloatClick = (e) => {
@@ -54,7 +55,7 @@ export default function Navbar() {
         ADMISSION
       </div>
       <nav className='shadow-2xl'>
-        <div className='nav-close mobile'><img src={require("../images/cancel.png")} alt="cant load" className='nav-close-btn' /></div>
+        <div className='nav-close mobile'><img src={cancelImg} alt="cant load" className='nav-close-btn' /></div>
         <div className="header-btns mobile-header-btns mobile">
           <button className="admission-btn" type="button" onClick={() => {
             document.querySelector(".admission-dialog").classList.add("show")

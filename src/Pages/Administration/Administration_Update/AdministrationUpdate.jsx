@@ -37,7 +37,7 @@ const Society_Update = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Administration/Single_Administration_Display/${_id}`
+            `${import.meta.env.VITE_API_URL}/Administration/Single_Administration_Display/${_id}`
           )
         ).data;
         setGovernUpdate({
@@ -79,7 +79,7 @@ const Society_Update = () => {
       console.log(formData);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Administration/Administration_Update/${_id}`,
+          `${import.meta.env.VITE_API_URL}/Administration/Administration_Update/${_id}`,
           formData,
           {
             headers: {
@@ -173,7 +173,7 @@ const Society_Update = () => {
                   />
                 ) : (
                   <img
-                    src={`${process.env.REACT_APP_API_URL}/Administration/AdministrationImageDisplay/${_id}`}
+                    src={`${import.meta.env.VITE_API_URL}/Administration/AdministrationImageDisplay/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

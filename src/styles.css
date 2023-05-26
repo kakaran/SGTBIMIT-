@@ -1,5 +1,5 @@
-@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap');
+@tailwind utilities;
 
 :root {
     --primary-clr: #BF1717;
@@ -10,19 +10,19 @@
 
 @font-face {
     font-family: "SF Pro Display";
-    src: url("../public/fonts/SFPRODISPLAYREGULAR.OTF");
+    src: url("/fonts/SFPRODISPLAYREGULAR.OTF");
     font-style: normal;
 }
 
 @font-face {
     font-family: "SF Pro Display-Bold";
-    src: url("../public/fonts/SFPRODISPLAYBOLD.OTF");
+    src: url("/fonts/SFPRODISPLAYBOLD.OTF");
     font-style: normal;
 }
 
 @font-face {
     font-family: "SF Pro Display-Medium";
-    src: url("../public/fonts/SFPRODISPLAYMEDIUM.OTF");
+    src: url("/fonts/SFPRODISPLAYMEDIUM.OTF");
     font-style: normal;
 }
 

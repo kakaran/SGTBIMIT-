@@ -4,6 +4,8 @@ import "./Vision.css";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { routingAnimations } from "../../constants";
+import vission from '../../images/vission.jpg'
+import mission from '../../images/mission.jpg'
 
 export default function Vision() {
   useEffect(() => {
@@ -36,12 +38,12 @@ export default function Vision() {
             </p>
           </div>
           <div className="flex justify-center items-center">
-            <img src={require("../../images/vission.jpg")} alt="" className=" w-full" />
+            <img src={vission} alt="" className=" w-full" />
           </div>
         </div>
         <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
           <div className="flex justify-center items-center">
-            <img src={require("../../images/mission.png")} alt="" className=" w-full" />
+            <img src={mission} alt="" className=" w-full" />
           </div>
           <div>
             <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">

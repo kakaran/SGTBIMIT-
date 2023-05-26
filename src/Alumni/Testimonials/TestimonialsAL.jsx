@@ -8,7 +8,7 @@ import useFetch from '../../useFetch'
 
 
 export default function TestimonialsAL() {
-    const { data: alumni, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Display`)
+    const { data: alumni, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/alumini_Testimonial/alumini_Testimonial_Display`)
 
     return (
         <>
@@ -28,7 +28,7 @@ export default function TestimonialsAL() {
                     {alumni?.map((alum, i) => {
                         return (
                             <div className="t-card">
-                                <img src={`${process.env.REACT_APP_API_URL}/alumini_Testimonial/alumini_Testimonial_Image_Display/${alum._id}`} className="card-img" alt='placeholder for images' />
+                                <img src={`${import.meta.env.VITE_API_URL}/alumini_Testimonial/alumini_Testimonial_Image_Display/${alum._id}`} className="card-img" alt='placeholder for images' />
                                 <div className="card-info">
                                     <p className="text-body">{alum.detail}</p>
                                     <p className="text-title">{alum.name}</p>

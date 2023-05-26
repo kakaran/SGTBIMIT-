@@ -19,7 +19,7 @@ export default function Notice() {
     const [search, setSearch] = useState(false)
 
     const fetchData = async () => {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/Notice/Notice_Data_Display`)
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/Notice/Notice_Data_Display`)
         const data = await res.json()
         setNotices(data)
         setOptions(_.uniqBy(data, obj => obj.Categories))

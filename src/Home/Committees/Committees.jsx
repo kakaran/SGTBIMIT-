@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { committees } from './constant'
 import { Link } from 'react-router-dom'
+import pdfIcon from '../../images/pdf-icon.png'
+
 export default function Committees() {
 
 
@@ -70,7 +72,7 @@ export default function Committees() {
                   delay: i * 0.15,
                 }}
               >
-                <img src={require("../../images/pdf-icon.png")} alt="" />
+                <img src={pdfIcon} alt="" />
                 <span>View Data</span>
               </motion.div>
             </Link>

@@ -20,7 +20,7 @@ const StarsDisplay = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Display`)
+          await axios.get(`${import.meta.env.VITE_API_URL}/PlacementFeature/PlacementFeature_Display`)
         ).data;
         setStars(data);
         setRender(0);
@@ -34,7 +34,7 @@ const StarsDisplay = () => {
 
   const ImagesGet = (value) => {
     return (
-      <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${value}`} alt=""
+      <img src={`${import.meta.env.VITE_API_URL}/PlacementFeature/Placementfeature_Image_Display/${value}`} alt=""
         style={{ height: "300px", borderBottom: "1px solid #f0f0f0", paddingBottom: "5px" }}
       />
     );
@@ -42,13 +42,13 @@ const StarsDisplay = () => {
 
   const CompanyImageGet = ({ id }) => {
     return (
-      <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_CompanyImg_Display/${id}`} alt="cant load" className="w-16 mx-auto rounded-[20%]" />
+      <img src={`${import.meta.env.VITE_API_URL}/PlacementFeature/PlacementFeature_CompanyImg_Display/${id}`} alt="cant load" className="w-16 mx-auto rounded-[20%]" />
     )
   }
 
   const PlacementDelete = async (value) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Delete/${value}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/PlacementFeature/PlacementFeature_Delete/${value}`);
       setRender(1);
     } catch (error) {
       console.log(error);

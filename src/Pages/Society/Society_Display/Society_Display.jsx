@@ -17,7 +17,7 @@ const Society_Display = () => {
     const TestimonialsDataGet = async () => {
       try {
         const data = (
-          await axios.get(`${process.env.REACT_APP_API_URL}/Society/Society_Display`)
+          await axios.get(`${import.meta.env.VITE_API_URL}/Society/Society_Display`)
         ).data;
         setSociety(data);
         setRender(0);
@@ -29,9 +29,9 @@ const Society_Display = () => {
     ImagesGet()
   }, [render]);
 
-  const ImagesGet = (value) =>{
+  const ImagesGet = (value) => {
     return (<img
-      src={`${process.env.REACT_APP_API_URL}/Society/Society_Image_Display/${value}`}
+      src={`${import.meta.env.VITE_API_URL}/Society/Society_Image_Display/${value}`}
       alt=""
     />)
   }
@@ -40,7 +40,7 @@ const Society_Display = () => {
     try {
       const _id = value;
       console.log(_id);
-      await axios.post(`${process.env.REACT_APP_API_URL}/Society/Society_Delete/${_id}`);
+      await axios.post(`${import.meta.env.VITE_API_URL}/Society/Society_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -49,7 +49,7 @@ const Society_Display = () => {
 
   return (
     <>
-    <Helmet title="Display Society" />
+      <Helmet title="Display Society" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />
@@ -87,7 +87,7 @@ const Society_Display = () => {
                       </span>
                     </h3>
                     <div className="Society_Card_ImageDescription">
-                    {ImagesGet(value?._id)}
+                      {ImagesGet(value?._id)}
                       <div className="Society_Describe">
                         <h4>{value.subdetail}</h4>
                         <p>{value.detail}</p>

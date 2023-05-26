@@ -33,7 +33,7 @@ const Society_Update = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Society/Single_Society_Display/${_id}`
+            `${import.meta.env.VITE_API_URL}/Society/Single_Society_Display/${_id}`
           )
         ).data;
         setSocieUpdate({
@@ -68,7 +68,7 @@ const Society_Update = () => {
       formData.append("subdetail", societUpdate.subdetail);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Society/Society_Update/${_id}`,
+          `${import.meta.env.VITE_API_URL}/Society/Society_Update/${_id}`,
           formData,
           {
             headers: {
@@ -145,7 +145,7 @@ const Society_Update = () => {
                   />
                 ) : (
                   <img
-                    src={`${process.env.REACT_APP_API_URL}/Society/Society_Image_Display/${_id}`}
+                    src={`${import.meta.env.VITE_API_URL}/Society/Society_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

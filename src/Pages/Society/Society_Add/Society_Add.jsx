@@ -37,7 +37,7 @@ const Society_Add = () => {
       formData.append("subdetail", societUpdate.subdetail);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Society/Society_Add`,
+          `${import.meta.env.VITE_API_URL}/Society/Society_Add`,
           formData,
           {
             headers: {

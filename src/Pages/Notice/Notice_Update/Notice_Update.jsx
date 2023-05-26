@@ -40,7 +40,7 @@ const NoticeUpdate = () => {
     setSocieUpdate({ ...societUpdate, [e.target.name]: e.target.value });
   };
 
- 
+
 
 
   const NoticeUpdate = async () => {
@@ -57,7 +57,7 @@ const NoticeUpdate = () => {
       formData.append("Detail", societUpdate.Detail);
       formData.append("Categories", societUpdate.Categories);
       const data1 = (
-        await axios.post(`${process.env.REACT_APP_API_URL}/Notice/Notice_Update/${_id}`, formData, {
+        await axios.post(`${import.meta.env.VITE_API_URL}/Notice/Notice_Update/${_id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

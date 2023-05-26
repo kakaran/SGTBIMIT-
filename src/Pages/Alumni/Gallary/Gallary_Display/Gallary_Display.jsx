@@ -5,7 +5,7 @@ import AdminMenu from "../../../../Components/AdminMenu/AdminMenu";
 import axios from "axios";
 
 const Gallary_Display = () => {
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = import.meta.env.VITE_API_URL;
   const [aluminData, setAluminiData] = useState();
   const { aluminimglen, setAluminimglen } = useState();
 
@@ -26,24 +26,24 @@ const Gallary_Display = () => {
     alumDataGet();
   }, []);
 
-//   const aluminiimagelength = async (_id) => {
-//     try {
-//       const data = (
-//         await axios(`${API_URL}/Alumini/gallery/alumini_Images_length/${_id}`)
-//       ).data;
-//     //   console.log(data);
-//       for (let i = 0; i < data; i++) {
-//         return (
-//           <img
-//             src={`${API_URL}/Alumini/gallery/aluminiDisplayImages/${_id}/${i}`}
-//             alt=""
-//           />
-//         );
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
+  //   const aluminiimagelength = async (_id) => {
+  //     try {
+  //       const data = (
+  //         await axios(`${API_URL}/Alumini/gallery/alumini_Images_length/${_id}`)
+  //       ).data;
+  //     //   console.log(data);
+  //       for (let i = 0; i < data; i++) {
+  //         return (
+  //           <img
+  //             src={`${API_URL}/Alumini/gallery/aluminiDisplayImages/${_id}/${i}`}
+  //             alt=""
+  //           />
+  //         );
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
   return (
     <>

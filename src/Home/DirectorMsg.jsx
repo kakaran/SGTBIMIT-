@@ -1,5 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import quote from '../images/quote.png'
+import dir from '../images/director.jpg'
+
 export default function DirectorMsg() {
 
   return (
@@ -31,9 +34,9 @@ export default function DirectorMsg() {
           type: 'spring'
         }}
       >
-        <img src={require("../images/quote.png")} alt="" className="dir-quote" />
+        <img src={quote} alt="" className="dir-quote" />
         <div className="director-img">
-          <img src={require("../images/director.jpg")} alt="cant load" />
+          <img src={dir} alt="cant load" />
         </div>
         <p className='dr-note text-justify'>
           “Those who walk on the path of truth shall be praised throughout the world”

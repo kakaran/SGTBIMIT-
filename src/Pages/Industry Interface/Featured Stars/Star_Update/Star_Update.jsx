@@ -33,7 +33,7 @@ const StarsUpdate = () => {
       try {
         const data = (
           await axios.get(
-            `${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Single/${_id}`
+            `${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Single/${_id}`
           )
         ).data;
         setStarsUpdate({
@@ -68,7 +68,7 @@ const StarsUpdate = () => {
       formData.append("companyName", starsUpdate.companyName);
       const data1 = (
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/Placement_Intership/PlacementInterships_Update/${_id}`,
+          `${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Update/${_id}`,
           formData,
           {
             headers: {
@@ -136,7 +136,7 @@ const StarsUpdate = () => {
                   />
                 ) : (
                   <img
-                    src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${_id}`}
+                    src={`${import.meta.env.VITE_API_URL}/PlacementFeature/Placementfeature_Image_Display/${_id}`}
                     alt=""
                     style={{
                       width: "400px",

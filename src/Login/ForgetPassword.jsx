@@ -27,7 +27,7 @@ const ForgetPassword = () => {
                 });
                 console.log("error");
             } else {
-                const data = await axios.post(`${process.env.REACT_APP_API_URL}/Admin/forgetpassword/${email}`, { code, password })
+                const data = await axios.post(`${import.meta.env.VITE_API_URL}/Admin/forgetpassword/${email}`, { code, password })
                 if (data.status) {
                     toast.success(`${data.message}`, {
                         position: "top-right",
@@ -52,7 +52,7 @@ const ForgetPassword = () => {
     const handleForgetpassword = async () => {
         try {
             if (email) {
-                const data = (await axios.post(`${process.env.REACT_APP_API_URL}/Admin/EmailCheck/${email}`)).data
+                const data = (await axios.post(`${import.meta.env.VITE_API_URL}/Admin/EmailCheck/${email}`)).data
                 if (data.status) {
                     toast.success(`${data.message}`, {
                         position: "top-right",

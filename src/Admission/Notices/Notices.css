@@ -111,7 +111,7 @@
     padding-top: min(1rem, 3vw);
     cursor: pointer;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .notice-file a {

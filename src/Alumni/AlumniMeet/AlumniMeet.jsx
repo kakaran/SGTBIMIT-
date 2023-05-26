@@ -21,7 +21,7 @@ const AlumniMeet = () => {
             >
                 <div className='alumnimeet'>
                     <h1>ALUMNI MEET</h1>
-                    <div className='flex'>
+                    <div className='flex flex-custom'>
                         <h2 className='m-0'>
                             <span className='ahead'>
                                 A

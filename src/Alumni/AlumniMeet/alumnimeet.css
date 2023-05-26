@@ -1,5 +1,6 @@
 .alumini-meet-section {
     background-image: url("../../images/bg-frame.png");
+    background-size: 100%;
 }
 
 .alumnimeet {
@@ -57,7 +58,7 @@
 }
 
 @media(max-width: 1300px) {
-    .alumini-meet-section{
+    .alumini-meet-section {
         background-image: url("../../images/bg-frame.png");
         max-width: 100%;
     }
@@ -67,12 +68,12 @@
         margin-inline: auto;
     }
 
-    .flex{
+    .flex-custom {
         width: 60%;
         margin: 0 30%;
     }
 
-    .alumnimeet > h2{
+    .alumnimeet>h2 {
         text-align: center;
     }
 }

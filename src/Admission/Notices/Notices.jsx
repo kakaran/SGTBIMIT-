@@ -18,22 +18,24 @@ export default function Notice() {
     const [searched, setSearched] = useState([])
     const [search, setSearch] = useState(false)
 
-    const handleOptionChange = (e) => {
-        if (e.target.value) {
-            setSearched(notices.filter(notice => notice.Categories === e.target.value))
-            setSearch(true)
-        } else {
-            setSearch(false)
-        }
-    }
-
     const fetchData = async () => {
         const res = await fetch(`${process.env.REACT_APP_API_URL}/Notice/Notice_Data_Display`)
         const data = await res.json()
         setNotices(data)
         setOptions(_.uniqBy(data, obj => obj.Categories))
-        console.log(options);
     }
+    const handleOptionChange = (e) => {
+        if (e.target.value) {
+            console.log(e.target.value);
+            setSearched(notices.filter(notice => notice.Categories === e.target.value))
+            setSearch(true)
+        } else {
+            console.log("hi");
+            setSearch(false)
+            console.log(search);
+        }
+    }
+
     useEffect(() => {
         fetchData()
     }, [])
@@ -55,7 +57,7 @@ export default function Notice() {
 
                     <div className="drop">
                         <select onChange={handleOptionChange}>
-                            <option value={null}>All Notices</option>
+                            <option value="">All Notices</option>
                             {options?.map(opt => (
                                 <option value={opt.Categories}>{opt.Categories}</option>
                             ))}
@@ -63,7 +65,7 @@ export default function Notice() {
                     </div>
                     {!notices && <Loader />}
                     <div className="notices-grid">
-                        {(notices && !search) && notices.map((notice) => (
+                        {!search && notices.map((notice) => (
                             <div className="notice-card" key={notice._id}>
                                 <h1>{notice.Name}</h1>
                                 <p> {notice.Detail} </p>
@@ -74,7 +76,7 @@ export default function Notice() {
                                 </div>
                             </div>
                         )).reverse()}
-                        {(searched && search) && searched.map((notice) => (
+                        {search && searched.map((notice) => (
                             <div className="notice-card" key={notice._id}>
                                 <h1>{notice.Name}</h1>
                                 <p className="text-gray-700"> {notice.Detail} </p>

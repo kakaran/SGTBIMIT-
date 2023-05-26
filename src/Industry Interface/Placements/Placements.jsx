@@ -13,11 +13,11 @@ import { routingAnimations } from '../../constants'
 import AutoHorizontalScroll from '../../Home/AutoHorizontalScroll'
 import useFetch from '../../useFetch'
 import _ from 'lodash'
+import Team from './Team'
 
 export default function Placements() {
 
     const { data: feature, isPending } = useFetch(`${process.env.REACT_APP_API_URL}/PlacementFeature/PlacementFeature_Display`)
-    console.log(feature ? feature : "");
 
     return (
         <>
@@ -80,7 +80,7 @@ export default function Placements() {
                         {isPending && <Loader />}
                         {feature && <AutoHorizontalScroll>
                             {feature.map(feat => (
-                                <div className='relative p-5 border-solid border-2 border-gray-300 rounded-md bg-white flex flex-col gap-4 min-w-[350px] max-w-[350px] m-0' key={feat.name}>
+                                <div className='relative p-5 border-solid border-2 border-gray-300 rounded-md bg-white flex flex-col gap-4 min-w-[350px] max-w-[350px] m-0 overflow-hidden' key={feat.name} style={{ boxShadow: "inset 0 -3em 3em rgba(0,0,0,0.1), 0 0  0 2px rgb(190, 190, 190),0.3em 0.3em 1em rgba(0,0,0,0.3)" }}>
                                     <img src={`${process.env.REACT_APP_API_URL}/PlacementFeature/Placementfeature_Image_Display/${feat._id}`} alt="" className='mix-blend-multiply w-full' />
                                     <div>
                                         <div className='my-bold text-3xl'>{_.capitalize(_.toLower(feat.Name))}</div>
@@ -98,6 +98,7 @@ export default function Placements() {
                         }}
                     />
                 </section>
+                <Team />
                 <section className='placement-recruiters-section'>
                     <div className='layered-title' style={{
                         marginInline: 'auto',

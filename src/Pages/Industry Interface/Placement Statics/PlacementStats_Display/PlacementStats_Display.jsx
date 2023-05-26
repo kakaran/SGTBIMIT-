@@ -10,17 +10,16 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { Helmet } from "react-helmet";
 
 const PStatsDisplay = () => {
+
   const [render, setRender] = useState(0);
-  const [getPstats, setPstats] = useState([]);
+  const [Pstats, setPstats] = useState([]);
 
   useEffect(() => {
     const AdministrationsDataGet = async () => {
       try {
-        const data = (
-          await axios.get(
-            `${import.meta.env.VITE_API_URL}/PlacementStatics/placement_Dispaly`
-          )
-        ).data;
+        const data = (await axios.get(`${import.meta.env.VITE_API_URL}/PlacementStatics/placement_Display`)
+        ).data.AllData;
+        console.log(data);
         setPstats(data);
         setRender(0);
       } catch (error) {
@@ -34,9 +33,7 @@ const PStatsDisplay = () => {
     try {
       const _id = value;
       console.log(_id);
-      await axios.post(
-        `${import.meta.env.VITE_API_URL}//PlacementStatics/Placement_Year_Delete/${_id}`
-      );
+      await axios.post(`${import.meta.env.VITE_API_URL}/PlacementStatics/Placement_Year_Delete/${_id}`);
       setRender(1);
     } catch (error) {
       console.log(error);
@@ -57,9 +54,9 @@ const PStatsDisplay = () => {
               <h1>Placement Statistics</h1>
             </div>
             <div className="TesDisplayCardContainer">
-              {numAscending.map((value) => {
+              {Pstats?.map((value, index) => {
                 return (
-                  <div className="Society_Card" >
+                  <div className="Society_Card" key={index}>
                     <h3>
                       {value.Year}
                       <span

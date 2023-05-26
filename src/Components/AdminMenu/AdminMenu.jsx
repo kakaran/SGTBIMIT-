@@ -793,7 +793,7 @@ const AdminMenu = () => {
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/placement_Dispaly");
+                          navigate("/dashboard/admin/placement_Statics_Display");
                         }}
                       >
                         PLACEMENT STATICS DISPLAY

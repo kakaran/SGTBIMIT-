@@ -171,7 +171,7 @@ function App() {
           <Route path='admin/Placement_Team_Add' element={<PTeamAdd />} />
           <Route path='admin/Placement_Team_Display' element={<PTeamDisplay />} />
           <Route path='admin/placement_Statics_Add' element={<PStatsAdd />} />
-          <Route path='admin/placement_Dispaly' element={<PStatsDisplay />} />
+          <Route path='admin/placement_Statics_Display' element={<PStatsDisplay />} />
           <Route path='admin/Registration_Add' element={<RegistrationAdd />} />
           <Route path='admin/Registration_Display' element={<RegistrationDisplay />} />
           <Route path='admin/Alumini/gallery/aluminiAddImage' element={<AGalleryAdd />} />

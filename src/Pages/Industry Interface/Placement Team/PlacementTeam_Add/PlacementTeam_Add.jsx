@@ -52,7 +52,7 @@ const PTeamAdd = () => {
   };
   return (
     <>
-      <Helmet title="Add Faculty" />
+      <Helmet title="Add Placement Team" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

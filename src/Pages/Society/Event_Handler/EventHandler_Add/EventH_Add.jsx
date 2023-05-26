@@ -82,7 +82,7 @@ const EventHAdd = () => {
     };
     return (
         <>
-            <Helmet title="Add Event" />
+            <Helmet title="Add Event Handler" />
             <div className="societyAddConatiner">
                 <div className="SideBar">
                     <AdminMenu />

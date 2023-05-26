@@ -55,7 +55,7 @@ const PTeamDisplay = () => {
 
   return (
     <>
-      <Helmet title="Display Faculty" />
+      <Helmet title="Display Placement Team" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />

@@ -3,6 +3,7 @@ import "./Gallery_Display.css";
 import AdminHeader from "../../../../Components/AdminHeader/AdminHeader";
 import AdminMenu from "../../../../Components/AdminMenu/AdminMenu";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const Gallary_Display = () => {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -47,6 +48,7 @@ const Gallary_Display = () => {
 
   return (
     <>
+    <Helmet title="Display Alumni Gallery" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

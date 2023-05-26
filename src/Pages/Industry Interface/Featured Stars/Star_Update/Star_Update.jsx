@@ -85,7 +85,7 @@ const StarsUpdate = () => {
 
   return (
     <>
-      <Helmet title="Update Placement" />
+      <Helmet title="Update Placement Stars" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

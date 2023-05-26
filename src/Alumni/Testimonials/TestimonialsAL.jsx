@@ -12,7 +12,7 @@ export default function TestimonialsAL() {
 
     return (
         <>
-            <Helmet title='SGTBIMIT | Alumini Testimonials' />
+            <Helmet title='SGTBIMIT | Alumni Testimonials' />
             <Header />
             <Navbar />
             <motion.section className='test-al-section'

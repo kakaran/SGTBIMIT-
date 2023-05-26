@@ -6,6 +6,7 @@ import { Card } from 'antd';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiEditAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const Notice_Display = () => {
@@ -41,6 +42,7 @@ const Notice_Display = () => {
 
     return (
         <>
+        <Helmet title="Display Notices" />
             <div className="SocietyDisplayContainer">
                 <div className="SideBar">
                     <AdminMenu />

@@ -82,7 +82,7 @@ const AlumniTesti_Update = () => {
   console.log(testiUpdate);
   return (
     <>
-      <Helmet title="Update Faculty" />
+      <Helmet title="Update Alumni Testimonials" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

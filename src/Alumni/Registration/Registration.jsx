@@ -57,7 +57,7 @@ export default function Registration() {
     }
     return (
         <>
-            <Helmet title='SGTBIMIT | Alumini Registeration' />
+            <Helmet title='SGTBIMIT | Alumni Registration' />
             <Header />
             <Navbar />
 

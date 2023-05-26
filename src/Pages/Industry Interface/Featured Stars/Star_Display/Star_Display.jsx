@@ -57,7 +57,7 @@ const StarsDisplay = () => {
 
   return (
     <>
-      <Helmet title="Display Placement" />
+      <Helmet title="Display Placement Stars" />
       <div className="SocietyDisplayContainer">
         <div className="SideBar">
           <AdminMenu />

@@ -48,7 +48,7 @@ const RegistrationDisplay = () => {
   console.log(getRegis);
   return (
     <>
-      <Helmet title="Display Testimonial" />
+      <Helmet title="Display Alumni Registrations" />
       <div className="Testimonial_DisplayContainer">
         <div className="SideBar">
           <AdminMenu />

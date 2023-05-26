@@ -53,7 +53,7 @@ const StarsAdd = () => {
   };
   return (
     <>
-      <Helmet title="Add Placement" />
+      <Helmet title="Add Placement Stars" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

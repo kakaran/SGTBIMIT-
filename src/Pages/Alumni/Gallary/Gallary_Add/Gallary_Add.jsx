@@ -8,6 +8,7 @@ import "../../../Society/Society_Add/Society_Add.css";
 import "../../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
 import imageCompression from 'browser-image-compression';
+import { Helmet } from "react-helmet";
 
 const AGalleryAdd = () => {
     const [societUpdate, setSocieUpdate] = useState({
@@ -96,6 +97,7 @@ const AGalleryAdd = () => {
 
     return (
         <>
+        <Helmet title="Add Alumni Gallery" />
             <div className="societyAddConatiner">
                 <div className="SideBar">
                     <AdminMenu />

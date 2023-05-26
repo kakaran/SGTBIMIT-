@@ -9,7 +9,7 @@ import bcom from '../../images/bcom.png'
 export default function Bcom() {
     return (
         <>
-            <Helmet title="SGTBIMIT | Bcom" />
+            <Helmet title="SGTBIMIT | BCOM" />
             <Header />
             <Navbar />
             <motion.section className="courses-section"

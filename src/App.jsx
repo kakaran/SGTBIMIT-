@@ -88,6 +88,7 @@ import NoticeUpdate from './Pages/Notice/Notice_Update/Notice_Update.jsx'
 import PTeamAdd from './Pages/Industry Interface/Placement Team/PlacementTeam_Add/PlacementTeam_Add.jsx'
 import PTeamDisplay from './Pages/Industry Interface/Placement Team/PlacementTeam_Display/PlacementTeam_Display.jsx'
 import PStatsAdd from './Pages/Industry Interface/Placement Statics/PlacementStats_Add/PlacementStats_Add.jsx'
+import PStatsDisplay from './Pages/Industry Interface/Placement Statics/PlacementStats_Display/PlacementStats_Display.jsx'
 
 function App() {
   const location = useLocation()
@@ -170,6 +171,7 @@ function App() {
           <Route path='admin/Placement_Team_Add' element={<PTeamAdd />} />
           <Route path='admin/Placement_Team_Display' element={<PTeamDisplay />} />
           <Route path='admin/placement_Statics_Add' element={<PStatsAdd />} />
+          <Route path='admin/placement_Dispaly' element={<PStatsDisplay />} />
           <Route path='admin/Registration_Add' element={<RegistrationAdd />} />
           <Route path='admin/Registration_Display' element={<RegistrationDisplay />} />
           <Route path='admin/Alumini/gallery/aluminiAddImage' element={<AGalleryAdd />} />

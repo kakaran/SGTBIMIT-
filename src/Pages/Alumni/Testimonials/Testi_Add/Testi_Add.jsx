@@ -52,7 +52,7 @@ const AlumniTesti_Add = () => {
 
   return (
     <>
-      <Helmet title="Add Testimonial" />
+      <Helmet title="Add Alumni Testimonial" />
       <div className="TestimonailAddContainer">
         <div className="SideBar">
           <AdminMenu />

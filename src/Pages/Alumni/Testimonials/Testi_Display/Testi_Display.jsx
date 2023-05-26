@@ -57,7 +57,7 @@ const AlumniTesti_Display = () => {
 
   return (
     <>
-      <Helmet title="Display Testimonial" />
+      <Helmet title="Display Alumni Testimonial" />
       <div className="Testimonial_DisplayContainer">
         <div className="SideBar">
           <AdminMenu />

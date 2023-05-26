@@ -89,7 +89,7 @@ const NoticeUpdate = () => {
   };
   return (
     <>
-      <Helmet title="Update Question Paper" />
+      <Helmet title="Update Notices" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

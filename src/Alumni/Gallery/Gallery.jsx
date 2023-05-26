@@ -12,7 +12,7 @@ export default function Gallery() {
     const [isCarouselActive, setIsCarouselActive] = useState(false)
     return (
         <>
-            <Helmet title='SGTBIMIT | Alumini Gallery' />
+            <Helmet title='SGTBIMIT | Alumni Gallery' />
             <Header />
             <Navbar />
             <motion.section className='gallery-section'

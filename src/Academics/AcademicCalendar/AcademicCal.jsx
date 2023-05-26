@@ -12,7 +12,7 @@ export default function AcademicCal() {
 
     return (
         <>
-            <Helmet title="SGTBIMIT | Acamdeic Calendar" />
+            <Helmet title="SGTBIMIT | Academic Calendar" />
             <Header />
             <Navbar />
 

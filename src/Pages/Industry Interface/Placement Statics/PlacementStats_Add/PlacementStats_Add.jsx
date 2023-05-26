@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 const PStatsAdd = () => {
   const [pstatsUpdate, setPstatsUpdate] = useState({
     Year: "",
+    Course: "",
     Name: "",
     Eligible: "",
     Offers: "",
@@ -32,6 +33,7 @@ const PStatsAdd = () => {
       //   console.log(compressedFile);
       //   formData.append("image", compressedFile, filedata.name);
       formData.append("Year", pstatsUpdate.Year);
+      formData.append("Course", pstatsUpdate.Course);
       formData.append("Name", pstatsUpdate.Name);
       formData.append("Eligible", pstatsUpdate.Eligible);
       formData.append("Offers", pstatsUpdate.Offers);
@@ -53,7 +55,7 @@ const PStatsAdd = () => {
   };
   return (
     <>
-      <Helmet title="Add Faculty" />
+      <Helmet title="Add Placement Stats" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />
@@ -72,6 +74,11 @@ const PStatsAdd = () => {
                 placeholder="Year Range"
                 onChange={Onchagetesdetail}
               />
+              <select>
+                <option value="course">Select A Course</option>
+                <option value="cse">CSE</option>
+                <option value="ece">ECE</option>
+              </select>
               <input
                 type="text"
                 name="Name"
@@ -90,7 +97,7 @@ const PStatsAdd = () => {
                 type="text"
                 name="Offers"
                 id=""
-                placeholder="Total No. of Offers"
+                placeholder="No. of Offers"
                 onChange={Onchagetesdetail}
               />
 

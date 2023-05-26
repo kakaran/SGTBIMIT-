@@ -62,7 +62,7 @@ const RegistrationAdd = () => {
   };
   return (
     <>
-      <Helmet title="Add Faculty" />
+      <Helmet title="Register Alumni" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

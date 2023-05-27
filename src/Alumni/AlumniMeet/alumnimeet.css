@@ -1,18 +1,12 @@
 .alumini-meet-section {
     background-image: url("../../images/bg-frame.png");
     background-size: 100%;
+    padding-inline: 2rem;
 }
 
 .alumnimeet {
     width: min(1500px, 100%);
     margin-inline: auto;
-}
-
-.alumnimeet h1 {
-    font-size: min(4rem, 8vw);
-    text-align: center;
-    font-family: "SF Pro Display-Bold";
-    color: #1f567c;
 }
 
 .alumnimeet h2 {
@@ -25,17 +19,8 @@
 .alumnimeet h3 {
     font-family: "SF Pro Display";
     font-size: 30px;
-    width: min(1500px, 90%);
     margin-inline: auto;
-    text-align: center;
     color: #A52E2E;
-}
-
-.alumnimeet p {
-    font-size: 24px;
-    text-align: justify;
-    width: min(1500px, 80%);
-    margin-inline: auto;
 }
 
 .alumnimeet li {
@@ -43,23 +28,10 @@
     line-height: 3rem;
 }
 
-.bgblue {
-    background: #d1e9ff;
-    border-radius: 3rem;
-    margin-left: -15.3rem;
-}
-
-.ahead {
-    font-size: min(4.5rem, 7vw);
-}
-
-.bouthead {
-    font-size: min(2.5rem, 4vw);
-}
 
 @media(max-width: 1300px) {
     .alumini-meet-section {
-        background-image: url("../../images/bg-frame.png");
+        background-image: none;
         max-width: 100%;
     }
 
@@ -73,7 +45,4 @@
         margin: 0 30%;
     }
 
-    .alumnimeet>h2 {
-        text-align: center;
-    }
 }

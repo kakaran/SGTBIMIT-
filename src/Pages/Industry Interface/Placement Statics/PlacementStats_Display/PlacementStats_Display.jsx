@@ -76,12 +76,16 @@ const PStatsDisplay = () => {
                       </span>
                     </h3>
                     <div className="Society_Card_ImageDescription">
-                      <div className="Society_Describe">
-                        <h3>Course: {value.Course}</h3>
-                        <h4>Name: {value.Name}</h4>
-                        <h4>Eligible Students: {value.Eligible}</h4>
-                        <p>No. of Offers: {value.Offers}</p>
-                      </div>
+                      {value.Course?.map((value, index) => {
+                        return (
+                          <div className="Society_Describe" key={index}>
+                            <h4>Name: {value.Name}</h4>
+                            <h4>Eligible Students: {value.Eligible}</h4>
+                            <p>No. of Offers: {value.Offers}</p>
+                          </div>
+                        );
+                      })
+                      }
                     </div>
                   </div>
                 );

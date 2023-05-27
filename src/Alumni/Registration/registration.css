@@ -133,8 +133,9 @@
     border: 2px solid var(--primary-clr);
 } */
 
-.backgroundreg{
+.backgroundreg {
   background: url("../../images/bg-frame.png");
+  background-size: 100%;
 }
 
 .reg-container {
@@ -380,17 +381,22 @@ form .cat label .dot {
   width: auto;
 }
 
-.input4, .place-1, .place-2, .input5{
- font-size: 20px;
+.input4,
+.place-1,
+.place-2,
+.input5 {
+  font-size: 20px;
 }
 
-.Emphead , .org-head, .des-head, .place-head{
+.Emphead,
+.org-head,
+.des-head,
+.place-head {
   font-size: 25px;
 
 }
 
 
-.head-titles{
+.head-titles {
   color: #1f567c;
 }
-

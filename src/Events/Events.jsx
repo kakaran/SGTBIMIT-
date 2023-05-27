@@ -104,7 +104,8 @@ export default function Events() {
                   </span>
                   <AnimatePresence mode="wait">
                     {eventYearController && (
-                      <motion.div viewport={{ once: true }}
+                      <motion.div
+                        viewport={{ once: true }}
                         className="FilterData"
                         initial={{
                           scale: 0,
@@ -146,19 +147,23 @@ export default function Events() {
                     <div className="events-container" key={`Year-${i}`}>
                       <div className="EventScroller">
                         {year.Events.map((singleEvent, i) => {
-                          return (
-                            <div className="eventCardConatainer" key={`Event-${i}`}>
-                              <div className="event-card">
-                                <p>{year?.year}</p>
-                                <img
-                                  src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent?.Event_id?._id}`}
-                                  alt="cant load"
-                                />
-                                <h1> {singleEvent?.Event_id?.name} </h1>
-                                <p> {singleEvent?.Event_id?.detail} </p>
+                          if (singleEvent.Event_id) {
+                            return (
+                              <div className="eventCardConatainer" key={`Event-${i}`}>
+                                <div className="event-card">
+                                  <p>{year?.year}</p>
+                                  <img
+                                    src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent?.Event_id?._id}`}
+                                    alt="cant load"
+                                  />
+                                  <h1> {singleEvent?.Event_id?.name} </h1>
+                                  <p> {singleEvent?.Event_id?.detail} </p>
+                                </div>
                               </div>
-                            </div>
-                          )
+                            )
+                          } else {
+                            return
+                          }
                         })}
                       </div>
                     </div>

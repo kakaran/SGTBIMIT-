@@ -1,0 +1,9 @@
+.container {
+    width: calc(100% - 2*(var(--radius)));
+    border-top-right-radius: var(--radius);
+}
+
+.line {
+    width: calc(100% - 2*(var(--radius)));
+    transform: translateY(50%);
+}

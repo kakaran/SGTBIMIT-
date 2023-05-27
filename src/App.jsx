@@ -30,6 +30,8 @@ import NoticePDF from './Admission/Notices/NoticePDF.jsx'
 import Registration from './Alumni/Registration/Registration.jsx'
 import CommitteePDF from './Home/Committees/CommitteePDF.jsx'
 import QuestionPaper from './Academics/QuestionPaperDisplay/QuestionPaper.jsx'
+import Visit from './Industry Interface/Visit/Visit.jsx'
+
 
 /* Admin imports */
 
@@ -90,6 +92,7 @@ import PTeamDisplay from './Pages/Industry Interface/Placement Team/PlacementTea
 import PStatsAdd from './Pages/Industry Interface/Placement Statics/PlacementStats_Add/PlacementStats_Add.jsx'
 import PStatsDisplay from './Pages/Industry Interface/Placement Statics/PlacementStats_Display/PlacementStats_Display.jsx'
 
+
 function App() {
   const location = useLocation()
 
@@ -124,6 +127,7 @@ function App() {
         <Route path='/committees/:id' element={<CommitteePDF />}></Route>
         <Route path='/alumini/registration' element={<Registration />} />
         <Route path='/industry/placements' element={<Placements />} />
+        <Route path='/industry/industrial-visit' element={<Visit />} />
 
         {/* Admin Routes */}
 

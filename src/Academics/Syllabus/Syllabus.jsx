@@ -59,6 +59,7 @@ export default function Syllabus() {
                 transition='transition'
                 variants={routingAnimations}
             >
+                <h1 className='text-[var(--primary-blue)] my-text-4 text-center my-bold'>SYLLABUS</h1>
                 <div className="w-[min(1200px,100%)] flex flex-col gap-5 mx-auto">
                     {courses.map((course, i) => (
                         <div className="flex flex-col transition-all" key={i}>

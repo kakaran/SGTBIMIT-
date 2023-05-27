@@ -183,7 +183,7 @@ function App() {
           <Route path='admin/EventHandler_Add' element={<EventHAdd />} />
         </Route>
         <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
-        <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index/:name" element={<QuestionPaperPDFDisplay />} />
+        <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index" element={<QuestionPaperPDFDisplay />} />
         {/* <Route path='/admin/login' element={<Login />} /> */}
 
 

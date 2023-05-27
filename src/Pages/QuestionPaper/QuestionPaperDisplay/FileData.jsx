@@ -62,7 +62,7 @@ const FileData = (props) => {
                 }}
                 onClick={() => {
                   window.open(
-                    `/Prev_Year_Paper_PDF_Display/${props._id}/${Index}/${value}`,
+                    `/Prev_Year_Paper_PDF_Display/${props._id}/${Index}`,
                     "_blank"
                   );
                 }}

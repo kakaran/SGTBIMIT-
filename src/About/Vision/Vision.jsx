@@ -43,7 +43,7 @@ export default function Vision() {
         </div>
         <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
           <div className="flex justify-center items-center">
-            <img src={mission} alt="" className=" w-full" />
+            <img src={mission} alt="" className=" w-full p-5" />
           </div>
           <div>
             <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">

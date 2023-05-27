@@ -3,6 +3,7 @@
 .courses-section {
     background-image: url("../../images/bg-frame.png");
     width: 100%;
+    background-size: 100%;
 }
 
 .courses>h1 {

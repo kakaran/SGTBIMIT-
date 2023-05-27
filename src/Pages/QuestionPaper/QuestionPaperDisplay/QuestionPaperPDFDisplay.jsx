@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 
 const QuestionPaperPDFDisplay = () => {
+  console.log("hello");
   const { _id, name, index } = useParams();
 
   const [embedHeight, setEmbedHeight] = useState(600); // default height

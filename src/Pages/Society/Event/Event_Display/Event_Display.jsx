@@ -180,27 +180,33 @@ const EventDisplay = () => {
             </div>
             {render &&
               <div className="flex flex-wrap justify-between gap-5">
-                {EventsAaray?.Events?.map(events => (
-                  <div className="flex flex-col w-96 shadow-md bg-white p-5">
-                    <h1 className="my-bold text-xl m-0 pb-2" style={{ borderBottom: "1px solid gray" }}>
-                      {_.startCase(_.toLower(events.Event_id?.name))}
-                    </h1>
-                    <div className="flex justify-between gap-2 items-center mb-5">
-                      <h2 className="my-bold text-lg text-slate-500 m-0">
-                        {_.startCase(_.toLower(events.Event_id?.eventHandler))}
-                      </h2>
-                      <h4 className="my-bold text-sm text-slate-500 m-0">
-                        {events.Event_id?.year}
-                      </h4>
-                    </div>
-                    <img src={`${import.meta.env.VITE_API_URL}/Event/Event_MainImage_Display/${events.Event_id?._id}`} alt="cant load" className="rounded-md object-fill w-full aspect-video mt-auto" />
-                    <div className="flex justify-between p-5">
-                      <div onClick={() => { PaperDelete(events.Event_id?._id) }}>
-                        <RiDeleteBin6Line color="red" size="1.5rem" />
+                {EventsAaray?.Events?.map(events => {
+                  if (events.Event_id) {
+                    return (
+                      <div className="flex flex-col w-96 shadow-md bg-white p-5">
+                        <h1 className="my-bold text-xl m-0 pb-2" style={{ borderBottom: "1px solid gray" }}>
+                          {_.startCase(_.toLower(events.Event_id?.name))}
+                        </h1>
+                        <div className="flex justify-between gap-2 items-center mb-5">
+                          <h2 className="my-bold text-lg text-slate-500 m-0">
+                            {_.startCase(_.toLower(events.Event_id?.eventHandler))}
+                          </h2>
+                          <h4 className="my-bold text-sm text-slate-500 m-0">
+                            {events.Event_id?.year}
+                          </h4>
+                        </div>
+                        <img src={`${import.meta.env.VITE_API_URL}/Event/Event_MainImage_Display/${events.Event_id?._id}`} alt="cant load" className="rounded-md object-fill w-full aspect-video mt-auto" />
+                        <div className="flex justify-between p-5">
+                          <div onClick={() => { PaperDelete(events.Event_id?._id) }}>
+                            <RiDeleteBin6Line color="red" size="1.5rem" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
+                    )
+                  } else {
+                    return
+                  }
+                })}
               </div>
             }
           </div>

@@ -6,6 +6,7 @@ import "../../../Testimonials/Testimonials_ADD/Testimonials_ADD";
 import axios from "axios";
 import imageCompression from 'browser-image-compression';
 import { Helmet } from "react-helmet";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const EventAdd = () => {
@@ -76,7 +77,7 @@ const EventAdd = () => {
             console.log("hi");
             const data1 = (
                 await axios.post(
-                    `${import.meta.env.VITE_API_URL}/Event/Event_Add`,
+                    `${import.meta.env.VITE_API_URL}/Event/Event_Addddd`,
                     formData,
                     {
                         headers: {
@@ -85,8 +86,28 @@ const EventAdd = () => {
                     }
                 )
             ).data;
+            toast.success(`Added Successfully`, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            })
             // console.log(data1);
         } catch (error) {
+            toast.error(`Error`, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            })
             console.log(error);
         }
     };
@@ -96,6 +117,7 @@ const EventAdd = () => {
     return (
         <>
             <Helmet title="Add Event" />
+            <ToastContainer />
             <div className="societyAddConatiner">
                 <div className="SideBar">
                     <AdminMenu />

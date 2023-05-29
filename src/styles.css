@@ -69,6 +69,31 @@ a {
     font-size: min(4rem, 8vw);
 }
 
+.primary-clr {
+    color: var(--primary-clr);
+}
+
+.secondary-clr {
+    color: var(--secondary-clr);
+}
+
+.primary-blue {
+    color: var(--primary-blue);
+}
+
+.primary-bg-clr {
+    background-color: var(--primary-clr);
+}
+
+.secondary-bg-clr {
+    background-color: var(--secondary-clr);
+}
+
+.primary-blue-bg-clr {
+    background-color: var(--primary-blue);
+}
+
+
 button {
     cursor: pointer;
     border: none;

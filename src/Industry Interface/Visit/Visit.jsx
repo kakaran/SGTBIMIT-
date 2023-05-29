@@ -8,7 +8,7 @@ const Visit = () => {
     const [radius, setRadius] = useState(0)
     const myRef = useRef(null)
     useEffect(() => {
-        setRadius(myRef.current.offsetHeight / 2);
+        setRadius(myRef.current.offsetHeight / 4);
     })
 
     return (

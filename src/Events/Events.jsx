@@ -3,14 +3,18 @@ import "./events.css";
 import { Header, Navbar, Footer, Loader } from "../Components";
 import { Carousel } from "react-responsive-carousel";
 import { BsFillFilterCircleFill } from "react-icons/bs";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import { motion, AnimatePresence } from 'framer-motion'
 import { routingAnimations } from "../constants";
 import _ from 'lodash'
 
+
 export default function Events() {
+
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const [events, setEvents] = useState();
   const [eventFilter, setEventFilter] = useState();
@@ -150,7 +154,9 @@ export default function Events() {
                           if (singleEvent.Event_id) {
                             return (
                               <div className="eventCardConatainer" key={`Event-${i}`}>
-                                <div className="event-card">
+                                <div className="event-card" onClick={
+                                  () => { navigate(`/events/${id}/${singleEvent?.Event_id?._id}`) }
+                                }>
                                   <p>{year?.year}</p>
                                   <img
                                     src={`${API_URL}/Event/Event_MainImage_Display/${singleEvent?.Event_id?._id}`}

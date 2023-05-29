@@ -47,14 +47,14 @@ export default function AdminisCarousel() {
                   src={`${import.meta.env.VITE_API_URL}/Administration/AdministrationImageDisplay/${adminis._id}`}
                   alt="cant load"
                 />
-                <h2 className="adminis-heading">
+                <h2 className="adminis-heading m-0 my-bold">
                   {adminis?.name}
-                  <strong className="position"> {adminis?.position}</strong>
                 </h2>
-                <strong className="short-note">
-                  WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!
-                  <strong>{adminis.shortNote}</strong>
-                </strong>
+                <div className="position my-bold"> {adminis?.position}</div>
+                <div className="short-note">
+                  <div className="my-bold mt-5">WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!</div>
+                  <div>{adminis.shortNote}</div>
+                </div>
                 <p className="long-note leading-[2em] text-gray-800"> {adminis?.longNote} </p>
               </div>
             ))}

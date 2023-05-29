@@ -64,7 +64,6 @@ const AdminMenu = () => {
             placeholder="Search..."
             className="rounded-full px-[1em] py-[.8em] focus:outline-none focus:border-cyan-500"
             onFocus={() => setPages()}
-            onBlur={() => setTimeout(() => { setSearchedPages([]) }, 100)}
             name="search"
           />
           {searchedPages &&

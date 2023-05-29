@@ -91,6 +91,7 @@ import PTeamAdd from './Pages/Industry Interface/Placement Team/PlacementTeam_Ad
 import PTeamDisplay from './Pages/Industry Interface/Placement Team/PlacementTeam_Display/PlacementTeam_Display.jsx'
 import PStatsAdd from './Pages/Industry Interface/Placement Statics/PlacementStats_Add/PlacementStats_Add.jsx'
 import PStatsDisplay from './Pages/Industry Interface/Placement Statics/PlacementStats_Display/PlacementStats_Display.jsx'
+import SingleEvent from './Events/SingleEvent/SingleEvent.jsx'
 
 
 function App() {
@@ -128,6 +129,7 @@ function App() {
         <Route path='/alumini/registration' element={<Registration />} />
         <Route path='/industry/placements' element={<Placements />} />
         <Route path='/industry/industrial-visit' element={<Visit />} />
+        <Route path='events/:id/:event_id' element={<SingleEvent />} />
 
         {/* Admin Routes */}
 

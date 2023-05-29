@@ -7,7 +7,6 @@
     position: relative;
     background: url("../../images/bg-frame.png");
     background-size: 100%;
-
 }
 
 .adminis-carousel {
@@ -40,12 +39,12 @@
     position: relative;
 }
 
-.adminis-heading,
-.short-note {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    font-size: min(1.3rem, 2vw);
+.adminis-heading {
+    font-size: min(4rem, 8vw);
+}
+
+.short-note div {
+    font-size: min(2rem, 4vw);
 }
 
 
@@ -55,11 +54,12 @@
     color: rgba(0, 0, 0, 0.9);
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2rem;
-    font-size: min(1.5rem,2.5vw);
+    font-size: min(1.5rem, 2.5vw);
 }
 
 .position {
-    color: var(--primary-clr) !important;
+    color: var(--primary-clr);
+    font-size: min(2.5rem, 5vw);
 }
 
 @media(max-width: 1000px) {

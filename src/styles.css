@@ -69,6 +69,10 @@ a {
     font-size: min(4rem, 8vw);
 }
 
+.my-text-2 {
+    font-size: min(2rem, 4vw);
+}
+
 .primary-clr {
     color: var(--primary-clr);
 }

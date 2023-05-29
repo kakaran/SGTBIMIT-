@@ -26,7 +26,7 @@ export default function Vision() {
         className="Vision_Container">
         <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
           <div>
-            <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">
+            <h1 className="my-bold my-text-4 text-[--primary-blue]">
               Our Vision
             </h1>
             <p className="text-2xl text-justify leading-[2em] text-gray-800">
@@ -46,7 +46,7 @@ export default function Vision() {
             <img src={mission} alt="" className=" w-full p-5" />
           </div>
           <div>
-            <h1 className="my-bold text-[min(4rem,8vw)] text-[--primary-blue]">
+            <h1 className="my-bold my-text-4 text-[--primary-blue]">
               Our Mission
             </h1>
             <ul className="text-2xl text-justify leading-[2em] text-gray-800">

@@ -104,7 +104,7 @@ export default function Examination() {
         transition='transition'
         variants={routingAnimations}
       >
-        <h1 className='my-bold text-[min(4rem,8vw)] text-[var(--primary-blue)] text-center'>
+        <h1 className='my-bold my-text-4 text-[var(--primary-blue)] text-center'>
           Tips for Students
         </h1>
         <div className='w-full max-w-[1500px] mx-auto'>
@@ -124,7 +124,7 @@ export default function Examination() {
                     </div>
                     <div>
                       <h1 className='text-[var(--primary-blue)] m-0'>
-                        <span className='my-bold text-[min(4rem,8vw)]'>
+                        <span className='my-bold my-text-4'>
                           {tip.title.split("")[0]}
                         </span>
                         <span className='my-bold text-[min(2rem,4vw)]'>

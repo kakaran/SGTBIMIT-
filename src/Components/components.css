@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400&display=swap');
 
-.mobile {
-  display: none !important;
-}
-
 /* Floating Admissions Button */
 
 @keyframes animate {
@@ -116,34 +112,6 @@ header {
   font-weight: 500;
   color: red;
   transform: scaleY(1.2);
-}
-
-
-.header-news {
-  width: 100%;
-
-}
-
-.header-news a {
-  color: blue;
-  text-transform: uppercase;
-}
-
-.header-news a:hover {
-  color: red;
-}
-
-
-@media(max-width: 1000px) {
-  .menu {
-    margin-inline: 2.5rem;
-    height: 1.5rem;
-  }
-
-  .header-btns button {
-    width: 300px;
-  }
-
 }
 
 /* Admission Dialog Form */
@@ -269,7 +237,7 @@ header {
 }
 
 /* NavBar */
-nav {
+.desktop-nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -287,7 +255,7 @@ nav {
   height: 109px;
 }
 
-nav a {
+.desktop-nav a {
   color: white;
   height: 100%;
 }
@@ -299,7 +267,7 @@ nav a {
   align-items: center;
 }
 
-nav>* {
+.desktop-nav>* {
   /* padding-block: min(2.5rem, 2.5vw); */
   display: flex;
   gap: min(.7rem, 1.3vw);
@@ -316,11 +284,11 @@ nav>* {
   text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
 }
 
-nav>*:hover .dropdown {
+.desktop-nav>*:hover .dropdown {
   display: block;
 }
 
-nav img {
+.desktop-nav img {
   width: 8px;
   height: 8px;
 }
@@ -369,70 +337,6 @@ nav img {
   display: block !important;
 }
 
-
-@media(max-width: 1000px) {
-  .mobile {
-    display: block !important;
-  }
-
-  .desktop {
-    display: none;
-  }
-
-  nav {
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    left: 0;
-    height: 100%;
-    min-width: 70svw;
-    flex-direction: column;
-    z-index: 11;
-    font-size: large;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: 250ms;
-    justify-content: start;
-    box-shadow: 0 0 0 200vw rgba(0, 0, 0, 0.8);
-    background-color: rgb(20, 20, 20);
-  }
-
-  .nav-item {
-    flex-direction: column;
-    transition: 250ms;
-  }
-
-  .dropdown {
-    position: relative;
-    inset: auto;
-  }
-
-
-  .mobile-header-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    align-items: center;
-
-  }
-
-  .header-btns button {
-    padding-block: 2rem;
-  }
-
-  .nav-close {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .nav-close-btn {
-    width: 25px;
-    height: 25px;
-  }
-}
 
 /* Footer */
 

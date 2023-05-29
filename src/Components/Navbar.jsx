@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import useFetch from '../useFetch'
 import cancelImg from '../images/cancel.png'
@@ -11,36 +11,37 @@ export default function Navbar() {
 
 
 
-  useEffect(() => {
-    document.querySelector(".menu").addEventListener("click", (e) => {
-      document.querySelector("nav").style.transform = "translateX(0%)"
-      document.querySelector("nav").style.visibility = "visible"
-    })
-    document.querySelector(".nav-close-btn").addEventListener("click", (e) => {
-      document.querySelector("nav").style.transform = "translateX(-100%)"
-      document.querySelector("nav").style.visibility = "hidden"
-    })
-    if (document.body.offsetWidth < 1000) {
 
-      document.querySelectorAll(".dropdown").forEach(dropdown => {
-        dropdown.style.display = "none"
-      })
-      document.querySelectorAll(".nav-item>*:first-child").forEach((link, i) => {
-        link.addEventListener("click", e => {
-          const dropdowns = document.querySelectorAll(`.dropdown`)
-          dropdowns.forEach((dropdown, j) => {
-            if (dropdown.dataset.index === `${i}`) {
-              if (dropdown.style.display === "none") {
-                dropdown.style.display = "block"
-                return
-              }
-              dropdown.style.display = "none"
-            }
-          })
-        })
-      })
-    }
-  }, [])
+  // useEffect(() => {
+  //   document.querySelector(".menu").addEventListener("click", (e) => {
+  //     document.querySelector("nav").style.transform = "translateX(0%)"
+  //     document.querySelector("nav").style.visibility = "visible"
+  //   })
+  //   document.querySelector(".nav-close-btn").addEventListener("click", (e) => {
+  //     document.querySelector("nav").style.transform = "translateX(-100%)"
+  //     document.querySelector("nav").style.visibility = "hidden"
+  //   })
+  //   if (document.body.offsetWidth < 1000) {
+
+  //     document.querySelectorAll(".dropdown").forEach(dropdown => {
+  //       dropdown.style.display = "none"
+  //     })
+  //     document.querySelectorAll(".nav-item>*:first-child").forEach((link, i) => {
+  //       link.addEventListener("click", e => {
+  //         const dropdowns = document.querySelectorAll(`.dropdown`)
+  //         dropdowns.forEach((dropdown, j) => {
+  //           if (dropdown.dataset.index === `${i}`) {
+  //             if (dropdown.style.display === "none") {
+  //               dropdown.style.display = "block"
+  //               return
+  //             }
+  //             dropdown.style.display = "none"
+  //           }
+  //         })
+  //       })
+  //     })
+  //   }
+  // }, [])
 
   const handleFloatClick = (e) => {
     document.querySelector(".admission-dialog").classList.add("show")
@@ -54,14 +55,7 @@ export default function Navbar() {
       >
         ADMISSION
       </div>
-      <nav className='shadow-2xl'>
-        <div className='nav-close mobile'><img src={cancelImg} alt="cant load" className='nav-close-btn' /></div>
-        <div className="header-btns mobile-header-btns mobile">
-          <button className="admission-btn" type="button" onClick={() => {
-            document.querySelector(".admission-dialog").classList.add("show")
-          }}>CLICK HERE FOR ADMISSIONS</button>
-          <button className="student-login-btn" type="button">STUDENT - ERP LOGIN</button>
-        </div>
+      <nav className='shadow-2xl desktop-nav max-lg:hidden'>
         <div className="nav-item" data-index="0">
           <div className='h-full'><NavLink to="/" className='h-full flex items-center'>HOME</NavLink></div>
         </div>

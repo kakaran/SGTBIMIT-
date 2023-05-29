@@ -24,7 +24,7 @@ export default function Faculty() {
                 variants={routingAnimations}
             >
                 <div className="w-[min(1500px,98%)] mx-auto">
-                    <h1 className="my-bold text-[min(4rem,8vw)] text-[var(--primary-blue)] text-center">Core Faculty</h1>
+                    <h1 className="my-bold my-text-4 text-[var(--primary-blue)] text-center">Core Faculty</h1>
                     <p className="text-gray-800 leading-[2em] text-[min(2rem,4vw)]">SGTBIMIT has very diversified and experienced faculties of their domains that works day in day out for their students to make them industry ready</p>
                     {isPending && <div className='flex justify-center items-center'> <Loader /> </div>}
                     <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5 place-items-center">

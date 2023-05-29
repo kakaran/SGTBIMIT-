@@ -20,7 +20,7 @@
 .floating-btn {
   position: fixed;
   top: 50%;
-  right: 0dvw;
+  right: 0px;
   color: white;
   background-color: var(--secondary-clr);
   border-radius: 5px 5px 0 0;

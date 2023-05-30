@@ -92,6 +92,7 @@ import PTeamDisplay from './Pages/Industry Interface/Placement Team/PlacementTea
 import PStatsAdd from './Pages/Industry Interface/Placement Statics/PlacementStats_Add/PlacementStats_Add.jsx'
 import PStatsDisplay from './Pages/Industry Interface/Placement Statics/PlacementStats_Display/PlacementStats_Display.jsx'
 import SingleEvent from './Events/SingleEvent/SingleEvent.jsx'
+import EventHDisplay from './Pages/Society/Event_Handler/EventHandler_Display/EventH_Display.jsx'
 
 
 function App() {
@@ -187,6 +188,7 @@ function App() {
           <Route path='admin/Event_Display' element={<EventDisplay />} />
           <Route path='admin/Event_Update/:id' element={<EventUpdate />} />
           <Route path='admin/EventHandler_Add' element={<EventHAdd />} />
+          <Route path='admin/EventHandler_Display' element={<EventHDisplay />} />
         </Route>
         <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
         <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index" element={<QuestionPaperPDFDisplay />} />

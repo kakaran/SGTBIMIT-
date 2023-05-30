@@ -59,7 +59,7 @@ export default function Syllabus() {
                 transition='transition'
                 variants={routingAnimations}
             >
-                <h1 className='text-[var(--primary-blue)] my-text-4 text-center my-bold'>SYLLABUS</h1>
+                <h1 className='primary-blue my-text-4 text-center my-bold'>SYLLABUS</h1>
                 <div className="w-[min(1200px,100%)] flex flex-col gap-5 mx-auto">
                     {courses.map((course, i) => (
                         <div className="flex flex-col transition-all" key={i}>
@@ -69,7 +69,7 @@ export default function Syllabus() {
                             </div>
                             <div className={`grid transition-all ${selected === i ? "grid-show" : "grid-hide"}`}>
                                 <div className='overflow-hidden'>
-                                    <div className='flex flex-col p-7 my-5 bg-[var(--primary-blue)] text-white rounded-lg text-[min(2rem,4vw)]'>
+                                    <div className='flex flex-col p-7 my-5 primary-blue-bg-clr text-white rounded-lg text-[min(2rem,4vw)]'>
                                         <div className='flex flex-col gap-2'>
                                             <h1 className='my-bold my-2 pb-2' style={{ borderBottom: "2px solid white" }}>Subjects</h1>
                                             <div className='flex flex-col gap-4 m-4'>
@@ -79,7 +79,7 @@ export default function Syllabus() {
                                             </div>
                                         </div>
                                         <div className='mx-auto'>
-                                            <a href={course.link} className='text-white no-underline bg-[var(--primary-clr)] px-8 py-2 rounded-full my-md' download>
+                                            <a href={course.link} className='text-white no-underline primary-clr px-8 py-2 rounded-full my-md' download>
                                                 Download PDF
                                             </a>
                                         </div>

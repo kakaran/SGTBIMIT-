@@ -20,11 +20,11 @@ export default function Header() {
       document.querySelector(".admission-dialog").classList.add("show")
       document.querySelector(".admission-bg").classList.add("show-bg")
     })
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 1024) {
-        setMobileToggle(false)
-      }
-    })
+    // window.addEventListener("resize", () => {
+    //   if (window.innerWidth > 1024) {
+    //     setMobileToggle(false)
+    //   }
+    // })
   }, [])
 
   const buttonStyle = {
@@ -65,7 +65,7 @@ export default function Header() {
           <img src={menuImg} alt="" height={"50px"} className="menu" onClick={() => { setMobileToggle(!mobileToggle) }} />
         </div>
       </div>
-      <div className={`grid ${mobileToggle ? "grid-show" : "grid-hide"} transition-all`}>
+      <div className={`grid ${mobileToggle ? "grid-show" : "grid-hide"} transition-all lg:hidden`}>
         <div className='overflow-hidden'>
           <MobileNav />
         </div>

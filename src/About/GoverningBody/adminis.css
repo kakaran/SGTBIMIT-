@@ -1,10 +1,5 @@
-/* Administration */
 .adminis-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    position: relative;
     background: url("../../images/bg-frame.png");
     background-size: 100%;
 }
@@ -22,29 +17,23 @@
 
 
 .adminis {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
+    /* display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem; */
     margin-inline: auto;
-    padding-inline: min(4rem, 8vw);
+    padding-inline: min(2rem, 4vw);
 }
 
 .adminis img {
-    margin-inline: auto;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    height: 400px !important;
     width: 400px !important;
+    aspect-ratio: 1 !important;
     position: relative;
-}
-
-.adminis-heading {
-    font-size: min(4rem, 8vw);
-}
-
-.short-note div {
-    font-size: min(2rem, 4vw);
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
 }
 
 
@@ -52,18 +41,25 @@
     text-align: justify;
     line-height: clamp(1.5rem, 2vw, 2rem);
     color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
     font-size: min(1.5rem, 2.5vw);
 }
 
 .position {
     color: var(--primary-clr);
-    font-size: min(2.5rem, 5vw);
+    opacity: .8;
+    font-size: min(1.5rem, 3vw);
 }
 
 @media(max-width: 1000px) {
     .adminis-section {
         background-image: none;
+    }
+}
+
+@media(max-width: 768px) {
+    .adminis img {
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 0;
     }
 }

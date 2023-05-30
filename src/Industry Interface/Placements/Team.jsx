@@ -23,11 +23,11 @@ const Team = () => {
     return (
         <section className='px-10'>
 
-            <h1 className='my-bold text-[var(--primary-blue)] my-text-4'>Placement Team</h1>
+            <h1 className='my-bold primary-blue my-text-4'>Placement Team</h1>
             <div className='flex gap-5 flex-wrap justify-center '>
                 {team.map(item => (
                     <div key={item._id} className='w-[500px] bg-white rounded-md px-5 py-10 flex flex-col gap-4 shadow-lg'>
-                        <h1 className='text-[min(3rem,3vw)] my-bold max-md:text-lg text-[var(--primary-blue)] m-0'>{item.Name}</h1>
+                        <h1 className='text-[min(3rem,6vw)] my-bold max-md:text-lg primary-blue m-0'>{item.Name}</h1>
                         {item.Categories === 0 ? <h2 className='text-[min(2rem,2vw)] my-bold max-md:text-lg m-0 text-gray-600'>Placement Head</h2> : <h2 className='text-[min(2rem,2vw)] my-bold max-md:text-lg m-0 text-gray-600'>Placement Co-ordinator</h2>}
                         <div className=' px-4'>
                             <img src={`${import.meta.env.VITE_API_URL}/PlacementTeam/Placement_Image_Display/${item._id}`} onError={handleError} ref={imageRef} className='w-full shadow-lg rounded-lg object-cover aspect-square' />

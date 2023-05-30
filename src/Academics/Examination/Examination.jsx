@@ -104,11 +104,11 @@ export default function Examination() {
         transition='transition'
         variants={routingAnimations}
       >
-        <h1 className='my-bold my-text-4 text-[var(--primary-blue)] text-center'>
+        <h1 className='my-bold my-text-4 primary-blue text-center'>
           Tips for Students
         </h1>
         <div className='w-full max-w-[1500px] mx-auto'>
-          <h1 className='my-bold text-[var(--primary-clr)] text-[min(3rem,6vw)]'>
+          <h1 className='my-bold primary-clr text-[min(3rem,6vw)]'>
             {_.capitalize(_.toLower("IMPORTANT TIPS TO BE KEPT IN MIND BEFORE/DURING CAMPUS PLACEMENT DRIVE"))}
           </h1>
           <p className='text-gray-500 text-[min(1.5rem,4vw)] leading-[min(2rem,5vw)] text-justify'>
@@ -119,11 +119,11 @@ export default function Examination() {
               if (!(i === 3 || i === 4)) {
                 return (
                   <div className="grid grid-flow-col gap-5 max-lg:grid-flow-row">
-                    <div className="rounded-full bg-[var(--primary-blue)] text-white flex justify-center items-center w-16 h-16 text-2xl mt-3" key={tip.id}>
+                    <div className="rounded-full primary-blue-bg-clr text-white flex justify-center items-center w-16 h-16 text-2xl mt-3" key={tip.id}>
                       {tip.id}.
                     </div>
                     <div>
-                      <h1 className='text-[var(--primary-blue)] m-0'>
+                      <h1 className='primary-blue m-0'>
                         <span className='my-bold my-text-4'>
                           {tip.title.split("")[0]}
                         </span>
@@ -140,17 +140,17 @@ export default function Examination() {
               } else {
                 return (
                   <div className="flex gap-5 ml-28 max-lg:ml-0">
-                    {/* <div className="rounded-full bg-[var(--primary-blue)] text-white flex justify-center items-center w-16 h-16 text-2xl mt-3 opacity-0 ml-5" key={tip.id}>
+                    {/* <div className="rounded-full primary-blue-bg-clr text-white flex justify-center items-center w-16 h-16 text-2xl mt-3 opacity-0 ml-5" key={tip.id}>
                       {tip.id}.
                     </div> */}
                     <div>
-                      <h1 className='text-[var(--primary-blue)] m-0 my-bold text-[min(2rem,5vw)]'>
+                      <h1 className='primary-blue m-0 my-bold text-[min(2rem,5vw)]'>
                         {tip.title}
                       </h1>
                       <div className=''>
                         {tip.desc.map(dress => (
                           <p className='text-[min(1.5rem,4vw)] leading-[min(2rem,4vw)] text-gray-600 ml-5'>
-                            <span className='text-[var(--primary-blue)]'>→</span> {dress}
+                            <span className='primary-blue'>→</span> {dress}
                           </p>
                         ))}
                       </div>

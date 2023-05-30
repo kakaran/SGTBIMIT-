@@ -20,7 +20,7 @@ export default function About() {
                 transition='transition'
                 variants={routingAnimations}
                 className='about'>
-                <h1 className='my-bold text-[var(--primary-blue)] my-text-4 text-center'>
+                <h1 className='my-bold primary-blue my-text-4 text-center'>
                     About SGTBIMIT
                 </h1>
                 <div className='flex flex-col gap-3 w-[min(1400px,100%)] mx-auto'>
@@ -32,7 +32,7 @@ export default function About() {
                     </div>
 
                     <div className='text-justify leading-[2.5em] text-gray-800'>
-                        <h1 className="my-bold text-[var(--primary-blue)] my-text-4">
+                        <h1 className="my-bold primary-blue my-text-4">
                             History
                         </h1>
                         <div className='text-[min(1.5rem,3vw)]'>

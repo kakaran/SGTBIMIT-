@@ -30,35 +30,51 @@ export default function AdminisCarousel() {
         variants={routingAnimations}
         className="adminis-section"
       >
+        <h1 className="my-bold my-text-4 primary-blue text-center">Governing Body</h1>
         {isPending && <Loader />}
         {error && <div className="error">{error}</div>}
-        <Carousel
-          showThumbs={false}
-          interval={4000}
-          className="adminis-carousel"
-          autoPlay={true}
-          selectedItem={0}
-        >
-          {
-            numAscending?.map((adminis) => (
-              <div className="adminis" key={adminis?.Index}>
+        <div className="p-2 shadow-lg">
+          <Carousel
+            showThumbs={false}
+            interval={4000}
+            className="adminis-carousel"
+            autoPlay={true}
+            selectedItem={0}
+            emulateTouch={false}
+          >
+            {
+              numAscending?.map((adminis) => (
+                <div className="adminis" key={adminis?.Index}>
 
-                <img
-                  src={`${import.meta.env.VITE_API_URL}/Administration/AdministrationImageDisplay/${adminis._id}`}
-                  alt="cant load"
-                />
-                <h2 className="adminis-heading m-0 my-bold">
-                  {adminis?.name}
-                </h2>
-                <div className="position my-bold"> {adminis?.position}</div>
-                <div className="short-note">
-                  <div className="my-bold mt-5">WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!</div>
-                  <div>{adminis.shortNote}</div>
+                  <div className="flex flex-col items-start gap-4">
+                    <div>
+                      <div className="my-text-2 m-0 my-bold w-max text-start">
+                        {adminis?.name}
+                      </div>
+                      <div className="position my-bold text-start">
+                        {adminis?.position}
+                      </div>
+                    </div>
+                    <div className="short-note">
+                      <div className="my-bold mt-5 text-lg text-start">WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!</div>
+                      <div className="my-bold text-gray-700 text-start">{adminis.shortNote}</div>
+                    </div>
+                    <div>
+                      <img
+                        src={`${import.meta.env.VITE_API_URL}/Administration/AdministrationImageDisplay/${adminis._id}`}
+                        alt="cant load"
+                        className="float-left max-md:float-none"
+                      />
+
+                      <p className="long-note leading-[2em] text-gray-800"> {adminis?.longNote} </p>
+                    </div>
+
+                  </div>
+
                 </div>
-                <p className="long-note leading-[2em] text-gray-800"> {adminis?.longNote} </p>
-              </div>
-            ))}
-        </Carousel>
+              ))}
+          </Carousel>
+        </div>
       </motion.section>
       <Footer />
     </>

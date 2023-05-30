@@ -20,9 +20,9 @@ const AlumniMeet = () => {
                 className="alumini-meet-section"
             >
                 <div className='alumnimeet'>
-                    <h1 className='text-[var(--primary-clr)] text-center my-text-4'>ALUMNI MEET</h1>
+                    <h1 className='primary-clr text-center my-text-4'>ALUMNI MEET</h1>
                     <div className='rounded-2xl bg-[#D1E9FF] w-[90%] mx-auto'>
-                        <h1 className='text-[var(--primary-blue)] w-max' style={{ transform: "translate(-20%, -40%)" }}>
+                        <h1 className='primary-blue w-max' style={{ transform: "translate(-20%, -40%)" }}>
                             <span className='text-[min(5rem,10vw)] my-bold'>A</span>
                             <span className='text-[min(3rem,6vw)] my-bold'>bout us</span>
                         </h1>

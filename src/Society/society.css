@@ -42,3 +42,9 @@
         background-image: none;
     }
 }
+
+@media(max-width: 800px) {
+    .about-event{
+        margin: 1.6rem;
+    }
+}

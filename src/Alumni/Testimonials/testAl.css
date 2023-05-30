@@ -69,4 +69,14 @@
     .t-grid {
         grid-template-columns: 1fr;
     }
+
+    .t-card{
+        width: 70%;
+        height: auto;
+    }
+
+    .card-info{
+        margin-top: 20px;
+        width: 80%;
+    }
 }

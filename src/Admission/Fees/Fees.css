@@ -116,3 +116,14 @@
         width: 90%;
     }
 }
+
+@media(max-width: 500px) {
+    .structure {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        height: 400px;
+        width: 78%;
+    }
+}

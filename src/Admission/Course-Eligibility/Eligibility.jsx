@@ -22,8 +22,8 @@ export default function Eligibility() {
             >
                 <div className="eli_container">
                     <h1>ELIGIBILITY FOR COURSES</h1>
-                    <div className="btns">
-                        <h2>BCA</h2>
+                    <div>
+                        <h2 className="btns">BCA</h2>
                         <div className="infos">
                             <h3>BCA Eligibility Criteria:</h3>
                             <p>
@@ -47,7 +47,7 @@ export default function Eligibility() {
                             </p>
                         </div>
 
-                        <h2>BBA(G)</h2>
+                        <h2 className="btns">BBA(G)</h2>
                         <div className="infos">
                             <h3>BBA(G) Eligibility Criteria:</h3>
                             <p>
@@ -62,7 +62,7 @@ export default function Eligibility() {
                             </p>
                         </div>
 
-                        <h2>BBA(B&I)</h2>
+                        <h2 className="btns">BBA(B&I)</h2>
                         <div className="infos">
                             <h3>BBA(B&I) Eligibility Criteria:</h3>
                             <p>
@@ -77,7 +77,7 @@ export default function Eligibility() {
                             </p>
                         </div>
 
-                        <h2>B.COM</h2>
+                        <h2 className="btns">B.COM</h2>
                         <div className="infos">
                             <h3>B.Com Eligibility Criteria:</h3>
                             <p>

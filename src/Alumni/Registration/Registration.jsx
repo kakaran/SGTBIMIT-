@@ -94,7 +94,7 @@ export default function Registration() {
                 variants={routingAnimations}
             >
                 <div className="reg-container">
-                    <div className="my-bold my-text-4 primary-blue text-center">Registration</div>
+                    <div className="my-bold my-text-4 primary-blue text-center">REGISTRATION</div>
                     <div className="content">
 
                         <form action={`${import.meta.env.VITE_API_URL}/Registration/Registration_Add`} method='POST' onSubmit={(e) => { handleSubmit(e) }}>

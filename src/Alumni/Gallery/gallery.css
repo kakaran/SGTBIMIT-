@@ -109,3 +109,9 @@
     }
     
 }
+
+@media(max-width: 600px) {
+    .head1{
+        font-size: 50px;
+    }
+}

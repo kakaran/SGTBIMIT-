@@ -656,7 +656,7 @@ const AdminMenu = () => {
                       </p>
                       <p
                         onClick={() => {
-                          navigate("/dashboard/admin/Prev_Year_Paper_Dislay");
+                          navigate("/dashboard/admin/Alumini/gallery/aluminiDisplay");
                         }}
                       >
                         GALLERY DISPLAY

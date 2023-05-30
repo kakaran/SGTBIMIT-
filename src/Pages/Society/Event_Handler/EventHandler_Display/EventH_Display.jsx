@@ -63,7 +63,7 @@ const EventHDisplay = () => {
                     <AdminHeader />
                     <div className="TesHeaderCard">
                         <div className="TesDisplayHeading">
-                            <h1>Governing Body</h1>
+                            <h1>Socities (Event Handlers)</h1>
                         </div>
                         <div className="TesDisplayCardContainer">
                             {eventH?.map((value) => {

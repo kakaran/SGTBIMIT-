@@ -9,6 +9,10 @@
     background-repeat: repeat-y;
 }
 
+.about > p{
+    font-family: "SF Pro Display-Bold";
+}
+
 @media(max-width: 1000px) {
     .about {
         background-image: none;

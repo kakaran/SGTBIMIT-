@@ -38,21 +38,11 @@ export default function About() {
                         <div className='text-[min(1.5rem,3vw)]'>
                             <p>
                                 <span className='my-bold'>Sri Guru Tegh Bahadur Institute of Management & Information Technology</span>, a SIKH Institution, was founded by the DSGMC, with the primary objective of providing University Education in a nice atmosphere for deserving students irrespective of caste and creed.
-                            </p>
-                            <p>
-                                It started functioning in 2008 with just 120 students on the rolls in two undergraduate courses of BCA & BBA.
-                            </p>
-                            <p>
-                                SGTBIMIT is an 'A' degree level Institute, affiliated to Guru Gobind Singh Indraprastha University, approved by the directorate of higher education (GOVT OF NCT OF DELHI), certified by ISO 9001-2008 . SGTBIMIT, though affiliated to Guru Gobind Singh Indraprastha University, is empowered to frame its own course of studies and adopt innovative methods of teaching and evaluation.
-                            </p>
-                            <p>
-                                The University degrees will be conferred on the students passing the examinations conducted by the university. The story of Sri Guru Tegh Bahadur Institute of Management and Information technology (SGTBIMIT) goes back to the chain of schools and colleges under DSGMC that offer an attractive option of world class education.
-                            </p>
-                            <p>
-                                SGTBIMIT was established to promote excellence in professional education and promote studies, research and extension work in the emerging areas of higher education in Management, Information Technology, Banking & Insurance. Located in the heart of the city, adjacent to Gurudwara Nanak Piao (GT Karnal Road, New Delhi), hardly 1 km away from north campus (DU).
-                            </p>
-                            <p>
-                                Today, we have four U.G courses (BCA , BBA(G), BBA(B&I), & B.Com(H)) . At present, we have well educated teaching staff members & non-teaching staff in service.
+                            It started functioning in 2008 with just 120 students on the rolls in two undergraduate courses of BCA & BBA.
+                            SGTBIMIT is an 'A' degree level Institute, affiliated to Guru Gobind Singh Indraprastha University, approved by the directorate of higher education (GOVT OF NCT OF DELHI), certified by ISO 9001-2008 . SGTBIMIT, though affiliated to Guru Gobind Singh Indraprastha University, is empowered to frame its own course of studies and adopt innovative methods of teaching and evaluation.
+                            The University degrees will be conferred on the students passing the examinations conducted by the university. The story of Sri Guru Tegh Bahadur Institute of Management and Information technology (SGTBIMIT) goes back to the chain of schools and colleges under DSGMC that offer an attractive option of world class education.
+                            SGTBIMIT was established to promote excellence in professional education and promote studies, research and extension work in the emerging areas of higher education in Management, Information Technology, Banking & Insurance. Located in the heart of the city, adjacent to Gurudwara Nanak Piao (GT Karnal Road, New Delhi), hardly 1 km away from north campus (DU).
+                            Today, we have four U.G courses (BCA , BBA(G), BBA(B&I), & B.Com(H)) . At present, we have well educated teaching staff members & non-teaching staff in service.
                             </p>
                         </div>
                     </div>

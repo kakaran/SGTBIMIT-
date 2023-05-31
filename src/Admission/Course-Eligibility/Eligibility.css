@@ -26,11 +26,12 @@
     font-weight: 600;
     width: 200px;
     height: 70px;
-    border-radius: 20px;
+    border-radius: 18px;
     margin: 20px 43%;
     background-color: var(--secondary-clr);
     color: white;
     padding-top: 14px;
+    font-family: "SF Pro Display-Bold";
 }
 
 
@@ -41,6 +42,7 @@
     border: 2px solid black;
     border-radius: 15px;
     font-size: 24px;
+    font-family: "SF Pro Display";
 }
 
 @media (max-width:1000px) {

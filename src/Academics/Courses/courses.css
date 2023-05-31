@@ -13,6 +13,11 @@
     color: var(--primary-blue);
 }
 
+.courses> p> h2{
+    font-family: "SF Pro Display-Bold";
+    color: var(--primary-blue);
+}
+
 .courses>p {
     font-size: min(1.5rem, 4vw);
     text-align: justify;

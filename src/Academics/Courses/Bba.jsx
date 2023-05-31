@@ -25,20 +25,50 @@ export default function Bba() {
           <img src={bba} alt="cant load" />
           <h1>BACHELORS OF BUSINESS ADMINISTRATION</h1>
           <p>
-            "According to Peter Drucker, leadership involves elevating an individual's vision to greater
-            heights, improving their performance to exceed standard levels, and expanding their personality
-            beyond its usual limitations."
-            <br /><br />
-            In 2008, SGTBIMIT launched the Department of Business Administration, which has since become
-            renowned for producing outstanding graduates. Many of its alumni are now successful
-            entrepreneurs and business leaders.
-            <br /><br />
-            Management is a prestigious profession that commands
-            high social standing. With increasing demand for practitioners, researchers, and social
-            scientists, management education is receiving greater attention. The BBA (G) program offered
-            by the Department of Business Administration equips students with professional skills
-            necessary for achieving success in the economy. Additionally, it enables students to understand,
-            predict, and guide human behavior in organizations.
+            Bachelor of Business Administration is one of the most sought bachelor's degree 
+            programmes after the 12th standard. This course provides an insight on several of
+            managerial roles. Management is the art of making workplaces efficient and accountable.
+            With good managerial skills, students can excel in the corporate world.
+
+            <h2>DESCRIPTION OF DEGREE</h2>
+
+            Bachelor of Business Administration(BBA) programs feature classes in general economic
+            theory as well as opportunities to explore specific fields of study in more depth. 
+            These concentrations range from Accounting and Marketing to Finance and Human resources. 
+            An undergraduate degree in Business Administration will give you a firm understanding 
+            of principles at work in today's dynamic economy. You will also have the chance to 
+            build skills widely towards success in your chosen area of expertise.
+
+            <h2>SKILLS OBTAINED</h2>
+
+            To give you a well-rounded business education, Bachelor of Business Administration 
+            programs feature courses in a wide range of subjects. This gives you a chance to learn 
+            practical knowledge while honing leadership, communications and team-building abilities. 
+            Students in BBA programs also pursue individual interests through concentrated study in 
+            areas such as Accounting, Finance, Marketing, Operations and Information Management, 
+            Human Resources, Management and Business Law.
+            
+            <h2>HIGHER EDUCATIONAL PLAN</h2>
+
+            The Master of Business Administration is also one of the most popular graduate degrees. 
+            Students from a wide range of backgrounds apply to MBA programs to stay competitive in 
+            a crowded job market.
+
+            <h2>CAREER OPTIONS</h2>
+
+            Students who graduate with a degree in Business administration may work in a wide range 
+            of environments. From accountants to marketing staff and human resource managers to IT 
+            administrators, the work of these business professionals is important to the success of 
+            organizations throughout the world. Regardless of the concentrations, you choose to 
+            pursue in business administration, you can expect to make a vital contribution in the workplace.
+
+            <h2>WRAP UP</h2>
+
+            A degree in Business Administration can give you a decided advantage in an increasingly 
+            competitive job market. Graduates are needed in virtually every industry, and they are 
+            qualified to land eagerly sought positions from the nation's top employers. Effectively 
+            in demand within every sector of the economy, graduates with Business Administrations 
+            degrees can expect a healthy future in the job market.
           </p>
           {/*           <AdditionalDiploma /> */}
         </div>

@@ -25,36 +25,58 @@ export default function Bca() {
           <img src={bca} alt="cant load" />
           <h1>BACHELORS OF COMPUTER APPLICATIONS</h1>
           <p>
-            The Bachelor of Computer Applications (BCA) program offered by
-            Sri Guru Tegh Bahadur Institute of Management and Information
-            Technology (SGTBIMIT) is a highly sought-after program for students
-            aspiring to pursue a career in the field of Information Technology (IT).
-            <br /><br />
-            The BCA program at SGTBIMIT is designed to provide students with a
-            strong foundation in computer applications, programming languages,
-            database management, and software development. The curriculum is
-            well-balanced, with a focus on both theoretical and practical learning.
-            Students gain hands-on experience through various lab sessions, projects,
-            and assignments, which help them apply their learning to real-world scenarios.
-            <br /><br />
-            The faculty at SGTBIMIT is highly qualified and experienced in their
-            respective fields, and they are dedicated to providing quality education
-            to students. The institute offers modern facilities and resources, including
-            a well-equipped computer lab, library, and access to the latest software and technologies.
-            <br /><br />
-            Throughout the program, students have the opportunity to participate in
-            various extracurricular activities, including technical events, seminars,
-            and workshops, which help them enhance their skills and gain exposure to
-            the latest trends in the IT industry.
-            <br /><br />
-            Upon completion of the BCA program, students have a strong foundation in
-            computer applications and programming, which prepares them for various job
-            roles in the IT industry. They can pursue careers as software developers,
-            database administrators, system analysts, network administrators, and many more.
-            <br /><br />
-            Overall, the BCA program at SGTBIMIT is an excellent choice for students who
-            are passionate about pursuing a career in the field of IT, as it provides them
-            with a strong foundation and exposure to the latest technologies and trends in the industry.
+          We at SGTBIMIT aspire to create competent Software & IT Management professionals who 
+          are committed to pursuing excellence and setting benchmarks in the IT Sector. 
+          Our students are provided with the best learning aids, and hands-on exposure to 
+          industry work and seminars.
+
+          <h2>ABOUT THE BCA PROGRAM STRUCTURE</h2>
+
+          BCA course offered by SGTBIMITis affiliated to the Guru Gobind Singh Indraprastha University, Delhi.
+          The programme is divided into six semesters with two semesters in an academic year.
+          The fast-growing information technology and communication systems have become critical 
+          components of almost every company's strategic plan. Companies that want to take advantage 
+          of the new information technologies and communication systems require expert professionals, 
+          who can apply computer science principles to solve problems produced by the interface 
+          between business and technology. BCA Course is an undergraduate program where students 
+          are exposed to various areas of computer applications including the latest developments 
+          in the industry. The main objective of the Bachelor of Computer Application (B.C.A.) is 
+          to provide an advanced career in Computer Applications. BCA graduates can start their 
+          careers as programmers and rise to that senior programmers.
+
+          <h2>DESCRIPTION OF DEGREE</h2>
+
+          Bachelor of Computer Application(BCA) is an undergraduate course for tech-savvy youth 
+          who are interested in making a career in the field of Info-tech. If one wishes to 
+          become a Software Developer or web designer or wants to take up a career in Systems 
+          Management, then BCA is the best course to get an early start on their career. Job 
+          opportunities can be found in both large and small software development organizations 
+          as well as hardware companies. The aim is to equip individuals with skill sets 
+          comparable to International standards. The successful completion of this course 
+          opens up options such as MCA, MBA etc.
+
+          <h2>SKILLS OBTAINED</h2>
+
+          Bachelor of Computer Applications (BCA) course grooms the students with 
+          comprehensive inputs from the rapidly changing IT industry & enables them 
+          to develop an all-round personality that would enable the students to take 
+          up the challenges of the corporate world. The primary focus is to build the 
+          strong foundation needed for careers in Computers, with Emphasis on emerging Computer Applications.
+
+          <h2>HIGHER EDUCATIONAL PLAN</h2>
+
+          The Master of Computer Application is also one of the most popular graduate 
+          degrees. Students from a wide range of backgrounds apply to MCA programs to stay in IT Sector.
+
+          <h2>CAREER OPTIONS</h2>
+
+          A very good career option indeed. The successful completion of this course opens 
+          up options such as MCA etc.IT being a sunshine sector there are no dearth of 
+          opportunities in the same. The IT industry has a shortage of skilled resources. 
+          Develop a strong analytical ability and excellent written and verbal communication 
+          skills if you want to move ahead in this field. Excellent team working and 
+          peer-to-peer interaction are a must to succeed in the IT industry. Given the 
+          era of globalization, it is advisable to pick up a foreign language as well.
           </p>
           {/*           <AdditionalDiploma /> */}
         </div>

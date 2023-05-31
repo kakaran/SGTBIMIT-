@@ -6,8 +6,10 @@ import map from '../images/map-icon.png'
 import pdf from '../images/pdf-icon.png'
 import campus from '../images/campus-icon.png'
 import research from '../images/research-icon.png'
+import { useNavigate } from 'react-router-dom'
 
 export default function Map() {
+  const navigate = useNavigate()
   const data = [
     {
       type: "Email",
@@ -73,7 +75,7 @@ export default function Map() {
               <img src={campus} alt="" />
               <span>Campus Tour</span>
             </button>
-            <button className="chip">
+            <button className="chip" onClick={() => { navigate("/academics/research") }}>
               <img src={research} alt="" />
               <span>Researches</span>
             </button>

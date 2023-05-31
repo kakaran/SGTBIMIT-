@@ -8,7 +8,7 @@ export default function DirectorMsg() {
   return (
     <section className="director-msg">
       <motion.h1 viewport={{ once: true }}
-        className='director-heading'
+        className='director-heading my-bold my-text-4'
         initial={{
           x: 400
         }}
@@ -41,9 +41,10 @@ export default function DirectorMsg() {
         <p className='dr-note text-justify'>
           “Those who walk on the path of truth shall be praised throughout the world”
           <br />
-          <p className='my-bold text-center mt-0'>
+          <span className='my-bold text-center mt-4 block'>
             &nbsp; ~ Sri Guru Granth Sahib Ji &nbsp;
-          </p>
+          </span>
+          <br />
           We at Sri Guru Tegh Bahadur Institute of Management & Information Technology endeavor to follow Gurbani in letter and spirit. The management and staff of SGTBIMIT work on a mission and treat students with utmost love & compassion.
         </p>
         <div className="director-position">

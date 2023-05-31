@@ -65,6 +65,7 @@ export default function Placements() {
                         <img src={img} alt="" />
                     </div>
                 </section>
+                <Team />
                 <section className="featured-stars-section">
                     <h2 className='placement-about-us'
                         style={{
@@ -98,7 +99,7 @@ export default function Placements() {
                         }}
                     />
                 </section>
-                <Team />
+
                 <section className='placement-recruiters-section'>
                     <div className='layered-title' style={{
                         marginInline: 'auto',

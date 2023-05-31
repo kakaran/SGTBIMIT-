@@ -48,9 +48,7 @@ export default function AdminisCarousel() {
 
                   <div className="flex flex-col items-start gap-4">
                     <div>
-                      <div className="my-text-2 m-0 my-bold w-max text-start">
-                        {adminis?.name}
-                      </div>
+
                       <div className="position my-bold text-start">
                         {adminis?.position}
                       </div>
@@ -65,7 +63,9 @@ export default function AdminisCarousel() {
                         alt="cant load"
                         className="float-left max-md:float-none"
                       />
-
+                      <p className="my-text-4 m-0 my-bold text-start">
+                        {adminis?.name}
+                      </p>
                       <p className="long-note leading-[2em] text-gray-800"> {adminis?.longNote} </p>
                     </div>
 

@@ -273,10 +273,8 @@
 }
 
 .director-heading {
-    font-size: min(3.75rem, 7.5vw);
     margin-block: 12px;
     color: var(--primary-blue);
-    font-family: "SF Pro Display-Bold";
 }
 
 

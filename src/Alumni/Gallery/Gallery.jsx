@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './gallery.css'
 import { Header, Navbar, Footer } from '../../Components'
 import { Carousel } from 'react-responsive-carousel'
@@ -9,7 +9,20 @@ import p1 from '../../images/p1.jpg'
 import cancel from '../../images/cancel.png'
 
 export default function Gallery() {
-    const [isCarouselActive, setIsCarouselActive] = useState(false)
+
+    const [images, setImages] = useState([])
+    const [carouselIndex, setCarouselIndex] = useState(null)
+
+    const fetchImages = async () => {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/Alumini/gallery/aluminiDisplayImage`)
+        const data = await res.json()
+        setImages(data)
+
+    }
+
+    useEffect(() => {
+        fetchImages()
+    }, [])
     return (
         <>
             <Helmet title='SGTBIMIT | Alumni Gallery' />
@@ -25,13 +38,13 @@ export default function Gallery() {
             >
                 <div className="head1">GALLERY</div>
                 <div className="gallery-box">
-                    {[...Array(9)].map((x, i) => (
+                    {images.map((image, i) => (
                         <>
-                            {!isCarouselActive && <div className="gallery-box1" onClick={() => { setIsCarouselActive(true) }}>
-                                <img src={p1} alt="infra" className="pic" />
-                                <p className="text">Infra</p>
-                            </div>}
-                            {isCarouselActive && (
+                            <div className="gallery-box1" onClick={() => { setCarouselIndex(i) }}>
+                                <img src={`${import.meta.env.VITE_API_URL}/Alumini/gallery/alumini_Simgle_Image/${image._id}`} alt="can load" className="pic" />
+                                <p className="my-text-2">{image.category}</p>
+                            </div>
+                            {carouselIndex === i && (
                                 <motion.section viewport={{ once: true }}
                                     className="gallery-carousel-section"
                                     initial={{
@@ -42,11 +55,11 @@ export default function Gallery() {
                                     }}
                                 >
                                     <div className="gallery-carousel-container">
-                                        <img src={cancel} className="carousel-close-btn" onClick={() => setIsCarouselActive(false)} alt='' />
+                                        <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
                                         <Carousel>
-                                            {[...Array(6)].map((x, i) => (
+                                            {image.images.map((nestedImage, i) => (
                                                 <div className="gallery-carousel-item">
-                                                    <img src={p1} alt="infra" />
+                                                    <img src={`${import.meta.env.VITE_API_URL}/Alumini/gallery/aluminiDisplayImages/${image._id}/${nestedImage._id}`} alt="cant load" />
                                                 </div>
                                             ))}
                                         </Carousel>

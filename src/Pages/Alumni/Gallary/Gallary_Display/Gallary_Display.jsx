@@ -48,7 +48,7 @@ const Gallary_Display = () => {
 
   return (
     <>
-    <Helmet title="Display Alumni Gallery" />
+      <Helmet title="Display Alumni Gallery" />
       <div className="societyAddConatiner">
         <div className="SideBar">
           <AdminMenu />

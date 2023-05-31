@@ -31,9 +31,10 @@
     width: 400px !important;
     aspect-ratio: 1 !important;
     position: relative;
-    margin-right: 4rem;
-    margin-bottom: 4rem;
-    margin-top: 4rem;
+    --margin: 2rem;
+    margin-right: var(--margin);
+    margin-bottom: var(--margin);
+    margin-top: var(--margin);
 }
 
 

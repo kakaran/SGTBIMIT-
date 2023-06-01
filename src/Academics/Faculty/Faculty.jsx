@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './faculty.css'
 import useFetch from '../../useFetch'
 import { Header, Navbar, Footer, Loader } from '../../Components'
@@ -8,7 +8,20 @@ import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
 
 export default function Faculty() {
-    const { data: facultyData, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Display`)
+    const [facultyData, setFacultyData] = useState(null)
+
+    const fetchData = async () => {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Display`)
+        const data = await res.json()
+        const sortedData = data.sort((a, b) => a.Index > b.Index ? 1 : -1)
+        setFacultyData(sortedData)
+
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+    // const { isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Display`)
 
     return (
         <>
@@ -26,7 +39,7 @@ export default function Faculty() {
                 <div className="w-[min(1500px,98%)] mx-auto">
                     <h1 className="my-bold my-text-4 primary-blue text-center">Core Faculty</h1>
                     <p className="text-gray-800 leading-[2em] text-[min(2rem,4vw)]">SGTBIMIT has very diversified and experienced faculties of their domains that works day in day out for their students to make them industry ready</p>
-                    {isPending && <div className='flex justify-center items-center'> <Loader /> </div>}
+                    {!facultyData && <div className='flex justify-center items-center'> <Loader /> </div>}
                     <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5 place-items-center">
                         {facultyData && facultyData.map(({ _id, name, post, detail, Department }, i) => (
                             <div className="flex flex-col items-center p-5 shadow-2xl bg-white w-[70%] h-full rounded-3xl">

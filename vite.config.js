@@ -8,7 +8,7 @@ export default defineConfig(() => {
         },
         plugins: [react()],
         server: {
-            port: 4173,
+            port: 3000,
             host: true,
             open: true,
         },

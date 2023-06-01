@@ -21,6 +21,10 @@
     grid-template-columns: 2fr;
 } */
 
+@media (max-width:1000px){
+    .eli-section{
+    background: none;
+}}
 .btns {
     font-size: 30px;
     font-weight: 600;
@@ -37,7 +41,7 @@
 
 
 .infos {
-    margin: 10px 65px;
+    margin: 10px;
     padding: 20px;
     border: 2px solid black;
     border-radius: 15px;
@@ -74,8 +78,12 @@
     }
 
     .infos {
-        font-size: 12px;
+        font-size: 20px;
+        line-height: 1.5em;
     }
+    /* .eli_container{
+        width: 550px;
+    } */
 }
 
 @media(max-width: 600px) {

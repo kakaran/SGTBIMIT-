@@ -41,6 +41,10 @@
     .society {
         background-image: none;
     }
+    .society p{
+        font-size: 4vw;
+        line-height: 1.5em;
+    }
 }
 
 @media(max-width: 800px) {

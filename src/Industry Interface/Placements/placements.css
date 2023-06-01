@@ -176,4 +176,7 @@
         width: 90%;
         margin-top: 2rem;
     }
+    .placement-about-content p{
+        font-size: 4vw;
+    }
 }

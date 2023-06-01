@@ -29,7 +29,7 @@
 }
 
 
-@media(max-width: 1300px) {
+@media(max-width: 1000px) {
     .alumini-meet-section {
         background-image: none;
         max-width: 100%;
@@ -43,6 +43,14 @@
     .flex-custom {
         width: 60%;
         margin: 0 30%;
+    }
+    .alumnimeet p{
+        font-size: 4vw;
+        line-height: 1.5em;
+    }
+    .alumnimeet li{
+        font-size: 4vw;
+        line-height: 1.5em;
     }
 
 }

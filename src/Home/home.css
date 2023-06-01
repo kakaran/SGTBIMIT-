@@ -307,7 +307,7 @@
 
 .director-container p {
     color: white;
-    font-size: min(2.5rem, 5vw);
+    font-size: min(2rem, 4vw);
     width: min(820px, 85%);
     line-height: 50px;
 }

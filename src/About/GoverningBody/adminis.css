@@ -40,9 +40,9 @@
 
 .long-note {
     text-align: justify;
-    line-height: clamp(1.5rem, 2vw, 2rem);
+    line-height: 1.5em;
     color: rgba(0, 0, 0, 0.9);
-    font-size: min(1.5rem, 2.5vw);
+    font-size: min(1.5rem, 4vw);
 }
 
 .position {

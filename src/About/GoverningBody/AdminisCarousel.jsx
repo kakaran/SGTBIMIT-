@@ -63,10 +63,10 @@ export default function AdminisCarousel() {
                         alt="cant load"
                         className="float-left max-md:float-none"
                       />
-                      <p className="my-text-4 m-0 my-bold text-start">
+                      <p className="my-text-4 m-0 my-bold text-start max-lg:mt-5">
                         {adminis?.name}
                       </p>
-                      <p className="long-note leading-[2em] text-gray-800"> {adminis?.longNote} </p>
+                      <p className="long-note text-gray-800"> {adminis?.longNote} </p>
                     </div>
 
                   </div>

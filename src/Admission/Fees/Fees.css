@@ -5,6 +5,11 @@
     background-size: 100%;
 }
 
+@media (max-width: 1000px){
+    .Fees {
+        background-image:none;
+}}
+
 .Fees>h1 {
     font-size: min(4rem, 8vw);
     text-align: center;
@@ -62,7 +67,7 @@
 }
 
 .info>p {
-    font-size: min(1.5rem, 3vw);
+    font-size: min(1.5rem, 4vw);
     line-height: 30px;
     text-align: justify;
     @apply text-gray-800 leading-[2em];

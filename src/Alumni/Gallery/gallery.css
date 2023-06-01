@@ -83,6 +83,8 @@
     padding: min(5rem, 5vw);
     background: white;
     border-radius: 5px;
+    width: min(400px, 100%);
+    margin: auto;
 }
 
 @keyframes shake {

@@ -19,7 +19,6 @@ const MobileNav = () => {
     const navItemStyle = 'rounded-md bg-red-200 p-4 primary-clr cursor-pointer my-text-2'
     const textstyle = "my-bold px-4 py-1 my-3"
     const btnStyle = 'gap-2 flex items-center px-4 py-2 primary-bg-clr text-white my-text-2 rounded-md'
-    'gap-2 flex items-center px-4 py-2 primary-bg-clr text-white my-text-2 rounded-md'
 
     useEffect(() => {
         const fetchSociety = async () => {
@@ -81,7 +80,7 @@ const MobileNav = () => {
                         </div>
                         <div className={`grid ${coursesToggle ? "grid-show" : "grid-hide"} transition-all`}>
                             <div className='overflow-hidden'>
-                                <div className='my-bold mx-4 my-3' onClick={() => { navigate('/academics/courses/bca') }} style={borderStyle}>
+                                <div typeof='button' className='my-bold mx-4 my-3' onClick={() => { navigate('/academics/courses/bca') }} style={borderStyle}>
                                     BCA
                                 </div>
                                 <div className='my-bold mx-4 my-3' onClick={() => { navigate('/academics/courses/bba') }} style={borderStyle}>

@@ -39,37 +39,37 @@ export default function Gallery() {
                 <div className="head1">GALLERY</div>
                 <div className="gallery-box">
                     {images.map((image, i) => (
-                        <>
-                            <div className="gallery-box1" onClick={() => { setCarouselIndex(i) }}>
-                                <img src={`${import.meta.env.VITE_API_URL}/Alumini/gallery/alumini_Simgle_Image/${image._id}`} alt="can load" className="pic" />
-                                <p className="my-text-2">{image.category}</p>
-                            </div>
-                            {carouselIndex === i && (
-                                <motion.section viewport={{ once: true }}
-                                    className="gallery-carousel-section"
-                                    initial={{
-                                        scale: 0,
-                                    }}
-                                    animate={{
-                                        scale: 1,
-                                    }}
-                                >
-                                    <div className="gallery-carousel-container">
-                                        <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
-                                        <Carousel>
-                                            {image.images.map((nestedImage, i) => (
-                                                <div className="gallery-carousel-item">
-                                                    <img src={`${import.meta.env.VITE_API_URL}/Alumini/gallery/aluminiDisplayImages/${image._id}/${nestedImage._id}`} alt="cant load" />
-                                                </div>
-                                            ))}
-                                        </Carousel>
-                                    </div>
-                                </motion.section>
-                            )}
-                        </>
+                        <div key={image._id} className="gallery-box1" onClick={() => { setCarouselIndex(i) }}>
+                            <img src={`${import.meta.env.VITE_API_URL}/Alumini/gallery/alumini_Simgle_Image/${image._id}`} alt="can load" className="pic" />
+                            <p className="my-text-2">{image.category}</p>
+                        </div>
                     ))}
                 </div>
             </motion.section>
+            {images.map((image, i) => {
+                if (carouselIndex === i) return (
+                    <motion.section viewport={{ once: true }}
+                        className="gallery-carousel-section"
+                        initial={{
+                            scale: 0,
+                        }}
+                        animate={{
+                            scale: 1,
+                        }}
+                    >
+                        <div className="gallery-carousel-container">
+                            <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
+                            <Carousel>
+                                {image.images.map((nestedImage, i) => (
+                                    <div className="gallery-carousel-item">
+                                        <img src={`${import.meta.env.VITE_API_URL}/Alumini/gallery/aluminiDisplayImages/${image._id}/${nestedImage._id}`} alt="cant load" />
+                                    </div>
+                                ))}
+                            </Carousel>
+                        </div>
+                    </motion.section>
+                )
+            })}
             <Footer />
         </>
     )

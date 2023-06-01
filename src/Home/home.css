@@ -62,7 +62,7 @@
 }
 
 .welcome-text p {
-    font-size: min(1.5rem, 3vw);
+    font-size: min(1.5rem, 4vw);
     line-height: min(2.5rem, 5vh);
     width: 95%;
     color: #2D2D2D;
@@ -112,6 +112,17 @@
 
     .welcome p {
         text-align: justify;
+    }
+
+    .welcome-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome-img img {
+        margin-inline: auto;
+        width: 90%;
     }
 
     .develop-skills-btn {

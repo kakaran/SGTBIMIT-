@@ -35,6 +35,9 @@ export default function DirectorMsg() {
         }}
       >
         <img src={quote} alt="" className="dir-quote" />
+        <div className="director-position">
+          Prof. Dr. Navneet Kaur - Director, SGTBIMIT
+        </div>
         <div className="director-img">
           <img src={dir} alt="cant load" />
         </div>
@@ -47,9 +50,6 @@ export default function DirectorMsg() {
           <br />
           We at Sri Guru Tegh Bahadur Institute of Management & Information Technology endeavor to follow Gurbani in letter and spirit. The management and staff of SGTBIMIT work on a mission and treat students with utmost love & compassion.
         </p>
-        <div className="director-position">
-          Prof. Dr. Navneet Kaur - Director, SGTBIMIT
-        </div>
 
       </motion.div>
     </section>

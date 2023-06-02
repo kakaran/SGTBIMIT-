@@ -347,6 +347,18 @@
 
 
 @media (max-width: 1000px) {
+    .director-position {
+        position: static;
+        color: white;
+        white-space: pre-wrap;
+        transform: rotate(0deg) translate(0px, 0px);
+        transform-origin: left;
+        letter-spacing: 0.8px;
+        font-family: "SF Pro Display-Bold";
+        font-size: min(2rem, 4vw);
+        margin: 2rem;
+    }
+
     .director-container {
         width: 100%;
     }

@@ -8,7 +8,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const SingleEvent = () => {
     const { id, event_id } = useParams()
-    const [event, setEvent] = useState({})
+    const [event, setEvent] = useState(null)
 
     const getData = async () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/Event/Single_Event_Display/${event_id}`)
@@ -33,18 +33,22 @@ const SingleEvent = () => {
                 variants={routingAnimations}
             >
                 <div className='gradient-bg'></div>
-                <div className='px-10 flex flex-col p-5 mx-auto rounded-lg shadow-lg my-10 bg-white bg-opacity-30 items-center'>
-                    <h1 className='my-text-4 text-center my-bold bg-clip-text text-transparent w-max max-w-full' style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}>{event.name}</h1>
+                <div className='w-3/4 flex flex-col p-5 mx-auto rounded-lg shadow-lg my-10 bg-white bg-opacity-30 items-center'>
+                    <h1 className='my-text-4 text-center my-bold bg-clip-text text-transparent w-max max-w-full' style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}>{event?.name}</h1>
 
                     <Carousel
                         showStatus={false}
+                        showThumbs={false}
+                        dynamicHeight={true}
+                        interval={5000}
+                        stopOnHover={false}
                     >
                         <img src={`${import.meta.env.VITE_API_URL}/Event/Event_MainImage_Display/${event_id}`} alt="" className='w-1/2 rounded-2xl shadow-2xl mx-auto' />
-                        {event.Images?.map((image, index) => (
+                        {event?.Images?.map((image, index) => (
                             <img src={`${import.meta.env.VITE_API_URL}/Event/Event_Image_Display/${event_id}/${image._id}`} alt="" className='w-1/2 rounded-2xl shadow-2xl mx-auto' key={index} />
                         ))}
                     </Carousel>
-                    <p className='text-gray-700 text-2xl text-justify px-11 max-md:px-2 max-lg:text-lg'>{event.detail}</p>
+                    <p className='text-gray-700 text-2xl text-justify px-11 max-md:px-2 max-lg:text-lg'>{event?.detail}</p>
                 </div>
                 {/* <div className='flex flex-col w-[min(1500px,100%)] mx-auto p-5 bg-white bg-opacity-30'>
                     <h1 className='text-5xl primary-blue my-bold mb-1'>Images</h1>

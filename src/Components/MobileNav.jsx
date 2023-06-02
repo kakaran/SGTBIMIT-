@@ -109,7 +109,7 @@ const MobileNav = () => {
                         <div className={textstyle} onClick={() => { navigate('/academics/e-resources') }} style={borderStyle}>
                             E-Resources
                         </div>
-                        <div className={textstyle} onClick={() => { navigate('/academics/prev-year-papers') }} style={borderStyle}>
+                        <div className={textstyle} onClick={() => { navigate('/academics/research') }} style={borderStyle}>
                             Research & Development
                         </div>
                         <div className={textstyle} onClick={() => { navigate('/academics/faculty') }} style={borderStyle}>

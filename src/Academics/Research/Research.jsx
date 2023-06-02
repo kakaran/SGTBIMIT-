@@ -65,7 +65,7 @@ export default function Research() {
                     <img src={img} alt="cant load" />
                 </div>
                 <p className="research-content">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    SGTBIMIT has a Research and Development Department dedicated to promote and to encourage the aspiring students and faculty members to carry out research in the field of Management, IT, commerce, by providing necessary facilities and infrastructures required by them.
                 </p>
                 <section className='research-box'>
                     <div className="research-box-left">

@@ -61,10 +61,10 @@ export default function Gallery() {
                             <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
                             <Carousel
                                 showThumbs={false}
-                                dynamicHeight={true}
+
                             >
                                 {image.images.map((nestedImage, i) => (
-                                    <div className="gallery-carousel-item">
+                                    <div className="gallery-carousel-item h-[500px]">
                                         <img src={`${import.meta.env.VITE_API_URL}/Alumini/gallery/aluminiDisplayImages/${image._id}/${nestedImage._id}`} alt="cant load" />
                                     </div>
                                 ))}

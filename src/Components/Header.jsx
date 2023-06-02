@@ -39,7 +39,7 @@ export default function Header() {
 
 
     <header>
-      <script src="//code.tidio.co/djv7qpldihqart98bhpeazlxworceabc.js" async></script>
+      <script src="https://code.tidio.co/djv7qpldihqart98bhpeazlxworceabc.js" async></script>
       <Admission />
       <div className="header-top">
         <div className="logo">

@@ -25,7 +25,7 @@
 }
 
 .examination h1 {
-    font-size: min(4rem, 8vw);
+    font-size: min(3.5rem, 8vw);
     text-align: center;
     border-radius: 10px;
     font-family: "SF Pro Display-Bold", sans-serif;

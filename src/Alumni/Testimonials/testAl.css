@@ -7,7 +7,7 @@
 
 .test-al-section>h1 {
     font-family: "SF Pro Display-Bold";
-    font-size: min(4rem, 8vw);
+    font-size: min(3.5rem, 8vw);
     text-align: center;
     color: #1f567c
 }
@@ -70,12 +70,12 @@
         grid-template-columns: 1fr;
     }
 
-    .t-card{
+    .t-card {
         width: 70%;
         height: auto;
     }
 
-    .card-info{
+    .card-info {
         margin-top: 20px;
         width: 80%;
     }

@@ -33,9 +33,17 @@ const SingleEvent = () => {
                 variants={routingAnimations}
             >
                 <div className='gradient-bg'></div>
-                <div className='flex flex-col p-5 mx-auto rounded-lg shadow-lg my-10 bg-white bg-opacity-30 items-center'>
+                <div className='px-10 flex flex-col p-5 mx-auto rounded-lg shadow-lg my-10 bg-white bg-opacity-30 items-center'>
                     <h1 className='my-text-4 text-center my-bold bg-clip-text text-transparent w-max max-w-full' style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}>{event.name}</h1>
-                    <img src={`${import.meta.env.VITE_API_URL}/Event/Event_MainImage_Display/${event_id}`} alt="" className='w-1/2 rounded-2xl shadow-2xl mx-auto' />
+
+                    <Carousel
+                        showStatus={false}
+                    >
+                        <img src={`${import.meta.env.VITE_API_URL}/Event/Event_MainImage_Display/${event_id}`} alt="" className='w-1/2 rounded-2xl shadow-2xl mx-auto' />
+                        {event.Images?.map((image, index) => (
+                            <img src={`${import.meta.env.VITE_API_URL}/Event/Event_Image_Display/${event_id}/${image._id}`} alt="" className='w-1/2 rounded-2xl shadow-2xl mx-auto' key={index} />
+                        ))}
+                    </Carousel>
                     <p className='text-gray-700 text-2xl text-justify px-11 max-md:px-2 max-lg:text-lg'>{event.detail}</p>
                 </div>
                 {/* <div className='flex flex-col w-[min(1500px,100%)] mx-auto p-5 bg-white bg-opacity-30'>
@@ -49,13 +57,7 @@ const SingleEvent = () => {
                 </div> */}
                 <div className=' flex items-center justify-center'>
                     <div className='w-1/2 p-5 max-md:w-full max-lg:w-3/4'>
-                        <Carousel
-                            showStatus={false}
-                        >
-                            {event.Images?.map((image, index) => (
-                                <img src={`${import.meta.env.VITE_API_URL}/Event/Event_Image_Display/${event_id}/${image._id}`} alt="" className='rounded-2xl shadow-2xl mx-auto my-5' key={index} />
-                            ))}
-                        </Carousel>
+
                     </div>
                 </div>
             </motion.section>

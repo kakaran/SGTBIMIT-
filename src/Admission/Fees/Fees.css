@@ -5,13 +5,14 @@
     background-size: 100%;
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1000px) {
     .Fees {
-        background-image:none;
-}}
+        background-image: none;
+    }
+}
 
 .Fees>h1 {
-    font-size: min(4rem, 8vw);
+    font-size: min(3.5rem, 8vw);
     text-align: center;
     font-family: "SF Pro Display-Bold";
     color: var(--primary-blue);

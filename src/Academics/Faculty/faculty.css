@@ -16,7 +16,7 @@
 }
 
 .faculty-container h1 {
-    font-size: min(4rem, 8vw);
+    font-size: min(3.5rem, 8vw);
     font-family: "SF Pro Display-Bold";
     color: var(--primary-blue);
     text-align: center;

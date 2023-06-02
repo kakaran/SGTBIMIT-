@@ -245,14 +245,14 @@ header {
   color: white;
   padding-inline: min(1.5rem, 1.5vw);
   gap: min(1rem, 1vw);
-  font-size: min(1.5rem, 2vw);
+  font-size: min(1.25rem, 2vw);
   font-weight: 600;
   visibility: visible;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
-  height: 109px;
+  height: 90px;
 }
 
 .desktop-nav a {

@@ -42,14 +42,14 @@ export default function Faculty() {
                     {!facultyData && <div className='flex justify-center items-center'> <Loader /> </div>}
                     <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5 place-items-center">
                         {facultyData && facultyData.map(({ _id, name, post, detail, Department }, i) => (
-                            <div className="flex flex-col items-center p-5 shadow-2xl bg-white w-[70%] h-full rounded-3xl">
-                                <img src={`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" className='w-[85%] mx-auto rounded-md' />
-                                <div className='mt-auto'>
+                            <div className="flex flex-col items-center shadow-2xl bg-white w-[70%] h-full rounded-3xl">
+                                <img src={`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" className='w-full aspect-square object-fillx mx-auto rounded-md' />
+                                <div className='mt-auto  p-5'>
                                     <h2 className="my-bold text-[min(2.5rem,5vw)] mt-3 mb-0 text-center">{_.startCase(_.toLower(name)).replace("Dr ", "Dr. ")}</h2>
                                     <p className='primary-clr leading-[2em] text-[min(1.5rem,2vw)] m-0 text-center'>{post}</p>
                                 </div>
                                 <div className='h-1 rounded-full w-[70%] bg-[#004180]'></div>
-                                <div className='fac-details'>
+                                <div className='fac-details  p-5'>
                                     <p className="text-gray-800 leading-[2em] text-xl text-center">{detail}</p>
                                     <p className="text-lg text-center">
                                         <span className='my-bold '>

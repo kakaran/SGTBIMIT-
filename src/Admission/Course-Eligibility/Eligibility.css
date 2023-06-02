@@ -11,7 +11,7 @@
 }
 
 .eli_container>h1 {
-    font-size: min(4rem, 8vw);
+    font-size: min(3.5rem, 8vw);
     font-family: "SF Pro Display-Bold";
     color: var(--primary-blue);
 }
@@ -21,10 +21,12 @@
     grid-template-columns: 2fr;
 } */
 
-@media (max-width:1000px){
-    .eli-section{
-    background: none;
-}}
+@media (max-width:1000px) {
+    .eli-section {
+        background: none;
+    }
+}
+
 .btns {
     font-size: 30px;
     font-weight: 600;
@@ -63,7 +65,7 @@
 }
 
 @media (max-width: 800px) {
-    .eli-section  h1{
+    .eli-section h1 {
         margin: 5px;
     }
 
@@ -81,6 +83,7 @@
         font-size: 20px;
         line-height: 1.5em;
     }
+
     /* .eli_container{
         width: 550px;
     } */

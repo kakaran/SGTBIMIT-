@@ -20,6 +20,8 @@ export default function Home() {
   const [isPending, setIsPending] = useState(true)
   useEffect(() => {
     setIsPending(false)
+    document.querySelector('.admission-dialog').classList.add('show')
+    document.querySelector(".admission-bg").classList.add("show-bg")
   }, [])
 
   return (

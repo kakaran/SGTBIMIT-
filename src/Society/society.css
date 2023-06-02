@@ -8,7 +8,7 @@
 }
 
 .society h1 {
-    font-size: min(4rem, 8vw);
+    font-size: min(3.5rem, 8vw);
     font-family: "SF Pro Display-Bold";
 }
 
@@ -41,14 +41,15 @@
     .society {
         background-image: none;
     }
-    .society p{
+
+    .society p {
         font-size: 4vw;
         line-height: 1.5em;
     }
 }
 
 @media(max-width: 800px) {
-    .about-event{
+    .about-event {
         margin: 1.6rem;
     }
 }

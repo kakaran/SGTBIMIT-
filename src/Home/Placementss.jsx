@@ -45,7 +45,8 @@ export default function Placements({ isTitle = true }) {
               return (
                 <div className="place-card" key={placement._id}>
                   <img src={`${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${placement._id}`} alt="cant load" className='placement-img' />
-                  <div className='place-heading'> {placement.name}  </div>
+                  <div className='place-heading my-bold'> {placement.name}  </div>
+                  <p>Package: 6.5Lakhs</p>
                   <p> {placement.companyName} </p>
                 </div>
               )

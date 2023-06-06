@@ -18,23 +18,27 @@
 
 
 .floating-btn {
+  display: flex;
+  gap: .5rem;
   position: fixed;
-  top: 50%;
+  top: 35%;
   right: 0px;
-  color: white;
-  background-color: var(--secondary-clr);
-  border-radius: 5px 5px 0 0;
   transform: rotate(-90deg) translateY(-50%);
   transform-origin: right;
-  cursor: pointer;
-  padding: 1rem 4rem;
-  animation: animate 1s infinite;
   z-index: 102;
-
-
 }
 
-.floating-btn:hover {
+.floating-btn button {
+  color: white;
+  padding: 1rem 4rem;
+  animation: animate 1s infinite;
+  cursor: pointer;
+  background-color: var(--secondary-clr);
+  border-radius: 5px 5px 0 0;
+  font-size: min(1.25rem, 2.5vw);
+}
+
+.floating-btn button:hover {
   outline: 3px solid white;
   background-color: var(--primary-clr);
 }
@@ -148,14 +152,14 @@ header {
   z-index: 499 !important;
 }
 
-.admission-dialog h1 {
+/* .admission-dialog h1 {
   margin: 0;
   font-size: min(2.5rem, 6vw);
   width: 90%;
   text-align: center;
   border-radius: 1rem;
   color: var(--secondary-clr);
-}
+} */
 
 .hurry {
   font-style: italic;
@@ -181,10 +185,11 @@ header {
 }
 
 .admission-form input[type=text],
+.admission-form input[type=textarea],
 .admission-form input[type=email] {
   border: none;
   background: transparent;
-  color: white;
+  color: black;
   font-size: 1.5rem;
   border-radius: 10px;
   border-bottom: 1px solid var(--secondary-clr);
@@ -198,10 +203,6 @@ header {
   font-family: cursive;
 } */
 
-.admission-form select:focus {
-  outline: none;
-  background-color: rgba(0, 0, 0, 0.2);
-}
 
 .admission-form input[type=submit] {
   background: var(--secondary-clr);
@@ -225,15 +226,17 @@ header {
 }
 
 .admission-form input[type=text]::placeholder,
+.admission-form input[type=textarea]::placeholder,
 .admission-form input[type=email]::placeholder {
   color: var(--primary-clr);
+  opacity: .7;
 }
 
 .admission-form input[type=text]:focus,
+.admission-form input[type=textarea]:focus,
 .admission-form input[type=email]:focus {
-  border: none;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.2);
+  /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
 /* NavBar */

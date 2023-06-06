@@ -9,7 +9,8 @@ export default function Admission() {
         Name: "",
         Email: "",
         PNumber: "",
-        Course: ""
+        Course: "",
+        Query: ""
     });
     const closeHandle = (e) => {
         e.target.parentElement.classList.remove("show")
@@ -18,7 +19,8 @@ export default function Admission() {
             Name: "",
             Email: "",
             PNumber: "",
-            Course: ""
+            Course: "",
+            Query: ""
         })
     }
 
@@ -33,7 +35,8 @@ export default function Admission() {
                 Name: admissionFormDetail.Name,
                 Email: admissionFormDetail.Email,
                 PNumber: admissionFormDetail.PNumber,
-                Course: admissionFormDetail.Course
+                Course: admissionFormDetail.Course,
+                Query: admissionFormDetail.Query
             })).data
             if (data.status === "success") {
                 toast.success(`${data.message}`, {
@@ -72,12 +75,13 @@ export default function Admission() {
             <div className='admission-dialog'>
 
                 <img src={cancelImg} alt="cant load" className='close-btn' onClick={(e) => closeHandle(e)} />
-                <h1 className='admission-title'>ADMISSION FORM</h1>
+                <h1 className='orange_gradient my-bold text-4xl'>ADMISSION FORM</h1>
                 <div className='hurry'>Hurry, Fill your Admission Form right now</div>
                 <div className="admission-form">
                     <input type="text" placeholder='Name' className="admission-name" name='Name' onChange={AdmissionDataGet} value={admissionFormDetail.Name} />
                     <input type="email" placeholder='Email Address' className="admission-email" name='Email' onChange={AdmissionDataGet} value={admissionFormDetail.Email} />
                     <input type="text" placeholder='Phone Number' className="admission-number" name='PNumber' onChange={AdmissionDataGet} value={admissionFormDetail.PNumber} />
+                    <input type="textarea" placeholder='Query' className="admission-query" name='Query' onChange={AdmissionDataGet} value={admissionFormDetail.Query} />
                     <label htmlFor="courses">Course interested in:</label>
                     <div className="AdmissionRadiobuttonsContainer">
                         <span className="AdmisRadioButton">

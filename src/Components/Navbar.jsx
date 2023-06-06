@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import useFetch from '../useFetch'
 import cancelImg from '../images/cancel.png'
 
@@ -7,6 +7,7 @@ import arrow from "../images/down.png"
 
 
 export default function Navbar() {
+  const navigate = useNavigate()
   const { data: events } = useFetch(`${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Display`)
 
 
@@ -51,9 +52,12 @@ export default function Navbar() {
   return (
     <>
       <div className="floating-btn"
-        onClick={(e) => { handleFloatClick(e) }}
+
       >
-        ADMISSION
+        <button type='button' onClick={() => { navigate('/notices') }}>Notices</button>
+        <button type='button' onClick={(e) => { handleFloatClick(e) }}>
+          ADMISSION
+        </button>
       </div>
       <nav className='shadow-2xl desktop-nav max-lg:hidden'>
         <div className="nav-item" data-index="0">

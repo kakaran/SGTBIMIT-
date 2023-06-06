@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import "./Notices.css"
-import useFetch from "../../useFetch"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Helmet } from "react-helmet"
 import { motion } from "framer-motion"
 import { routingAnimations } from "../../constants"
 import { SlArrowDown } from "react-icons/sl"
-import _ from 'lodash'
+import _, { set } from 'lodash'
 
 
 
 export default function Notice() {
+    const location = useLocation()
 
     const [notices, setNotices] = useState([])
     const [options, setOptions] = useState([])
@@ -23,6 +23,10 @@ export default function Notice() {
         const data = await res.json()
         setNotices(data)
         setOptions(_.uniqBy(data, obj => obj.Categories))
+        if (location.pathname === "/admission/notices") {
+            setSearched(data.filter(notice => notice.Categories === "Admissions"))
+            setSearch(true)
+        }
     }
     const handleOptionChange = (e) => {
         if (e.target.value) {
@@ -55,14 +59,16 @@ export default function Notice() {
                 >
                     <h1>NOTICES</h1>
 
-                    <div className="drop">
-                        <select onChange={handleOptionChange}>
-                            <option value="">All Notices</option>
-                            {options?.map(opt => (
-                                <option value={opt.Categories}>{opt.Categories}</option>
-                            ))}
-                        </select>
-                    </div>
+                    {location.pathname !== "/admission/notices" &&
+                        <div className="drop">
+                            <select onChange={handleOptionChange}>
+                                <option value="">All Notices</option>
+                                {options?.map(opt => (
+                                    <option value={opt.Categories}>{opt.Categories}</option>
+                                ))}
+                            </select>
+                        </div>
+                    }
                     {!notices && <Loader />}
                     <div className="notices-grid">
                         {!search && notices.map((notice) => (
@@ -70,7 +76,7 @@ export default function Notice() {
                                 <h1>{notice.Name}</h1>
                                 <p> {notice.Detail} </p>
                                 <div className="notice-file">
-                                    <Link to={`/admission/notices/${notice._id}`} target="_blank" className="flex justify-center items-center gap-4 hover:text-white hover:secondary-clr">
+                                    <Link to={`/admission/notices/${notice._id}`} target="_blank" className="flex justify-center items-center gap-4 hover:text-white hover:bg-red-700">
                                         <span className="my-bold">Read More</span>
                                     </Link>
                                 </div>
@@ -81,7 +87,7 @@ export default function Notice() {
                                 <h1>{notice.Name}</h1>
                                 <p className="text-gray-700"> {notice.Detail} </p>
                                 <div className="notice-file">
-                                    <Link to={`/admission/notices/${notice._id}`} target="_blank" className="flex justify-center items-center gap-4 hover:text-white hover:secondary-clr">
+                                    <Link to={`/admission/notices/${notice._id}`} target="_blank" className="flex justify-center items-center gap-4 hover:text-white hover:bg-red-700">
                                         <span className="my-bold">Read More</span>
                                     </Link>
                                 </div>

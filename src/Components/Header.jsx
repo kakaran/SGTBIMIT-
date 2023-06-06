@@ -9,6 +9,7 @@ import menuImg from '../images/menu.png'
 import MobileNav from './MobileNav'
 
 export default function Header() {
+
   const [mobileToggle, setMobileToggle] = useState(false)
   const { data: notices } = useFetch(`${import.meta.env.VITE_API_URL}/Notice/Notice_Data_Display`)
   const filteredNotices = notices ? notices.filter((notice) => (
@@ -40,6 +41,7 @@ export default function Header() {
 
 
     <header>
+
       <script src="https://code.tidio.co/djv7qpldihqart98bhpeazlxworceabc.js" async></script>
       <Admission />
       <div className="header-top">

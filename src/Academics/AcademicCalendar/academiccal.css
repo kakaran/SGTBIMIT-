@@ -39,7 +39,7 @@
     color: white;
 }
 
-.acad-cal h1 {
+.acad-cal>h1 {
     font-size: min(3.5rem, 8vw);
     text-align: center;
     font-family: "SF Pro Display-Bold";

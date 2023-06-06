@@ -30,6 +30,7 @@ export default function AdminisCarousel() {
         variants={routingAnimations}
         className="adminis-section"
       >
+        <div className="gradient-bg"></div>
         <h1 className="my-bold my-text-4 primary-blue text-center">Governing Body</h1>
         {isPending && <Loader />}
         {error && <div className="error">{error}</div>}
@@ -63,9 +64,11 @@ export default function AdminisCarousel() {
                         alt="cant load"
                         className="float-left max-md:float-none"
                       />
-                      <p className="my-text-4 m-0 my-bold text-start max-lg:mt-5">
-                        {adminis?.name}
-                      </p>
+                      <div className="flex justify-start">
+                        <p className="my-text-4 m-0 my-bold text-start max-lg:mt-5 orange_gradient inline">
+                          {adminis?.name}
+                        </p>
+                      </div>
                       <p className="long-note text-gray-800"> {adminis?.longNote} </p>
                     </div>
 

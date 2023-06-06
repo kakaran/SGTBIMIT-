@@ -1,7 +1,7 @@
 .adminis-section {
     width: 100%;
-    background: url("../../images/bg-frame.png");
-    background-size: 100%;
+    /* background: url("../../images/bg-frame.png");
+    background-size: 100%; */
 }
 
 .adminis-carousel {
@@ -31,8 +31,8 @@
     width: 400px !important;
     aspect-ratio: 1 !important;
     position: relative;
-    --margin: 2rem;
-    margin-right: var(--margin);
+    --margin: 1rem;
+    margin-right: calc(var(--margin) * 2);
     margin-bottom: var(--margin);
     margin-top: var(--margin);
 }
@@ -41,7 +41,6 @@
 .long-note {
     text-align: justify;
     line-height: 1.5em;
-    color: rgba(0, 0, 0, 0.9);
     font-size: min(1.5rem, 4vw);
 }
 

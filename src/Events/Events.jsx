@@ -74,7 +74,7 @@ export default function Events() {
             <div className={`about-event-section ${events?.images?.length ? "conditional-event-grid" : ""}`}>
               <div className="gradient-bg"></div>
               <div className="about-event">
-                <h1 className='my-bold bg-clip-text text-transparent w-max' style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}>About {_.startCase(_.toLower(events?.name))}</h1>
+                <h1 className='my-bold bg-clip-text text-transparent orange_gradient'>About {_.startCase(_.toLower(events?.name))}</h1>
                 <p className="text-gray-800 leading-[1.5em]">{events?.detail}</p>
               </div>
               {events?.images?.length ?

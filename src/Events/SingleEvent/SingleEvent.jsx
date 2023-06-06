@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { Footer, Header, Navbar } from '../../Components';
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
-import styles from './singleEvent.module.css'
 import { Carousel } from 'react-responsive-carousel';
 
 const SingleEvent = () => {
@@ -34,11 +33,11 @@ const SingleEvent = () => {
             >
                 <div className='gradient-bg'></div>
                 <div className='w-3/4 flex flex-col p-5 mx-auto rounded-lg shadow-lg my-10 bg-white bg-opacity-30 items-center'>
-                    <h1 className='my-text-4 text-center my-bold bg-clip-text text-transparent w-max max-w-full' style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}>{event?.name}</h1>
+                    <h1 className='my-text-4 text-center my-bold bg-clip-text text-transparent orange_gradient'>{event?.name}</h1>
 
                     <Carousel
                         showStatus={false}
-                        showThumbs={false}
+                        showThumbs={event && event.Images.length > 1 ? true : false}
                         dynamicHeight={true}
                         interval={5000}
                         stopOnHover={false}

@@ -77,7 +77,7 @@ const EventAdd = () => {
             console.log("hi");
             const data1 = (
                 await axios.post(
-                    `${import.meta.env.VITE_API_URL}/Event/Event_Addddd`,
+                    `${import.meta.env.VITE_API_URL}/Event/Event_Add`,
                     formData,
                     {
                         headers: {

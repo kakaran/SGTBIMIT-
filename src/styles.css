@@ -97,6 +97,15 @@ a {
     background-color: var(--primary-blue);
 }
 
+.orange_gradient {
+    background-image: linear-gradient(to right, #f59e0b, #ea580c, #eab308);
+    @apply bg-clip-text text-transparent w-max max-w-full
+}
+
+.blue_gradient {
+    background-image: linear-gradient(to right, #2563eb, #0891b2);
+    @apply bg-clip-text text-transparent w-max max-w-full
+}
 
 button {
     cursor: pointer;

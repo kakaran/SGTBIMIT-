@@ -107,9 +107,8 @@ const QuestionPaperDisplay = () => {
       >
         <div className="gradient-bg"></div>
         <div>
-          <h1 className="bg-clip-text text-transparent my-text-4 w-max mx-auto"
+          <h1 className="bg-clip-text text-transparent my-text-4 blue_gradient mx-auto"
             style={{
-              backgroundImage: "linear-gradient(to right, #2563eb, #0891b2)",
               fontFamily: "Spline Sans"
             }}
           >Previous Year Papers</h1>
@@ -200,8 +199,7 @@ const QuestionPaperDisplay = () => {
                 {!isPending && (
                   <div className={`mx-auto rounded-md shadow-md bg-white bg-opacity-30 p-[min(2.5rem,2vw)] my-4 col-span-3 max-lg:col-span-1 w-full`} >
                     <div className="flex flex-col gap-4 border-b-1 border-slate-400">
-                      <div className="text-6xl my-bold bg-clip-text text-transparent max-lg:mx-auto w-max"
-                        style={{ backgroundImage: "linear-gradient(to right, #f59e0b, #ea580c, #eab308)" }}
+                      <div className="text-6xl my-bold bg-clip-text text-transparent max-lg:mx-auto orange_gradient"
                       >
                         {getPaperFilterData?.course}
                       </div>

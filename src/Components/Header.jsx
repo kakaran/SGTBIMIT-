@@ -32,7 +32,8 @@ export default function Header() {
     justifyContent: "center",
     margin: "auto",
     alignItems: "center",
-    gap: "1rem"
+    gap: "1rem",
+    fontSize: ".7vw",
   }
 
   return (

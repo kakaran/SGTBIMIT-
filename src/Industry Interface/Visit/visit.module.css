@@ -1,9 +1,8 @@
 .container {
-    width: calc(100% - 2*(var(--radius)));
-    border-top-right-radius: var(--radius);
+    border-top-right-radius: 3rem;
 }
 
 .line {
-    width: calc(100% - 2*(var(--radius)));
+    width: calc(100% - 3rem);
     transform: translateY(50%);
 }

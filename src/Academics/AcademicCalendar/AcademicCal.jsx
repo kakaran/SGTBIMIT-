@@ -53,7 +53,7 @@ export default function AcademicCal() {
 
                 <div className='gradient-bg'></div>
 
-                <div className='w-[min(1500px,100%)] p-4 mx-auto grid gap-10'>
+                {/* <div className='w-[min(1500px,100%)] p-4 mx-auto grid gap-10'>
                     <div>
                         <h1 className='orange_gradient my-bold my-text-4'>Odd Semester</h1>
                         {details.oddSem.map((item, index) => {
@@ -82,6 +82,20 @@ export default function AcademicCal() {
                             )
                         })}
                     </div>
+                </div> */}
+                <div className='flex justify-between items-center w-[min(1500px,100%)] p-4 mx-auto gap-10'>
+                    <h1 className='my-bold blue_gradient my-text-2'>
+                        Academic Calendar - All Programmes (2022-2023)
+                    </h1>
+                    <button
+                        type='button'
+                        className='my-bold text-2xl px-6 py-2 h-max primary-blue-bg-clr rounded-md'
+                        onClick={() => {
+                            window.open(`http://www.ipu.ac.in/DAA/acadcalendar/Academic%20Calendar%20for%20All%20prorammes%202022-23.pdf`)
+                        }}
+                    >
+                        <span className='text-white'> PDF </span>
+                    </button>
                 </div>
             </motion.section>
             <Footer />

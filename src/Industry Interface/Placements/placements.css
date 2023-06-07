@@ -133,8 +133,8 @@
     padding-right: min(4rem, 4vw);
 }
 
-.placement-about-content img {
-    width: 100%;
+.placement-about-content > img {
+    width: 100px;
     box-shadow: 0 90px 50px -50px #33393C75;
     border-radius: 20px;
 }
@@ -165,13 +165,17 @@
     z-index: 0;
 }
 
-.PlacementImage:hover{
+.PlacementImage:hover {
     cursor: pointer;
     content: url("../../../public/linkedin.png");
     opacity: calc(0.5);
     transition-duration: .5s;
     transition-property: all;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
+    /* background-size: 50px; */
+    /* background-position:center; */
+    /* background-repeat: no-repeat; */
+    z-index: 1000;
 }
 
 @media (max-width: 1000px) {
@@ -185,7 +189,8 @@
         width: 90%;
         margin-top: 2rem;
     }
-    .placement-about-content p{
+
+    .placement-about-content p {
         font-size: 4vw;
     }
 }

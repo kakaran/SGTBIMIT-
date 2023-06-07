@@ -5,8 +5,11 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { routingAnimations } from "../../constants";
 import axios from "axios";
+import cancel from '../../images/cancel.png'
+import { Carousel } from "react-responsive-carousel";
 
 const AlumniMeet = () => {
+  const [carouselIndex, setCarouselIndex] = useState(null)
   const [aluminiEventData, setAluminiEventData] = useState([]);
 
   useEffect(() => {
@@ -14,8 +17,7 @@ const AlumniMeet = () => {
       try {
         const Data = (
           await axios(
-            `${
-              import.meta.env.VITE_API_URL
+            `${import.meta.env.VITE_API_URL
             }/AluminiEvents/AluyminiEvent_Display`
           )
         ).data;
@@ -127,14 +129,13 @@ const AlumniMeet = () => {
           </ul>
           <h3>Events</h3>
           <div className="AluminiEventsContainer">
-            {aluminiEventData?.map((value) => {
+            {aluminiEventData?.map((value, i) => {
               return (
-                <div className="AluminCardContainer">
+                <div className="AluminCardContainer" key={value._id} onClick={() => { setCarouselIndex(i) }}>
                   <h4>{value?.Year}</h4>
                   <img
-                    src={`${
-                      import.meta.env.VITE_API_URL
-                    }/AluminiEvents/AluminiEvenmai_Image_Display/${value?._id}`}
+                    src={`${import.meta.env.VITE_API_URL
+                      }/AluminiEvents/AluminiEvenmai_Image_Display/${value?._id}`}
                     alt={value?.Name}
                   />
                   <p>{value?.Detail}</p>
@@ -144,6 +145,36 @@ const AlumniMeet = () => {
           </div>
         </div>
       </motion.section>
+      {aluminiEventData?.map((alumni, i) => {
+
+        if (carouselIndex === i) return <motion.section viewport={{ once: true }}
+          className="gallery-carousel-section"
+          initial={{
+            scale: 0,
+          }}
+          animate={{
+            scale: 1,
+          }}
+        >
+          <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
+          <Carousel
+            showThumbs={false}
+          >
+            {alumni.Images.map((image) => {
+              return (
+                <div className="gallery-carousel-container">
+                  <div className="gallery-carousel-item h-[500px]">
+                    <img src={`${import.meta.env.VITE_API_URL}/AluminiEvents/Alumin_Images_Display/${alumni._id}/${image._id}`} alt="cant load" />
+                  </div>
+                </div>
+              )
+            }
+            )}
+          </Carousel>
+        </motion.section>
+      }
+      )
+      }
       {/* <Footer /> */}
     </>
   );

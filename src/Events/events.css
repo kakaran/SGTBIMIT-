@@ -66,7 +66,7 @@
 
 }
 
-.about-event p {
+.about-event pre {
     /* color: #383838; */
     font-size: min(1.6rem, 3.2vw);
     /* line-height: 2rem; */

@@ -75,7 +75,7 @@ export default function Events() {
               <div className="gradient-bg"></div>
               <div className="about-event">
                 <h1 className='my-bold bg-clip-text text-transparent orange_gradient'>About {_.startCase(_.toLower(events?.name))}</h1>
-                <p className="text-gray-800 leading-[1.5em]">{events?.detail}</p>
+                <pre className="text-gray-800 leading-[1.5em] whitespace-break-spaces">{events?.detail}</pre>
               </div>
               {events?.images?.length ?
                 <div className="about-event-carousel">

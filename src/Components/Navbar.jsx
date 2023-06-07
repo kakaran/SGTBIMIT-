@@ -9,8 +9,6 @@ import arrow from "../images/down.png"
 export default function Navbar() {
   const navigate = useNavigate()
   const { data: events } = useFetch(`${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Display`)
-  const { data: infra } = useFetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Display_DropDown`)
-  console.log(infra ? infra : "");
 
 
   // useEffect(() => {
@@ -60,12 +58,12 @@ export default function Navbar() {
         </button>
       </div>
       <nav className='shadow-2xl desktop-nav max-lg:hidden'>
-        <div className="nav-item" data-index="0">
+        <div className="nav-item" >
           <div className='h-full'><NavLink to="/" className='h-full flex items-center'>HOME</NavLink></div>
         </div>
-        <div className="nav-item" data-index="1">
+        <div className="nav-item" >
           <div> ABOUT US<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="1">
+          <div className="dropdown" >
             <NavLink to="/about/governing-body" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">GOVERNING BODY</div>
             </NavLink>
@@ -78,9 +76,9 @@ export default function Navbar() {
           </div>
 
         </div>
-        <div className="nav-item" data-index="2">
+        <div className="nav-item" >
           <div>ACADEMICS<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="2">
+          <div className="dropdown" >
             <div className="dropdown-item courses-dropdown-container">
               <div>COURSES</div>
               <div className="dropdown courses-dropdown">
@@ -123,21 +121,19 @@ export default function Navbar() {
 
         </div>
 
-        <div className="nav-item" data-index="6">
-          <div>INFRASTRUCTURE<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="6">
-            {infra && infra.Data?.map((inn, i) => (
-              <NavLink to={`/infrastructure/${inn._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={`${inn + i}`}>
-                <div className="dropdown-item uppercase"> {inn.InfraName} </div>
-              </NavLink>
-            ))}
+        <div className="nav-item" >
+          <div>CAMPUS<img src={arrow} alt="" /></div>
+          <div className="dropdown" >
+            <NavLink to={`/infrastructure`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+              <div className="dropdown-item uppercase"> INFRASTRUCTURE </div>
+            </NavLink>
           </div>
         </div>
 
 
-        <div className="nav-item" data-index="3">
+        <div className="nav-item" >
           <div>ADMISSION<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="3">
+          <div className="dropdown" >
             <NavLink to="/admission/fees" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">FEES</div>
             </NavLink>
@@ -150,9 +146,9 @@ export default function Navbar() {
           </div>
 
         </div>
-        <div className="nav-item" data-index="4">
+        <div className="nav-item" >
           <div>ALUMNI<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="4">
+          <div className="dropdown" >
             <NavLink to="/alumini/alumini-meet" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">ALUMNI MEET</div>
             </NavLink>
@@ -168,9 +164,9 @@ export default function Navbar() {
           </div>
 
         </div>
-        {/* <div className="nav-item" data-index="5">
+        {/* <div className="nav-item" >
           <div>SOCIETY<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="5">
+          <div className="dropdown" >
             {societies && societies.map((society) => {
               return (
                 <NavLink to={`/society/${society._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={society._id}>
@@ -181,9 +177,9 @@ export default function Navbar() {
           </div>
 
         </div> */}
-        <div className="nav-item" data-index="6">
+        <div className="nav-item" >
           <div>SOCIETY & CLUBS<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="6">
+          <div className="dropdown" >
             {events && events.map((event, i) => (
               <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={`${event + i}`}>
                 <div className="dropdown-item uppercase"> {event.name} </div>
@@ -192,9 +188,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="nav-item" data-index="7">
+        <div className="nav-item" >
           <div>INDUSTRY INTERFACE<img src={arrow} alt="" /></div>
-          <div className="dropdown" data-index="7">
+          <div className="dropdown" >
             <NavLink to="/industry/industrial-visit" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">INDUSTRIAL VISIT</div>
             </NavLink>
@@ -210,9 +206,9 @@ export default function Navbar() {
           </div>
 
         </div>
-        {/* <div className="nav-item" data-index="8">
+        {/* <div className="nav-item" >
           <div>NAAC<img src={arrow} alt="" /></div>
-          <div className="dropdown left-dropdown" data-index="8">
+          <div className="dropdown left-dropdown" >
             <NavLink to="/naac/r&d" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">R&D</div>
             </NavLink>

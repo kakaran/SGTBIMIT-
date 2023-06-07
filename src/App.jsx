@@ -94,6 +94,7 @@ import PStatsDisplay from './Pages/Industry Interface/Placement Statics/Placemen
 import SingleEvent from './Events/SingleEvent/SingleEvent.jsx'
 import EventHDisplay from './Pages/Society/Event_Handler/EventHandler_Display/EventH_Display.jsx'
 import Infra from './Infra/Infra.jsx'
+import Summer from './Industry Interface/Summer/Summer.jsx'
 
 
 function App() {
@@ -133,7 +134,8 @@ function App() {
         <Route path='/industry/industrial-visit' element={<Visit />} />
         <Route path='events/:id/:event_id' element={<SingleEvent />} />
         <Route path='/notices' element={<Notice />} />
-        <Route path='/infrastructure/:id' element={<Infra />} />
+        <Route path='/infrastructure' element={<Infra />} />
+        <Route path="/industry/summer-internship" element={<Summer />} />
 
         {/* Admin Routes */}
 

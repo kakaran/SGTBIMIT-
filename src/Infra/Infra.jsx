@@ -34,11 +34,10 @@ const Infra = () => {
             >
                 <div className='gradient-bg' />
                 <div className='flex justify-center'>
-                    <h1 className='my-bold blue_gradient my-text-4'>Infrastucture</h1>
+                    <h1 className='my-bold blue_gradient my-text-4'>INFRASTRUCTURE</h1>
                 </div>
                 <div className='w-[min(1500px,100%)] mx-auto my-10'>
                     <h1 className='orange_gradient my-bold my-text-4'>{infra.Data?.InfraName}</h1>
-                    <p className='text-gray-700 text-2xl'> {infra.Data?.Detail}</p>
                     <div className='w-1/2'>
                         <Carousel
 
@@ -57,6 +56,7 @@ const Infra = () => {
                                 </div>))}
                         </Carousel>
                     </div>
+                    <p className='text-gray-700 text-2xl'> {infra.Data?.Detail}</p>
                 </div>
             </motion.section>
             <Footer />

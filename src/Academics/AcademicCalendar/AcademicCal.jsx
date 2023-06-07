@@ -51,7 +51,7 @@ export default function AcademicCal() {
                     })}
                 </div> */}
 
-                {/* <div className='gradient-bg'></div> */}
+                <div className='gradient-bg'></div>
 
                 <div className='w-[min(1500px,100%)] p-4 mx-auto grid gap-10'>
                     <div>

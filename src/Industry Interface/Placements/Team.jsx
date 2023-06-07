@@ -52,9 +52,8 @@ const Team = () => {
                   {console.log(item._id)}
                   <Link to={item.linkdin} target="_blank">
                     <img
-                      src={`${
-                        import.meta.env.VITE_API_URL
-                      }/PlacementTeam/Placement_Image_Display/${item._id}`}
+                      src={`${import.meta.env.VITE_API_URL
+                        }/PlacementTeam/Placement_Image_Display/${item._id}`}
                       onError={handleError}
                       ref={imageRef}
                       className="aspect-square PlacementImage w-40 rounded-full"
@@ -77,13 +76,12 @@ const Team = () => {
                 >
                   <Link to={item.linkdin} target="_blank">
                     <img
-                      src={`${
-                        import.meta.env.VITE_API_URL
-                      }/PlacementTeam/Placement_Image_Display/${item._id}`}
+                      src={`${import.meta.env.VITE_API_URL
+                        }/PlacementTeam/Placement_Image_Display/${item._id}`}
                       onError={handleError}
                       ref={imageRef}
                       className="aspect-square PlacementImage w-40 rounded-full"
-                      onClick={item.linkdin}
+                      onClick={() => { window.open(item.linkdin) }}
                     />
                   </Link>
                   <h1 className="my-bold text-gray-500">{item.Name}</h1>

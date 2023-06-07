@@ -76,8 +76,8 @@ const Infra = () => {
                                 </Carousel>
                             </div>
                         </div>
+                        <p className='text-gray-700 text-2xl text-justify'> {infra.Data?.Detail}</p>
                     </motion.div>}
-                    <p className='text-gray-700 text-2xl text-justify'> {infra.Data?.Detail}</p>
                 </div>
             </motion.section>
             <Footer />

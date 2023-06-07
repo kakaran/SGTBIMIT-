@@ -56,23 +56,25 @@ const Infra = () => {
                         key={infra.Data?._id}
                     >
                         <h1 className='orange_gradient my-bold my-text-3'>{infra.Data?.InfraName}</h1>
-                        <div className='w-1/2'>
-                            <Carousel
-                                showThumbs={false}
-                                showStatus={false}
-                                showIndicators={false}
-                                autoPlay={true}
-                                infiniteLoop={true}
-                                interval={5000}
-                                transitionTime={500}
-                                stopOnHover={false}
-                            >
-                                {infra.Data?.Images?.map((image, index) => (
-                                    <div key={index} className='h-full flex items-center'>
-                                        <img src={`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Image_Display/${infra.Data._id}/${image._id}`} alt={image} className='rounded-lg' onLoad={() => { window.scrollTo(0, myRef.current.offsetTop + 140) }} />
-                                    </div>))
-                                }
-                            </Carousel>
+                        <div className='flex justify-center items-center'>
+                            <div className='w-1/2'>
+                                <Carousel
+                                    showThumbs={false}
+                                    showStatus={false}
+                                    showIndicators={false}
+                                    autoPlay={true}
+                                    infiniteLoop={true}
+                                    interval={5000}
+                                    transitionTime={500}
+                                    stopOnHover={false}
+                                >
+                                    {infra.Data?.Images?.map((image, index) => (
+                                        <div key={index} className='flex items-center h-[500px] justify-center'>
+                                            <img src={`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Image_Display/${infra.Data._id}/${image._id}`} alt={image} className='rounded-lg ' onLoad={() => { window.scrollTo(0, myRef.current.offsetTop + 140) }} />
+                                        </div>))
+                                    }
+                                </Carousel>
+                            </div>
                         </div>
                     </motion.div>}
                     <p className='text-gray-700 text-2xl text-justify'> {infra.Data?.Detail}</p>

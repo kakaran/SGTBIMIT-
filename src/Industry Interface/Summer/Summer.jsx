@@ -11,7 +11,6 @@ const Summer = () => {
             <Header />
             <Navbar />
             <motion.section
-
                 viewport="viewport"
                 initial="initial"
                 animate="animate"
@@ -24,7 +23,11 @@ const Summer = () => {
                     <h1 className='my-bold blue_gradient my-text-4'>SUMMER INTERNSHIP</h1>
                 </div>
                 <div className='w-[min(1800px,100%)] mx-auto my-10 grid px-10'>
-                    {[...Array(5)].map((_, index) => (<></>))}
+                    {[...Array(5)].map((_, index) => (
+                        <div className=''>
+
+                        </div>
+                    ))}
                 </div>
             </motion.section>
         </>

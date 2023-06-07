@@ -9,8 +9,8 @@ import arrow from "../images/down.png"
 export default function Navbar() {
   const navigate = useNavigate()
   const { data: events } = useFetch(`${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Display`)
-
-
+  const { data: infra } = useFetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Display_DropDown`)
+  console.log(infra ? infra : "");
 
 
   // useEffect(() => {
@@ -122,6 +122,19 @@ export default function Navbar() {
           </div>
 
         </div>
+
+        <div className="nav-item" data-index="6">
+          <div>INFRASTRUCTURE<img src={arrow} alt="" /></div>
+          <div className="dropdown" data-index="6">
+            {infra && infra.Data?.map((inn, i) => (
+              <NavLink to={`/infrastructure/${inn._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={`${inn + i}`}>
+                <div className="dropdown-item uppercase"> {inn.InfraName} </div>
+              </NavLink>
+            ))}
+          </div>
+        </div>
+
+
         <div className="nav-item" data-index="3">
           <div>ADMISSION<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="3">
@@ -177,8 +190,8 @@ export default function Navbar() {
               </NavLink>
             ))}
           </div>
-
         </div>
+
         <div className="nav-item" data-index="7">
           <div>INDUSTRY INTERFACE<img src={arrow} alt="" /></div>
           <div className="dropdown" data-index="7">

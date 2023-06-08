@@ -134,7 +134,7 @@
 }
 
 .placement-about-content > img {
-    width: 100px;
+    width: 100%;
     box-shadow: 0 90px 50px -50px #33393C75;
     border-radius: 20px;
 }

@@ -134,7 +134,7 @@ function App() {
         <Route path='/industry/industrial-visit' element={<Visit />} />
         <Route path='events/:id/:event_id' element={<SingleEvent />} />
         <Route path='/notices' element={<Notice />} />
-        <Route path='/infrastructure/:id' element={<Infra />} />
+        <Route path='/infrastructure/' element={<Infra />} />
         <Route path='/InfraLife' element={<InfraLife />} />
 
         {/* Admin Routes */}

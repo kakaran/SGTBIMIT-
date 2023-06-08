@@ -74,30 +74,26 @@ const Visit = () => {
               <div className={`w-full h-1 primary-bg-clr rounded-full`}></div>
               <div className="h-28" />
               <div className="flex">
-                <div className="z-10 w-3/5">
+                <div className="z-10 w-full min-h-full grid">
                   <img
-                    src={`${
-                      import.meta.env.VITE_API_URL
-                    }/IndustrialVisits/IndustrialVisits_Image_Display/${
-                      visit._id
-                    }`}
+                    src={`${import.meta.env.VITE_API_URL
+                      }/IndustrialVisits/IndustrialVisits_Image_Display/${visit._id
+                      }`}
                     alt="cant load"
-                    className="aspect-video w-full rounded-lg shadow-lg"
+                    className="aspect-video w-[400px] rounded-lg shadow-lg"
                     style={{
                       transform: "translate(3rem,-30%)",
                     }}
                   />
                   <img
-                    src={`${
-                      import.meta.env.VITE_API_URL
-                    }/IndustrialVisits/IndustrialVisits_CompanyImg_Display/${
-                      visit._id
-                    }`}
+                    src={`${import.meta.env.VITE_API_URL
+                      }/IndustrialVisits/IndustrialVisits_CompanyImg_Display/${visit._id
+                      }`}
                     alt=""
-                    className="aspect-square w-full"
+                    className="aspect-square w-[200px] mt-auto"
                   />
                 </div>
-                <p className="bg-[#FFDFDF] z-0 p-16 rounded-lg text-gray-700 text-justify text-2xl flex items-center">
+                <p className=" bg-[rgba(255,255,255,0.5)] z-0 p-16 rounded-lg text-gray-700 text-justify text-2xl flex items-center">
                   {visit.about}
                 </p>
               </div>

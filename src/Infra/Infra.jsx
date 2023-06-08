@@ -14,7 +14,6 @@ const Infra = () => {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Single_Display/${e.target.value}`)
         const data = await res.json()
         setInfra(data)
-
         console.log(data);
     }
 

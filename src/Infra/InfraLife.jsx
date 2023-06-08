@@ -25,10 +25,13 @@ const InfraLife = () => {
     <>
       <Header />
       <Navbar />
+      <div className="gradient-bg" />
       <div className="InfraLifeContainer">
-        <h1>Infra Life</h1>
+        <div className="grid place-content-center">
+          <h1 className="blue_gradient my-bold my-text-4 uppercase">Infra Life</h1>
+        </div>
         <p>
-          <span style={{ fontWeight: "bold" }}>
+          <span className="my-bold">
             Life at SGTBIMIT: Fostering Excellence and Holistic Development
           </span>
           <br />
@@ -63,14 +66,14 @@ const InfraLife = () => {
                 console.log(`current index: ${current}, prev index: ${prev}`),
             }}
           >
-            {infraData.map((value)=>{
-                return(<Image
-                    width={200}
-                    height={200}
-                    src={`${import.meta.env.VITE_API_URL}/Infrastructure/InfraLife_Images_Display/${value._id}`}
-                  />)
+            {infraData.map((value) => {
+              return (<Image
+                width={200}
+                height={200}
+                src={`${import.meta.env.VITE_API_URL}/Infrastructure/InfraLife_Images_Display/${value._id}`}
+              />)
             })}
-            
+
           </Image.PreviewGroup>
         </div>
       </div>

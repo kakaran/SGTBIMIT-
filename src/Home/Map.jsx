@@ -7,6 +7,7 @@ import pdf from '../images/pdf-icon.png'
 import campus from '../images/campus-icon.png'
 import research from '../images/research-icon.png'
 import { useNavigate } from 'react-router-dom'
+import brochure from '../Assets/brochure.pdf'
 
 export default function Map() {
   const navigate = useNavigate()
@@ -67,10 +68,10 @@ export default function Map() {
             ))}
           </div>
           <div className="chips">
-            <button className="chip">
+            <a className="chip" href={brochure} download classname="cursor-pointer">
               <img src={pdf} alt="" style={{ filter: "brightness(0) invert(1)" }} />
               <span>Download Brochure</span>
-            </button>
+            </a>
             <button className="chip" onClick={() => { window.open("https://youtu.be/bfeek8jSpeI") }}>
               <img src={campus} alt="" />
               <span>Campus Tour</span>

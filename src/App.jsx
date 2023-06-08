@@ -31,7 +31,7 @@ import Registration from './Alumni/Registration/Registration.jsx'
 import CommitteePDF from './Home/Committees/CommitteePDF.jsx'
 import QuestionPaper from './Academics/QuestionPaperDisplay/QuestionPaper.jsx'
 import Visit from './Industry Interface/Visit/Visit.jsx'
-
+import Summer from './Industry Interface/Summer/Summer.jsx'
 
 /* Admin imports */
 
@@ -134,8 +134,9 @@ function App() {
         <Route path='/industry/industrial-visit' element={<Visit />} />
         <Route path='events/:id/:event_id' element={<SingleEvent />} />
         <Route path='/notices' element={<Notice />} />
-        <Route path='/infrastructure/' element={<Infra />} />
+        <Route path='/infrastructure' element={<Infra />} />
         <Route path='/InfraLife' element={<InfraLife />} />
+        <Route path='/industry/summer-internship' element={<Summer />} />
 
         {/* Admin Routes */}
 

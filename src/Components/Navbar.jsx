@@ -127,6 +127,9 @@ export default function Navbar() {
             <NavLink to={`/infrastructure`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item uppercase"> INFRASTRUCTURE </div>
             </NavLink>
+            <NavLink to={`/infralife`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+              <div className="dropdown-item uppercase"> Infra Life </div>
+            </NavLink>
           </div>
         </div>
 

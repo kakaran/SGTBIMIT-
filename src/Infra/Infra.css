@@ -4,16 +4,16 @@
   margin: auto;
 }
 
-.InfraLifeContainer h1 {
+/* .InfraLifeContainer h1 {
   background-image: linear-gradient(to right, #2563eb, #0891b2);
-  /* width: max-content; */
+  width: max-content;
   max-width: 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-size: min(3.5rem, 8vw);
   text-transform: uppercase;
-}
+} */
 
 .InfraLifeContainer p {
   font-size: 1.5rem;
@@ -23,11 +23,11 @@
   padding: 10px 0px;
 }
 
-.InfraLifeContainer video[poster]{
-    width: 65%;
-    height: 500px
+.InfraLifeContainer video[poster] {
+  width: 65%;
+  height: 500px
 }
 
-.InfraLifeImageContainer{
-    padding: 20px 0px;
+.InfraLifeImageContainer {
+  padding: 20px 0px;
 }

@@ -4,6 +4,7 @@ import { Image } from "antd";
 import "./Infra.css";
 import { useEffect } from "react";
 import axios from "axios";
+import { Carousel } from "antd";
 
 const InfraLife = () => {
   const [infraData, setInfraData] = useState([]);
@@ -11,16 +12,19 @@ const InfraLife = () => {
   useEffect(() => {
     const InfraDataGet = async () => {
       try {
-        const Data = (await axios.get(`${import.meta.env.VITE_API_URL}/Infrastructure/InfraLife_Data_Send`)).data;
+        const Data = (
+          await axios.get(
+            `${import.meta.env.VITE_API_URL}/Infrastructure/InfraLife_Data_Send`
+          )
+        ).data;
         console.log(Data);
-        setInfraData(Data)
+        setInfraData(Data);
       } catch (error) {
         console.log(error);
       }
     };
-    InfraDataGet()
+    InfraDataGet();
   }, []);
-
   return (
     <>
       <Header />
@@ -57,21 +61,20 @@ const InfraLife = () => {
           muted
         ></video>
         <div className="InfraLifeImageContainer">
-          <Image.PreviewGroup
-            preview={{
-              onChange: (current, prev) =>
-                console.log(`current index: ${current}, prev index: ${prev}`),
-            }}
-          >
-            {infraData.map((value)=>{
-                return(<Image
-                    width={200}
-                    height={200}
-                    src={`${import.meta.env.VITE_API_URL}/Infrastructure/InfraLife_Images_Display/${value._id}`}
-                  />)
+          <Carousel autoplay>
+            {infraData.map((value) => {
+              return (
+                <img
+                  src={`${
+                    import.meta.env.VITE_API_URL
+                  }/Infrastructure/InfraLife_Images_Display/${value._id}`}
+                  alt=""
+                  width="1000px"
+                  height="800px"
+                />
+              );
             })}
-            
-          </Image.PreviewGroup>
+          </Carousel>
         </div>
       </div>
       <Footer />

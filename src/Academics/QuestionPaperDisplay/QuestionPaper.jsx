@@ -111,7 +111,7 @@ const QuestionPaperDisplay = () => {
             style={{
               fontFamily: "Spline Sans"
             }}
-          >Previous Year Papers</h1>
+          >PREVIOUS YEAR PAPERS</h1>
         </div>
         <div className={`mx-auto gap-[min(2rem,2vw)] transition-all duration-500 z-10 my-10 px-[min(2rem,3vw)] ${firstRender ? "grid grid-cols-4 max-lg:grid-cols-1 w-full" : "w-[min(499px,95%)]"}`}>
           <div className={`flex flex-col w-full h-max text-4xl py-8 px-[min(3rem,2vw)] bg-slate-100 rounded-md shadow-xl mx-auto gap-11 transition-all`} >

@@ -276,6 +276,12 @@
     }
 }
 
+/* latest events */
+.eventcard{
+    margin-block: 2rem;
+    margin: 0rem 3rem;
+}
+
 /* director msg */
 .director-msg {
     position: relative;

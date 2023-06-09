@@ -37,13 +37,13 @@ export default function Faculty() {
                 variants={routingAnimations}
             >
                 <div className="w-[min(1500px,98%)] mx-auto">
-                    <h1 className="my-bold my-text-4 primary-blue text-center">Core Faculty</h1>
+                    <h1 className="my-bold my-text-4 primary-blue text-center">CORE FACULTY</h1>
                     <p className="text-gray-800 leading-[2em] text-[min(2rem,4vw)]">SGTBIMIT has very diversified and experienced faculties of their domains that works day in day out for their students to make them industry ready</p>
                     {!facultyData && <div className='flex justify-center items-center'> <Loader /> </div>}
                     <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5 place-items-center">
                         {facultyData && facultyData.map(({ _id, name, post, detail, Department }, i) => (
                             <div className="flex flex-col items-center shadow-2xl bg-white w-[70%] h-full rounded-3xl">
-                                <img src={`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" className='w-full aspect-square object-fillx mx-auto rounded-md' />
+                                <img src={`${import.meta.env.VITE_API_URL}/Faculty/Faculty_Image_Display/${_id}`} alt="cant load" className='w-4/5 aspect-square object-fillx mx-auto rounded-md' />
                                 <div className='mt-auto  p-5'>
                                     <h2 className="my-bold text-[min(2.5rem,5vw)] mt-3 mb-0 text-center">{_.startCase(_.toLower(name)).replace("Dr ", "Dr. ")}</h2>
                                     <p className='primary-clr leading-[2em] text-[min(1.5rem,2vw)] m-0 text-center'>{post}</p>

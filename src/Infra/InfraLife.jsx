@@ -28,7 +28,7 @@ const InfraLife = () => {
       <div className="gradient-bg" />
       <div className="InfraLifeContainer">
         <div className="grid place-content-center">
-          <h1 className="blue_gradient my-bold my-text-4 uppercase">Infra Life</h1>
+          <h1 className="blue_gradient my-bold my-text-4 uppercase">Campus Life</h1>
         </div>
         <p>
           <span className="my-bold">

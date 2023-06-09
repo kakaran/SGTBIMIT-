@@ -1,10 +1,10 @@
-
 import React from 'react'
 import useFetch from '../useFetch'
 import { Carousel } from 'react-responsive-carousel'
 import Loader from '../Components/Loader'
 import { motion } from 'framer-motion'
 import quote from '../images/quote.png'
+
 export default function Testimonials() {
     const { data: testimonials, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Testimonial/Testimonial_Display`)
     return (

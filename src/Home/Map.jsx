@@ -19,7 +19,7 @@ export default function Map() {
     },
     {
       type: "Phone Number",
-      detail: "+91-8810230080, 9899333224",
+      detail: "91-9899333224, 91-8810230080, 011-61383760, 011-61383764",
       image: phone
     },
     {

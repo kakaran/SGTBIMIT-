@@ -127,7 +127,7 @@ const AlumniMeet = () => {
             <li>Re-unions of ex-students.</li>
             <li>Felicitation of achievers.</li>
           </ul>
-          <h3>Events</h3>
+          <h3>Alumni Meets</h3>
           <div className="AluminiEventsContainer">
             {aluminiEventData?.map((value, i) => {
               return (

@@ -31,7 +31,7 @@ export default function AdminisCarousel() {
         className="adminis-section"
       >
         <div className="gradient-bg"></div>
-        <h1 className="my-bold my-text-4 primary-blue text-center">Governing Body</h1>
+        <h1 className="my-bold my-text-4 primary-blue text-center">GOVERNING BODY</h1>
         {isPending && <Loader />}
         {error && <div className="error">{error}</div>}
         <div className="p-2 shadow-lg">

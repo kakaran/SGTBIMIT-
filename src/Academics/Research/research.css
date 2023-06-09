@@ -2,8 +2,8 @@
     width: 100%;
     position: relative;
     padding: min(2rem, 2vw);
-    background: linear-gradient(252.16deg, #FFFFFF 12.88%, #E7F3FF 60.19%),
-        linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    /* background: linear-gradient(252.16deg, #FFFFFF 12.88%, #E7F3FF 60.19%), */
+    /* linear-gradient(0deg, #FFFFFF, #FFFFFF); */
 
 }
 
@@ -43,12 +43,13 @@
     padding-inline: min(2rem, 2vw);
 }
 
-.res-grid{
+.res-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: min(2rem, 2vw);
 }
-.research-card{
+
+.research-card {
     width: 100%;
     aspect-ratio: 74.5/100;
     background-color: white;

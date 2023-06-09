@@ -20,7 +20,7 @@ export default function Research() {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/Research_Development/Research_Development_Display`)
         const data = (await res.json()).Data
         setResearch(data)
-        setOptions(_.uniqBy(data, obj => obj.category))
+        setOptions(_.uniqBy(data, obj => obj.Date))
         console.log(data)
     }
 
@@ -111,6 +111,11 @@ export default function Research() {
                         </Carousel>
                     </div>
                 </section>} */}
+                <select name="date" id="date">
+                    {options?.map(option => (
+                        <option value={option.Date}>{option.Date}</option>
+                    ))}
+                </select>
                 <div>
                     {options && options.map((option, i) => (
                         <div>

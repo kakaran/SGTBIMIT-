@@ -3,7 +3,8 @@
     background-size: contain;
     padding-bottom: min(2rem, 2vw);
     background-size: 100%;
-    min-height: 50vh;
+    min-height: 100vh;
+    z-index: -2;
 }
 
 

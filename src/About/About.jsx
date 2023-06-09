@@ -21,7 +21,7 @@ export default function About() {
                 variants={routingAnimations}
                 className='about'>
                 <h1 className='my-bold primary-blue my-text-4 text-center'>
-                    About SGTBIMIT
+                    ABOUT SGTBIMIT
                 </h1>
                 <div className='flex flex-col gap-3 w-[min(1400px,100%)] mx-auto'>
                     <div className='grid grid-cols-2 gap-8 text-[min(1.5rem,4vw)] max-lg:grid-cols-1 leading-[2em] max-md:leading-[1.5em] text-gray-800 place-items-center'>

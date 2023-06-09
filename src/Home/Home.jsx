@@ -15,6 +15,7 @@ import Committees from './Committees/Committees'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../constants'
+import LatestEvents from './LatestEvents'
 export default function Home() {
 
   const [isPending, setIsPending] = useState(true)
@@ -46,6 +47,7 @@ export default function Home() {
           <Committees />
           <Placementss />
           <Testimonials />
+          <LatestEvents />
           {/*             <Collaboration />
             <Recruiters /> */}
           <Map />

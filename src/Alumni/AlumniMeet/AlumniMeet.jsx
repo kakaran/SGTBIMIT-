@@ -16,9 +16,9 @@ const AlumniMeet = () => {
     const AluminEvent = async () => {
       try {
         const Data = (
-          await axios(
+          await axios.get(
             `${import.meta.env.VITE_API_URL
-            }/AluminiEvents/AluyminiEvent_Display`
+            }/Alumni/AlumniEvent_Display`
           )
         ).data;
         console.log(Data);
@@ -127,7 +127,7 @@ const AlumniMeet = () => {
             <li>Re-unions of ex-students.</li>
             <li>Felicitation of achievers.</li>
           </ul>
-          <h3>Events</h3>
+          <h3>Alumni Meets</h3>
           <div className="AluminiEventsContainer">
             {aluminiEventData?.map((value, i) => {
               return (
@@ -135,7 +135,7 @@ const AlumniMeet = () => {
                   <h4>{value?.Year}</h4>
                   <img
                     src={`${import.meta.env.VITE_API_URL
-                      }/AluminiEvents/AluminiEvenmai_Image_Display/${value?._id}`}
+                      }/Alumni/AlumniEventMainImage_Display/${value?._id}`}
                     alt={value?.Name}
                   />
                   <p>{value?.Detail}</p>
@@ -164,7 +164,7 @@ const AlumniMeet = () => {
               return (
                 <div className="gallery-carousel-container">
                   <div className="gallery-carousel-item h-[500px]">
-                    <img src={`${import.meta.env.VITE_API_URL}/AluminiEvents/Alumin_Images_Display/${alumni._id}/${image._id}`} alt="cant load" />
+                    <img src={`${import.meta.env.VITE_API_URL}/Alumni/AlumniEventImages_Display/${alumni?._id}/${image?._id}`} alt="cant load" />
                   </div>
                 </div>
               )

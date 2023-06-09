@@ -53,6 +53,25 @@ a {
     text-decoration: none;
 }
 
+.gradient-bg {
+    z-index: -1;
+    background-image:
+        url("./images/bg-frame.png");
+    /* radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 0%),
+        radial-gradient(circle at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+        radial-gradient(circle at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+        radial-gradient(circle at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+        radial-gradient(circle at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+        radial-gradient(circle at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+        radial-gradient(circle at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%); */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    /* filter: blur(100px) saturate(150%);
+    opacity: 0.25; */
+}
+
 .my-bold {
     font-family: "SF Pro Display-Bold";
 }
@@ -114,6 +133,12 @@ a {
 .blue_bg {
     background-color: #2563eb;
     /* background-image: linear-gradient(to right, #2563eb, #0891b2); */
+}
+
+.theme-width {
+    --padding: 2vw;
+    width: min(1500px, 100% - var(--padding));
+    margin-inline: auto;
 }
 
 button {

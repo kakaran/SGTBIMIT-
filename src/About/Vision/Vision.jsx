@@ -27,7 +27,7 @@ export default function Vision() {
         <div className="grid grid-cols-2 mx-auto w-[min(1200px,100%)] max-md:grid-cols-1 px-5">
           <div>
             <h1 className="my-bold my-text-4 primary-blue">
-              Our Vision
+              OUR VISION
             </h1>
             <p className="text-2xl text-justify leading-[2em] text-gray-800">
               To facilitate integrated, secure, competitive and scalable digital
@@ -47,7 +47,7 @@ export default function Vision() {
           </div>
           <div>
             <h1 className="my-bold my-text-4 primary-blue">
-              Our Mission
+              OUR MISSION
             </h1>
             <ul className="text-2xl text-justify leading-[2em] text-gray-800">
               <li>

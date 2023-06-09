@@ -57,8 +57,8 @@ export default function Gallery() {
                             scale: 1,
                         }}
                     >
+                        <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
                         <div className="gallery-carousel-container">
-                            <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
                             <Carousel
                                 showThumbs={false}
 

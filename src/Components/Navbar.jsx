@@ -127,6 +127,9 @@ export default function Navbar() {
             <NavLink to={`/infrastructure`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item uppercase"> INFRASTRUCTURE </div>
             </NavLink>
+            <NavLink to={`/infralife`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+              <div className="dropdown-item uppercase"> Infra Life </div>
+            </NavLink>
           </div>
         </div>
 
@@ -155,9 +158,9 @@ export default function Navbar() {
             <NavLink to="/alumini/testimonials" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">TESTIMONIALS</div>
             </NavLink>
-            <NavLink to="/alumini/gallery" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+            {/* <NavLink to="/alumini/gallery" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">GALLERY</div>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/alumini/registration" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">REGISTRATION</div>
             </NavLink>

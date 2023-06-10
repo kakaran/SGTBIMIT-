@@ -9,7 +9,7 @@ import arrow from "../images/down.png"
 export default function Navbar() {
   const navigate = useNavigate()
   const { data: events } = useFetch(`${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Display`)
-
+  const { data: infraDrop } = useFetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Display_DropDown`)
 
   // useEffect(() => {
   //   document.querySelector(".menu").addEventListener("click", (e) => {
@@ -124,9 +124,16 @@ export default function Navbar() {
         <div className="nav-item" >
           <div>CAMPUS<img src={arrow} alt="" /></div>
           <div className="dropdown" >
-            <NavLink to={`/infrastructure`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
-              <div className="dropdown-item uppercase"> INFRASTRUCTURE </div>
-            </NavLink>
+            <div className="dropdown-item courses-dropdown-container">
+              <div>INFRASTRUCTURE</div>
+              <div className="dropdown courses-dropdown">
+                {infraDrop && infraDrop.Data.map((inn, index) => (
+                  <NavLink to={`/infrastructure/${inn._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+                    <div className="dropdown-item">{inn.InfraName}</div>
+                  </NavLink>
+                ))}
+              </div>
+            </div>
             <NavLink to={`/infralife`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item uppercase"> Infra Life </div>
             </NavLink>

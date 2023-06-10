@@ -68,15 +68,15 @@ export default function Map() {
             ))}
           </div>
           <div className="chips">
-            <a className="chip" href={brochure} download classname="cursor-pointer">
+            <a className="chip cursor-pointer" href={brochure} download>
               <img src={pdf} alt="" style={{ filter: "brightness(0) invert(1)" }} />
               <span>Download Brochure</span>
             </a>
-            <button className="chip" onClick={() => { window.open("https://youtu.be/bfeek8jSpeI") }}>
+            <button className="chip cursor-pointer" onClick={() => { window.open("https://youtu.be/bfeek8jSpeI") }}>
               <img src={campus} alt="" />
               <span>Campus Tour</span>
             </button>
-            <button className="chip" onClick={() => { navigate("/academics/research") }}>
+            <button className="chip cursor-pointer" onClick={() => { navigate("/academics/research") }}>
               <img src={research} alt="" />
               <span>Researches</span>
             </button>

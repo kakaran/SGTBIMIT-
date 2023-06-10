@@ -1,24 +1,26 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Header, Navbar, Footer, Loader } from '../Components'
 import { motion } from 'framer-motion'
 import { routingAnimations } from "../constants"
 import { Carousel } from 'react-responsive-carousel'
-import useFetch from '../useFetch'
+import { useParams } from 'react-router-dom'
 
 const Infra = () => {
-    const myRef = useRef(null)
     const [infra, setInfra] = useState({})
-    const { data: infraDrop, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Display_DropDown`)
+    const { id } = useParams()
 
-    const fetchInfra = async (e) => {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Single_Display/${e.target.value}`)
+
+    const fetchInfra = async () => {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Single_Display/${id}`)
         const data = await res.json()
         setInfra(data)
         console.log(data);
     }
 
 
-
+    useEffect(() => {
+        fetchInfra()
+    }, [])
     return (
         <>
             <Header />
@@ -33,11 +35,11 @@ const Infra = () => {
             >
                 <div className='gradient-bg' />
                 <div className='flex justify-center'>
-                    <h1 className='my-bold blue_gradient my-text-4'>INFRASTRUCTURE</h1>
+                    <h1 className='my-bold blue_gradient my-text-4 mb-0'>INFRASTRUCTURE</h1>
                 </div>
 
                 <div className='w-[min(1500px,100%)] mx-auto my-10 grid'>
-                    {isPending && <Loader />}
+                    {/* {isPending && <Loader />}
                     {infraDrop &&
                         <select name="infradrop" onChange={(e) => { fetchInfra(e) }} className='mx-auto my-text-2 p-5 outline-none border-none blue_bg my-bold text-white rounded-md shadow-md'>
                             <option value="" className='my-bold'>Select</option>
@@ -45,16 +47,16 @@ const Infra = () => {
                                 <option key={index} value={infra._id} className='my-bold'>{infra.InfraName}</option>
                             ))}
                         </select>
-                    }
+                    } */}
 
                     {infra && <motion.div
                         initial={{ translateY: 100 }}
                         animate={{ translateY: 0 }}
                         transition={{ duration: .3, type: 'spring' }}
-                        ref={myRef}
+                        // ref={myRef}
                         key={infra.Data?._id}
                     >
-                        <h1 className='orange_gradient my-bold my-text-3'>{infra.Data?.InfraName}</h1>
+                        <h1 className='orange_gradient my-bold my-text-3 mt-0'>{infra.Data?.InfraName}</h1>
                         <div className='flex justify-center items-center'>
                             <div className='w-1/2'>
                                 <Carousel
@@ -69,7 +71,7 @@ const Infra = () => {
                                 >
                                     {infra.Data?.Images?.map((image, index) => (
                                         <div key={index} className='flex items-center h-[500px] justify-center'>
-                                            <img src={`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Image_Display/${infra.Data._id}/${image._id}`} alt={image} className='rounded-lg ' onLoad={() => { window.scrollTo(0, myRef.current.offsetTop + 140) }} />
+                                            <img src={`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Image_Display/${infra.Data._id}/${image._id}`} alt={image} className='rounded-lg ' /* onLoad={() => { window.scrollTo(0, myRef.current.offsetTop + 140) }} */ />
                                         </div>))
                                     }
                                 </Carousel>

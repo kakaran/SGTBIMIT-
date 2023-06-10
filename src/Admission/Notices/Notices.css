@@ -100,14 +100,14 @@
     text-transform: uppercase;
     margin-top: 0;
     font-family: "SF Pro Display-Bold";
-    font-size: min(2.5rem, 5vw);
+    font-size: min(1.5rem, 3vw);
     border-bottom: 3px solid var(--secondary-clr);
     padding-block: min(1rem, 1vw);
     color: #2d2d2d;
 }
 
 .notice-card p {
-    font-size: min(1.5rem, 4vw);
+    font-size: min(1rem, 2vw);
     /* color: rgba(0, 0, 0, 0.75); */
     font-family: "SF Pro Display-Medium";
     line-height: 1.5em;

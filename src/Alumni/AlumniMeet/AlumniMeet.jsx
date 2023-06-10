@@ -164,7 +164,7 @@ const AlumniMeet = () => {
               return (
                 <div className="gallery-carousel-container">
                   <div className="gallery-carousel-item h-[500px]">
-                    <img src={`${import.meta.env.VITE_API_URL}/Alumni/AlumniEventImages_Display/${alumni?._id}/${image?._id}`} alt="cant load" />
+                    <img src={`${import.meta.env.VITE_API_URL}/AluminiEvents/Alumin_Images_Display/${alumni?._id}/${image?._id}`} alt="cant load" />
                   </div>
                 </div>
               )

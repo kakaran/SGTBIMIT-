@@ -41,13 +41,13 @@ export default function Placements({ isTitle = true }) {
         {isPending && <Loader />}
         <AutoHorizontalScroll>
           {placementArray &&
-            placementArray.map((placement, i) => {
+            placementArray.sort((a, b) => a.package < b.package ? 1 : -1).map((placement, i) => {
               return (
                 <div className="place-card" key={placement._id}>
                   <img src={`${import.meta.env.VITE_API_URL}/Placement_Intership/PlacementInterships_Image_Display/${placement._id}`} alt="cant load" className='placement-img' />
                   <div className='place-heading my-bold'> {placement.name}  </div>
-                  <p>Package: 6.5Lakhs</p>
-                  <p> {placement.companyName} </p>
+                  <p>Package: {placement.package} Lakhs</p>
+                  <p className='uppercase'> {placement.companyName} </p>
                 </div>
               )
             })

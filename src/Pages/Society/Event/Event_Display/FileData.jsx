@@ -74,7 +74,7 @@ const FileData = (props) => {
                 onClick={() => {
                   SocietyDelete(props._id, Index);
                 }}
-                style={{ color: "#d00000" }}
+                style={{ color: "#d00000", cursor : "pointer"}}
               />
             </span>
           </div>

@@ -42,12 +42,20 @@
     text-align: justify;
     line-height: 1.5em;
     font-size: min(1.5rem, 4vw);
+    width: 70%;
+    margin-left: 32%;
 }
 
 .position {
     color: var(--primary-clr);
     opacity: .8;
-    font-size: min(1.5rem, 3vw);
+    font-size: min(2rem, 3vw);
+}
+.short-note{
+    color: black;
+}
+.s-n{
+    font-size: min( 1rem,1.5vw);
 }
 
 @media(max-width: 1000px) {

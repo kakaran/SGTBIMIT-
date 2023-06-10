@@ -30,7 +30,7 @@ const InfraLife = () => {
       <Header />
       <Navbar />
       <div className="InfraLifeContainer">
-        <h1>Infra Life</h1>
+        <h1>CAMPUS LIFE</h1>
         <p>
           <span style={{ fontWeight: "bold" }}>
             Life at SGTBIMIT: Fostering Excellence and Holistic Development

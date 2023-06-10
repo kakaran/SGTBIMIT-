@@ -54,10 +54,7 @@ export default function AdminisCarousel() {
                         {adminis?.position}
                       </div>
                     </div>
-                    <div className="short-note">
-                      <div className="my-bold mt-5 text-lg text-start">WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!</div>
-                      <div className="my-bold text-gray-700 text-start">{adminis.shortNote}</div>
-                    </div>
+                    
                     <div>
                       <img
                         src={`${import.meta.env.VITE_API_URL}/Administration/AdministrationImageDisplay/${adminis._id}`}
@@ -66,7 +63,12 @@ export default function AdminisCarousel() {
                       />
                       <div className="flex justify-start">
                         <p className="my-text-4 m-0 my-bold text-start max-lg:mt-5 orange_gradient inline">
-                          {adminis?.name}
+                        {adminis?.name}
+                        <div className="short-note">
+                         <div className="my-bold mt-5 text-lg text-start">WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!</div>
+                          <div className="  s-n my-bold text-gray-700 text-start">{adminis.shortNote}</div>
+                        </div>
+                        
                         </p>
                       </div>
                       <p className="long-note text-gray-800"> {adminis?.longNote} </p>

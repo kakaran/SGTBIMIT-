@@ -334,7 +334,7 @@
 .director-position {
     position: absolute;
     left: 100%;
-    top: 73%;
+    top: 75%;
     color: var(--secondary-clr);
     white-space: nowrap;
     /* transform: rotate(-90deg) translate(-40%, -50%); */

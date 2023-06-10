@@ -277,7 +277,7 @@
 }
 
 /* latest events */
-.eventcard{
+.eventcard {
     margin-block: 2rem;
     margin: 0rem 3rem;
 }
@@ -332,24 +332,29 @@
 }
 
 .director-position {
-    position: absolute;
+    /* position: absolute;
     left: 100%;
-    top: 75%;
-    color: var(--secondary-clr);
+    top: 75%; */
+    color: white;
+    margin-top: 2rem;
     white-space: nowrap;
     /* transform: rotate(-90deg) translate(-40%, -50%); */
     transform-origin: left;
     letter-spacing: 0.8px;
-    font-size: min(1.3rem,2vw);
+    font-size: min(1.3rem, 2vw);
 }
 
 .director-position::before {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
     content: '';
     width: 50px;
     height: 1px;
     background-color: white;
     position: absolute;
-    transform: translate(-130%, 6px);
+    transform: translate(-130%, 50%);
+    font-size: min(2rem, 4vw);
 }
 
 

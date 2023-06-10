@@ -57,7 +57,7 @@ export default function Notice() {
                     transition='transition'
                     variants={routingAnimations}
                 >
-                    <h1>NOTICES</h1>
+                    <h1> ADMISSION NOTICES</h1>
 
                     {location.pathname !== "/admission/notices" &&
                         <div className="drop">
@@ -88,7 +88,7 @@ export default function Notice() {
                                 <p className="text-gray-700"> {notice.Detail} </p>
                                 <div className="notice-file">
                                     <Link to={`/admission/notices/${notice._id}`} target="_blank" className="flex justify-center items-center gap-4 hover:text-white hover:bg-red-700">
-                                        <span className="my-bold">Read More</span>
+                                        <span className="my-bold ">View</span>
                                     </Link>
                                 </div>
                             </div>

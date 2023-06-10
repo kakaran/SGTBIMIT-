@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { IoMdExit, IoMdSchool } from 'react-icons/io'
+import useFetch from '../useFetch'
 
 
 const MobileNav = () => {
@@ -14,12 +15,16 @@ const MobileNav = () => {
     const [alumniToggle, setAlumniToggle] = useState(false)
     const [societyToggle, setSocietyToggle] = useState(false)
     const [industryToggle, setIndustryToggle] = useState(false)
+    const [campusToggle, setCampusToggle] = useState(false)
+    const [infrastructureToggle, setInfrastructureToggle] = useState(false)
+
     const navigate = useNavigate()
 
     const navItemStyle = 'rounded-md bg-red-200 p-4 primary-clr cursor-pointer my-text-2'
     const textstyle = "my-bold px-4 py-1 my-3"
     const btnStyle = 'gap-2 flex items-center px-4 py-2 primary-bg-clr text-white my-text-2 rounded-md'
 
+    const { data: infraDrop } = useFetch(`${import.meta.env.VITE_API_URL}/Infrastructure/Infrastructure_Display_DropDown`)
     useEffect(() => {
         const fetchSociety = async () => {
             const res = await fetch(`${import.meta.env.VITE_API_URL}/Eventhandler/EventHandler_Display`)
@@ -114,6 +119,34 @@ const MobileNav = () => {
                         </div>
                         <div className={textstyle} onClick={() => { navigate('/academics/faculty') }} style={borderStyle}>
                             Faculty Members
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={navItemStyle}>
+                <div className='flex justify-between items-center' onClick={() => { setCampusToggle(!campusToggle) }}>
+                    <div className="my-bold">Campus</div>
+                    {campusToggle ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />}
+                </div>
+                <div className={`grid ${campusToggle ? "grid-show" : "grid-hide"} transition-all`}>
+                    <div className='overflow-hidden'>
+                        <div className='flex justify-between items-center px-4 py-1 mt-3' onClick={() => { setInfrastructureToggle(!infrastructureToggle) }} style={borderStyle}>
+                            <div className='my-bold'>Infrastructure</div>
+                            {infrastructureToggle ? <AiOutlineArrowUp /> : <AiOutlineArrowDown />}
+
+                        </div>
+                        <div className={`grid ${infrastructureToggle ? "grid-show" : "grid-hide"} transition-all`}>
+                            <div className='overflow-hidden'>
+                                {infraDrop && infraDrop.Data.map(inn => (
+                                    <div key={inn._id} className='my-bold mx-4 my-3' onClick={() => { navigate(`/infrastructure/${inn._id}`) }} style={borderStyle}>
+                                        {inn.InfraName}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className={textstyle} onClick={() => { navigate('/infralife') }} style={borderStyle}>
+                            Campus Life
                         </div>
                     </div>
                 </div>

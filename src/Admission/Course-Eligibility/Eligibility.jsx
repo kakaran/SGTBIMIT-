@@ -34,7 +34,7 @@ export default function Eligibility() {
                                     Computer Applications / Multimedia & Web Technology / Data
                                     Management Application / Web Application as compulsory subject of
                                     non-vocational stream with 50 theory and 50 practical ratio).</li>
-                                <b>OR</b><br />
+                               <div className="ortext"> <b>OR</b> </div>
                                 <li>Three year Diploma in a branch of Engineering from a polytechnic
                                     duly approved by All India Council for Technical Education and
                                     affiliated to a recognized examining body with a minimum of 50%
@@ -87,7 +87,7 @@ export default function Eligibility() {
                                     an examination recognized as equivalent to that.</li>
                                 (i) Pre-University Examination (Two years after ten years of
                                 schooling) of an Indian school / college.
-                                <br /><b>OR</b><br />
+                                <br /><div className="ortext"> <b>OR</b> </div>
                                 <li>Intermediate Examination of an Indian University / Board or an
                                     Examination recognized as equivalent to that (Pass in Five written
                                     subjects)</li>

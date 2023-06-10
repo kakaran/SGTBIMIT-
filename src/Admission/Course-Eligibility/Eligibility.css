@@ -50,6 +50,12 @@
     font-size: 24px;
     font-family: "SF Pro Display";
 }
+.infos p{
+    text-align: justify;
+}
+.ortext{
+    text-align: center;
+}
 
 @media (max-width:1000px) {
     .btns {

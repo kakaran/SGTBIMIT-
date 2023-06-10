@@ -69,7 +69,7 @@
     font-weight: 400;
 }
 
-.develop-skills-btn {
+/* .develop-skills-btn {
     padding: min(1rem, 2vw) min(2rem, 4vw);
     margin-bottom: min(2rem, 2vw);
     background: var(--secondary-clr);
@@ -84,20 +84,20 @@
     gap: min(1rem, 1vw);
     margin-top: auto;
     width: max-content;
-}
+} */
 
 .skills-text {
     color: white;
 }
 
-.develop-skills-btn:hover {
+/* .develop-skills-btn:hover {
     background-color: var(--primary-clr);
     outline: 3px solid white;
 }
 
 .learn-more-btn:hover {
     background-color: var(--secondary-clr);
-}
+} */
 
 .skill-arrow {
     width: 3%;
@@ -313,9 +313,9 @@
 
 .director-container p {
     color: white;
-    font-size: min(2rem, 4vw);
+    font-size: min(1.5rem, 3vw);
     width: min(820px, 85%);
-    line-height: 50px;
+    line-height: 40px;
 }
 
 
@@ -333,13 +333,14 @@
 
 .director-position {
     position: absolute;
-    left: 92%;
-    top: 50%;
-    color: white;
+    left: 100%;
+    top: 75%;
+    color: var(--secondary-clr);
     white-space: nowrap;
-    transform: rotate(-90deg) translate(-40%, -50%);
+    /* transform: rotate(-90deg) translate(-40%, -50%); */
     transform-origin: left;
     letter-spacing: 0.8px;
+    font-size: min(1.3rem,2vw);
 }
 
 .director-position::before {
@@ -595,7 +596,7 @@
 }
 
 .place-card p {
-    font-size: min(1.25rem, 2.5vw);
+    font-size: min(1.4rem, 2.8vw);
     color: var(--primary-clr);
     margin-top: 0;
     margin-bottom: 1rem;

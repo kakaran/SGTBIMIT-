@@ -36,7 +36,7 @@ export default function DirectorMsg() {
       >
         <img src={quote} alt="" className="dir-quote" />
         <div className="director-position">
-          Prof. Dr. Navneet Kaur - Director, SGTBIMIT
+          <b>Prof. Dr. Navneet Kaur - Director, SGTBIMIT</b>
         </div>
         <div className="director-img">
           <img src={dir} alt="cant load" />
@@ -48,7 +48,7 @@ export default function DirectorMsg() {
             &nbsp; ~ Sri Guru Granth Sahib Ji &nbsp;
           </span>
           <br />
-          We at Sri Guru Tegh Bahadur Institute of Management & Information Technology endeavor to follow Gurbani in letter and spirit. The management and staff of SGTBIMIT work on a mission and treat students with utmost love & compassion.
+          We at Sri Guru Tegh Bahadur Institute of Management & Information Technology endeavor to follow Gurbani in letter and spirit. The management and staff of SGTBIMIT work on a mission and treat students with utmost love & compassion.SGTBIMIT started in the year 2009 with a modest strength and in the next couple of years, it has crossed the 1500 mark. At present, it has emerged as a premier institution that stands above most of the institutes of Guru Gobind Singh Indraprastha University.We are happy to have a qualified, dedicated, innovative, and hard-working faculty as well as administrative staff.
         </p>
 
       </motion.div>

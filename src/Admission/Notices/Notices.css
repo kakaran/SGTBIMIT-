@@ -56,6 +56,8 @@
     flex-direction: column;
     border: 2.5px solid var(--secondary-clr);
     margin: 2.4rem 2rem;
+    width: 80%;
+    margin-left:10%;
 }
 
 /* .notice-card:nth-child(2n-2) {
@@ -100,14 +102,14 @@
     text-transform: uppercase;
     margin-top: 0;
     font-family: "SF Pro Display-Bold";
-    font-size: min(2.5rem, 5vw);
+    font-size: min(1.7rem, 3.4vw);
     border-bottom: 3px solid var(--secondary-clr);
     padding-block: min(1rem, 1vw);
     color: #2d2d2d;
 }
 
 .notice-card p {
-    font-size: min(1.5rem, 4vw);
+    font-size: min(1.3rem, 2.6vw);
     /* color: rgba(0, 0, 0, 0.75); */
     font-family: "SF Pro Display-Medium";
     line-height: 1.5em;
@@ -123,7 +125,7 @@
 
 .notice-file a {
     border-radius: 12px;
-    font-size: min(2rem, 4vw);
+    font-size: min(1rem, 4vw);
     font-family: "SF Pro Display-Bold";
     padding: min(.5rem, .5vw) min(2rem, 2vw);
     border: 2.5px solid var(--secondary-clr);

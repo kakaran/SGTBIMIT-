@@ -18,7 +18,7 @@ const AlumniMeet = () => {
         const Data = (
           await axios.get(
             `${import.meta.env.VITE_API_URL
-            }/AluminiEvents/AluyminiEvent_Display`
+            }/Alumni/AlumniEvent_Display`
           )
         ).data;
         console.log(Data);
@@ -135,7 +135,7 @@ const AlumniMeet = () => {
                   <h4>{value?.Year}</h4>
                   <img
                     src={`${import.meta.env.VITE_API_URL
-                      }/AluminiEvents/AluminiEvenmai_Image_Display/${value?._id}`}
+                      }/Alumni/AlumniEventMainImage_Display/${value?._id}`}
                     alt={value?.Name}
                   />
                   <p>{value?.Detail}</p>

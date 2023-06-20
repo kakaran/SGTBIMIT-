@@ -31,3 +31,8 @@
 .InfraLifeImageContainer {
   padding: 20px 0px;
 }
+@media(max-width:800px){
+  .InfraLifeContainer{
+    width: 90%;
+  }
+}

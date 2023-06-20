@@ -54,3 +54,8 @@
     background: url("../../images/bg-frame.png");
     background-size: 100%;
 }
+@media(max-width:800px){
+    .e-resources-container{
+        width: 90%;
+    }
+}

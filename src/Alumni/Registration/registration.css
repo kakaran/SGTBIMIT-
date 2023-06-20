@@ -276,12 +276,12 @@ form .button input:hover {
   }
 }
 
-@media(max-width: 459px) {
+/* @media(max-width: 459px) {
   .container .content .category {
     flex-direction: column;
   }
 
-}
+} */
 
 form .edu-details .detail3 {
   font-size: 20px;
@@ -369,4 +369,9 @@ form .cat label .dot {
 .place-head {
   font-size: 25px;
 
+}
+@media(max-width:800px){
+  .reg-container{
+    width: 90%;
+  }
 }

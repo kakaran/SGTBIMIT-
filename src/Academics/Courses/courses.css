@@ -81,3 +81,8 @@
     margin-inline: auto;
 
 }
+@media(max-width: 800px){
+    .courses{
+        width: 90% ;
+    }
+}

@@ -16,6 +16,7 @@
 @media(max-width: 1000px) {
     .about {
         background-image: none;
+        width: 90%;
     }
 }
 

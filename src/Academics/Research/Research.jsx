@@ -23,6 +23,7 @@ export default function Research() {
         const data = (await res.json()).Data
         setResearch(data)
         setOptions(_.uniqBy(data, obj => obj.Date))
+        setFilter(_.uniqBy(data, obj => obj.Date)[0].Date)
         console.log(data)
     }
 
@@ -118,7 +119,7 @@ export default function Research() {
                     </div>
                 </section>} */}
                     <select name="date" id="date" onChange={(e) => setFilter(e.target.value)} className='blue_bg text-white my-text-2 my-bold px-5 py-2 outline-none border-none rounded-lg my-5'>
-                        <option value="">Select Year</option>
+                        {/* <option value="">Select Year</option> */}
                         {options?.map(option => (
                             <option value={option.Date}>{option.Date}</option>
                         ))}
@@ -131,10 +132,11 @@ export default function Research() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 100 }}
                                     transition={{ duration: 0.5 }}
+                                    onClick={
+                                        () => { navigate(`/academics/research/${res._id}`) }
+                                    }
                                 >
-                                    <div className="event-card" onClick={
-                                        () => { navigate(`/alumnievents/${res._id}`) }
-                                    }>
+                                    <div className="event-card">
                                         <p>{res?.Date}</p>
                                         <img
                                             src={`${import.meta.env.VITE_API_URL}/Research&Development/Research&Development_Image_Display/${res._id}`}

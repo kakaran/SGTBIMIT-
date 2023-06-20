@@ -95,6 +95,7 @@ import SingleEvent from './Events/SingleEvent/SingleEvent.jsx'
 import EventHDisplay from './Pages/Society/Event_Handler/EventHandler_Display/EventH_Display.jsx'
 import Infra from './Infra/Infra.jsx'
 import InfraLife from './Infra/InfraLife.jsx'
+import SingleResearch from './Academics/Research/SingleResearch.jsx'
 
 
 function App() {
@@ -137,7 +138,7 @@ function App() {
         <Route path='/infrastructure/:id' element={<Infra />} />
         <Route path='/InfraLife' element={<InfraLife />} />
         <Route path='/industry/summer-internship' element={<Summer />} />
-
+        <Route path='/academics/research/:id' element={<SingleResearch />} />
         {/* Admin Routes */}
 
         <Route path='/login' element={<Login />} />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './placements.css'
 import { Header, Navbar, Footer, Loader } from '../../Components'
 import { Helmet } from 'react-helmet'
@@ -16,6 +16,12 @@ import _ from 'lodash'
 import Team from './Team'
 
 export default function Placements() {
+    const myRef = useRef(null)
+
+    const handleScroll = (e) => {
+        e.preventDefault()
+        window.scrollTo(0, myRef.current.offsetTop + 300)
+    }
 
     const { data: feature, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/PlacementFeature/PlacementFeature_Display`)
 
@@ -40,12 +46,12 @@ export default function Placements() {
                     <p>
                         This would be the our story text. Amet minim mollit noncription. Amnefjenfjeet minim mollit noncription. Amet minim mollit noncription. Amet minnfejfnjim mollit noncription. Amet minim mollit noncription. Amet minim jdbfjejfbmollit noncription. Amet minim mollit noncription. Amet minim mollit noncription. Amet minim mollit noncription. Amet minim fbmollit noncription. Amet minim mollit no
                     </p>
-                    <a href="#placement-about">
+                    <a onClick={(e) => { handleScroll(e) }} className='cursor-pointer'>
                         <BsArrowDownCircleFill size={"3rem"} color="#005E93" />
                         <div className="vertical-line max-lg:hidden" />
                     </a>
                 </section>
-                <section className='placement-about-section' id='placement-about'>
+                <section className='placement-about-section' ref={myRef}>
                     <img src={ellipse} alt="" className='max-lg:hidden' />
                     <div className='layered-title'>
                         <h1>ABOUT US</h1>

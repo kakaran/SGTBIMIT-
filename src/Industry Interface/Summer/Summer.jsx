@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Header, Navbar, Footer } from '../../Components'
 import { motion } from 'framer-motion'
 import { routingAnimations } from "../../constants"
-import wipro from '../../images/wipro.png'
-import { AiOutlineArrowDown } from 'react-icons/ai'
-import img from '../../images/place-img.png'
+// import wipro from '../../images/wipro.png'
+// import { AiOutlineArrowDown } from 'react-icons/ai'
+// import img from '../../images/place-img.png'
+import { summer } from './constant'
 
 
 const Summer = () => {
@@ -25,7 +26,7 @@ const Summer = () => {
                 <div className='flex justify-center'>
                     <h1 className='my-bold blue_gradient my-text-4'>SUMMER INTERNSHIP</h1>
                 </div>
-                <div className='w-[min(1800px,100%)] mx-auto my-10 grid px-10 gap-10'>
+                {/* <div className='w-[min(1800px,100%)] mx-auto my-10 grid px-10 gap-10'>
                     {[...Array(5)].map((item, index) => (
                         <div className='rounded-md shadow-md bg-white py-5 px-10'>
                             <div className='flex gap-5' onClick={() => {
@@ -60,6 +61,57 @@ const Summer = () => {
                             </div>
                         </div>
                     ))}
+                </div> */}
+
+                <div className="theme-width">
+                    <div className='overflow-x-scroll flex gap-5'>
+                        {summer.map((item, index) => (
+                            <img src={item.img} alt='' onClick={() => setToggle(index)} />
+                        ))}
+                    </div>
+                    <div className='mt-44'>
+                        {summer.map((item, index) => {
+                            if (toggle === index) {
+                                return (
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        className=''
+                                    >
+                                        <div className='bg-[#D9D9D9] rounded-[50px] mx-10 bg-opacity-90'>
+                                            <div className='grid place-content-center'><img src={item.img} alt="" className='object-fill rounded-full w-[200px] h-[200px]' style={{ transform: "translateY(-50%)" }} /></div>
+                                            <div className='-mt-20  p-10'>
+                                                <h1 className='my-text-3 my-bold orange_gradient'> {item.name} </h1>
+                                                <p className='text-gray-700 text-2xl'>
+                                                    {item.detail}
+                                                </p>
+                                                <div className='my-10'>
+                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Partnership with: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.partner}</span>
+                                                </div>
+                                                <div className='my-10'>
+                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Internship Offered: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.intern}</span>
+                                                </div>
+                                                <div>
+                                                    <h1 className='text-center my-bold text-[#B81D1D] my-text-3'>Top Interns:</h1>
+                                                    <div className='flex gap-36'>
+                                                        {item.interns.map((item) => (
+                                                            <div className='grow'>
+                                                                <img src={item.img} alt="" className='aspect-sqaure rounded-full w-full' />
+                                                                <h2 className='my-bold my-text-2'> {item.name} </h2>
+                                                                <h2 className='my-bold my-text-2'> {item.detail} </h2>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )
+                            }
+                        }
+                        )
+                        }
+                    </div>
                 </div>
             </motion.section>
         </>

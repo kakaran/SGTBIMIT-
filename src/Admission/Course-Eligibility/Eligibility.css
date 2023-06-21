@@ -90,9 +90,9 @@
         line-height: 1.5em;
     }
 
-    /* .eli_container{
-        width: 550px;
-    } */
+    .eli_container{
+        width: 90%;
+    }
 }
 
 @media(max-width: 600px) {

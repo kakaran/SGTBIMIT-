@@ -55,3 +55,9 @@
     background-color: white;
     color: black;
 }
+@media(max-width:800px){
+    .research-section{
+        width: 90%;
+        margin-left: 2rem;
+    }
+}

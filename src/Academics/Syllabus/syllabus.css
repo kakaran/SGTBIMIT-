@@ -94,3 +94,13 @@ td>a {
 .grid-show {
     grid-template-rows: 1fr;
 }
+@media(max-width:800px) {
+    .grid-show {
+        width:90% ;
+        margin-left: 2rem;
+    }
+    .grid-hide{
+        width: 90%;
+    }
+    
+}

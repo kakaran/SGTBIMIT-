@@ -210,9 +210,9 @@ export default function Navbar() {
             <NavLink to="/industry/summer-internship" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">SUMMER INTERNSHIP</div>
             </NavLink>
-            <NavLink to="/industry/corporate-speak" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
+            {/* <NavLink to="/industry/corporate-speak" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">CORPORATE SPEAK</div>
-            </NavLink>
+            </NavLink> */}
           </div>
 
         </div>

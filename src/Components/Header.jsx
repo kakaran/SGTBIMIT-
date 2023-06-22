@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Admission from './Admission'
 import "./components.css"
 import useFetch from '../useFetch'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { IoMdSchool, IoMdExit } from 'react-icons/io'
 import logo from '../images/sgtbimit.png'
 import menuImg from '../images/menu.png'
 import MobileNav from './MobileNav'
 
 export default function Header() {
+  const navigate = useNavigate()
 
   const [mobileToggle, setMobileToggle] = useState(false)
   const { data: notices } = useFetch(`${import.meta.env.VITE_API_URL}/Notice/Notice_Data_Display`)
@@ -46,7 +47,7 @@ export default function Header() {
       <Admission />
       <div className="header-top">
         <div className="logo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" onClick={() => navigate("/")} className='cursor-pointer' />
         </div>
 
         <div className="clg-heading-wrapper max-lg:hidden">

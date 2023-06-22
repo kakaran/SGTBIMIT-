@@ -16,6 +16,11 @@ import _ from "lodash";
 import Team from "./Team";
 
 export default function Placements() {
+  const aboutRef = useRef(null);
+
+  const handleScroll = () => {
+    window.scrollTo(0, aboutRef.current.offsetTop + 220);
+  };
 
   const { data: feature, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/PlacementFeature/PlacementFeature_Display`)
 
@@ -46,12 +51,12 @@ export default function Placements() {
             embark on a journey of success, where no dream is
             too big to achieve.
           </p>
-          <a href="#placement-about">
+          <a href="#placement-about cursor-pointer" onClick={handleScroll}>
             <BsArrowDownCircleFill size={"3rem"} color="#005E93" />
             <div className="vertical-line max-lg:hidden" />
           </a>
         </section>
-        <section className="placement-about-section" id="placement-about">
+        <section className="placement-about-section" id="placement-about" ref={aboutRef}>
           <img src={ellipse} alt="" className="max-lg:hidden" />
           <div className="layered-title">
             <h1>ABOUT US</h1>

@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Header, Navbar, Footer } from '../../Components'
 import { motion } from 'framer-motion'
 import { routingAnimations } from "../../constants"
 // import wipro from '../../images/wipro.png'
 // import { AiOutlineArrowDown } from 'react-icons/ai'
 // import img from '../../images/place-img.png'
-import { summer } from './constant'
+// import { summer } from './constant'
 
 
 const Summer = () => {
+    const [summer, setSummer] = useState([])
+
+    const fetchData = async () => {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/SummerInternship/SummerInternship_Display`)
+        const data = await res.json()
+        setSummer(data)
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
     const [toggle, setToggle] = useState(0)
     return (
         <>
@@ -66,7 +78,7 @@ const Summer = () => {
                 <div className="theme-width">
                     <div className='overflow-x-scroll flex gap-5'>
                         {summer.map((item, index) => (
-                            <img src={item.img} alt='' onClick={() => setToggle(index)} />
+                            <img src={`${import.meta.env.VITE_API_URL}/SummerInternship/SummerInternship_CompanyImage_Display/${item._id}`} alt='' onClick={() => setToggle(index)} className='w-52' />
                         ))}
                     </div>
                     <div className='mt-44'>
@@ -79,26 +91,26 @@ const Summer = () => {
                                         className=''
                                     >
                                         <div className='bg-[#D9D9D9] rounded-[50px] mx-10 bg-opacity-90'>
-                                            <div className='grid place-content-center'><img src={item.img} alt="" className='object-fill rounded-full w-[200px] h-[200px]' style={{ transform: "translateY(-50%)" }} /></div>
+                                            <div className='grid place-content-center'><img src={`${import.meta.env.VITE_API_URL}/SummerInternship/SummerInternship_CompanyImage_Display/${item._id}`} alt="" className='object-fill rounded-full w-[200px] h-[200px]' style={{ transform: "translateY(-50%)" }} /></div>
                                             <div className='-mt-20  p-10'>
-                                                <h1 className='my-text-3 my-bold orange_gradient'> {item.name} </h1>
+                                                <h1 className='my-text-3 my-bold orange_gradient'> {item.companyName} </h1>
                                                 <p className='text-gray-700 text-2xl'>
-                                                    {item.detail}
+                                                    {item.companyDetail}
                                                 </p>
                                                 <div className='my-10'>
-                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Partnership with: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.partner}</span>
+                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Partnership with: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.partnershipWith}</span>
                                                 </div>
                                                 <div className='my-10'>
-                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Internship Offered: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.intern}</span>
+                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Internship Offered: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.internshipOffered}</span>
                                                 </div>
                                                 <div>
                                                     <h1 className='text-center my-bold text-[#B81D1D] my-text-3'>Top Interns:</h1>
-                                                    <div className='flex gap-36'>
-                                                        {item.interns.map((item) => (
-                                                            <div className='grow'>
-                                                                <img src={item.img} alt="" className='aspect-sqaure rounded-full w-full' />
-                                                                <h2 className='my-bold my-text-2'> {item.name} </h2>
-                                                                <h2 className='my-bold my-text-2'> {item.detail} </h2>
+                                                    <div className='grid grid-cols-3 gap-36'>
+                                                        {item.topInterns.map((itemm) => (
+                                                            <div className=''>
+                                                                <img src={`${import.meta.env.VITE_API_URL}/SummerInternship/SummerInternship_TopInternsImages_Display/${item._id}/${itemm._id}`} alt="" className='aspect-square rounded-full w-full' />
+                                                                <h2 className='my-bold my-text-2'> {itemm.studName} </h2>
+                                                                <h2 className='my-bold my-text-2'> {itemm.internshipIn} </h2>
                                                             </div>
                                                         ))}
                                                     </div>

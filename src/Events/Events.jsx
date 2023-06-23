@@ -55,7 +55,7 @@ export default function Events() {
         transition='transition'
         variants={routingAnimations}
       >
-        <div className="gradient-bg"></div>
+        <div className="gradient-bg opacity-30"></div>
         <section className="event-section">
           {!events && <Loader />}
           {events && (
@@ -157,7 +157,7 @@ export default function Events() {
                               return (
                                 <div className="eventCardConatainer" key={`Event-${i}`}>
                                   <div className="event-card" onClick={
-                                    () => { navigate(`/events/${id}/${singleEvent?.Event_id?._id}`) }
+                                    () => { navigate(`/event/${singleEvent?.Event_id?._id}`) }
                                   }>
                                     <p>{year?.year}</p>
                                     <img

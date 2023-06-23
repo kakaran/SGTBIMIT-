@@ -70,7 +70,7 @@ header {
   font-weight: 700;
   border-radius: 9999999px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-  font-size: min(1rem, 2vw);
+  font-size: min(2rem, 4vw);
 }
 
 .header-btns {

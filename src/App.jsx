@@ -133,7 +133,7 @@ function App() {
         <Route path='/alumini/registration' element={<Registration />} />
         <Route path='/industry/placements' element={<Placements />} />
         <Route path='/industry/industrial-visit' element={<Visit />} />
-        <Route path='events/:id/:event_id' element={<SingleEvent />} />
+        <Route path='/event/:event_id' element={<SingleEvent />} />
         <Route path='/notices' element={<Notice />} />
         <Route path='/infrastructure/:id' element={<Infra />} />
         <Route path='/InfraLife' element={<InfraLife />} />

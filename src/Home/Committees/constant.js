@@ -1,4 +1,6 @@
 import pdf from '../../Assets/anti_ragging_poster.pdf'
+import female from '../../Assets/female.pdf'
+import sexual_harrass from '../../Assets/sexual_harras.pdf'
 import antiRagging from '../../images/anti-ragging.png'
 import qualityPolicy from '../../images/quality-policy.png'
 import sexualHarrass from '../../images/sexual-harrassment.png'
@@ -23,14 +25,14 @@ export const committees = [
   {
     name: "SEXUAL HARRASMENT",
     image: sexualHarrass,
-    pdf: pdf,
+    pdf: sexual_harrass,
     detail: "Ragging is a punishable offence as per Hon'ble Supreme Court order.",
     id: "3",
   },
   {
     name: "FEMALE FOETICIDE COMMITTEE",
     image: femaleFoeticie,
-    pdf: pdf,
+    pdf: female,
     detail: "Caste Discrimination Complaint.",
     id: "4",
   }

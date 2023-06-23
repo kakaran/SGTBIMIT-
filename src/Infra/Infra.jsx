@@ -35,7 +35,7 @@ const Infra = () => {
             >
                 <div className='gradient-bg' />
                 <div className='flex justify-center'>
-                    <h1 className='my-bold blue_gradient my-text-4 mb-0'>INFRASTRUCTURE</h1>
+                    <h1 className='my-bold blue_gradient my-text-4 mb-0'>{infra?.Data?.InfraName}</h1>
                 </div>
 
                 <div className='w-[min(1500px,100%)] mx-auto my-10 grid'>
@@ -49,14 +49,7 @@ const Infra = () => {
                         </select>
                     } */}
 
-                    {infra && <motion.div
-                        initial={{ translateY: 100 }}
-                        animate={{ translateY: 0 }}
-                        transition={{ duration: .3, type: 'spring' }}
-                        // ref={myRef}
-                        key={infra.Data?._id}
-                    >
-                        <h1 className='orange_gradient my-bold my-text-3 mt-0'>{infra.Data?.InfraName}</h1>
+                    {infra && <div key={infra.Data?._id}>
                         <div className='flex justify-center items-center'>
                             <div className='w-1/2'>
                                 <Carousel
@@ -78,7 +71,7 @@ const Infra = () => {
                             </div>
                         </div>
                         <p className='text-gray-700 text-2xl text-justify'> {infra.Data?.Detail}</p>
-                    </motion.div>}
+                    </div>}
                 </div>
             </motion.section>
             <Footer />

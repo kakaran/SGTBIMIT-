@@ -26,10 +26,11 @@
     background-size: 100%;
     display: grid;
     padding-block: min(7rem, 7vh);
-    padding-inline: min(4rem, 4vw);
+    padding-inline: min(8rem, 8vw);
     position: relative;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 30% 70%;
     width: 100%;
+
 
 }
 
@@ -45,7 +46,7 @@
 
 .welcome-img img {
     border-radius: 16px;
-    width: 100%;
+    width: 90%;
 }
 
 .welcome-text {
@@ -64,7 +65,6 @@
 .welcome-text p {
     font-size: min(1.5rem, 4vw);
     line-height: min(2.5rem, 5vh);
-    width: 95%;
     color: #2D2D2D;
     font-weight: 400;
 }

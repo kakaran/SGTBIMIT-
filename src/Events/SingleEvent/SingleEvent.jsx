@@ -6,8 +6,9 @@ import { routingAnimations } from '../../constants'
 import { Carousel } from 'react-responsive-carousel';
 
 const SingleEvent = () => {
-    const { id, event_id } = useParams()
+    const { event_id } = useParams()
     const [event, setEvent] = useState(null)
+    console.log(event_id);
 
     const getData = async () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/Event/Single_Event_Display/${event_id}`)

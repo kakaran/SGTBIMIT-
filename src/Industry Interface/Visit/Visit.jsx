@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Footer, Header, Loader, Navbar } from "../../Components";
 import { motion } from "framer-motion";
 import { routingAnimations } from "../../constants";
-import styles from "./visit.module.css";
+import "./visit.module.css";
 import axios from "axios";
 
 const Visit = () => {
@@ -37,7 +37,7 @@ const Visit = () => {
         <div className="gradient-bg"></div>
         <section
 
-          className="w-[min(1500px,98%)] mx-auto"
+          className="w-[min(1500px,98%)] mx-auto max-xl:w-3/4"
         >
           <div className="w-[min(1500px,98%)] mx-auto">
             <h1 className="my-bold my-text-4 primary-blue text-center uppercase">
@@ -77,7 +77,7 @@ const Visit = () => {
                 <div className={`w-full h-1 primary-bg-clr rounded-full`}></div>
                 <div className="h-28" />
                 <div className="flex">
-                  <div className="z-10 w-full min-h-full grid">
+                  <div className="data z-10 w-full min-h-full grid">
                     <img
                       src={`${import.meta.env.VITE_API_URL
                         }/IndustrialVisits/IndustrialVisits_Image_Display/${visit._id
@@ -96,7 +96,7 @@ const Visit = () => {
                       className="aspect-square w-[200px] mt-auto"
                     />
                   </div>
-                  <p className=" bg-[rgba(255,255,255,0.5)] z-0 p-16 rounded-lg text-gray-700 text-justify text-2xl flex items-center">
+                  <p className="data bg-[rgba(255,255,255,0.5)] z-0 p-16 rounded-lg text-gray-700 text-justify text-2xl flex items-center">
                     {visit.about}
                   </p>
                 </div>

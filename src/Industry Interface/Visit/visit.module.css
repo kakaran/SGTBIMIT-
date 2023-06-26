@@ -6,3 +6,9 @@
     width: calc(100% - 3rem);
     transform: translateY(50%);
 }
+
+@media (max-width:800px) {
+    .data {
+        width: 90%;
+    }
+}

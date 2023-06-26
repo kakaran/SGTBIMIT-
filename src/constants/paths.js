@@ -119,4 +119,27 @@ export const pages = [
         path: '/dashboard/admin/Event_Display',
         name: 'Display Events'
     },
+    {
+        path: '/dashboard/admin/Research_Development_Add',
+        name: 'Add Research & Development'
+    },
+    {
+        path: '/dashboard/admin/Research_Development_Display',
+        name: 'Display Research and Development'
+    },
+    {
+        path: '/dashboard/admin/IndustrialVisits_Add',
+        name: 'Add Industrial Visit'
+    },
+    {
+        path: '/dashboard/admin/IndustrialVisits_Display',
+        name: 'Display Industrial Visit'
+    },{
+        path: '/dashboard/admin/IndustrialVisits_Update',
+        name: 'Update Industrial Visit'
+    },
+    {
+        path: '',
+        name: ''
+    },
 ]

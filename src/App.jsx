@@ -96,6 +96,11 @@ import EventHDisplay from './Pages/Society/Event_Handler/EventHandler_Display/Ev
 import Infra from './Infra/Infra.jsx'
 import InfraLife from './Infra/InfraLife.jsx'
 import SingleResearch from './Academics/Research/SingleResearch.jsx'
+import RDAdd from './Pages/R&D/R&D Add/Rd_Add.jsx'
+import RDDisplay from './Pages/R&D/R&D Display/Rd_Display.jsx'
+import VisitAdd from './Pages/Industry Interface/Industrial Visit/Visit Add/VisitAdd.jsx'
+import VisitDisplay from './Pages/Industry Interface/Industrial Visit/Visit Display/VisitDisplay.jsx'
+import VisitUpdate from './Pages/Industry Interface/Industrial Visit/Visit Update/VisitUpdate.jsx'
 
 
 function App() {
@@ -196,6 +201,11 @@ function App() {
           <Route path='admin/Event_Update/:id' element={<EventUpdate />} />
           <Route path='admin/EventHandler_Add' element={<EventHAdd />} />
           <Route path='admin/EventHandler_Display' element={<EventHDisplay />} />
+          <Route path='admin/Research_Development_Add' element={<RDAdd />} />
+          <Route path='admin/Research_Development_Display' element={<RDDisplay />} />
+          <Route path='admin/IndustrialVisits_Add' element={<VisitAdd />} />
+          <Route path='admin/IndustrialVisits_Display' element={<VisitDisplay />} />
+          <Route path='admin/IndustrialVisits_Update' element={<VisitUpdate />} />
         </Route>
         <Route path='/admin/forgetPassword/:_id/:email/:status' element={<ForgetPassword />} />
         <Route path="/Prev_Year_Paper_PDF_Display/:_id/:index" element={<QuestionPaperPDFDisplay />} />

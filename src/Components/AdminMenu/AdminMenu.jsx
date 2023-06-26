@@ -31,6 +31,8 @@ const AdminMenu = () => {
   const [isSocietiesActive, setIsSocietiesActive] = useState(false);
   const [isAcademicsActive, setIsAcademicsActive] = useState(false);
   const [isSUBEresourcesActive, setIsSUBEresourcesActive] = useState(false);
+  const [isSUBRdActive, setIsSUBRdActive] = useState(false);
+  const [isSUBIvisitActive, setIsSUBIvisitActive] = useState(false);
   const [isQuestionPaperActive, setIsQuestionPaperActive] = useState(false);
   const [isCalenderActive, setIsCalenderActive] = useState(false);
 
@@ -532,6 +534,36 @@ const AdminMenu = () => {
                     </span>
                   </div>
                 )}
+                <p
+                  onClick={() => {
+                    setIsSUBRdActive(!isSUBRdActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  RESEARCH & DEVELOPMENT <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBRdActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Research_Development_Add");
+                        }}
+                      >
+                        R&D ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/Research_Development_Display");
+                        }}
+                      >
+                        R&D DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
               </span>
             </div>
           )}
@@ -708,6 +740,37 @@ const AdminMenu = () => {
           {isInterfaceActive && (
             <div className="Categoriesdropdown">
               <span>
+              <p
+                  onClick={() => {
+                    setIsSUBIvisitActive(!isSUBIvisitActive);
+                  }}
+                  style={{
+                    backgroundColor: "#e0e1dd",
+                  }}
+                >
+                  INDUSTRIAL VISIT <IoIosArrowDown className="CatHeadIcons" />
+                </p>
+                {isSUBIvisitActive && (
+                  <div className="Categoriesdropdown">
+                    <span>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/IndustrialVisits_Add");
+                        }}
+                      >
+                        INDUSTRIAL VISIT ADD
+                      </p>
+                      <p
+                        onClick={() => {
+                          navigate("/dashboard/admin/IndustrialVisits_Display");
+                        }}
+                      >
+                        INDUSTRIAL VISIT DISPLAY
+                      </p>
+                    </span>
+                  </div>
+                )}
+
                 <p
                   onClick={() => {
                     setIsSUBStarsActive(!isSUBStarsActive);

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-import cancelImg from '../images/cancel.png'
 
 
 export default function Admission() {
@@ -74,7 +73,7 @@ export default function Admission() {
             <div className="admission-bg"></div>
             <div className='admission-dialog'>
 
-                <img src={cancelImg} alt="cant load" className='close-btn' onClick={(e) => closeHandle(e)} />
+                <img src="/images/cancel.png" alt="cant load" className='close-btn' onClick={(e) => closeHandle(e)} />
                 <h1 className='orange_gradient my-bold text-4xl'>ADMISSION FORM</h1>
                 <div className='hurry'>Hurry, Fill your Admission Form right now</div>
                 <div className="admission-form">

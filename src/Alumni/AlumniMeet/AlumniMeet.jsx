@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { routingAnimations } from "../../constants";
 import axios from "axios";
-import cancel from '../../images/cancel.png'
 import { Carousel } from "react-responsive-carousel";
 
 const AlumniMeet = () => {
@@ -156,7 +155,7 @@ const AlumniMeet = () => {
             scale: 1,
           }}
         >
-          <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
+          <img src="/images/cancel.png" className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
           <Carousel
             showThumbs={false}
           >

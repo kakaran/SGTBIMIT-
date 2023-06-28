@@ -1,38 +1,10 @@
 import React, { useState } from 'react'
 import './syllabus.css'
 import { Header, Navbar, Footer } from '../../Components'
-import BCA from '../../Assets/BCA-SYLLABUS .pdf';
-import BCOM from '../../Assets/B.com_Syllabus.pdf';
-import BBABI from '../../Assets/BBA-BI-Syllabus.pdf';
-import BBA from '../../Assets/BBA-SYLLABUS.pdf';
 import { Helmet } from 'react-helmet';
 import { AiOutlinePlusSquare, AiOutlineMinusSquare } from 'react-icons/ai'
 import { motion } from 'framer-motion';
 import { routingAnimations } from '../../constants';
-
-// File imports
-
-import bca_sem1 from '../../Assets/bca/1st_Sem.pdf'
-import bca_sem2 from '../../Assets/bca/2nd_Sem.pdf'
-import bca_sem3 from '../../Assets/bca/3rd_Sem.pdf'
-import bca_sem4 from '../../Assets/bca/4th_Sem.pdf'
-import bca_sem5 from '../../Assets/bca/5th_Sem.pdf'
-import bca_sem6 from '../../Assets/bca/6th_Sem.pdf'
-
-
-import bba_sem2 from '../../Assets/bba/2nd_Sem.pdf'
-import bba_sem3 from '../../Assets/bba/3rd_Sem.docx'
-import bba_sem4 from '../../Assets/bba/4th_Sem.doc'
-import bba_sem5 from '../../Assets/bba/5th_Sem.docx'
-import bba_sem6 from '../../Assets/bba/6th_Sem.doc'
-
-import bcom_sem1 from '../../Assets/bcom/1st_Sem.docx'
-import bcom_sem2 from '../../Assets/bcom/2nd_Sem.docx'
-
-import bba_bi_sem3 from '../../Assets/bbabi/3rd_Sem.docx'
-import bba_bi_sem4 from '../../Assets/bbabi/4th_Sem.docx'
-import bba_bi_sem5 from '../../Assets/bbabi/5th_Sem.docx'
-import bba_bi_sem6 from '../../Assets/bbabi/6th_Sem.docx'
 
 export default function Syllabus() {
     const [selected, setSelected] = useState(null)
@@ -49,90 +21,90 @@ export default function Syllabus() {
     const courses = [
         {
             name: "Bachelor of Computer Applications (BCA)",
-            link: BCA,
+            link: "/assets/BCA-SYLLABUS.pdf",
             sems: [{
                 name: "Semester 1",
-                file: bca_sem1,
+                file: "/assets/bca/1st_Sem.pdf",
             },
             {
                 name: "Semester 2",
-                file: bca_sem2,
+                file: "/assets/bca/2nd_Sem.pdf",
             },
             {
                 name: "Semester 3",
-                file: bca_sem3,
+                file: "/assets/bca/3rd_Sem.pdf",
             },
             {
                 name: "Semester 4",
-                file: bca_sem4,
+                file: "/assets/bca/4th_Sem.pdf",
             },
             {
                 name: "Semester 5",
-                file: bca_sem5,
+                file: "/assets/bca/5th_Sem.pdf",
             },
             {
                 name: "Semester 6",
-                file: bca_sem6,
+                file: "/assets/bca/6th_Sem.pdf",
             },
             ],
         },
         {
             name: "Bachelor of Business Administration (BBA)",
-            link: BBA,
+            link: "/assets/BBA-SYLLABUS.pdf",
             sems: [{
                 name: "Semester 2",
-                file: bba_sem2,
+                file: "/assets/bba/2nd_Sem.pdf",
             },
             {
                 name: "Semester 3",
-                file: bba_sem3,
+                file: "/assets/bba/3rd_Sem.docx",
             },
             {
                 name: "Semester 4",
-                file: bba_sem4,
+                file: "/assets/bba/4th_Sem.doc",
             },
             {
                 name: "Semester 5",
-                file: bba_sem5,
+                file: "/assets/bba/5th_Sem.docx",
             },
             {
                 name: "Semester 6",
-                file: bba_sem6,
+                file: "/assets/bba/6th_Sem.doc",
             },
 
             ],
         },
         {
             name: "Bachelor of Business Administration (BBA(B&I))",
-            link: BBABI,
+            link: "/assets/BBA-BI-Syllabus.pdf",
             sems: [{
                 name: "Semester 3",
-                file: bba_bi_sem3,
+                file: "/assets/bbabi/3rd_Sem.docx",
             },
             {
                 name: "Semester 4",
-                file: bba_bi_sem4,
+                file: "/assets/bbabi/4th_Sem.docx",
             },
             {
                 name: "Semester 5",
-                file: bba_bi_sem5,
+                file: "/assets/bbabi/5th_Sem.docx",
             },
             {
                 name: "Semester 6",
-                file: bba_bi_sem6,
+                file: "/assets/bbabi/6th_Sem.docx",
             },
             ],
         },
         {
             name: "Bachelor of Commerce (B.COM)",
-            link: BCOM,
+            link: "/assets/B.com_Syllabus.pdf",
             sems: [{
                 name: "Semester 1",
-                file: bcom_sem1,
+                file: "/assets/bcom/1st_Sem.docx",
             },
             {
                 name: "Semester 2",
-                file: bcom_sem2,
+                file: "/assets/bcom/2nd_Sem.docx",
             },
             ],
         },

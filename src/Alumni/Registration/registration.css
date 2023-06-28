@@ -134,7 +134,7 @@
 } */
 
 .backgroundreg {
-  background: url("../../images/bg-frame.png");
+  background: url("/images/bg-frame.png");
   background-size: 100%;
 }
 
@@ -370,8 +370,9 @@ form .cat label .dot {
   font-size: 25px;
 
 }
-@media(max-width:800px){
-  .reg-container{
+
+@media(max-width:800px) {
+  .reg-container {
     width: 90%;
   }
 }

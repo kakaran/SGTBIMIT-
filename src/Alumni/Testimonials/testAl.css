@@ -1,5 +1,5 @@
 .test-al-section {
-    background: url("../../images/bg-frame.png");
+    background: url("/images/bg-frame.png");
     background-size: 100%;
     width: 100%;
     padding: min(2rem, 2vw);

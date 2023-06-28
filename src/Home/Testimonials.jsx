@@ -3,7 +3,6 @@ import useFetch from '../useFetch'
 import { Carousel } from 'react-responsive-carousel'
 import Loader from '../Components/Loader'
 import { motion } from 'framer-motion'
-import quote from '../images/quote.png'
 
 export default function Testimonials() {
     const { data: testimonials, isPending } = useFetch(`${import.meta.env.VITE_API_URL}/Testimonial/Testimonial_Display`)
@@ -48,7 +47,7 @@ export default function Testimonials() {
                             <div className="test-container" key={testimonial._id}>
                                 <div className="test">
                                     <div className="card">
-                                        <img src={quote} alt="" className="test-quote" />
+                                        <img src="/images/quote.png" alt="" className="test-quote" />
                                         <motion.div viewport={{ once: true }}
                                             className="card-content"
                                             initial={{

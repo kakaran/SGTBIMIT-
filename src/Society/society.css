@@ -3,7 +3,7 @@
     text-align: center;
     margin-inline: auto;
     padding-top: min(2rem, 2vh);
-    background: url("../images/bg-frame.png");
+    background: url("/images/bg-frame.png");
     background-size: 100%;
 }
 

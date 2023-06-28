@@ -56,7 +56,7 @@ a {
 .gradient-bg {
     z-index: -1;
     background-image:
-        url("./images/bg-frame.png");
+        url("/images/bg-frame.png");
     /* radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 0%),
         radial-gradient(circle at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
         radial-gradient(circle at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),

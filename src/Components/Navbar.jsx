@@ -1,9 +1,6 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import useFetch from '../useFetch'
-import cancelImg from '../images/cancel.png'
-
-import arrow from "../images/down.png"
 
 
 export default function Navbar() {
@@ -62,7 +59,7 @@ export default function Navbar() {
           <div className='h-full'><NavLink to="/" className='h-full flex items-center'>HOME</NavLink></div>
         </div>
         <div className="nav-item" >
-          <div> ABOUT US<img src={arrow} alt="" /></div>
+          <div> ABOUT US<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             <NavLink to="/about/governing-body" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">GOVERNING BODY</div>
@@ -77,7 +74,7 @@ export default function Navbar() {
 
         </div>
         <div className="nav-item" >
-          <div>ACADEMICS<img src={arrow} alt="" /></div>
+          <div>ACADEMICS<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             <div className="dropdown-item courses-dropdown-container">
               <div>COURSES</div>
@@ -122,7 +119,7 @@ export default function Navbar() {
         </div>
 
         <div className="nav-item" >
-          <div>CAMPUS<img src={arrow} alt="" /></div>
+          <div>CAMPUS<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             <div className="dropdown-item courses-dropdown-container">
               <div>INFRASTRUCTURE</div>
@@ -142,7 +139,7 @@ export default function Navbar() {
 
 
         <div className="nav-item" >
-          <div>ADMISSION<img src={arrow} alt="" /></div>
+          <div>ADMISSION<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             <NavLink to="/admission/fees" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">FEES</div>
@@ -157,7 +154,7 @@ export default function Navbar() {
 
         </div>
         <div className="nav-item" >
-          <div>ALUMNI<img src={arrow} alt="" /></div>
+          <div>ALUMNI<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             <NavLink to="/alumini/alumini-meet" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">ALUMNI MEET</div>
@@ -175,7 +172,7 @@ export default function Navbar() {
 
         </div>
         {/* <div className="nav-item" >
-          <div>SOCIETY<img src={arrow} alt="" /></div>
+          <div>SOCIETY<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             {societies && societies.map((society) => {
               return (
@@ -188,7 +185,7 @@ export default function Navbar() {
 
         </div> */}
         <div className="nav-item" >
-          <div>SOCIETY & CLUBS<img src={arrow} alt="" /></div>
+          <div>SOCIETY & CLUBS<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             {events && events.map((event, i) => (
               <NavLink to={`/events/${event._id}`} className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'} key={`${event + i}`}>
@@ -199,7 +196,7 @@ export default function Navbar() {
         </div>
 
         <div className="nav-item" >
-          <div>INDUSTRY INTERFACE<img src={arrow} alt="" /></div>
+          <div>INDUSTRY INTERFACE<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown" >
             <NavLink to="/industry/industrial-visit" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">INDUSTRIAL VISIT</div>
@@ -217,7 +214,7 @@ export default function Navbar() {
 
         </div>
         {/* <div className="nav-item" >
-          <div>NAAC<img src={arrow} alt="" /></div>
+          <div>NAAC<img src={"/images/down.png"} alt="" /></div>
           <div className="dropdown left-dropdown" >
             <NavLink to="/naac/r&d" className={({ isActive }) => isActive ? 'dropdown-active-item' : 'non-active'}>
               <div className="dropdown-item">R&D</div>

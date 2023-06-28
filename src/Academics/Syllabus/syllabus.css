@@ -1,5 +1,5 @@
 .syllabus {
-    background: url("../../images/bg-frame.png");
+    background: url("/images/bg-frame.png");
     background-size: 100%;
     padding-top: min(2rem, 2vw);
     margin-bottom: min(2rem, 2vw);
@@ -94,13 +94,15 @@ td>a {
 .grid-show {
     grid-template-rows: 1fr;
 }
+
 @media(max-width:800px) {
     .grid-show {
-        width:90% ;
+        width: 90%;
         margin-left: 2rem;
     }
-    .grid-hide{
+
+    .grid-hide {
         width: 90%;
     }
-    
+
 }

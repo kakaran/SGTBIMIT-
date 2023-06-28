@@ -1,5 +1,5 @@
 .eli-section {
-    background: url("../../images/bg-frame.png");
+    background: url("/images/bg-frame.png");
     background-size: 100%;
 }
 
@@ -50,10 +50,12 @@
     font-size: 24px;
     font-family: "SF Pro Display";
 }
-.infos p{
+
+.infos p {
     text-align: justify;
 }
-.ortext{
+
+.ortext {
     text-align: center;
 }
 
@@ -90,7 +92,7 @@
         line-height: 1.5em;
     }
 
-    .eli_container{
+    .eli_container {
         width: 90%;
     }
 }

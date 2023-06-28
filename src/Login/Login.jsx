@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useAuth } from '../Context/auth';
 import { ToastContainer, toast } from 'react-toastify';
-import logo from '../images/sgtbimit.png'
 
 
 export default function Login() {
@@ -75,7 +74,7 @@ export default function Login() {
     return (
         <>
             <section className="login-section">
-                <img className="login-logo" src={logo} alt="" />
+                <img className="login-logo" src="/images/sgtbimit.png" alt="" />
                 <div className="form-container">
                     <p className="login-title">Login</p>
                     <div className="form" >

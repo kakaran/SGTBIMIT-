@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import gtb from '../images/gtbji.png'
-import arrow from '../images/VectorskillsArrow.png'
+
+// import { Link } from 'react-router-dom'
+// import arrow from '../images/VectorskillsArrow.png'
 
 export default function Welcome() {
 
@@ -21,7 +21,7 @@ export default function Welcome() {
           type: 'spring'
         }}
       >
-        <img src={gtb} alt="" />
+        <img src="/images/gtbji.png" alt="" />
       </motion.div>
       <div className='welcome-text'>
         <motion.h1 viewport={{ once: true }}

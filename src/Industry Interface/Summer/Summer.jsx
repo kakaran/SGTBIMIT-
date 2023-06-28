@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { routingAnimations } from "../../constants"
 // import wipro from '../../images/wipro.png'
 // import { AiOutlineArrowDown } from 'react-icons/ai'
-// import img from '../../images/place-img.png'
 // import { summer } from './constant'
 
 
@@ -67,7 +66,7 @@ const Summer = () => {
                                         <p className='text-gray-700 text-2xl text-justify'>
                                             Wipro is an Indian multinational corporation that provides information technology, consultant and business process services. It is one of the leading Big Tech companies. Wipro's capabilities range across cloud computing, computer security, digital transformation, artificial intelligence, robotics, data analytics, and other technology consulting services to customers in 167 countries.
                                         </p>
-                                        <img src={img} alt="cant load" className='w-full' />
+                                        <img src="/images/place-img.png" alt="cant load" className='w-full' />
                                     </div>
                                 </div>
                             </div>

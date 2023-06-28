@@ -3,10 +3,7 @@ import "./placements.css";
 import { Header, Navbar, Footer, Loader } from "../../Components";
 import { Helmet } from "react-helmet";
 import { BsArrowDownCircleFill } from "react-icons/bs";
-import ellipse from "../../images/placement-ellipse.png";
-import img from "../../images/place-img.png";
 import Recruiters from "../../Home/Recruiters";
-import Placementss from "../../Home/Placementss";
 import Statistics from "./Statistics/Statistics";
 import { motion } from "framer-motion";
 import { routingAnimations } from "../../constants";
@@ -14,6 +11,7 @@ import AutoHorizontalScroll from "../../Home/AutoHorizontalScroll";
 import useFetch from "../../useFetch";
 import _ from "lodash";
 import Team from "./Team";
+// import Placementss from "../../Home/Placementss";
 
 export default function Placements() {
   const aboutRef = useRef(null);
@@ -57,7 +55,7 @@ export default function Placements() {
           </a>
         </section>
         <section className="placement-about-section" id="placement-about" ref={aboutRef}>
-          <img src={ellipse} alt="" className="max-lg:hidden" />
+          <img src="/images/placement-ellipse.png" alt="" className="max-lg:hidden" />
           <div className="layered-title">
             <h1>ABOUT US</h1>
             <h2>About us</h2>
@@ -73,7 +71,7 @@ export default function Placements() {
                 towards success.
               </p>
             </div>
-            <img src={img} alt="" />
+            <img src="/images/place-img.png" alt="" />
           </div>
         </section>
         <Team />

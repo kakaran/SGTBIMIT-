@@ -1,13 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import email from '../images/email-icon.png'
-import phone from '../images/phone-icon.png'
-import map from '../images/map-icon.png'
-import pdf from '../images/pdf-icon.png'
-import campus from '../images/campus-icon.png'
-import research from '../images/research-icon.png'
 import { useNavigate } from 'react-router-dom'
-import brochure from '../Assets/brochure.pdf'
 
 export default function Map() {
   const navigate = useNavigate()
@@ -15,17 +8,17 @@ export default function Map() {
     {
       type: "Email",
       detail: "sgtbimit@hotmail.com",
-      image: email
+      image: "/images/email-icon.png"
     },
     {
       type: "Phone Number",
       detail: "91-9899333224, 91-8810230080, 011-61383760, 011-61383764",
-      image: phone
+      image: "/images/phone-icon.png"
     },
     {
       type: "Location",
       detail: "Adjacent to Gurudwara Nanak Piao, State Bank Colony, Near Model Town Metro Station, Delhi-110009",
-      image: map
+      image: "/images/map-icon.png"
     }
   ]
 
@@ -68,16 +61,16 @@ export default function Map() {
             ))}
           </div>
           <div className="chips">
-            <a className="chip cursor-pointer" href={brochure} download>
-              <img src={pdf} alt="" style={{ filter: "brightness(0) invert(1)" }} />
+            <a className="chip cursor-pointer" href="/assets/brochure.pdf" download>
+              <img src="/images/pdf-icon.png" alt="" style={{ filter: "brightness(0) invert(1)" }} />
               <span>Download Brochure</span>
             </a>
             <button className="chip cursor-pointer" onClick={() => { window.open("https://youtu.be/bfeek8jSpeI") }}>
-              <img src={campus} alt="" />
+              <img src="/images/campus-icon.png" alt="" />
               <span>Campus Tour</span>
             </button>
             <button className="chip cursor-pointer" onClick={() => { navigate("/academics/research") }}>
-              <img src={research} alt="" />
+              <img src="/images/research-icon.png" alt="" />
               <span>Researches</span>
             </button>
           </div>

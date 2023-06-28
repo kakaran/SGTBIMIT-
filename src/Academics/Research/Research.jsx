@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Header, Navbar, Footer } from "../../Components"
 import './research.css'
-import img from '../../images/research-img.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { Carousel } from 'react-responsive-carousel'
-import researchCardImg from '../../images/research-card-img.png'
 import { Helmet } from 'react-helmet'
 import { motion } from 'framer-motion'
 import { routingAnimations } from '../../constants'
@@ -30,34 +28,34 @@ export default function Research() {
     // const research = [
     //     [
     //         {
-    //             image: researchCardImg,
+    //             image: "/images/research-card-img.png",
     //             title: 'Research Card',
     //             date: "dd-mm-yyyy"
     //         },
     //         {
-    //             image: researchCardImg,
+    //             image: "/images/research-card-img.png",
     //             title: 'Research Card',
     //             date: "dd-mm-yyyy"
     //         },
     //         {
-    //             image: researchCardImg,
+    //             image: "/images/research-card-img.png",
     //             title: 'Research Card',
     //             date: "dd-mm-yyyy"
     //         },
     //     ],
     //     [
     //         {
-    //             image: researchCardImg,
+    //             image: "/images/research-card-img.png",
     //             title: 'Research Card',
     //             date: "dd-mm-yyyy"
     //         },
     //         {
-    //             image: researchCardImg,
+    //             image: "/images/research-card-img.png",
     //             title: 'Research Card',
     //             date: "dd-mm-yyyy"
     //         },
     //         {
-    //             image: researchCardImg,
+    //             image: "/images/research-card-img.png",
     //             title: 'Research Card',
     //             date: "dd-mm-yyyy"
     //         },
@@ -85,7 +83,7 @@ export default function Research() {
 
                 >
                     <div className="research-img">
-                        <img src={img} alt="cant load" className='w-full h-[500px] rounded-3xl shadow-lg object-cover' />
+                        <img src="/images/research-img.png" alt="cant load" className='w-full h-[500px] rounded-3xl shadow-lg object-cover' />
                     </div>
                     <p className="research-content">
                         SGTBIMIT has a Research and Development Department dedicated to promote and to encourage the aspiring students and faculty members to carry out research in the field of Management, IT, commerce, by providing necessary facilities and infrastructures required by them.

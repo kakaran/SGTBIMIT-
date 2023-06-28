@@ -22,7 +22,7 @@
 /* Welcome */
 
 .welcome {
-    background-image: url("../images/bg-welcome.png");
+    background-image: url("/images/bg-welcome.png");
     background-size: 100%;
     display: grid;
     padding-block: min(7rem, 7vh);

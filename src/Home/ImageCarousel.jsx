@@ -1,8 +1,5 @@
 import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
-import one from '../images/1.png'
-import two from '../images/2.png'
-import three from '../images/3.png'
 
 export default function ImageCarousel() {
   return (
@@ -17,13 +14,13 @@ export default function ImageCarousel() {
       >
 
         <div className="carousel-item">
-          <img src={one} alt="carousel-1" />
+          <img src="/images/1.png" alt="carousel-1" />
         </div>
         <div className="carousel-item">
-          <img src={two} alt="carousel-2" />
+          <img src="/images/2.png" alt="carousel-2" />
         </div>
         <div className="carousel-item">
-          <img src={three} alt="carousel-2" />
+          <img src="/images/3.png" alt="carousel-2" />
         </div>
       </Carousel>
     </div>

@@ -4,7 +4,7 @@
     width: 100%;
     margin-inline: auto;
     padding: min(2rem, 2vw);
-    background: url("../images/bg-frame.png");
+    background: url("/images/bg-frame.png");
     background-size: 100%;
 }
 

@@ -3,7 +3,7 @@
     padding: min(2rem, 2vw);
     display: flex;
     flex-direction: column;
-    background: url("../../images/bg-frame.png");
+    background: url("/images/bg-frame.png");
     background-size: 100%;
 }
 
@@ -57,7 +57,7 @@
     border: 2.5px solid var(--secondary-clr);
     margin: 2.4rem 2rem;
     width: 80%;
-    margin-left:10%;
+    margin-left: 10%;
 }
 
 /* .notice-card:nth-child(2n-2) {

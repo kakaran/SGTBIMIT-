@@ -1,5 +1,5 @@
 .examination-section {
-    background: url("../../images//bg-frame.png");
+    background: url("/images//bg-frame.png");
     background-size: 100%;
     padding: min(2rem, 3vw);
 }
@@ -8,7 +8,7 @@
     .examination-section {
         background: none;
         width: 90%;
-        margin-left:1rem;
+        margin-left: 1rem;
     }
 }
 

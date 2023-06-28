@@ -4,8 +4,6 @@ import "./components.css"
 import useFetch from '../useFetch'
 import { Link, useNavigate } from 'react-router-dom'
 import { IoMdSchool, IoMdExit } from 'react-icons/io'
-import logo from '../images/sgtbimit.png'
-import menuImg from '../images/menu.png'
 import MobileNav from './MobileNav'
 
 export default function Header() {
@@ -47,7 +45,7 @@ export default function Header() {
       <Admission />
       <div className="header-top">
         <div className="logo">
-          <img src={logo} alt="" onClick={() => navigate("/")} className='cursor-pointer' />
+          <img src="/images/sgtbimit.png" alt="" onClick={() => navigate("/")} className='cursor-pointer' />
         </div>
 
         <div className="clg-heading-wrapper max-lg:hidden">
@@ -66,7 +64,7 @@ export default function Header() {
           <button className="student-login-btn" type="button"><span style={buttonStyle}><IoMdExit />Student - ERP Login</span></button>
         </div>
         <div className="hidden max-lg:block p-5">
-          <img src={menuImg} alt="" height={"50px"} className="menu" onClick={() => { setMobileToggle(!mobileToggle) }} />
+          <img src="/images/menu.png" alt="" height={"50px"} className="menu" onClick={() => { setMobileToggle(!mobileToggle) }} />
         </div>
       </div>
       <div className={`grid ${mobileToggle ? "grid-show" : "grid-hide"} transition-all lg:hidden`}>

@@ -5,8 +5,6 @@ import { Carousel } from 'react-responsive-carousel'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet'
 import { routingAnimations } from '../../constants'
-import p1 from '../../images/p1.jpg'
-import cancel from '../../images/cancel.png'
 
 export default function Gallery() {
 
@@ -57,7 +55,7 @@ export default function Gallery() {
                             scale: 1,
                         }}
                     >
-                        <img src={cancel} className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
+                        <img src="/images/cancel.png" className="carousel-close-btn" onClick={() => setCarouselIndex(null)} alt='' />
                         <div className="gallery-carousel-container">
                             <Carousel
                                 showThumbs={false}

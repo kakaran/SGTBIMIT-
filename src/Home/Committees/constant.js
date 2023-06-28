@@ -1,6 +1,7 @@
 import pdf from '../../Assets/anti_ragging_poster.pdf'
 import female from '../../Assets/female.pdf'
 import sexual_harrass from '../../Assets/sexual_harras.pdf'
+import policy from '../../Assets/policy.pdf'
 import antiRagging from '../../images/anti-ragging.png'
 import qualityPolicy from '../../images/quality-policy.png'
 import sexualHarrass from '../../images/sexual-harrassment.png'
@@ -18,7 +19,7 @@ export const committees = [
   {
     name: "QUALITY POLICY",
     image: qualityPolicy,
-    pdf: pdf,
+    pdf: policy,
     detail: "Top Recruiters having placement drives at SGTBIMIT.",
     id: "2",
   },

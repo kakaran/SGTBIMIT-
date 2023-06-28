@@ -90,7 +90,7 @@ const Summer = () => {
                                         animate={{ opacity: 1 }}
                                         className=''
                                     >
-                                        <div className='bg-[#D9D9D9] rounded-[50px] mx-10 bg-opacity-90'>
+                                        <div className='bg-[#D9D9D9] rounded-[50px] mx-10 bg-opacity-40'>
                                             <div className='grid place-content-center'><img src={`${import.meta.env.VITE_API_URL}/SummerInternship/SummerInternship_CompanyImage_Display/${item._id}`} alt="" className='object-fill rounded-full w-[200px] h-[200px]' style={{ transform: "translateY(-50%)" }} /></div>
                                             <div className='-mt-20  p-10'>
                                                 <h1 className='my-text-3 my-bold orange_gradient'> {item.companyName} </h1>
@@ -98,10 +98,13 @@ const Summer = () => {
                                                     {item.companyDetail}
                                                 </p>
                                                 <div className='my-10'>
-                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Partnership with: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.partnershipWith}</span>
+                                                    {/* <h1 className='my-text-3 my-bold blue_gradient inline'>Partnership with: </h1> <span className='text-gray-700 my-text-3 my-bold'>{item.partnershipWith}</span> */}
                                                 </div>
                                                 <div className='my-10'>
-                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Internship Offered: </h1> <span className='text-gray-700 text-2xl my-bold'>{item.internshipOffered}</span>
+                                                    <h1 className='my-text-3 my-bold blue_gradient inline'>Internship Offered: </h1>
+                                                    <ul>{item.internshipOffered.map((item) => (
+                                                        <li className='text-gray-700 my-text-2 mx-5'>{`${item}`}</li>))
+                                                    }</ul>
                                                 </div>
                                                 <div>
                                                     <h1 className='text-center my-bold text-[#B81D1D] my-text-3'>Top Interns:</h1>
@@ -126,6 +129,7 @@ const Summer = () => {
                     </div>
                 </div>
             </motion.section>
+            <Footer />
         </>
     )
 }

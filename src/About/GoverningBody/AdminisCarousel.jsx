@@ -67,7 +67,7 @@ export default function AdminisCarousel() {
                       <div className="my-bold mt-5 text-lg text-start">WAHEGURU JI KA KHALSA, WAHEGURU JI KI FATEH!!</div>
                       <div className=" my-bold text-gray-700 text-start max-2xl:text-center">{adminis.shortNote}</div>
                     </div>
-                    <p className="text-3xl text-justify text-gray-700"> {adminis?.longNote} </p>
+                    <p className="text-3xl max-lg:text-xl text-justify text-gray-700"> {adminis?.longNote} </p>
                   </div>
 
 
